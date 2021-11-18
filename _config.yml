@@ -149,7 +149,7 @@ yat:
 header_pages:
    - index.html
    - tutorial.html
-   - categories.html
+   - project.html
    - tags.html
    - about.html
 
