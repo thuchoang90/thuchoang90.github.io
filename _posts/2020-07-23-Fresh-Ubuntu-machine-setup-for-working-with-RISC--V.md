@@ -7,7 +7,7 @@ tags: RISC-V
 
 ## I. Dependencies & Proxy
 
-To make **vi** more comfortable:
+To make ```vi``` more comfortable:
 ```shell
 $ sudo apt install vim
 $ vi ~/.vimrc
@@ -187,14 +187,14 @@ $ make -j`nproc`
 ### II. e) Idea IntelliJ
 
 **Idea IntelliJ** is a tool for compiling scala codes. It much more like a GUI for the SBT tool.
-After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by **./idea.sh**
+After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by ```./idea.sh```
 
 ### II. f) Eclipse
 
 Eclipse is the tool for writing software codes (C/C++), to build, to run, and to debug the software.
 
 Download the gnu-mcu-eclipse (linux version) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
-Then extract it and copy the folder to any place you want. The execution file is at: ***\[Eclipse folder\]/eclipse/eclipse***
+Then extract it and copy the folder to any place you want. The execution file is at: ```[Eclipse folder]/eclipse/eclipse```
 
 You will be aksed to install plugins at the first launch of the program, remember to choose install the Scala language support.
 
@@ -214,7 +214,7 @@ $ sudo make install -j`nproc`
 ```
 
 Configuration files for RISC-V CPU: [riscv-openocd](/assets/sources/other/riscv-openocd.cfg)
-You should download them and put them under the riscv-openocd/ folder.
+You should download them and put them under the ```riscv-openocd/``` folder.
 
 ### II. h) Vivado 2016.4
 
@@ -222,7 +222,7 @@ You should download them and put them under the riscv-openocd/ folder.
 
 **Check your eth0 interface:**
 
-Type "$ ifconfig -a" to make sure that the network interface name is 'eth0'.
+Type ```$ ifconfig -a``` to make sure that the network interface name is ```eth0```.
 If not, the Vivado cannot recognize the license from the NAT interface.
 Then, the network interface name must be rename by:
 ```shell
@@ -259,7 +259,7 @@ $ sudo ./install_drivers
 Just download from the [fpgasoftware.intel.com](http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct) and install.
 Choose the version you want to download, then from Ubuntu just click and install
 (In this tutorial, the chosen Quartus version is Quartus Prime Standard 18.1).
-The Quartus execution file is located at **intelFPGA/18.1/quartus/bin/**
+The Quartus execution file is located at ```intelFPGA/18.1/quartus/bin/```
 
 Note: if running Quartus fail due to ```libpng12``` error, then you need to install it manually (just download & install):
 for [32-bit](https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108507/+files/libpng12-dev_1.2.54-1ubuntu1.1_i386.deb),
