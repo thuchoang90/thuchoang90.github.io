@@ -148,3 +148,38 @@ You can follow the [scala-lang.org](https://www.scala-lang.org/download/) to dow
 
 Then download the sbt tool according to the [scala-sbt.org](https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html).
 Download the deb file and install (recommend to install at least the 1.2.8 version).
+
+### II. c) Verilator
+
+Verilator is a cycle-accurate behavioral model, and it is used to simulate the Verilog codes at cycle level (like ModelSim).
+
+To install the Verilator:
+```shell
+stand where you want to install Verilator
+$ git clone http://git.veripool.org/git/verilator
+$ cd verilator/
+$ git checkout v4.032
+$ unset VERILATOR_ROOT    #For bash, unsetenv for csh
+$ autoconf #this is to create the ./configure script
+$ ./configure #then run the script
+$ make -j`nproc`
+$ sudo make install
+```
+
+### II. d) QEMU
+
+QEMU is an emulation tool, not a simulation tool. It does not simulate anything (.v codes, .scala codes, or .c codes, etc.).
+It emulates the behavioral that a correct CPU should behave. Reference [link](https://github.com/riscv/riscv-qemu/tree/riscv-qemu-4.0.0).
+
+To install the RISC-V QEMU:
+```shell
+stand where you want to install RISC-V QEMU
+$ git clone https://github.com/riscv/riscv-qemu.git
+$ cd riscv-qemu/
+$ git checkout riscv-qemu-4.0.0         	#commit 62a172e on 19-Mar-2019
+$ git submodule update --init --recursive
+$ mkdir build
+$ cd build
+$ ../configure
+$ make -j`nproc`
+```
