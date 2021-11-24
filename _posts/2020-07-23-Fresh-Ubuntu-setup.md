@@ -310,9 +310,10 @@ Current mainstream is gcc 9.2 (brach master commit 6d2706f2 on 19-Feb-2020).
 If you want to use older gcc:
 ```shell
 gcc 7.2 (branch master commit on 21-Feb-2019):
-         $ git checkout bb41926cb5a62e6cbe4b659ded6ff52c70b2baf1
+$ git checkout bb41926cb5a62e6cbe4b659ded6ff52c70b2baf1
+
 gcc 8.3 (branch master commit on 16-Aug-2019):
-         $ git checkout 0914ab9f41b63681e538ec677c4adeaa889adae5
+$ git checkout 0914ab9f41b63681e538ec677c4adeaa889adae5
 ```
 
 Finally:
