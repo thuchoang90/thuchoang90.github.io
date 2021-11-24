@@ -1,13 +1,8 @@
 ---
 layout: post
 title: Fresh Ubuntu machine setup for working with RISC-V
-subheading: Installing necessary RISC-V tools.
 categories: Tutorial
 tags: RISC-V
-banner:
-  heading_style: "font-size: 4.25em; font-weight: bold"
-  subheading_style: "color: gold"
-sidebar: []
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
