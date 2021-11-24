@@ -183,3 +183,35 @@ $ cd build
 $ ../configure
 $ make -j`nproc`
 ```
+
+### II. e) Idea IntelliJ
+
+**Idea IntelliJ** is a tool for compiling scala codes. It much more like a GUI for the SBT tool.
+After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by **./idea.sh**
+
+### II. f) Eclipse
+
+Eclipse is the tool for writing software codes (C/C++), to build, to run, and to debug the software.
+
+Download the gnu-mcu-eclipse (linux version) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
+Then extract it and copy the folder to any place you want. The execution file is at: ***\[Eclipse folder\]/eclipse/eclipse***
+
+You will be aksed to install plugins at the first launch of the program, remember to choose install the Scala language support.
+
+### II. g) OpenOCD
+
+Open OCD (OCD: On-Chip Debugger) is a tool to control a CPU via a debugger, thus allowing us to load a program, and run or debug that program.
+
+To install & make OpenOCD:
+```shell
+$ git clone https://github.com/riscv/riscv-openocd.git    #branch riscv commit 54e5d253 on 5-Mar-2020
+$ cd riscv-openocd/
+$ git submodule update --init --recursive
+$ ./bootstrap
+$ ./configure --enable-ftdi --enable-dummy
+$ make -j`nproc`
+$ sudo make install -j`nproc`
+```
+
+Configuration files for RISC-V CPU: [riscv-openocd](./riscv-openocd.cfg)
+You should download them and put them under the riscv-openocd/ folder.
