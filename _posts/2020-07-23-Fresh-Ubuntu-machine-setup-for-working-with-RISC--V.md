@@ -262,8 +262,8 @@ Choose the version you want to download, then from Ubuntu just click and install
 The Quartus execution file is located at **intelFPGA/18.1/quartus/bin/**
 
 Note: if running Quartus fail due to ```libpng12``` error, then you need to install it manually (just download & install):
-for [32-bit](https://packages.ubuntu.com/en/xenial/i386/libpng12-0/download),
-for [64-bit](https://packages.ubuntu.com/en/xenial/amd64/libpng12-0/download).
+for [32-bit](https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108507/+files/libpng12-dev_1.2.54-1ubuntu1.1_i386.deb),
+for [64-bit](https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108504/+files/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb).
 
 **Install cable driver:**
 
