@@ -215,3 +215,96 @@ $ sudo make install -j`nproc`
 
 Configuration files for RISC-V CPU: [riscv-openocd](/assets/sources/other/riscv-openocd.cfg)
 You should download them and put them under the riscv-openocd/ folder.
+
+### II. h) Vivado 2016.4
+
+(because the VC707 project now can compatible only with the 2016.4 version of Vivado)
+
+**Check your eth0 interface:**
+
+Type "$ ifconfig -a" to make sure that the network interface name is 'eth0'.
+If not, the Vivado cannot recognize the license from the NAT interface.
+Then, the network interface name must be rename by:
+```shell
+$ sudo vi /etc/default/grub
+
+Then add this line beneath those GRUB... lines:
+    GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0
+
+Then:
+$ sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Finally, reboot again for the computer to update the new ethernet interface.
+
+**Download and Install:**
+
+First, download the Vivado 2016.4 from [xilinx.com](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html) (linux .bin file self extract). Then, cd to the downloaded .bin file and run:
+```shell
+$ chmod +x Xilinx_....bin
+$ sudo ./Xilinx_....bin
+```
+
+The GUI for installation will be load. Choose to install the Vivado HL Design Edition and wait for the installer to complete.
+
+**Install cable driver:**
+```shell
+cd to Vivado installed folder:
+$ cd ...Xilinx/Vivado/2016.4/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+$ sudo ./install_drivers
+```
+
+### II. i) Quartus
+
+Just download from the [fpgasoftware.intel.com](http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct) and install.
+Choose the version you want to download, then from Ubuntu just click and install
+(In this tutorial, the chosen Quartus version is Quartus Prime Standard 18.1).
+The Quartus execution file is located at **intelFPGA/18.1/quartus/bin/**
+
+Note: if running Quartus fail due to ```libpng12``` error, then you need to install it manually (just download & install):
+for [32-bit](https://packages.ubuntu.com/en/xenial/i386/libpng12-0/download),
+for [64-bit](https://packages.ubuntu.com/en/xenial/amd64/libpng12-0/download).
+
+**Install cable driver:**
+
+Create two 51- and 52- files:
+```shell
+$ sudo vi /etc/udev/rules.d/51-usbblaster.rules
+$ sudo vi /etc/udev/rules.d/52-usbblaster.rules
+```
+
+And add these lines on both files:
+```shell
+# USB-Blaster
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6001", MODE="0666"
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6002", MODE="0666" 
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6003", MODE="0666"   
+
+# USB-Blaster II
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6010", MODE="0666"
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6810", MODE="0666"
+```
+
+After that, you may:
+```shell
+$ sudo service udev restart
+```
+
+Or even reboot the computer if it's still not recognize the cable.
+	
+### II. k) Create Ubuntu Desktop Shorcut
+
+To install the tool:
+```shell
+$ sudo apt-get install --no-install-recommends gnome-panel
+```
+
+To add a new item on the desktop:
+```shell
+$ gnome-desktop-item-edit ~/Desktop/ --create-new
+Then fill in the name you wanted, browse to the execution file, and hit OK.
+```
+
+Double-click on the new icon for the first time and click the "Trust and Launch" button.
+
+* * *
