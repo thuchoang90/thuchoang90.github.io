@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Title
-subheading: Subtitle.
-categories: Project
-tags: RISC-V TEE
+title: Fresh Ubuntu machine setup for working with RISC-V
+subheading: Installing necessary RISC-V tools.
+categories: Tutorial
+tags: RISC-V
 sidebar: []
 ---
 
