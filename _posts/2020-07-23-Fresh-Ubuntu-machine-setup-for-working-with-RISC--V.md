@@ -331,7 +331,7 @@ The ```[path]``` is where you want to store your generated toolchain.
 The ```[arch]``` is the RISC-V architecture that you want. To be specific:
 
  * ```rv64``` and ```rv32``` respectively specify the 64-bit and 32-bit instruction set options.
- * These characters ```i```, ```a```, ```m```, ```f```, ```d```, ```c```, and ```g``` are respectively stand for the extensions of **i**nteger, **a**tomic, **m**ultiplication & division, **f**loating-point, **d**ouble floating-point, **c**ompress, and **g**eneral (general = *imafd*).
+ * These characters ```i```, ```a```, ```m```, ```f```, ```d```, ```c```, and ```g``` are respectively stand for the extensions of ***i***nteger, ***a***tomic, ***m***ultiplication & division, ***f***loating-point, ***d***ouble floating-point, ***c***ompress, and ***g***eneral (general = *imafd*).
  
  The ```[abi]``` is the ABI that specify the compile mode on the software. To be specific:
  * For 32-bit, there are ```ilp32``` and ```ilp32d``` to pair with ```rv32``` using soft-float or hard-float, respectively.
