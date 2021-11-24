@@ -292,21 +292,6 @@ $ sudo service udev restart
 
 Or even reboot the computer if it's still not recognize the cable.
 	
-### II. k) Create Ubuntu Desktop Shorcut
-
-To install the tool:
-```shell
-$ sudo apt-get install --no-install-recommends gnome-panel
-```
-
-To add a new item on the desktop:
-```shell
-$ gnome-desktop-item-edit ~/Desktop/ --create-new
-Then fill in the name you wanted, browse to the execution file, and hit OK.
-```
-
-Double-click on the new icon for the first time and click the "Trust and Launch" button.
-
 * * *
 
 ## III. RISC-V Toolchain
