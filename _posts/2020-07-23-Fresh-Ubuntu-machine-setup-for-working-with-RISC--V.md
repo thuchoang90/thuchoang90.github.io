@@ -160,8 +160,8 @@ $ git clone http://git.veripool.org/git/verilator
 $ cd verilator/
 $ git checkout v4.032
 $ unset VERILATOR_ROOT    #For bash, unsetenv for csh
-$ autoconf #this is to create the ./configure script
-$ ./configure #then run the script
+$ autoconf                #this is to create the ./configure script
+$ ./configure             #then run the script
 $ make -j`nproc`
 $ sudo make install
 ```
@@ -176,7 +176,7 @@ To install the RISC-V QEMU:
 stand where you want to install RISC-V QEMU
 $ git clone https://github.com/riscv/riscv-qemu.git
 $ cd riscv-qemu/
-$ git checkout riscv-qemu-4.0.0         	#commit 62a172e on 19-Mar-2019
+$ git checkout riscv-qemu-4.0.0   #commit 62a172e on 19-Mar-2019
 $ git submodule update --init --recursive
 $ mkdir build
 $ cd build
