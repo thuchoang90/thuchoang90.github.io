@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fresh Ubuntu machine setup for working with RISC-V
-categories: Tutorial
+title: "VexRiscv: A 32-bit RISC-V MCU"
+categories: Project
 tags: RISC-V
 ---
