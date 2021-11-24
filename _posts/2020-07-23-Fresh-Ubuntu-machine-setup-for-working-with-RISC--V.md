@@ -4,6 +4,9 @@ title: Fresh Ubuntu machine setup for working with RISC-V
 subheading: Installing necessary RISC-V tools.
 categories: Tutorial
 tags: RISC-V
+banner:
+  heading_style: "font-size: 4.25em; font-weight: bold"
+  subheading_style: "color: gold"
 sidebar: []
 ---
 
