@@ -308,3 +308,67 @@ Then fill in the name you wanted, browse to the execution file, and hit OK.
 Double-click on the new icon for the first time and click the "Trust and Launch" button.
 
 * * *
+
+## III. RISC-V Toolchain
+
+Toolchain for RISC-V CPU. Reference [link](https://github.com/riscv/riscv-gnu-toolchain).
+
+### III. a) Git clone
+
+Git clone the toolchain-making on github:
+```shell
+$ git clone https://github.com/riscv/riscv-gnu-toolchain
+$ cd riscv-gnu-toolchain/
+```
+
+Current mainstream is gcc 9.2 (brach master commit 6d2706f2 on 19-Feb-2020).
+If you want to use older gcc:
+```shell
+gcc 7.2 (branch master commit on 21-Feb-2019):
+         $ git checkout bb41926cb5a62e6cbe4b659ded6ff52c70b2baf1
+gcc 8.3 (branch master commit on 16-Aug-2019):
+         $ git checkout 0914ab9f41b63681e538ec677c4adeaa889adae5
+
+Finally:
+$ git submodule update --init --recursive
+```
+
+### III. b) Configurations
+
+The configuration command format:
+```shell
+$ ./configure --prefix=[path] --with-arch=[arch] --with-abi=[abi]
+```
+
+The ```[path]``` is where you want to store your generated toolchain.
+The ```[arch]``` is the RISC-V architecture that you want. To be specific:
+
+ * ```rv64``` and ```rv32``` respectively specify the 64-bit and 32-bit instruction set options.
+ * These characters ```i```, ```a```, ```m```, ```f```, ```d```, ```c```, and ```g``` are respectively stand for the extensions of (*i*)nteger, (*a*)tomic, (*m*)ultiplication & division, (*f*)loating-point, (*d*)ouble floating-point, (*c*)ompress, and (*g*)eneral (general = *imafd*).
+ 
+ The ```[abi]``` is the ABI that specify the **compile** mode on the software. To be specific:
+ * For 32-bit, there are ```ilp32``` and ```ilp32d``` to pair with ```rv32``` using **soft-float** or **hard-float**, respectively.
+ * For 64-bit, there are ```lp64``` and ```lp64d``` to pair with ```rv64``` using **soft-float** or **hard-float**, respectively.
+
+For example, to generate toolchain for a general 64-bit RISC-V CPU, you can write like this:
+```shell
+$ ./configure --prefix=/opt/riscv64gc --with-arch=rv64gc --with-abi=lp64d
+```
+
+Or for a general 32-bit RISC-V CPU:
+```shell
+$ ./configure --prefix=/opt/riscv32gc --with-arch=rv32gc --with-abi=ilp32d
+```
+
+### III. c) Make
+
+After install the dependencies, clone the toolchain-making folder, and set the configurations, now you can ```$ make``` the toolchain by:
+```shell
+for elf-toolchain (or baremetal toolchain) to run directly on the CPU (like MCU):
+$ sudo make -j`nproc`
+
+for linux-toolchain to run on the Linux that run on the CPU (like OS app):
+$ sudo make linux -j`nproc`
+```
+
+*Note*: to re-make again, it is better to ```$ sudo make clean``` beforehand.
