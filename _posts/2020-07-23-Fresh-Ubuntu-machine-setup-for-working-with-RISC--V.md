@@ -5,7 +5,7 @@ categories: Tutorial
 tags: RISC-V
 ---
 
-# I. Dependencies & Proxy
+## I. Dependencies & Proxy
 
 To make **vi** more comfortable:
 ```shell
