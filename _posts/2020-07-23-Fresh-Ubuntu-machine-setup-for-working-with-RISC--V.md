@@ -313,8 +313,10 @@ gcc 7.2 (branch master commit on 21-Feb-2019):
          $ git checkout bb41926cb5a62e6cbe4b659ded6ff52c70b2baf1
 gcc 8.3 (branch master commit on 16-Aug-2019):
          $ git checkout 0914ab9f41b63681e538ec677c4adeaa889adae5
+```
 
 Finally:
+```shell
 $ git submodule update --init --recursive
 ```
 
@@ -329,11 +331,11 @@ The ```[path]``` is where you want to store your generated toolchain.
 The ```[arch]``` is the RISC-V architecture that you want. To be specific:
 
  * ```rv64``` and ```rv32``` respectively specify the 64-bit and 32-bit instruction set options.
- * These characters ```i```, ```a```, ```m```, ```f```, ```d```, ```c```, and ```g``` are respectively stand for the extensions of (*i*)nteger, (*a*)tomic, (*m*)ultiplication & division, (*f*)loating-point, (*d*)ouble floating-point, (*c*)ompress, and (*g*)eneral (general = *imafd*).
+ * These characters ```i```, ```a```, ```m```, ```f```, ```d```, ```c```, and ```g``` are respectively stand for the extensions of **i**nteger, **a**tomic, **m**ultiplication & division, **f**loating-point, **d**ouble floating-point, **c**ompress, and **g**eneral (general = *imafd*).
  
- The ```[abi]``` is the ABI that specify the **compile** mode on the software. To be specific:
- * For 32-bit, there are ```ilp32``` and ```ilp32d``` to pair with ```rv32``` using **soft-float** or **hard-float**, respectively.
- * For 64-bit, there are ```lp64``` and ```lp64d``` to pair with ```rv64``` using **soft-float** or **hard-float**, respectively.
+ The ```[abi]``` is the ABI that specify the compile mode on the software. To be specific:
+ * For 32-bit, there are ```ilp32``` and ```ilp32d``` to pair with ```rv32``` using soft-float or hard-float, respectively.
+ * For 64-bit, there are ```lp64``` and ```lp64d``` to pair with ```rv64``` using soft-float or hard-float, respectively.
 
 For example, to generate toolchain for a general 64-bit RISC-V CPU, you can write like this:
 ```shell
