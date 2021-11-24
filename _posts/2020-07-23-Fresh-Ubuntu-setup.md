@@ -7,7 +7,7 @@ tags: RISC-V
 
 ## I. Dependencies & Proxy
 
-To make **vi** more comfortable:
+To make ```vi``` more comfortable:
 ```shell
 $ sudo apt install vim
 $ vi ~/.vimrc
@@ -187,14 +187,14 @@ $ make -j`nproc`
 ### II. e) Idea IntelliJ
 
 **Idea IntelliJ** is a tool for compiling scala codes. It much more like a GUI for the SBT tool.
-After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by **./idea.sh**
+After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by ```./idea.sh```
 
 ### II. f) Eclipse
 
 Eclipse is the tool for writing software codes (C/C++), to build, to run, and to debug the software.
 
 Download the gnu-mcu-eclipse (linux version) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
-Then extract it and copy the folder to any place you want. The execution file is at: ***\[Eclipse folder\]/eclipse/eclipse***
+Then extract it and copy the folder to any place you want. The execution file is at: ```[Eclipse folder]/eclipse/eclipse```
 
 You will be aksed to install plugins at the first launch of the program, remember to choose install the Scala language support.
 
@@ -213,5 +213,150 @@ $ make -j`nproc`
 $ sudo make install -j`nproc`
 ```
 
-Configuration files for RISC-V CPU: [riscv-openocd](./riscv-openocd.cfg)
-You should download them and put them under the riscv-openocd/ folder.
+Configuration files for RISC-V CPU: [riscv-openocd](/assets/sources/other/riscv-openocd.cfg)
+You should download them and put them under the ```riscv-openocd/``` folder.
+
+### II. h) Vivado 2016.4
+
+(because the VC707 project now can compatible only with the 2016.4 version of Vivado)
+
+**Check your eth0 interface:**
+
+Type ```$ ifconfig -a``` to make sure that the network interface name is ```eth0```.
+If not, the Vivado cannot recognize the license from the NAT interface.
+Then, the network interface name must be rename by:
+```shell
+$ sudo vi /etc/default/grub
+
+Then add this line beneath those GRUB... lines:
+    GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0
+
+Then:
+$ sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Finally, reboot again for the computer to update the new ethernet interface.
+
+**Download and Install:**
+
+First, download the Vivado 2016.4 from [xilinx.com](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html) (linux .bin file self extract). Then, cd to the downloaded .bin file and run:
+```shell
+$ chmod +x Xilinx_....bin
+$ sudo ./Xilinx_....bin
+```
+
+The GUI for installation will be load. Choose to install the Vivado HL Design Edition and wait for the installer to complete.
+
+**Install cable driver:**
+```shell
+cd to Vivado installed folder:
+$ cd ...Xilinx/Vivado/2016.4/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+$ sudo ./install_drivers
+```
+
+### II. i) Quartus
+
+Just download from the [fpgasoftware.intel.com](http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct) and install.
+Choose the version you want to download, then from Ubuntu just click and install
+(In this tutorial, the chosen Quartus version is Quartus Prime Standard 18.1).
+The Quartus execution file is located at ```intelFPGA/18.1/quartus/bin/```
+
+Note: if running Quartus fail due to ```libpng12``` error, then you need to install it manually (just download & install):
+for [32-bit](https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108507/+files/libpng12-dev_1.2.54-1ubuntu1.1_i386.deb),
+for [64-bit](https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108504/+files/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb).
+
+**Install cable driver:**
+
+Create two 51- and 52- files:
+```shell
+$ sudo vi /etc/udev/rules.d/51-usbblaster.rules
+$ sudo vi /etc/udev/rules.d/52-usbblaster.rules
+```
+
+And add these lines on both files:
+```shell
+# USB-Blaster
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6001", MODE="0666"
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6002", MODE="0666" 
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6003", MODE="0666"   
+
+# USB-Blaster II
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6010", MODE="0666"
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6810", MODE="0666"
+```
+
+After that, you may:
+```shell
+$ sudo service udev restart
+```
+
+Or even reboot the computer if it's still not recognize the cable.
+	
+* * *
+
+## III. RISC-V Toolchain
+
+Toolchain for RISC-V CPU. Reference [link](https://github.com/riscv/riscv-gnu-toolchain).
+
+### III. a) Git clone
+
+Git clone the toolchain-making on github:
+```shell
+$ git clone https://github.com/riscv/riscv-gnu-toolchain
+$ cd riscv-gnu-toolchain/
+```
+
+Current mainstream is gcc 9.2 (brach master commit 6d2706f2 on 19-Feb-2020).
+If you want to use older gcc:
+```shell
+gcc 7.2 (branch master commit on 21-Feb-2019):
+$ git checkout bb41926cb5a62e6cbe4b659ded6ff52c70b2baf1
+
+gcc 8.3 (branch master commit on 16-Aug-2019):
+$ git checkout 0914ab9f41b63681e538ec677c4adeaa889adae5
+```
+
+Finally:
+```shell
+$ git submodule update --init --recursive
+```
+
+### III. b) Configurations
+
+The configuration command format:
+```shell
+$ ./configure --prefix=[path] --with-arch=[arch] --with-abi=[abi]
+```
+
+The ```[path]``` is where you want to store your generated toolchain.
+The ```[arch]``` is the RISC-V architecture that you want. To be specific:
+
+ * ```rv64``` and ```rv32``` respectively specify the 64-bit and 32-bit instruction set options.
+ * These characters ```i```, ```a```, ```m```, ```f```, ```d```, ```c```, and ```g``` are respectively stand for the extensions of ***i***nteger, ***a***tomic, ***m***ultiplication & division, ***f***loating-point, ***d***ouble floating-point, ***c***ompress, and ***g***eneral (general = *imafd*).
+ 
+ The ```[abi]``` is the ABI that specify the compile mode on the software. To be specific:
+ * For 32-bit, there are ```ilp32``` and ```ilp32d``` to pair with ```rv32``` using soft-float or hard-float, respectively.
+ * For 64-bit, there are ```lp64``` and ```lp64d``` to pair with ```rv64``` using soft-float or hard-float, respectively.
+
+For example, to generate toolchain for a general 64-bit RISC-V CPU, you can write like this:
+```shell
+$ ./configure --prefix=/opt/riscv64gc --with-arch=rv64gc --with-abi=lp64d
+```
+
+Or for a general 32-bit RISC-V CPU:
+```shell
+$ ./configure --prefix=/opt/riscv32gc --with-arch=rv32gc --with-abi=ilp32d
+```
+
+### III. c) Make
+
+After install the dependencies, clone the toolchain-making folder, and set the configurations, now you can ```$ make``` the toolchain by:
+```shell
+for elf-toolchain (or baremetal toolchain) to run directly on the CPU (like MCU):
+$ sudo make -j`nproc`
+
+for linux-toolchain to run on the Linux that run on the CPU (like OS app):
+$ sudo make linux -j`nproc`
+```
+
+*Note*: to re-make again, it is better to ```$ sudo make clean``` beforehand.
