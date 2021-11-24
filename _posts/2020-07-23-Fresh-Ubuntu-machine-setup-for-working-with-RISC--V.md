@@ -213,5 +213,5 @@ $ make -j`nproc`
 $ sudo make install -j`nproc`
 ```
 
-Configuration files for RISC-V CPU: [riscv-openocd](./riscv-openocd.cfg)
+Configuration files for RISC-V CPU: [riscv-openocd](./assets/sources/other/riscv-openocd.cfg)
 You should download them and put them under the riscv-openocd/ folder.
