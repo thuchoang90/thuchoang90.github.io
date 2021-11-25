@@ -298,23 +298,23 @@ Number  Start (sector)  End (sector)  Size        Code    Name
 
 **For the bbl.bin:**
 
-Follow the [instruction](./keystone.md) to make the **bbl.bin** of the Keystone & Keystone demo.
+Follow the instruction to make the **bbl.bin** of the Keystone & Keystone demo: [Keystone 64-bit Makefile](/project/2020/07/24/Keystone-makefile-64), [Keystone 32-bit Makefile](/project/2020/07/24/Keystone-makefile-32), [Keystone 64-bit CMake](/project/2020/11/12/Keystone-cmake-64), or [Keystone 32-bit CMake](/project/2020/11/05/Keystone-cmake-32).
 
 The **bbl.bin** is for the 1st partition of the SD card:
 ```shell
 $ cd <keystone folder>    #cd to your keystone folder
 $ sudo dd if=hifive-work/bbl.bin of=/dev/sdX1 bs=4096 conv=fsync
-  where the X1 is the 1st partition of the USB device
+  #where the X1 is the 1st partition of the USB device
 ```
 
 **For the fsbl.bin:**
 
-After the hardware make (section [I. a)](#i-a-build) above), there is a **vc707fsbl.bin** file inside the folder **bootrom/freedom-u540-c000-bootloader/**. That file is for the 4th partition of the SD card:
+After the hardware make (section [I. a) Build](#i-a-build) above), there is a **vc707fsbl.bin** file inside the folder **bootrom/freedom-u540-c000-bootloader/**. That file is for the 4th partition of the SD card:
 ```shell
 $ cd <your freedom folder>
 $ cd bootrom/freedom-u540-c000-bootloader/
 $ sudo dd if=vc707fsbl.bin of=/dev/sdX4 bs=4096 conv=fsync
-  where the X4 is the 4th partition of the USB device
+  #where the X4 is the 4th partition of the USB device
 ```
 
 #### (iii) Boot on & run the test
