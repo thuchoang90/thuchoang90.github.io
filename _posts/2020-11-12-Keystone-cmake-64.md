@@ -110,7 +110,7 @@ $ make run-tests    #after this, a bbl.bin file is generated
 ## II. Keystone-demo
 
 Check PATH:
-- Pair with the prebuilt-toolchain of Keystone: *(Note: prebuilt-toolchain is RV64GC, so if you want to build for RV64IMAC please follow the local-built-toolchain)*
+- Pair with the prebuilt-toolchain of Keystone: *(Note: prebuilt-toolchain is ```RV64GC```, so if you want to build for ```RV64IMAC``` please follow the local-built-toolchain)*
 
 ```shell
 $ echo ${PATH}          #and MAKE SURE that NO ANY TOOLCHAIN is on the PATH
@@ -128,12 +128,12 @@ $ export KEYSTONE_BUILD_DIR=`pwd`/build   #point to the build folder
 Or: $ cd keystone-rv64imac/
 
 $ echo ${PATH}    #check if our toolchain is on the PATH or not
-# if not then export it to PATH
-If build for RV64GC:
-  $ export RISCV=/opt/GCC8/riscv64gc      #point to RV64GC toolchain
-If build for RV64IMAC:
-  $ export RISCV=/opt/GCC8/riscv64imac    #point to RV64IMAC toolchain
 
+If not then export it to PATH
+If build for RV64GC:      $ export RISCV=/opt/GCC8/riscv64gc      #point to RV64GC toolchain
+If build for RV64IMAC:    $ export RISCV=/opt/GCC8/riscv64imac    #point to RV64IMAC toolchain
+
+Finally:
 $ export PATH=$RISCV/bin/:$PATH
 $ export KEYSTONE_DIR=`pwd`
 $ export KEYSTONE_SDK_DIR=`pwd`/sdk/build
@@ -160,20 +160,20 @@ $ cd ${KEYSTONE_BUILD_DIR}    #now go back to the keystone folder
 $ make image                  #and update the bbl.bin there
 ```
 
-Note: there is kind of a bug with "script/run-qemu.sh", so do this to make sure that the "script/run-qemu.sh" will run smoother later
+*Note:* there is kind of a bug with ```script/run-qemu.sh```, so do this to make sure that the ```script/run-qemu.sh``` will run smoother later:
 ```shell
 $ <open a new terminal>
 $ cd <to the keystone build folder>
 $ ./script/run-qemu.sh
 ```
 
-Log in by the id of ```root``` and the password of ```sifive```
+Log in by the id of ```root``` and the password of ```sifive```.
 Then exit qemu by ```poweroff```.
-If it got stuck with ```Power off``` then just close the terminal
+If it got stuck with ```Power off``` then just close the terminal.
 
-To update the new hash value to the keystone-demo folder, do the followings:
+To update the new hash value to the ```keystone-demo/``` folder, do the followings:
 ```shell
-  #Now go back with the original terminal ealier
+#Now go back with the original terminal ealier
 $ cd ../../keystone-demo-rv64/              #first, cd back to the keystone-demo directory
 $ ./scripts/get_attestation.sh ./include    #if it stuck at "Power off", just Ctrl+C
 $ rm build/trusted_client.riscv
@@ -185,7 +185,7 @@ $ cd ${KEYSTONE_BUILD_DIR}    #now go back to the keystone folder
 $ make image                  #and update the bbl.bin there
 ```
 
-***Note:*** sometimes ***./scripts/get_attestation.sh ./include*** encountered a problem like this:
+*Note:* sometimes ```./scripts/get_attestation.sh ./include``` encountered a problem like this:
 ```shell
 spawn ./scripts/run-qemu.sh
 **** Running QEMU SSH on port 3000 ****
@@ -196,7 +196,7 @@ expect: spawn id exp4 not open
 Could not extract the SM_HASH!
 ```
 
-Then just change the SSH port in **${KEYSTONE_BUILD_DIR}/scripts/get_attestation.sh** from:
+Then just change the SSH port in ```${KEYSTONE_BUILD_DIR}/scripts/get_attestation.sh``` from:
 ```shell
 HOST_PORT=${HOST_PORT:="$((3000 + RANDOM % 3000))"};
 ```
@@ -210,27 +210,25 @@ HOST_PORT=${HOST_PORT:="$((3222))"};
 ## III. Run Test on QEMU
 
 ```shell
-$ cd <keystone folder>			#go to your keystone folder
-$ cd build/					#go to build folder
+$ cd <keystone folder>                #go to your keystone folder
+$ cd build/                           #go to build folder
 $ ./scripts/run-qemu.sh
-Login by the id of 'root' and the password of 'sifive'.
+  #Login by the id of 'root' and the password of 'sifive'
 
-$ insmod keystone-driver.ko		#install driver
+$ insmod keystone-driver.ko           #install driver
 
 To do the initial test:
-$ time ./tests.ke				#ok if 'Attestation report SIGNATURE is valid' is printed
+$ time ./tests.ke                     #ok if 'Attestation report SIGNATURE is valid' is printed
 
 To do the keystone-demo test:
-$ cd keystone-demo/			#go to the keystone-demo test
-$ ./demo-server.riscv &			#run host in localhost
-$ ./trusted_client.riscv localhost	#connect to localhost and test
-okay if the 'Attestation signature and enclave hash are valid' is printed
-exit the Security Monitor by:	$ q
-
-exit QEMU by:	$ poweroff
+$ cd keystone-demo/                   #go to the keystone-demo test
+$ ./demo-server.riscv &               #run host in localhost
+$ ./trusted_client.riscv localhost    #connect to localhost and test
 ```
+It is okay if the **Attestation signature and enclave hash are valid** is printed.
+Exit the security monitor by:	```$ q```. And exit the QEMU by: ```$ poweroff```.
 
-***Note:*** sometimes ***./scripts/run-qemu.sh*** encountered a problem like this:
+*Note:* sometimes ```./scripts/run-qemu.sh``` encountered a problem like this:
 ```shell
 **** Running QEMU SSH on port 5291 ****
 overriding secure boot ROM (file: /home/ubuntu/Projects/Keystone/CMake/keystone-rv64gc-local/build/bootrom.build/bootrom.bin)
