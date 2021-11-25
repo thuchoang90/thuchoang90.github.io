@@ -6,7 +6,7 @@ categories: Project
 
 Based on the [Chipyard](https://github.com/ucb-bar/chipyard), this hardware dedicates to accelerating the Trusted Execution Environment (TEE).
 The TEE-HW has demos on VC707, VCU118, DE4, and TR4 FPGA boards.
-The core processors can be configured to use [Rocket-chip](https://github.com/chipsalliance/rocket-chip), [BOOM](https://github.com/riscv-boom/riscv-boom) cores, or both.
+The core processors can be configured to use [Rocket-chip](https://github.com/chipsalliance/rocket-chip), [BOOM](https://github.com/riscv-boom/riscv-boom), or both.
 
 ## I. Hardware: Make & Build FPGA
 
@@ -79,7 +79,7 @@ Furthermore, 32bit Boom currently got bug and cannot perform in FPGA, so please 
 
 - Open the Vivado tool, select the '*Open Project*'
 - Point to '*tee-hardware/fpga/Xilinx/VC707/VC707.xpr*', then click '*OK*'
-- From the top-menu or in the Flow Navigation on the left, click the '*Generate Bitstream*' (at 1st time run, it will pop-up dialog and ask about synthesys & implementation -> just tick '*Don't show this dialog again*' and hit Yes)
+- From the top-menu or in the Flow Navigation on the left, click the '*Generate Bitstream*' (at first time run, it will pop-up dialog and ask about synthesys & implementation -> just tick '*Don't show this dialog again*' and hit Yes)
 - It will build sysnthesys, then implementation, then generate bitstream sequentially. When it's done, another dialog will appear and ask about '*Generate Memory Configuration*'. If you don't want to generate the files for flash programming, just skip this then you're done.
 
 But if you do want to program the flash, then choose the '*Generate Memory Configuration File*' then click '*OK*'. A new dialog will appear:
@@ -120,18 +120,18 @@ Guide for program & debug on VC707, DE4, and TR4 can be found here: [VC707 progr
 
 * * *
 
-# II. Hardware: Use with Idea IntelliJ
+## II. Hardware: Use with Idea IntelliJ
 
-Guide to install Idea IntelliJ is in [Initial Setup: II.e)](./init.md#ii-e-idea-intellij).
+Guide to install Idea IntelliJ is in [Fresh-Ubuntu-setup](/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-e-idea-intellij).
 
-## II. a) To import project
+### II. a) To import project
 
 To import the tee-hardware folder to the **Idea IntelliJ** tool:
 
- - If the tee-hardware folder wasn't compiled before, go ahead and 'make' for the first time. This act is just for download the dependencies, because the Idea IntelliJ has trouble with dependencies download.
- - **Big note:** when 'make', please notice that there will be one line looks like this, you should copy it for later use *(it usually appears right before the creation of the device tree)*:
+ - If the tee-hardware folder wasn't compiled before, go ahead and ```$ make``` for the first time. This act is just for download the dependencies, because the Idea IntelliJ has trouble with dependencies download.
+ - **Big note:** when ```$ make```, please notice that there will be one line looks like this, you should copy it for later use *(it usually appears right before the creation of the device tree)*:
 
-```
+```shell
 cd /home/ubuntu/Projects/TEE-HW/tee-hardware && java -Xmx8G -Xss8M -XX:MaxPermSize=256M -jar /home/ubuntu/Projects/TEE-HW/tee-hardware/hardware/chipyard/generators/rocket-chip/sbt-launch.jar ++2.12.4 "project teehardware" "runMain uec.teehardware.exampletop.Generator /home/ubuntu/Projects/TEE-HW/tee-hardware/fpga/Altera/DE4/src uec.teehardware FPGADE4 uec.teehardware DE4ConfigRV64GC"
 (the content may be differ on your machine)
 ```
@@ -141,13 +141,13 @@ cd /home/ubuntu/Projects/TEE-HW/tee-hardware && java -Xmx8G -Xss8M -XX:MaxPermSi
  - Tick the '*for imports*' and '*for builds*' options in the ***Use sbt shell*** then hit '*Finish*'
  - Wait for it to sync for the first time.
 
-## II. b) To debug project
+### II. b) To debug project
 
 To debug with the **Idea IntelliJ** tool:
 
  - Click the ***Add Configuration...*** button right next to the build button (at the top-bar to the right). Then hit the ***+*** button to add a new configuration, and choose the ***JAR Application*** setting
  - Now get back to the " *java -jar* " example note earlier:
-```
+```shell
 cd /home/ubuntu/Projects/TEE-HW/tee-hardware && java -Xmx8G -Xss8M -XX:MaxPermSize=256M -jar /home/ubuntu/Projects/TEE-HW/tee-hardware/hardware/chipyard/generators/rocket-chip/sbt-launch.jar ++2.12.4 "project teehardware" "runMain uec.teehardware.exampletop.Generator /home/ubuntu/Projects/TEE-HW/tee-hardware/fpga/Altera/DE4/src uec.teehardware FPGADE4 uec.teehardware DE4ConfigRV64GC"
 ```
    The ***/home/ubuntu/Projects/TEE-HW/tee-hardware/hardware/chipyard/generators/rocket-chip/sbt-launch.jar*** part will go to the ***Path to JAR:***
@@ -158,62 +158,62 @@ cd /home/ubuntu/Projects/TEE-HW/tee-hardware && java -Xmx8G -Xss8M -XX:MaxPermSi
 
 * * *
 
-# III. Software (with Keystone)
+## III. Software with TEE (Keystone-build)
 
-Ref [link](https://github.com/keystone-enclave/keystone) for the KeyStone project.
+Reference link: [github.com/keystone-enclave](https://github.com/keystone-enclave/keystone) for the KeyStone project.
 
-## III. a) Prepare the SD card
+### III. a) Prepare the SD card
 
 Use the **gptfdisk** tool to create 4 partitions in the SD card.
 
 If you don't have the **gptfdisk tool**, then do the followings to install it:
-```
-$ git clone https://github.com/tmagik/gptfdisk.git	#branch master commit 3d6a1587 on 9-Dec-2018
+```shell
+$ git clone https://github.com/tmagik/gptfdisk.git    #branch master commit 3d6a1587 on 9-Dec-2018
 $ cd gptfdisk/
 $ make -j`nproc`
 ```
 
 To use gptfdisk:
-```
-$ cd gptfdisk/	#go to gptfdisk folder
-$ sudo ./gdisk /dev/sd?	#point to the sd-card
+```shell
+$ cd gptfdisk/            #go to gptfdisk folder
+$ sudo ./gdisk /dev/sd?   #point to the sd-card
 
 Some commands:
-$ p	# print partitions information
-$ d	# delete partition
-$ n	# create new partition
-$ w	# write partition
+$ p	  #print partitions information
+$ d	  #delete partition
+$ n	  #create new partition
+$ w   #write partition
 ```
 
 The sd-card after created:
+```shell
+Number  Start (sector)  End (sector)	Size        Code    Name
+1       2048            67583         32.0 MiB    5202    SiFive bare-metal (...
+2       264192          15759326      7.4 GiB     8300    Linux filesystem
+4       67584           67839         128.0 KiB   5201    SiFive FSBL (first-...
 ```
-Number	Start (sector)	End (sector)	Size			Code	Name
-1		2048		67583		32.0 MiB		5202	SiFive bare-metal (...
-2		264192		15759326	7.4 GiB		8300	Linux filesystem
-4		67584		67839		128.0 KiB	5201	SiFive FSBL (first-...
-```
 
-## III. b) Prepare BBL & FSBL
+### III. b) Prepare BBL & FSBL
 
-#### For the bbl.bin:
+**For the bbl.bin:**
 
-Follow the instruction of [Keystone RV64](./keystone-makefile-64.md) or [Keystone RV32](./keystone-makefile-32.md) to make the **bbl.bin** of the Keystone & Keystone-demo.
+Follow the instructions to make the **bbl.bin** of the Keystone & Keystone-demo: [Keystone 64-bit Makefile](/project/2020/07/24/Keystone-makefile-64), [Keystone 32-bit Makefile](/project/2020/07/24/Keystone-makefile-32), [Keystone 64-bit CMake](/project/2020/11/12/Keystone-cmake-64), [Keystone 32-bit CMake](/project/2020/11/05/Keystone-cmake-32).
 
 The **bbl.bin** is for the 1st partition of the SD card:
-```
-$ cd <keystone folder>				#cd to your keystone folder
+```shell
+$ cd <keystone folder>    #cd to your keystone folder
 $ sudo dd if=hifive-work/bbl.bin of=/dev/sdX1 bs=4096 conv=fsync
-where the X1 is the 1st partition of the USB device
+  #where the X1 is the 1st partition of the USB device
 ```
 
-#### For the fsbl.bin:
+**For the fsbl.bin:**
 
 After the hardware make (section [I. a)](#i-a-make-verilog-sources) above), there is a **fsbl.bin** file inside the folder **software/freedom-u540-c000-bootloader/**. That file is for the 4th partition of the SD card:
-```
+```shell
 $ cd <your tee-hardware folder>
 $ cd software/freedom-u540-c000-bootloader/
 $ sudo dd if=vc707fsbl.bin of=/dev/sdX4 bs=4096 conv=fsync
-where the X4 is the 4th partition of the USB device
+  #where the X4 is the 4th partition of the USB device
 ```
 
 ## III. c) If using QSPI (Flash)
