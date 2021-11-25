@@ -122,8 +122,7 @@ $ make -j`nproc`        #and update the bbl.bin there
 
 ```shell
 $ cd <keystone folder>        #go to your keystone folder
-$ ./scripts/run-qemu.sh
-  #login by the id of 'root' and the password of 'sifive'
+$ ./scripts/run-qemu.sh       #login by the id of 'root' and the password of 'sifive'
 
 $ insmod keystone-driver.ko   #install driver
 ```
