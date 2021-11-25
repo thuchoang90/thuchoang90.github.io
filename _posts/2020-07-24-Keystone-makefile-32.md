@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Keystone 32-bit build using CMake"
+title: "Keystone 32-bit build using Makefile"
 categories: Project
 tags: RISC-V TEE
 ---
