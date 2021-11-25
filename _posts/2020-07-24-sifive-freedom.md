@@ -248,17 +248,17 @@ $ make -j`nproc` BOARD=vc707devkit_nopci
 
 ```shell
 $ sudo dd if=work/bbl.bin of=/dev/sdX bs=4096 conv=fsync
-  where X is the number of the USB device
+  #where X is the number of the USB device
 ```
 
 Put in the SD card to the board, program the board, then wait for the board to boot on. Communicate with the board via UART:
 ```shell
 $ sudo minicom -b 115200 -D /dev/ttyUSBx
-  where x is the number of connected USB-UART
-  login by the id of 'root' and the password of 'sifive'
+  #where x is the number of connected USB-UART
+  #login by the id of 'root' and the password of 'sifive'
 ```
 
-### II. b) SD card with KeyStone
+### II. b) With TEE (KeyStone-build)
 
 Reference link: [github.com/keystone-enclave](https://github.com/keystone-enclave/keystone) for the KeyStone project.
 
