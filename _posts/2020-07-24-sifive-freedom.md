@@ -268,7 +268,8 @@ Use the **gptfdisk** tool to create 4 partitions in the SD card.
 
 If you don't have the **gptfdisk tool**, then do the followings to install it:
 ```shell
-$ git clone https://github.com/tmagik/gptfdisk.git    #branch master commit 3d6a1587 on 9-Dec-2018
+$ git clone https://github.com/tmagik/gptfdisk.git
+  #branch master commit 3d6a1587 on 9-Dec-2018
 $ cd gptfdisk/
 $ make -j`nproc`
 ```
