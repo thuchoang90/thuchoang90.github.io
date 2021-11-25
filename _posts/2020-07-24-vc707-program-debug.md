@@ -82,15 +82,13 @@ Info : Listening on port 4444 for telnet connections
 
 Then, open another terminal to start a GDB session: (remember to export the riscv toolchain to your ```PATH```)
 ```shell
-$ riscv64-unknown-elf-gdb
-  #The GDB terminal will appear after this.
+$ riscv64-unknown-elf-gdb   #The GDB terminal will appear after this.
 
 From the GDB terminal, type:
 $ target extended-remote localhost:3333
-
-If succeed, the CPU will enter the debugging state after this command,
-and on the GDB terminal you can see the current instruction address
 ```
+If succeed, the CPU will enter the debugging state after this command,
+and on the GDB terminal you can see the current instruction address.
 
 Some useful tips for debugging the RISC-V CPU:
 ```shell
