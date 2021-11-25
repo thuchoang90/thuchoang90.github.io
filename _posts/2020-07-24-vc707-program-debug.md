@@ -51,7 +51,7 @@ SUBSYSTEM=="usb", ACTION=="add", ATTRS{idProduct}=="002a", ATTRS{idVendor}=="15b
 
 ### II. b) Run
 
-You need to prepare your riscv-openocd folder, guide is in [Initial Setup: II.g)](/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-g-openocd). Then:
+You need to prepare your riscv-openocd folder, guide is in [Fresh-Ubuntu-setup](/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-g-openocd). Then:
 ```shell
 $ cd <your riscv-openocd/ folder>
 $ openocd -f riscv-openocd.cfg
