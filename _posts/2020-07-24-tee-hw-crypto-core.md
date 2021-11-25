@@ -165,7 +165,6 @@ Reference link: [github.com/keystone-enclave](https://github.com/keystone-enclav
 ### III. a) Prepare the SD card
 
 Use the **gptfdisk** tool to create 4 partitions in the SD card.
-
 If you don't have the **gptfdisk tool**, then do the followings to install it:
 ```shell
 $ git clone https://github.com/tmagik/gptfdisk.git    #branch master commit 3d6a1587 on 9-Dec-2018
@@ -187,7 +186,7 @@ $ w   #write partition
 
 The sd-card after created:
 ```shell
-Number  Start (sector)  End (sector)	Size        Code    Name
+Number  Start (sector)  End (sector)  Size        Code    Name
 1       2048            67583         32.0 MiB    5202    SiFive bare-metal (...
 2       264192          15759326      7.4 GiB     8300    Linux filesystem
 4       67584           67839         128.0 KiB   5201    SiFive FSBL (first-...
