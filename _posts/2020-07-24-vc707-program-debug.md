@@ -11,22 +11,24 @@ Remember to switch the switches above the LCD to **UP-UP-DOWN-UP-DOWN**,
 then open vivado, open hardware manager, open target board, auto connect.
 
 Vivado direct programming:
-
-	a. right-click on the xc7vx485t_0
-	b. Program Device ...
-	c. select the .bit file
-	d. Program
+<ol type="a">
+  <li>right-click on the xc7vx485t_0</li>
+  <li>Program Device ...</li>
+  <li>select the .bit file</li>
+  <li>Program</li>
+</ol>
 
 Vivado flash programming:
-
-	a. right-click on the xc7vx485t_0
-	b. Add Configuration Memory Device ...
-	c. select the one with the Alias of 28f00ag18f ---> OK
-	d. OK to continue to program the device
-	e. select the Configuration file (.mcs) and PRM file (.prm)
-	f. select the RS pins: 25:24
-	g. OK to write data to the flash
-	h. finally, right-click again on the xc7vx485t_0 and select Boot from Configuration Memory Device
+<ol type="a">
+  <li>right-click on the xc7vx485t_0</li>
+  <li>Add Configuration Memory Device ...</li>
+  <li>select the one with the Alias of 28f00ag18f ---> OK</li>
+  <li>OK to continue to program the device</li>
+  <li>select the Configuration file (.mcs) and PRM file (.prm)</li>
+  <li>select the RS pins: 25:24</li>
+  <li>OK to write data to the flash</li>
+  <li>finally, right-click again on the xc7vx485t_0 and select Boot from Configuration Memory Device</li>
+</ol>
 
 * * *
 
