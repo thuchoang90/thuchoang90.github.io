@@ -215,48 +215,48 @@ $ sudo dd if=vc707fsbl.bin of=/dev/sdX4 bs=4096 conv=fsync
   #where the X4 is the 4th partition of the USB device
 ```
 
-## III. c) If using QSPI (Flash)
+### III. c) If using QSPI (Flash)
 
-If you're using the QSPI option in the DE4 & TR4 demos (VC707 demo doesn't support QSPI), then you have to copy the ZSBL to the Flash outside. Below is the instruction of how to program the Flash via QSPI.
+If you're using the QSPI option in the DE4 & TR4 demos (VC707 demo doesn't support QSPI), then you have to copy the **ZSBL** to the **Flash** outside. Below is the instruction of how to program the **Flash** via QSPI.
 
-We are going to program the Flash via JTAG by using the RISC-V CPU itself:
+We are going to program the **Flash** via JTAG by using the RISC-V CPU itself:
 - Turn on & program the board, connect the JTAG & UART as usual, also remember to connect the Flash to the board.
-- On a terminal, run the OpenOCD: *(guide on installing the OpenOCD is at [Initial Setup / II. g) OpenOCD](./init.md#ii-g-openocd))*
-```
+- On a terminal, run the OpenOCD: *(guide on installing the OpenOCD is at [Fresh-Ubuntu-setup](/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-g-openocd)*
+```shell
 $ cd <your riscv-openocd folder>
 $ openocd -f riscv-openocd-flash.cfg
 ```
 - If the debugger connection is success, then open a new terminal for GDB:
-```
+```shell
 $ cd <your tee-hardware folder>
-$ cd software/freedom-u540-c000-bootloader	# go to bootloader folder
-$ export PATH=/opt/riscv64gc/bin/:$PATH		# export toolchain if it's not there yet (choose the toolchain that you want)
-$ riscv64-unknown-elf-gdb FPGAzsbl.elf		# program the FPGAzsbl.elf to the flash
+$ cd software/freedom-u540-c000-bootloader    #go to bootloader folder
+$ export PATH=/opt/riscv64gc/bin/:$PATH       #export toolchain if it's not there yet (choose the toolchain that you want)
+$ riscv64-unknown-elf-gdb FPGAzsbl.elf        #program the FPGAzsbl.elf to the flash
 $ target extended-remote localhost:3333
 $ load	#after a while it will be done
 ```
 - Now the flash is programmed, you can:
-```
-$ monitor reset halt				# this will reset the CPUs
-$ c						# this will continue the CPUs
+```shell
+$ monitor reset halt    # this will reset the CPUs
+$ c                     # this will continue the CPUs
 ```
 or just quit the GDB/OpenOCD then hit reset on the board.
 
-## III. d) Boot on & run the test
+### III. d) Boot on & run the test
 
 Finally, put in the SD card to the board, program the board, then wait for the board to boot on. Communicate with the board via UART:
-```
+```shell
 $ sudo minicom -b 115200 -D /dev/ttyUSBx
-where x is the number of connected USB-UART
-Login by the id of 'root' and the password of 'sifive'.
+  #where x is the number of connected USB-UART
+  #login by the id of 'root' and the password of 'sifive'
 ```
 
 To run the keystone test:
+```shell
+$ insmod keystone-driver.ko           #install driver
+$ time ./tests/tests.ke               #okay if the 'Attestation report SIGNATURE is valid' is printed
+$ cd keystone-demo/                   #go to the keystone-demo test
+$ ./enclave-host.riscv &              #run host in localhost
+$ ./trusted_client.riscv localhost    #connect to localhost and test
 ```
-$ insmod keystone-driver.ko		#install driver
-$ time ./tests/tests.ke 			#okay if the 'Attestation report SIGNATURE is valid' is printed
-$ cd keystone-demo/			#go to the keystone-demo test
-$ ./enclave-host.riscv &			#run host in localhost
-$ ./trusted_client.riscv localhost	#connect to localhost and test
-okay if the 'Attestation signature and enclave hash are valid' is printed
-```
+It is okay if the **Attestation signature and enclave hash are valid** is printed.
