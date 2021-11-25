@@ -24,17 +24,17 @@ They used three kind of scala files, i.e., *Shell* file, *Configs* file, and *De
   <tr>
     <td><span style="font-weight:bold">Configs file</span></td>
     <td>Is used as a configuration file for the CPU, and it's usually fixed for multiple designs.</td>
-    <td>src/main/scala/unleashed/ DevKitConfigs.scala</td>
+    <td>src/main/ scala/unleashed/ DevKitConfigs.scala</td>
   </tr>
   <tr>
     <td><span style="font-weight:bold">Design file</span></td>
     <td>Is an extension upon the <i>Configs</i> file. In the <i>Design</i> file, all of the modules are called and connected. The <i>Design</i> file is also usually fixed for multiple platforms.</td>
-    <td>src/main/scala/unleashed/ DevKitFPGADesign.scala</td>
+    <td>src/main/ scala/unleashed/ DevKitFPGADesign.scala</td>
   </tr>
   <tr>
     <td><span style="font-weight:bold">Shell file</span></td>
     <td>Is like a top file where all of the IOs are declared. They usually have one <i>Shell</i> file for each platform.</td>
-    <td>fpga-shells/src/main/ scala/shell/xilinx/ VC707NewShell.scala</td>
+    <td>fpga-shells/ src/main/scala/ shell/xilinx/ VC707NewShell.scala</td>
   </tr>
 </table>
 
