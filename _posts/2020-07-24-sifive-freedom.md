@@ -67,7 +67,8 @@ The ```[BUILD_DIR]``` option is to specify the build directory:
 ```Makefile
 BUILD_DIR=`pwd`/builds/<name>
 
-Example:  BUILD_DIR=`pwd`/builds/vc707-u500devkit
+Example:
+  BUILD_DIR=`pwd`/builds/vc707-u500devkit
 ```
 
 Example:
