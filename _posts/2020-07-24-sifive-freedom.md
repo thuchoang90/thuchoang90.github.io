@@ -322,8 +322,8 @@ $ sudo dd if=vc707fsbl.bin of=/dev/sdX4 bs=4096 conv=fsync
 Finally, put in the SD card to the board, program the board, then wait for the board to boot on. Communicate with the board via UART:
 ```shell
 $ sudo minicom -b 115200 -D /dev/ttyUSBx
-  where x is the number of connected USB-UART
-  login by the id of 'root' and the password of 'sifive'
+  #where x is the number of connected USB-UART
+  #login by the id of 'root' and the password of 'sifive'
 ```
 
 To run the keystone test:
