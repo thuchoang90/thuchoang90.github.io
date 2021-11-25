@@ -161,7 +161,7 @@ But remember to change the addresses on the software as well. These files:
 
 ### I. c) Use with Idea IntelliJ
 
-Guide to install Idea IntelliJ is in [Initial Setup: II.e)](./init.md#ii-e-idea-intellij).
+Guide to install Idea IntelliJ is in [Fresh-Ubuntu-setup](/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-e-idea-intellij).
 
 To import the freedom folder to the **Idea IntelliJ** tool:
 
