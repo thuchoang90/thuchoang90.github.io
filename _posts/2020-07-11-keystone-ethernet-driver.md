@@ -8,7 +8,7 @@ tags: RISC-V TEE
 ## I. USB & Ethernet Drivers
 
 There are two ways of doing this, the **formal** way, and the **shortcut** way.
-But first, check the PATH:
+But first, check the ```PATH```:
 ```shell
 $ echo ${PATH}                      #and MAKE SURE that NO ANY TOOLCHAIN is on the PATH
 $ cd <your keystone folder>         #go to your keystone folder
@@ -28,7 +28,6 @@ $ make -f hifive.mk linux-menuconfig
 ```
 
 Wait for the GUI to load, then:
-
   1. Device drivers -> Network device support -> USB network adapters
   2. choose the appropriate drivers and turn them on (usually they are the RTL** something)
   3. Exit to go back to the Network device support page
@@ -36,7 +35,7 @@ Wait for the GUI to load, then:
   5. choose the appropriate drivers and turn them on (mostly they are the Intel and Realtek ones)
   6. Now just keep Exit till the end and choose Yes when asked to save the new configurations
 
-This line is for applying the new config file into the build file
+This line is for applying the new config file into the build file:
 ```shell
 $ cp hifive-conf/linux_defconfig hifive-conf/linux_cma_conf
 ```
@@ -75,6 +74,7 @@ $ make trusted_client.riscv
 $ make copybins
 
 $ cd <your keystone folder>         #go to your keystone folder and update the bbl.bin there
-if keystone-rv64:	$ make image -j`nproc`	
-if keystone-rv32:	$ make -j`nproc`
+
+If keystone-rv64:   $ make image -j`nproc`	
+If keystone-rv32:   $ make -j`nproc`
 ```
