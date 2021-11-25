@@ -4,47 +4,47 @@ title: "TEE-HW with cryptographic accelerators"
 categories: Project
 ---
 
-Based on the [Chipyard](https://github.com/ucb-bar/chipyard), this hardware dedicates to accelerating the Trusted Execution Environment (TEE). Original [repo](https://github.com/ckdur/tee-hardware).
+Based on the [Chipyard](https://github.com/ucb-bar/chipyard), this hardware dedicates to accelerating the Trusted Execution Environment (TEE).
+The TEE-HW has demos on VC707, VCU118, DE4, and TR4 FPGA boards.
+The core processors can be configured to use [Rocket-chip](https://github.com/chipsalliance/rocket-chip), [BOOM](https://github.com/riscv-boom/riscv-boom) cores, or both.
 
-The TEE-HW has demos on VC707, DE4, and TR4 FPGA boards.
+## I. Hardware: Make & Build FPGA
 
-The core processors can be configured to use [Rocket](https://github.com/chipsalliance/rocket-chip) cores, [BOOM](https://github.com/riscv-boom/riscv-boom) cores, or a hybrid system of them.
-
-# I. Hardware: Make & Build FPGA
-
-**Git clone:**
-```
-$ git clone -b dev-thuc https://github.com/ckdur/tee-hardware.git
+Git clone:
+```shell
+$ git clone -b dev-thuc https://github.com/uec-hanken/tee-hardware.git
 $ cd tee-hardware/
-update with firesim:		$ . update.sh
-update without firesim:		$ . update_nosim.sh
+
+Update with firesim:      $ . update.sh
+Update without firesim:   $ . update_nosim.sh
 ```
 
-## I. a) Make (verilog sources)
+### I. a) Make (verilog sources)
 
 Export appropriate toolchain to your PATH:
-```
-check PATH:		$ echo ${PATH}		#check the toolchain is on the PATH or not	
-if not, then:		$ export PATH=/opt/riscv64gc/bin/:${PATH}
+```shell
+#check PATH:
+$ echo ${PATH}    #check the toolchain is on the PATH or not	
+
+If not, then:
+$ export PATH=/opt/riscv64gc/bin/:${PATH}
 ```
 
 To make for each demo:
-```
+```shell
 $ cd <to your tee-hardware folder>
 
-for VC707:	$ cd fpga/Xilinx/VC707/
-			$ make
-				
-for DE4:		$ cd fpga/Altera/DE4/
-			$ make
-				
-for TR4:		$ cd fpga/Altera/TR4/
-			$ make
+For VC707:    $ cd fpga/Xilinx/VC707/
+For DE4:      $ cd fpga/Altera/DE4/
+For TR4:      $ cd fpga/Altera/TR4/
+
+Finally:
+$ make
 ```
 
-## I. b) Makefile variables
+### I. b) Makefile variables
 
-In the Makefile of each folder (i.e., **fpga/Xilinx/VC707**, **fpga/Altera/DE4**, and **fpga/Altera/TR4**), these options are availabe:
+In the **Makefile** of each folder (i.e., *fpga/Xilinx/VC707*, *fpga/Altera/DE4*, and *fpga/Altera/TR4*), these options are available:
 
 | Variable | Availabe option | Description |
 | -------- | --------------- | ----------- |
@@ -54,25 +54,29 @@ In the Makefile of each folder (i.e., **fpga/Xilinx/VC707**, **fpga/Altera/DE4**
 | DDRCLK   | - WSepaDDRClk<br />- WoSepaDDRClk | - Separate system-clock and DDR-clock<br />- Not separate, using the same system-clock |
 | HYBRID   | - Rocket<br />- Boom<br />- RocketBoom<br />- BoomRocet | - Dual-core Rocket<br />- Dual-core BOOM<br />- Dual-core hybrid: Rocket 1st, BOOM 2nd<br />- Dual-core hybrid: BOOM 1st, Rocket 2nd |
 
-#### About the BOOTSRC
-In the **BOOTSRC**=BOOTROM scenario, the ZSBL is stored in the BootROM inside the FPGA, the FSBL & BBL are stored outside in the SD-card (by different partitions).
+**About the BOOTSRC**
 
-In the **BOOTSRC**=QSPI scenario, the ZSBL is stored in the Flash (via QSPI) outside the FPGA, the BootROM inside the FPGA now contains just a simple jump instruction that jumps directly to the Flash outside. And the FSBL & BBL are still stored in the SD-card as same as before.
+In the ```BOOTSRC=BOOTROM``` scenario, the **ZSBL** is stored in the **BootROM** inside the FPGA, the **FSBL** & **BBL** are stored outside in the **SD-card** (by different partitions).
 
-#### About VC707 demo
-VC707 doesn't have enough GPIOs for QSPI and USB1.1, so the **BOOTSRC** variable always equal BOOTROM even selected as QSPI, and the USB1.1 module is deactivated in the VC707 demo.
+In the ```BOOTSRC=QSPI``` scenario, the **ZSBL** is stored in the **Flash** (via QSPI) outside the FPGA, the **BootROM** inside the FPGA now contains just a simple jump instruction that jumps directly to the **Flash** outside. And the **FSBL** & **BBL** are still stored in the **SD-card** as same as before.
 
-#### About DE4 & TR4 demos
-Currently, DE4 and TR4 demos don't support PCIE. So in DE4 and TR4 demos, the **PCIE** variable always point to without PCIE.
+**About VC707 demo**
 
-#### About the 32-bit Boom
-The 32bit Boom doesn't support FPU, so the **ISACONF**=RV32GC with **HYBRID**=\*Boom\* is an invalid configuration.
+VC707 doesn't have enough GPIOs for QSPI and USB1.1, so the ```BOOTSRC``` variable always equal **BOOTROM** even selected as **QSPI**, and the USB1.1 module is deactivated in the VC707 demo.
 
+**About DE4 & TR4 demos**
+
+Currently, DE4 and TR4 demos don't support PCIE. So in DE4 and TR4 demos, the ```PCIE``` variable always point to without PCIE.
+
+**About the 32-bit Boom**
+
+The 32bit Boom doesn't support FPU, so the ```ISACONF=RV32GC``` with ```HYBRID=Boom``` is an invalid configuration.
 Furthermore, 32bit Boom currently got bug and cannot perform in FPGA, so please don't use 32bit Boom *(32/64bit Rocket and 64bit Boom are okay!)*
 
-## I. c) Build FPGA (make .bit or .sof)
+### I. c) Build FPGA (make .bit or .sof)
 
-#### For demo on VC707:
+**For demo on VC707:**
+
 - Open the Vivado tool, select the '*Open Project*'
 - Point to '*tee-hardware/fpga/Xilinx/VC707/VC707.xpr*', then click '*OK*'
 - From the top-menu or in the Flow Navigation on the left, click the '*Generate Bitstream*' (at 1st time run, it will pop-up dialog and ask about synthesys & implementation -> just tick '*Don't show this dialog again*' and hit Yes)
@@ -98,7 +102,8 @@ Built files are under '*tee-hardware/fpga/Xilinx/VC707/VC707.runs/impl_1/*'
 - Then on the '*Project Settings*' on the left, now choose '*Implementation*' -> in the '*Settings*' on the right, at the '*Strategy*' option, choose '*Congestion_SpreadLogic_high*'
 - '*Apply*' then '*OK*'. Now you can re-build the Vivado again.
 
-#### For demo on DE4 & TR4:
+**For demo on DE4 & TR4:**
+
 - Open the Quartus tool, select '*File*' then '*Open Project*'
 - Point to '*tee-hardware/fpga/Altera/DE4/DE4.qpf*' if DE4; '*tee-hardware/fpga/Altera/TR4/TR4.qpf*' if TR4. Then click '*Open*'
 - Click the '*Tools*' then '*Platform Designer*', choose the '*main.qsys*' then '*Open*'
@@ -109,8 +114,9 @@ Built files are under '*tee-hardware/fpga/Xilinx/VC707/VC707.runs/impl_1/*'
 Built files are under '*tee-hardware/fpga/Altera/DE4/output_files/*' if DE4; '*tee-hardware/fpga/Altera/TR4/output_files/*' if TR4
 - .sof: bitstream file for direct programming
 
-#### About the program & debug
-Guide for program & debug on VC707, DE4, and TR4 can be found here: [FPGA Program & Debug Guide](./fpgaguide.md).
+**About the program & debug**
+
+Guide for program & debug on VC707, DE4, and TR4 can be found here: [VC707 program and debug guide](/project/2020/07/24/vc707-program-debug).
 
 * * *
 
