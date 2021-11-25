@@ -109,7 +109,7 @@ Reset CPU:              $ monitor reset halt
 
 ## III. Connections
 
-Connect your Olimex JTAG debugger to the VC707 FPGA board by the XADC (J19) header as shown as follows:
+Connect your Olimex JTAG debugger to the VC707 FPGA board by the **XADC** (*J19*) header as shown as follows:
 
 ![Branching](/assets/sources/freedom//jtag-20pin.png)
 
