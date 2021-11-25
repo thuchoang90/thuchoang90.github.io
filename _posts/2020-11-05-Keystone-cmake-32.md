@@ -28,6 +28,7 @@ If not then export it to PATH:
 If build for RV32GC:      $ export RISCV=/opt/GCC8/riscv32gc      #point to RV32GC toolchain
 If build for RV32IMAC:    $ export RISCV=/opt/GCC8/riscv32imac    #point to RV32IMAC toolchain
 
+Finally:
 $ export PATH=$RISCV/bin/:$PATH
 $ export KEYSTONE_DIR=`pwd`
 $ export KEYSTONE_SDK_DIR=`pwd`/sdk
