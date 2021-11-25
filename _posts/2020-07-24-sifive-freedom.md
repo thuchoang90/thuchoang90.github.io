@@ -98,9 +98,9 @@ To clean and build again:
 
 #### (ii) Notes
 
-**1:** Guide for program & debug on VC707 can be found here: [VC707 program and debug guide](./project/2020/07/24/vc707-program-debug).
+**1:** Guide for program & debug on VC707 can be found here: [VC707 program and debug guide](/project/2020/07/24/vc707-program-debug).
 
-**2:** Internal coding structure of the SiFive Freedom folder can be found here: [SiFive Freedom chisel code structure](./project/2020/04/27/freedom-chisel).
+**2:** Internal coding structure of the SiFive Freedom folder can be found here: [SiFive Freedom chisel code structure](/project/2020/04/27/freedom-chisel).
 
 **3:** The maximum frequency for the VC707 board with PCIE is 125MHz, and without PCIE is 150MHz.
 
