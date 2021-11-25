@@ -7,7 +7,7 @@ tags: RISC-V TEE
 
 ## I. Hardware
 
-SiFive freedom demo on VC707 FPGA board is using the **U540** core with ISA of ```RV64GC```.
+SiFive freedom demo on VC707 FPGA board is using the **U540** core with the ISA of ```RV64GC```.
 Original [repository](https://github.com/sifive/freedom). Modified [repository](https://github.com/thuchoang90/freedom).
 
 To build on VC707 FPGA, you need Xilinx Vivado design software. Install it in [Fresh-Ubuntu-setup](/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-h-vivado-20164).
@@ -20,7 +20,7 @@ $ git clone https://github.com/thuchoang90/freedom.git
 $ cd freedom/
 $ git checkout keystone-fpga    #commit 76dd152a on 5-Nov-2019
 
-this will 'submodule update' without download the toolchain again, and also patch the fpga-shells submodule afterward
+This will 'submodule update' without download the toolchain again, and also patch the fpga-shells submodule afterward
 $ . update.sh
 ```
 
@@ -47,26 +47,27 @@ CONFIG=DevKitU500FPGADesign_WithDevKit50MHz (default value)
 
 The ```[MODEL]``` option is for selecting the PCIe option:
 ```Makefile
-with PCIe build (default value):
-MODEL=VC707PCIeShell
+With PCIe build (default value):
+  MODEL=VC707PCIeShell
 
-without PCIe build:
-MODEL=VC707BaseShell
+Without PCIe build:
+  MODEL=VC707BaseShell
 ```
 
 The ```[BOOTROM_DIR]``` option is to specify the bootrom directory that you want to use:
 ```Makefile
-using the sifive's sdboot (default value):
-BOOTROM_DIR=`pwd`/bootrom/sdboot
+Using the sifive's sdboot (default value):
+  BOOTROM_DIR=`pwd`/bootrom/sdboot
 
-using the keystone's zsfl+fsbl boot:
-BOOTROM_DIR=`pwd`/bootrom/freedom-u540-c000-bootloader
+Using the keystone's zsfl+fsbl boot:
+  BOOTROM_DIR=`pwd`/bootrom/freedom-u540-c000-bootloader
 ```
 
 The ```[BUILD_DIR]``` option is to specify the build directory:
 ```Makefile
 BUILD_DIR=`pwd`/builds/<name>
-default value: BUILD_DIR=`pwd`/builds/vc707-u500devkit
+
+Example:  BUILD_DIR=`pwd`/builds/vc707-u500devkit
 ```
 
 Example:
