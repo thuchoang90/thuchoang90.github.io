@@ -165,8 +165,8 @@ Guide to install Idea IntelliJ is in [Fresh-Ubuntu-setup](/tutorial/2020/07/23/F
 
 To import the freedom folder to the **Idea IntelliJ** tool:
 
- - If the freedom folder wasn't compiled before, go ahead and 'make verilog' for the first time (no need to 'make mcs' though). This act is just for download the dependencies, because the Idea IntelliJ has trouble with dependencies download.
- - **Big note:** when 'make verilog', please notice that there will be one line looks like this, you should copy it for later use:
+ - If the freedom folder wasn't compiled before, go ahead and ```$ make verilog``` for the first time (no need to ```$ make mcs``` though). This act is just for download the dependencies, because the Idea IntelliJ has trouble with dependencies download.
+ - **Big note:** when ```$ make verilog```, please notice that there will be one line looks like this, you should copy it for later use:
 
 ```shell
 java -jar /home/ubuntu/project/freedom/rocket-chip/sbt-launch.jar ++2.12.4 "runMain freechips.rocketchip.system.Generator /home/ubuntu/project/freedom/builds/chip uec.nedo.chip ChipShell uec.nedo.chip ChipDesignTop"
@@ -202,144 +202,135 @@ java -jar /home/ubuntu/project/freedom/rocket-chip/sbt-launch.jar ++2.12.4 "runM
 
 * * *
 
-# II. Software
+## II. Software
 
-## II. a) Without KeyStone
+### II. a) Without TEE (KeyStone-build)
 
-Original [repo](https://github.com/sifive/freedom-u-sdk). Modified [repo](https://github.com/mcd500/freedom-u-sdk/).
+Original [repository](https://github.com/sifive/freedom-u-sdk). Modified [repository](https://github.com/mcd500/freedom-u-sdk/).
 
 *TODO*: currently, this way uses the prebuilt toolchain of gcc 7. In the future, this need to be upgraded to the current mainstream toolchain of sifive-freedom, gcc 9.2. Then after that, we can avoid to download the prebuilt toolchain again.
 
-### (i) Git clone
+#### (i) Git clone
 
-```
+```shell
 $ git clone https://github.com/mcd500/freedom-u-sdk.git
 $ cd freedom-u-sdk
-$ git checkout linux_u500vc707devkit_config		#commit 29fe529f on 12-Apr-2019
+$ git checkout linux_u500vc707devkit_config   #commit 29fe529f on 12-Apr-2019
 $ git submodule update --init --recursive
 ```
 
 *Note:* sometimes the **riscv-gnu-toolchain** submodule fails to clone. If that happened, we have to git clone it manually:
-```
-$ rm -rf riscv-gnu-toolchain		#first, remove the corrupted folder
-$ git clone https://github.com/riscv/riscv-gnu-toolchain.git	#then clone a new
+```shell
+$ rm -rf riscv-gnu-toolchain    #first, remove the corrupted folder
+$ git clone https://github.com/riscv/riscv-gnu-toolchain.git    #then clone a new
 $ cd riscv-gnu-toolchain/
 $ git checkout b4dae89
 $ git submodule update --init --recursive
-$ cd ../						#get back to the top folder of freedom-u-sdk
+$ cd ../    #get back to the top folder of freedom-u-sdk
 ```
 
-### (ii) Make the bbl.bin
+#### (ii) Make the bbl.bin
 
-```
-$ unset RISCV				#make sure that there is nothing on the RISCV variable
+```shell
+$ unset RISCV   #make sure that there is nothing on the RISCV variable
 
-export your toolchains to the PATH (both the elf & linux toolchains)
+Export your toolchains to the PATH (both the elf & linux toolchains)
 $ export PATH=/opt/riscv64gc/bin/:$PATH
 
-then 'make' with PCIE:
+Then 'make' with PCIE:
 $ make -j`nproc` BOARD=vc707devkit
 
 or 'make' without PCIE:
 $ make -j`nproc` BOARD=vc707devkit_nopci
 ```
 
-### (iii) Write SD card & boot on
+#### (iii) Write SD card & boot on
 
-```
+```shell
 $ sudo dd if=work/bbl.bin of=/dev/sdX bs=4096 conv=fsync
-where X is the number of the USB device
+  where X is the number of the USB device
 ```
 
 Put in the SD card to the board, program the board, then wait for the board to boot on. Communicate with the board via UART:
-```
+```shell
 $ sudo minicom -b 115200 -D /dev/ttyUSBx
-where x is the number of connected USB-UART
-Login by the id of 'root' and the password of 'sifive'.
+  where x is the number of connected USB-UART
+  login by the id of 'root' and the password of 'sifive'
 ```
 
-## II. b) SD card with KeyStone
+### II. b) SD card with KeyStone
 
-Ref [link](https://github.com/keystone-enclave/keystone) for the KeyStone project.
+Reference link: [github.com/keystone-enclave](https://github.com/keystone-enclave/keystone) for the KeyStone project.
 
-### (i) Partition the SD card
+#### (i) Partition the SD card
 
 Use the **gptfdisk** tool to create 4 partitions in the SD card.
 
 If you don't have the **gptfdisk tool**, then do the followings to install it:
-```
-$ git clone https://github.com/tmagik/gptfdisk.git	#branch master commit 3d6a1587 on 9-Dec-2018
+```shell
+$ git clone https://github.com/tmagik/gptfdisk.git    #branch master commit 3d6a1587 on 9-Dec-2018
 $ cd gptfdisk/
 $ make -j`nproc`
 ```
 
 To use gptfdisk:
-```
-$ cd gptfdisk/	#go to gptfdisk folder
-$ sudo ./gdisk /dev/sd?	#point to the sd-card
+```shell
+$ cd gptfdisk/            #go to gptfdisk folder
+$ sudo ./gdisk /dev/sd?   #point to the sd-card
 
 Some commands:
-$ p	# print partitions information
-$ d	# delete partition
-$ n	# create new partition
-$ w	# write partition
+$ p   #print partitions information
+$ d   #delete partition
+$ n   #create new partition
+$ w   #write partition
 ```
 
 The partitions after created:
-```
-Number	Start (sector)	End (sector)	Size			Code	Name
-1		2048		67583		32.0 MiB		5202	SiFive bare-metal (...
-2		264192		15759326	7.4 GiB		8300	Linux filesystem
-4		67584		67839		128.0 KiB	5201	SiFive FSBL (first-...
+```shell
+Number  Start (sector)  End (sector)  Size        Code    Name
+1       2048            67583         32.0 MiB    5202    SiFive bare-metal (...
+2       264192          15759326      7.4 GiB     8300    Linux filesystem
+4       67584           67839         128.0 KiB   5201    SiFive FSBL (first-...
 ```
 
-### (ii) Prepare BBL & FSBL
+#### (ii) Prepare BBL & FSBL
 
 **For the bbl.bin:**
 
 Follow the [instruction](./keystone.md) to make the **bbl.bin** of the Keystone & Keystone demo.
 
 The **bbl.bin** is for the 1st partition of the SD card:
-```
-$ cd <keystone folder>				#cd to your keystone folder
+```shell
+$ cd <keystone folder>    #cd to your keystone folder
 $ sudo dd if=hifive-work/bbl.bin of=/dev/sdX1 bs=4096 conv=fsync
-where the X1 is the 1st partition of the USB device
+  where the X1 is the 1st partition of the USB device
 ```
 
 **For the fsbl.bin:**
 
 After the hardware make (section [I. a)](#i-a-build) above), there is a **vc707fsbl.bin** file inside the folder **bootrom/freedom-u540-c000-bootloader/**. That file is for the 4th partition of the SD card:
-```
+```shell
 $ cd <your freedom folder>
 $ cd bootrom/freedom-u540-c000-bootloader/
 $ sudo dd if=vc707fsbl.bin of=/dev/sdX4 bs=4096 conv=fsync
-where the X4 is the 4th partition of the USB device
+  where the X4 is the 4th partition of the USB device
 ```
 
-### (iii) Boot on & run the test
+#### (iii) Boot on & run the test
 
 Finally, put in the SD card to the board, program the board, then wait for the board to boot on. Communicate with the board via UART:
-```
+```shell
 $ sudo minicom -b 115200 -D /dev/ttyUSBx
-where x is the number of connected USB-UART
-Login by the id of 'root' and the password of 'sifive'.
+  where x is the number of connected USB-UART
+  login by the id of 'root' and the password of 'sifive'
 ```
 
 To run the keystone test:
+```shell
+$ insmod keystone-driver.ko           #install driver
+$ time ./tests/tests.ke               #okay if the 'Attestation report SIGNATURE is valid' is printed
+$ cd keystone-demo/                   #go to the keystone-demo test
+$ ./enclave-host.riscv &              #run host in localhost
+$ ./trusted_client.riscv localhost    #connect to localhost and test
 ```
-$ insmod keystone-driver.ko		#install driver
-$ time ./tests/tests.ke 			#okay if the 'Attestation report SIGNATURE is valid' is printed
-$ cd keystone-demo/			#go to the keystone-demo test
-$ ./enclave-host.riscv &			#run host in localhost
-$ ./trusted_client.riscv localhost	#connect to localhost and test
-okay if the 'Attestation signature and enclave hash are valid' is printed
-```
-
-* * *
-
-# BOTTOM PAGE
-
-| Back | Next |
-| :--- | ---: |
-| [Keystone (using CMake) for RV64 Build](./keystone-cmake-64.md) | [VexRiscv 32-bit MCU](./vexriscv.md) |
-
+It is okay if the **Attestation signature and enclave hash are valid** is printed.
