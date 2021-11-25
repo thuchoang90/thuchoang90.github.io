@@ -9,7 +9,7 @@ tags: RISC-V TEE
 
 ### I. a) Using their prebuilt toolchain (gcc-7.2)
 
-*Note:* because their prebuilt toolchain is RV64GC, so for the RV64IMAC build please follow the guide in [I. b) Using our local toolchain](#i-b-using-our-local-toolchain-gcc-83-in-this-example).
+*Note:* because their prebuilt toolchain is ```RV64GC```, so for the ```RV64IMAC``` build please follow the guide in [I. b) Using our local toolchain](#i-b-using-our-local-toolchain-gcc-83-in-this-example).
 
 Git clone:
 ```shell
@@ -65,12 +65,12 @@ $ cd keystone-rv64imac/
 Check PATH:
 ```shell
 $ echo ${PATH}    #check if our toolchain is on the PATH or not
-# if not then export it to PATH
-If build for RV64GC:
-  $ export RISCV=/opt/GCC8/riscv64gc      #point to RV64GC toolchain
-If build for RV64IMAC:
-  $ export RISCV=/opt/GCC8/riscv64imac    #point to RV64IMAC toolchain
 
+If not then export it to PATH.
+If build for RV64GC:      $ export RISCV=/opt/GCC8/riscv64gc      #point to RV64GC toolchain
+If build for RV64IMAC:    $ export RISCV=/opt/GCC8/riscv64imac    #point to RV64IMAC toolchain
+
+Finally:
 $ export PATH=$RISCV/bin/:$PATH
 $ export KEYSTONE_DIR=`pwd`
 ```
@@ -80,7 +80,7 @@ Update submodule:
 $ ./fast-setup.sh   #this time, it won't download the prebuilt toolchain, just update the submodule
 ```
 
-Do the following if build for RV64IMAC, skip if build for RV64GC:
+Do the following if build for ```RV64IMAC```, skip if build for ```RV64GC```:
 ```shell
 $ ./patches/imac-patch.sh
 ```
