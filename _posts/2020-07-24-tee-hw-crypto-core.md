@@ -207,7 +207,7 @@ $ sudo dd if=hifive-work/bbl.bin of=/dev/sdX1 bs=4096 conv=fsync
 
 **For the fsbl.bin:**
 
-After the hardware make (section [I. a) Make (Verilog sources)](#i-a-make-verilog-sources) above), there is a **fsbl.bin** file inside the folder **software/freedom-u540-c000-bootloader/**. That file is for the 4th partition of the SD card:
+After the hardware make (section [I. a) Make (Verilog sources)](#i-a-make-verilog-sources) above), there is a **fsbl.bin** file inside the **software/freedom-u540-c000-bootloader/** folder. That file is for the 4th partition of the SD card:
 ```shell
 $ cd <your tee-hardware folder>
 $ cd software/freedom-u540-c000-bootloader/
