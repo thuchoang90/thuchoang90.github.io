@@ -19,7 +19,7 @@ Update with firesim:      $ . update.sh
 Update without firesim:   $ . update_nosim.sh
 ```
 
-### I. a) Make (verilog sources)
+### I. a) Make (Verilog sources)
 
 Export appropriate toolchain to your PATH:
 ```shell
@@ -178,9 +178,9 @@ $ cd gptfdisk/            #go to gptfdisk folder
 $ sudo ./gdisk /dev/sd?   #point to the sd-card
 
 Some commands:
-$ p	  #print partitions information
-$ d	  #delete partition
-$ n	  #create new partition
+$ p   #print partitions information
+$ d   #delete partition
+$ n   #create new partition
 $ w   #write partition
 ```
 
@@ -207,7 +207,7 @@ $ sudo dd if=hifive-work/bbl.bin of=/dev/sdX1 bs=4096 conv=fsync
 
 **For the fsbl.bin:**
 
-After the hardware make (section [I. a)](#i-a-make-verilog-sources) above), there is a **fsbl.bin** file inside the folder **software/freedom-u540-c000-bootloader/**. That file is for the 4th partition of the SD card:
+After the hardware make (section [I. a) Make (Verilog sources)](#i-a-make-verilog-sources) above), there is a **fsbl.bin** file inside the folder **software/freedom-u540-c000-bootloader/**. That file is for the 4th partition of the SD card:
 ```shell
 $ cd <your tee-hardware folder>
 $ cd software/freedom-u540-c000-bootloader/
