@@ -40,11 +40,11 @@ They used three kind of scala files, i.e., *Shell* file, *Configs* file, and *De
 
 ### I. b) Build procedure
 
-##### 1: from Makefile -> to sbt
+**1: from Makefile -> to sbt**
 
-When ```make verilog``` in the **freedom** top folder, the job of the Makefiles is just to pass the arguments into the **sbt** tool.
+When ```$ make verilog``` in the **freedom** top folder, the job of the Makefiles is just to pass the arguments into the **sbt** tool.
 
-##### 2: sbt: from .scala -> to .fir
+**2: sbt: from .scala -> to .fir**
 
 The **sbt** tool is a tool to compile the scala codes into java executable files. Then, subsequently, create the **.fir** files from those java executives.
 
@@ -54,18 +54,18 @@ java -jar $(rocketchip_dir)/sbt-launch.jar ++2.12.4 "runMain freechips.rocketchi
 ```
 where:
  - ```$(BUILD_DIR)``` is the folder that you want to generate your *.fir* file into
- - ```$(PROJECT)``` is the package that contains the *$(MODEL)*
+ - ```$(PROJECT)``` is the package that contains the ```$(MODEL)```
  - ```$(MODEL)``` is the name of the top *Shell* in scala codes
- - ```$(CONFIG_PROJECT)``` is the package that contains the *$(CONFIG)*
+ - ```$(CONFIG_PROJECT)``` is the package that contains the ```$(CONFIG)```
  - ```$(CONFIG)``` is the name of the top *Design* in scala codes
 
-##### 3: from .fir -> to .v
+**3: from .fir -> to .v**
 
 After we have the **.fir** file, this is the command to create the verilog codes from the **.fir** file: (the verilog codes are generated into just one **.v** file)
 ```makefile
 java -Xmx2G -Xss8M -XX:MaxPermSize=256M -cp $(FIRRTL_JAR) firrtl.Driver -i <path to .fir file> -o <path to .v file> -X verilog
 ```
-where ```$(FIRRTL_JAR)``` is the path that point to **$(rocketchip_dir)/firrtl/utils/bin/firrtl.jar**
+where ```$(FIRRTL_JAR)``` is the path that point to ```$(rocketchip_dir)/firrtl/utils/bin/firrtl.jar```
 
 * * *
 
