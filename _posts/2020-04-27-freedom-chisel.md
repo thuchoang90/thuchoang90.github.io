@@ -73,11 +73,11 @@ where ```$(FIRRTL_JAR)``` is the path that point to ```$(rocketchip_dir)/firrtl/
 
 This file is like a top file with the main purpose of IOs declaration.
 
-This file doesn't call the *Design* file or *Config* file. When ```make``` by the sbt, this file and the *Design* file are called together by a single sbt command-line. The *Shell* file and the *Design* file 'talk' with each other by [*Overlays*](#i-overlay). 
+This file doesn't call the *Design* file or *Config* file. When ```$ make``` by the sbt, this file and the *Design* file are called together by a single sbt command-line. The *Shell* file and the *Design* file 'talk' with each other by *Overlays*.
 
-SiFive Freedom codes are relied on extending the ***LazyModule*** which relied on ***lazy val*** declaration. Because of the ***lazy*** property, if a group of IOs isn't declared in the top *Shell*, the corresponding *lazy module* won't be instantiated, thus leading to the removal of the relevant modules in the actual implementation.
+SiFive Freedom codes are relied on extending the ***LazyModule*** which relied on ***lazy val*** declaration. Because of the ***lazy*** property, if a group of IOs isn't declared in the top *Shell*, the corresponding ***LazyModule*** won't be instantiated, thus leading to the removal of the relevant modules in the actual implementation.
 
-For example: in the *fpga-shells/src/main/scala/shell/xilinx/**VC707NewShell.scala***
+For example: in the ***fpga-shells/src/main/scala/shell/xilinx/VC707NewShell.scala***
 ```scala
 abstract class VC707Shell()(implicit p: Parameters) extends Series7Shell
 {
