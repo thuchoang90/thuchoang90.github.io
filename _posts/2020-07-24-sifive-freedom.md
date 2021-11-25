@@ -38,7 +38,7 @@ $ make [CONFIG] [MODEL] [BOOTROM_DIR] [BUILD_DIR] -f Makefile.vc707-u500devkit m
 ```
 
 The ```[CONFIG]``` option is for selecting the frequency:
-```Makefile
+```
 CONFIG=DevKitU500FPGADesign_WithDevKit50MHz (default value)
        DevKitU500FPGADesign_WithDevKit100MHz
        DevKitU500FPGADesign_WithDevKit125MHz
@@ -46,7 +46,7 @@ CONFIG=DevKitU500FPGADesign_WithDevKit50MHz (default value)
 ```
 
 The ```[MODEL]``` option is for selecting the PCIe option:
-```Makefile
+```
 With PCIe build (default value):
   MODEL=VC707PCIeShell
 
@@ -55,7 +55,7 @@ Without PCIe build:
 ```
 
 The ```[BOOTROM_DIR]``` option is to specify the bootrom directory that you want to use:
-```Makefile
+```
 Using the sifive's sdboot (default value):
   BOOTROM_DIR=`pwd`/bootrom/sdboot
 
@@ -64,7 +64,7 @@ Using the keystone's zsfl+fsbl boot:
 ```
 
 The ```[BUILD_DIR]``` option is to specify the build directory:
-```Makefile
+```
 BUILD_DIR=`pwd`/builds/<name>
 
 Example:
@@ -98,46 +98,44 @@ To clean and build again:
 
 #### (ii) Notes
 
-**1:** Guide for program & debug on VC707 can be found [here](./fpgaguide.md).
+**1:** Guide for program & debug on VC707 can be found here: [VC707 program and debug guide](./project/2020/07/24/vc707-program-debug).
 
-**2:** Internal coding structure of the SiFive Freedom folder can be found [here](./freedom.md).
+**2:** Internal coding structure of the SiFive Freedom folder can be found here: [SiFive Freedom chisel code structure](./project/2020/04/27/freedom-chisel).
 
 **3:** The maximum frequency for the VC707 board with PCIE is 125MHz, and without PCIE is 150MHz.
 
-**4:** Sometime the **make mcs** end with timing error and did not continue to generate the final mcs files for the flash programming, but still, it did generate the **.bit** file. Then, we can manually generate the **.mcs** from the **.bit**:
+**4:** Sometime the ```$ make mcs``` end with timing error and did not continue to generate the final mcs files for the flash programming, but still, it did generate the ***.bit*** file. Then, we can manually generate the ***.mcs*** from the ***.bit***:
 
-```
-cd to the build folder
-$ cd builds/<name>/obj/
+```shell
+$ cd builds/<name>/obj/   #cd to the build folder
 
-for VC707PCIeShell:
+For VC707PCIeShell:
 $ vivado -nojournal -mode batch -source ../../../fpga-shells/xilinx/common/tcl/write_cfgmem.tcl -tclargs vc707 VC707PCIeShell.mcs VC707PCIeShell.bit
 
-for VC707BaseShell:
+For VC707BaseShell:
 $ vivado -nojournal -mode batch -source ../../../fpga-shells/xilinx/common/tcl/write_cfgmem.tcl -tclargs vc707 VC707BaseShell.mcs VC707BaseShell.bit
 ```
 
-**5:** Built files are under **builds/<name>/obj/**. The important built files are:
+**5:** Built files are under ```builds/<name>/obj/```. The important built files are:
 
-```
-VC707Shell.v							the verilog source code
-VC707Shell.mcs and VC707Shell.prm		the two files for flash programming
-VC707Shell.bit						the bitstream file for direct programming
+```shell
+VC707Shell.v                        #the verilog source code
+VC707Shell.mcs and VC707Shell.prm   #the two files for flash programming
+VC707Shell.bit                      #the bitstream file for direct programming
 ```
 
-## I. b) Other utilities
+### I. b) Other utilities
 
 To quickly set build environment:
-```
-$ vi setenv.sh
-and change the correct corresponding paths in your machine
+```shell
+$ vi setenv.sh    #and change the correct corresponding paths in your machine
 
 Then from this point forward, you can auto set your environment by simply:
 $ . setenv.sh
 ```
 
 If you want to change the ROM size:
-```
+```shell
 BootRom size is declared in the file:
 	rocket-chip/src/main/scala/devices/tilelink/MaskROM.scala
 
@@ -148,7 +146,7 @@ Change the <depth> value to change the size.
 ```
 
 If you want to change the modules' addresses, number of CPU cores, etc:
-```
+```shell
 The declarations are in the file:
 	src/main/scala/unleashed/DevKitConfigs.scala
 
@@ -161,7 +159,7 @@ But remember to change the addresses on the software as well. These files:
 
 *TODO*: script to auto update ROM size, modules' addresses, and number of CPU to software
 
-## I. c) Use with Idea IntelliJ
+### I. c) Use with Idea IntelliJ
 
 Guide to install Idea IntelliJ is in [Initial Setup: II.e)](./init.md#ii-e-idea-intellij).
 
@@ -170,7 +168,7 @@ To import the freedom folder to the **Idea IntelliJ** tool:
  - If the freedom folder wasn't compiled before, go ahead and 'make verilog' for the first time (no need to 'make mcs' though). This act is just for download the dependencies, because the Idea IntelliJ has trouble with dependencies download.
  - **Big note:** when 'make verilog', please notice that there will be one line looks like this, you should copy it for later use:
 
-```
+```shell
 java -jar /home/ubuntu/project/freedom/rocket-chip/sbt-launch.jar ++2.12.4 "runMain freechips.rocketchip.system.Generator /home/ubuntu/project/freedom/builds/chip uec.nedo.chip ChipShell uec.nedo.chip ChipDesignTop"
 (the content may be differ on your machine)
 
