@@ -217,7 +217,7 @@ $ sudo dd if=vc707fsbl.bin of=/dev/sdX4 bs=4096 conv=fsync
 
 ### III. c) If using QSPI (Flash)
 
-If you're using the QSPI option in the DE4 & TR4 demos (VC707 demo doesn't support QSPI), then you have to copy the **ZSBL** to the **Flash** outside. Below is the instruction of how to program the **Flash** via QSPI.
+If you're using the **QSPI** option in the DE4 & TR4 demos *(VC707 demo doesn't support **QSPI**)*, then you have to copy the **ZSBL** to the **Flash** outside. Below is the instruction of how to program the **Flash** via **QSPI**.
 
 We are going to program the **Flash** via JTAG by using the RISC-V CPU itself:
 - Turn on & program the board, connect the JTAG & UART as usual, also remember to connect the Flash to the board.
@@ -233,7 +233,7 @@ $ cd software/freedom-u540-c000-bootloader    #go to bootloader folder
 $ export PATH=/opt/riscv64gc/bin/:$PATH       #export toolchain if it's not there yet (choose the toolchain that you want)
 $ riscv64-unknown-elf-gdb FPGAzsbl.elf        #program the FPGAzsbl.elf to the flash
 $ target extended-remote localhost:3333
-$ load	#after a while it will be done
+$ load                                        #after a while it will be done
 ```
 - Now the flash is programmed, you can:
 ```shell
