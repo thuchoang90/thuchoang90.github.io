@@ -15,13 +15,9 @@ banner:
   And enjoy!
 </p>
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {%- include head.html -%}
+<html>
   <body>
-    {%- include views/header.html -%}
     {%- include views/banner.html -%}
-    {%- include extensions/hashlocate.html -%}
-    {%- include extensions/theme-toggle.html -%}
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <p>
@@ -52,6 +48,6 @@ banner:
         </p>
       </div>
     </main>
-    {%- include views/footer.html -%}
   </body>
 </html>
+{%- include views/footer.html -%}
