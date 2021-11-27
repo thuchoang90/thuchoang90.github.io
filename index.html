@@ -7,6 +7,11 @@ banner:
   volume: 0
   height: "100vh"
 ---
+<style>
+  .bottom-three {
+     margin-bottom: 3cm;
+  }
+</style>
 <p>
   Greetings,<br>
   Here comes the page that gives you materials related to computer science, including tutorials, teaching courses, open-sources projects, and more.<br>
@@ -14,8 +19,12 @@ banner:
   Thank you for your visit.<br>
   And enjoy!
 </p>
+<p class="bottom-three"></p>
 <img src="/assets/images/banners/tutorial.jpg">
-<h1 class="page-banner-heading">
-  {{ heading | Tutorial | escape }}
-</h1>
 {% include tutorial.html %}
+<p class="bottom-three"></p>
+<img src="/assets/images/banners/project.jpg">
+{% include project.html %}
+<p class="bottom-three"></p>
+<img src="/assets/images/banners/home.jpg">
+{% include about.html %}
