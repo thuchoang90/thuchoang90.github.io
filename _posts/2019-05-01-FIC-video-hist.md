@@ -29,26 +29,38 @@ The idea of HE is to create a function that makes the dark pixels a bit brighter
 
 ## II. FPGA sources
 
-[Cyc5SoC_MTLC](/assets/sources/FICVideo/Cyc5SoC_Camera_MTLC.rar)
+Several FPGA demos are prepared. And they are given with some options as follows.
 
-[DE2_115_MTLC](/assets/sources/FICVideo/DE2_115_Camera_MTLC.rar)
+### II. a) Display using on-board LCD
 
-[DE2_115_VGA](/assets/sources/FICVideo/DE2_115_Camera_VGA.rar)
+![](/assets/sources/FICVideo/demo.jpg)
 
-[SoCKit_MTLC](/assets/sources/FICVideo/SoCKit_Camera_MTLC.rar)
+These FPGA demos using on-board LCD to display the video. The available sources are:
+  - Cyclone V SoC:  [Cyc5SoC_Camera_MTLC.rar](/assets/sources/FICVideo/Cyc5SoC_Camera_MTLC.rar)
+  - DE2-115:        [DE2_115_Camera_MTLC.rar](/assets/sources/FICVideo/DE2_115_Camera_MTLC.rar)
+  - Arrow SoCKit:   [SoCKit_Camera_MTLC.rar](/assets/sources/FICVideo/SoCKit_Camera_MTLC.rar)
 
-[SoCKit_VGA](/assets/sources/FICVideo/SoCKit_Camera_VGA.rar)
+### II. b) Display using VGA
 
-[SoCKit_VGA_HD.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD.rar)
+![](/assets/sources/FICVideo/demo_HD.jpg)
 
-[SoCKit_VGA_HD_HEdisplay](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay.rar)
+These FPGA demos using VGA to display the video. The available sources are:
+  - DE2-115:            [DE2_115_Camera_VGA.rar](/assets/sources/FICVideo/DE2_115_Camera_VGA.rar)
+  - Arrow SoCKit:       [SoCKit_Camera_VGA.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA.rar)
+  - Arrow SoCKit (HD):  [SoCKit_Camera_VGA_HD.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD.rar)
 
-[SoCKit_VGA_HD_HEdisplay_autoExposure](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
+### II. c) Display using VGA, with HE
 
-demo.jpg
-demo_HD.jpg
-demo_HD_HEdisplay.jpg
-demo_HD_HEdisplay_autoExposure.jpg
+![](/assets/sources/FICVideo/demo_HD_HEdisplay.jpg)
+
+This FPGA demo is similar with the ```Arrow SoCKit (HD)``` from the previous sub-section, 
+  - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay.rar)
+
+### II. d) Display using VGA, with HE and auto-exposure
+
+![](/assets/sources/FICVideo/demo_HD_HEdisplay_autoExposure.jpg)
+
+  - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
 
 ## III. Demonstration
 
