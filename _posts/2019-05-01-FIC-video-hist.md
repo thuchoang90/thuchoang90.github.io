@@ -7,4 +7,4 @@ tags: Image-Processing
 
 ## FIC
 
-![](https://www.youtube.com/watch?v=vkjfccmxcKw&feature=youtu.be)
+![](//www.youtube.com/watch?v=vkjfccmxcKw&feature=youtu.be)
