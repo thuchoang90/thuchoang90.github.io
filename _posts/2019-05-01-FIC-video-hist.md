@@ -29,12 +29,34 @@ The idea of HE is to create a function that makes the dark pixels a bit brighter
 
 ## II. FPGA demonstrations
 
+[Cyc5SoC_MTLC](/assets/sources/FICVideo/Cyc5SoC_Camera_MTLC.rar)
 
+[DE2_115_MTLC](/assets/sources/FICVideo/DE2_115_Camera_MTLC.rar)
+
+[DE2_115_VGA](/assets/sources/FICVideo/DE2_115_Camera_VGA.rar)
+
+[SoCKit_MTLC](/assets/sources/FICVideo/SoCKit_Camera_MTLC.rar)
+
+[SoCKit_VGA](/assets/sources/FICVideo/SoCKit_Camera_VGA.rar)
+
+[SoCKit_VGA_HD.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD.rar)
+
+[SoCKit_VGA_HD_HEdisplay](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay.rar)
+
+[SoCKit_VGA_HD_HEdisplay_autoExposure](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
+
+demo.jpg
+demo_HD.jpg
+demo_HD_HEdisplay.jpg
+demo_HD_HEdisplay_autoExposure.jpg
 
 ## III. Video demonstration
 
-![](/assets/sources/FICVideo/video.jpg)
+The following demo is done with ```SoCKit_VGA_HD_HEdisplay_autoExposure```. The setting for screen display is given as follows:
+![](/assets/sources/FICVideo/MonitorDisplay.jpg)
 
+The demonstration:
+![](/assets/sources/FICVideo/video.jpg)
 <div class="container">
   <iframe src="https://www.youtube.com/embed/vkjfccmxcKw?autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen class="video"></iframe>
 </div>
