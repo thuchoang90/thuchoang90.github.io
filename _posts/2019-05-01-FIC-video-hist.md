@@ -58,8 +58,9 @@ This FPGA demo is similar to the previous sub-section's ```Arrow SoCKit (HD)```.
 
 ### II. d) Display using VGA, with HE and auto-exposure
 
-This FPGA demo is similar to the previous sub-section's ```Arrow SoCKit (HE)```. The only difference is that now it has the feature of auto-exposure feeding back to the camera.
 ![](/assets/sources/FICVideo/demo_HD_HEdisplay_autoExposure.jpg)
+
+This FPGA demo is similar to the previous sub-section's ```Arrow SoCKit (HE)```. The only difference is that now it has the feature of auto-exposure feeding back to the camera.
   - Arrow SoCKit (HE & auto-exposure): [SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
 
 ## III. Demonstration
