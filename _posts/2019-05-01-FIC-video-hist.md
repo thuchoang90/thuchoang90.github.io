@@ -58,7 +58,7 @@ This FPGA demo is similar with the ```Arrow SoCKit (HD)``` from the previous sub
 
 ### II. d) Display using VGA, with HE and auto-exposure
 
-![](/assets/sources/FICVideo/demo_HD_HEdisplay_autoExposure.jpg)
+![](/assets/sources/FICVideo/demo_HD_HEdisplay_autoExposure.jpg){:height="75%" width="75%"}
 
   - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
 
