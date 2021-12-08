@@ -42,7 +42,7 @@ These FPGA demos using on-board LCD to display the video. The available sources 
 
 ### II. b) Display using VGA
 
-![](/assets/sources/FICVideo/demo_HD.jpg)
+![](/assets/sources/FICVideo/demo_HD.jpg){:height="50%" width="50%"}
 
 These FPGA demos using VGA to display the video. The available sources are:
   - DE2-115:            [DE2_115_Camera_VGA.rar](/assets/sources/FICVideo/DE2_115_Camera_VGA.rar)
@@ -51,7 +51,7 @@ These FPGA demos using VGA to display the video. The available sources are:
 
 ### II. c) Display using VGA, with HE
 
-![](/assets/sources/FICVideo/demo_HD_HEdisplay.jpg)
+![](/assets/sources/FICVideo/demo_HD_HEdisplay.jpg){:height="50%" width="50%"}
 
 This FPGA demo is similar with the ```Arrow SoCKit (HD)``` from the previous sub-section, 
   - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay.rar)
