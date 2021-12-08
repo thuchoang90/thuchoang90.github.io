@@ -54,18 +54,17 @@ These FPGA demos using VGA to display the video. The available sources are:
 ![](/assets/sources/FICVideo/demo_HD_HEdisplay.jpg){:height="75%" width="75%"}
 
 This FPGA demo is similar to the previous sub-section's ```Arrow SoCKit (HD)```. The only difference is that the HE is displayed on the same monitor together with the video stream.
-  - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay.rar)
+  - Arrow SoCKit (HE): [SoCKit_Camera_VGA_HD_HEdisplay.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay.rar)
 
 ### II. d) Display using VGA, with HE and auto-exposure
 
-This FPGA demo is similar with 
+This FPGA demo is similar to the previous sub-section's ```Arrow SoCKit (HE)```. The only difference is that now it has the feature of auto-exposure feeding back to the camera.
 ![](/assets/sources/FICVideo/demo_HD_HEdisplay_autoExposure.jpg)
-
-  - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
+  - Arrow SoCKit (HE & auto-exposure): [SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
 
 ## III. Demonstration
 
-The following demo is done with ```SoCKit_VGA_HD_HEdisplay_autoExposure```. The setting for screen display is given as follows:
+The following demo is done with the ```SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar```. The setting for screen display is given as follows:
 ![](/assets/sources/FICVideo/MonitorDisplay.jpg){:height="50%" width="50%"}
 
 The demonstration:
@@ -76,9 +75,7 @@ The demonstration:
 
 ## IV. Citation
 
-If you use the sources from this page in your published work, please cite the following:
-
-As plain text:
+If you use the sources from this page in your published work, please cite the following. As plain text:
 
 ```Takahiro Hosaka, Trong-Thuc Hoang, Van-Phuc Hoang, Duc-Hung Le, Katsumi Inoue, and Cong-Kha Pham, "Live Demonstration: Real-time Auto-exposure Histogram Equalization Video-system Using Frequent Items Counter," in Proc. of IEEE Int. Symp. on Circ. and Syst. (ISCAS), Sapporo, Japan, May 2019, pp. 1-1.```
 
