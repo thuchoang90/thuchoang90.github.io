@@ -29,19 +29,17 @@ tags: Image-Processing
 ## Citation
 
 If you use the sources from this page in your published work, please cite the following:
-
-Plain text:
-
-```Takahiro Hosaka, Trong-Thuc Hoang, Van-Phuc Hoang, Duc-Hung Le, Katsumi Inoue, and Cong-Kha Pham, "Live Demonstration: Real-time Auto-exposure Histogram Equalization Video-system Using Frequent Items Counter," in Proc. of IEEE Int. Symp. on Circ. and Syst. (ISCAS), Sapporo, Japan, May 2019, pp. 1-1.```
-
-Bib-entry:
 ```
+As plain text:
+  Takahiro Hosaka, Trong-Thuc Hoang, Van-Phuc Hoang, Duc-Hung Le, Katsumi Inoue, and Cong-Kha Pham, "Live Demonstration: Real-time Auto-exposure Histogram Equalization Video-system Using Frequent Items Counter," in Proc. of IEEE Int. Symp. on Circ. and Syst. (ISCAS), Sapporo, Japan, May 2019, pp. 1-1.
+
+As bib-entry:
 {% raw %}
 @inproceedings{HosakaFIC2019,
   author    = {{Takahiro Hosaka, Trong-Thuc Hoang, Van-Phuc Hoang, Duc-Hung Le, Katsumi Inoue, and Cong-Kha Pham}},
   title     = {{Live Demonstration: Real-time Auto-exposure Histogram Equalization Video-system Using Frequent Items Counter}},
   booktitle = {{IEEE Int. Symp. on Circ. and Syst. (ISCAS)}},
-  address		= {{Sapporo, Japan}},
+  address   = {{Sapporo, Japan}},
   year      = {{May 2019}},
   pages     = {1--1}
 }
