@@ -42,7 +42,7 @@ These FPGA demos using on-board LCD to display the video. The available sources 
 
 ### II. b) Display using VGA
 
-![](/assets/sources/FICVideo/demo_HD.jpg){:height="50%" width="50%"}
+![](/assets/sources/FICVideo/demo_HD.jpg){:height="75%" width="75%"}
 
 These FPGA demos using VGA to display the video. The available sources are:
   - DE2-115:            [DE2_115_Camera_VGA.rar](/assets/sources/FICVideo/DE2_115_Camera_VGA.rar)
@@ -51,14 +51,15 @@ These FPGA demos using VGA to display the video. The available sources are:
 
 ### II. c) Display using VGA, with HE
 
-![](/assets/sources/FICVideo/demo_HD_HEdisplay.jpg){:height="50%" width="50%"}
+![](/assets/sources/FICVideo/demo_HD_HEdisplay.jpg){:height="75%" width="75%"}
 
-This FPGA demo is similar with the ```Arrow SoCKit (HD)``` from the previous sub-section, 
+This FPGA demo is similar with the ```Arrow SoCKit (HD)``` from the previous sub-section. The only difference is that the HE is being displayed in the same monitor together with the video stream.
   - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay.rar)
 
 ### II. d) Display using VGA, with HE and auto-exposure
 
-![](/assets/sources/FICVideo/demo_HD_HEdisplay_autoExposure.jpg){:height="75%" width="75%"}
+This FPGA demo is similar with 
+![](/assets/sources/FICVideo/demo_HD_HEdisplay_autoExposure.jpg)
 
   - Arrow SoCKit: [SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar](/assets/sources/FICVideo/SoCKit_Camera_VGA_HD_HEdisplay_autoExposure.rar)
 
