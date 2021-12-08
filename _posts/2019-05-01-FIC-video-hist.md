@@ -33,7 +33,7 @@ The idea of HE is to create a function that makes the dark pixels a bit brighter
 
 ## III. Video demonstration
 
-![](/assets/sources/FICVideo/demo.jpg)
+![](/assets/sources/FICVideo/video.jpg)
 
 <div class="container">
   <iframe src="https://www.youtube.com/embed/vkjfccmxcKw?autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen class="video"></iframe>
