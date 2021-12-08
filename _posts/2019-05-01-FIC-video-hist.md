@@ -65,7 +65,7 @@ This FPGA demo is similar with the ```Arrow SoCKit (HD)``` from the previous sub
 ## III. Demonstration
 
 The following demo is done with ```SoCKit_VGA_HD_HEdisplay_autoExposure```. The setting for screen display is given as follows:
-![](/assets/sources/FICVideo/MonitorDisplay.jpg)
+![](/assets/sources/FICVideo/MonitorDisplay.jpg){:height="50%" width="50%"}
 
 The demonstration:
 ![](/assets/sources/FICVideo/video.jpg)
