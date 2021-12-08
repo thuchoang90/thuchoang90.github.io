@@ -20,13 +20,26 @@ tags: Image-Processing
   }
 </style>
 
-## FIC
+## I. Histogram Equalization (HE)
+
+Histogram equalization is a method for modifying the image based on its histogram. The primary purpose is for contrast enhancement. Please read the following paper for details about the algorithm: "A Histogram Modification Framework and Its Application for Image Contrast Enhancement" [[DOI]](https://doi.org/10.1109/TIP.2009.2021548).
+
+The idea of HE is to create a function that makes the dark pixels a bit brighter and the bright pixels a bit darker, thus stretching out, or balancing out, the histogram. For this project, we prepared a Matlab source for HE demonstration: [download](/assets/sources/FICVideo/Matlab.rar). To run the demo, first open your Matlab, then go to the ```Matlab/src/``` folder and you'll see the ```BasicHE.m``` file. Executing by: ```BasicHE(<image path>)```; for example: ```BasicHE('Standard Test Images\misc\4.1.01.tiff')``` and you'll get this result as follows:
+![](/assets/sources/FICVideo/ex.jpg)
+
+## II. FPGA demonstrations
+
+
+
+## III. Video demonstration
+
+![](/assets/sources/FICVideo/demo.jpg)
 
 <div class="container">
   <iframe src="https://www.youtube.com/embed/vkjfccmxcKw?autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen class="video"></iframe>
 </div>
 
-## Citation
+## IV. Citation
 
 If you use the sources from this page in your published work, please cite the following:
 
