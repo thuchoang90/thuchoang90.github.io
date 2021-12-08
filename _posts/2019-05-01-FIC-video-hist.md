@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FIC application: auto-exposure histogram equalization camera
-categories: Project
+tags: Project
 ---
 
 ## Canon in D (Pachelbel's Canon) - Cello & Piano [BEST WEDDING VERSION]
