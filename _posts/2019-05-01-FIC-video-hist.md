@@ -37,7 +37,7 @@ Plain text:
 Bib-entry:
 ```
 {% raw %}
-@inproceedings{ICAS2019a,
+@inproceedings{HosakaFIC2019,
   author    = {{Takahiro Hosaka, Trong-Thuc Hoang, Van-Phuc Hoang, Duc-Hung Le, Katsumi Inoue, and Cong-Kha Pham}},
   title     = {{Live Demonstration: Real-time Auto-exposure Histogram Equalization Video-system Using Frequent Items Counter}},
   booktitle = {{IEEE Int. Symp. on Circ. and Syst. (ISCAS)}},
