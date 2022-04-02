@@ -306,14 +306,17 @@ $ git clone https://github.com/riscv/riscv-gnu-toolchain
 $ cd riscv-gnu-toolchain/
 ```
 
-Current mainstream is gcc 9.2 (brach master commit 6d2706f2 on 19-Feb-2020).
+Current mainstream is gcc 11
 If you want to use older gcc:
 ```shell
-gcc 7.2 (branch master commit on 21-Feb-2019):
-$ git checkout bb41926cb5a62e6cbe4b659ded6ff52c70b2baf1
-
-gcc 8.3 (branch master commit on 16-Aug-2019):
-$ git checkout 0914ab9f41b63681e538ec677c4adeaa889adae5
+GCC 7.2:    $ git checkout 36e932c
+GCC 7.3:    $ git checkout 87fb575
+GCC 8.1:    $ git checkout 3c148a7
+GCC 8.2:    $ git checkout be9abee
+GCC 8.3:    $ git checkout bdf3ad8
+GCC 9.1:    $ git checkout 1df2a6b
+GCC 9.2:    $ git checkout 3e6d81b
+GCC 10.1:   $ git checkout 602fad9
 ```
 
 Finally:
