@@ -35,11 +35,25 @@ $ sudo apt install openjdk-8-jdk
 
 Then install dependencies:
 
-```$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool libssl-dev libpixman-1-dev patchutils bc zlib1g-dev libglib2.0-dev binutils-dev libboost-all-dev device-tree-compiler pkg-config libexpat-dev python libpython3-dev python-pip-whl python-capstone virtualenv git make g++ libusb-1.0.0-dev libusb-dev libyaml-dev xorg-dev libudev-dev libts-dev libgl1-mesa-dev libglu1-mesa-dev libasound2-dev libpulse-dev libopenal-dev libogg-dev libvorbis-dev libaudiofile-dev libfreetype6-dev libdbus-1-dev libdirectfb-dev libsdl2-dev ninja-build dialog```
+```
+$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev
+$ sudo apt-get install libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool libssl-dev
+$ sudo apt-get install libpixman-1-dev patchutils bc zlib1g-dev libglib2.0-dev binutils-dev libboost-all-dev
+$ sudo apt-get install device-tree-compiler pkg-config libexpat-dev python libpython3-dev python-pip-whl
+$ sudo apt-get install python-capstone virtualenv git make g++ libusb-1.0.0-dev libusb-dev libyaml-dev xorg-dev
+$ sudo apt-get install libudev-dev libts-dev libgl1-mesa-dev libglu1-mesa-dev libasound2-dev libpulse-dev
+$ sudo apt-get install libopenal-dev libogg-dev libvorbis-dev libaudiofile-dev libfreetype6-dev libdbus-1-dev
+$ sudo apt-get install libdirectfb-dev libsdl2-dev ninja-build dialog
+$ sudo apt-get install libncurses5 libncurses5-dev libncursesw5 libncursesw5-dev libtinfo5 libtinfo-dev
+```
 
 And other dependencies:
 
-```$ sudo apt install gnutls-bin uuid-dev libpopt-dev libncurses5-dev libncursesw5-dev unzip expat gcc tmux wget bzip2 patch vim-common lbzip2 expect makeself patch npm libexpat1-dev device-tree-compiler cpio rsync cmake llvm-9-dev clang-9 libclang-9-dev```
+```
+$ sudo apt install gnutls-bin uuid-dev libpopt-dev libncurses5-dev libncursesw5-dev unzip expat gcc tmux wget
+$ sudo apt install bzip2 patch vim-common lbzip2 expect makeself patch npm libexpat1-dev device-tree-compiler
+$ sudo apt install cpio rsync cmake llvm-9-dev clang-9 libclang-9-dev
+```
 	
 And the final dependency:
 ```shell
