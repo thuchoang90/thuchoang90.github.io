@@ -230,7 +230,7 @@ Then, the network interface name must be rename by:
 $ sudo vi /etc/default/grub
 
 Then add this line beneath those GRUB... lines:
-    GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0
+    GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
 
 Then:
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
