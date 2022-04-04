@@ -336,6 +336,9 @@ $ git submodule update --init --recursive
 The configuration command format:
 ```shell
 $ ./configure --prefix=[path] --enable-multilib
+
+For example:
+$ ./configure --prefix=/opt/riscv --enable-multilib
 ```
 For details on configuration, follows the guide in: https://github.com/riscv-collab/riscv-gnu-toolchain
 
