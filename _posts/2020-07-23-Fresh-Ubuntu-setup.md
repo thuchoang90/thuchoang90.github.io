@@ -158,13 +158,14 @@ To install the Verilator:
 stand where you want to install Verilator
 $ git clone http://git.veripool.org/git/verilator
 $ cd verilator/
-$ git checkout v4.032
+$ git checkout v4.220
 $ unset VERILATOR_ROOT    #For bash, unsetenv for csh
 $ autoconf                #this is to create the ./configure script
 $ ./configure             #then run the script
 $ make -j`nproc`
 $ sudo make install
 ```
+In general, follows the guide here to install: https://verilator.org/guide/latest/install.html
 
 ### II. d) QEMU
 
