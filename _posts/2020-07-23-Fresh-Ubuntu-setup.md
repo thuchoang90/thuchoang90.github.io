@@ -310,6 +310,7 @@ $ cd riscv-gnu-toolchain/
 Current mainstream is gcc 11.1
 If you want to use older gcc:
 ```shell
+GCC 11.1:   $ git checkout 995778bd3315faddd709948190ca76fb10b43188
 GCC 10.2:   $ git checkout a838c5dfe91c3ef29218747fa266ce24ae2cf052
 GCC 10.1:   $ git checkout f13b418e9a2e90308b3881adc13413c933d363ee
 GCC 9.2:    $ git checkout 345f419e1f783139dd3353eb09bb3efaa000bad9
