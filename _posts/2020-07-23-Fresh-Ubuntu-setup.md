@@ -307,17 +307,22 @@ $ git clone https://github.com/riscv/riscv-gnu-toolchain
 $ cd riscv-gnu-toolchain/
 ```
 
-Current mainstream is gcc 11
+Current mainstream is gcc 11.1
 If you want to use older gcc:
 ```shell
-GCC 7.2:    $ git checkout 36e932c
-GCC 7.3:    $ git checkout 87fb575
-GCC 8.1:    $ git checkout 3c148a7
-GCC 8.2:    $ git checkout be9abee
-GCC 8.3:    $ git checkout bdf3ad8
-GCC 9.1:    $ git checkout 1df2a6b
-GCC 9.2:    $ git checkout 3e6d81b
-GCC 10.1:   $ git checkout 602fad9
+GCC 10.2:   $ git checkout a838c5dfe91c3ef29218747fa266ce24ae2cf052
+GCC 10.1:   $ git checkout f13b418e9a2e90308b3881adc13413c933d363ee
+GCC 9.2:    $ git checkout 345f419e1f783139dd3353eb09bb3efaa000bad9
+GCC 8.3:    $ git checkout afcc8bc655d30cf6af054ac1d3f5f89d0627aa79
+GCC 8.2:    $ git checkout fa1fcaba7f883b20e14f1613bf4bb1028bec6e43
+GCC 8.1:    $ git checkout af5aa9f3fad527c14b3a8d3885d05d06931070ae
+GCC 7.2:    $ git checkout 686320c1fee0519f12117d0b6c9ef22b5fa4db16
+GCC 7.1:    $ git checkout dcda255e1f3d114e8d12b23c80b80382b51109d6
+GCC 6.1:    $ git checkout 39fb67144cd7228f72c00be330bc80e649105878
+GCC 5.3:    $ git checkout 105ffc3043c234d82b792b7e6950f286ff2bc65d
+GCC 5.2:    $ git checkout 28fccff586e77d73d1ef58d0e3f2d167065513b0
+GCC 5.1:    $ git checkout add1510c7b0f9cdf7e55ebd60d9744d2c740fe24
+GCC 4.9:    $ git checkout fe4c7d9583a3c06df08a7f013a901fd6a3456bfd
 ```
 
 Finally:
