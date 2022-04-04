@@ -331,34 +331,13 @@ Finally:
 $ git submodule update --init --recursive
 ```
 
-### III. b) Configurations
+### III. b) Config & Make
 
 The configuration command format:
 ```shell
-$ ./configure --prefix=[path] --with-arch=[arch] --with-abi=[abi]
+$ ./configure --prefix=[path] --enable-multilib
 ```
-
-The ```[path]``` is where you want to store your generated toolchain.
-The ```[arch]``` is the RISC-V architecture that you want. To be specific:
-
- * ```rv64``` and ```rv32``` respectively specify the 64-bit and 32-bit instruction set options.
- * These characters ```i```, ```a```, ```m```, ```f```, ```d```, ```c```, and ```g``` are respectively stand for the extensions of ***i***nteger, ***a***tomic, ***m***ultiplication & division, ***f***loating-point, ***d***ouble floating-point, ***c***ompress, and ***g***eneral (general = *imafd*).
- 
- The ```[abi]``` is the ABI that specify the compile mode on the software. To be specific:
- * For 32-bit, there are ```ilp32``` and ```ilp32d``` to pair with ```rv32``` using soft-float or hard-float, respectively.
- * For 64-bit, there are ```lp64``` and ```lp64d``` to pair with ```rv64``` using soft-float or hard-float, respectively.
-
-For example, to generate toolchain for a general 64-bit RISC-V CPU, you can write like this:
-```shell
-$ ./configure --prefix=/opt/riscv64gc --with-arch=rv64gc --with-abi=lp64d
-```
-
-Or for a general 32-bit RISC-V CPU:
-```shell
-$ ./configure --prefix=/opt/riscv32gc --with-arch=rv32gc --with-abi=ilp32d
-```
-
-### III. c) Make
+For details on configuration, follows the guide in: https://github.com/riscv-collab/riscv-gnu-toolchain
 
 After install the dependencies, clone the toolchain-making folder, and set the configurations, now you can ```$ make``` the toolchain by:
 ```shell
