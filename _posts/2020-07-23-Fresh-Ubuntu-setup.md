@@ -201,6 +201,14 @@ $ make -j`nproc`
 
 ### II. e) Idea IntelliJ
 
+Scala is a programming language, and Chisel is a library.
+
+SBT is the tool to compile the Scala sources.
+
+In Chisel desiging flow, SBT is used to generate from the Scala sources to Java executives. Then, Java executives create FIRRTL. Finally, generator (also a Java executive) generates Verilog code from FIRRTL codes.
+
+In short: Scala -> Java -> FIRRTL -> Verilog (1st arrow is done by SBT, 2nd & 3rd arrows are done by Java)
+
 **Idea IntelliJ** is a tool for compiling scala codes. It much more like a GUI for the SBT tool.
 After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by ```./idea.sh```
 
