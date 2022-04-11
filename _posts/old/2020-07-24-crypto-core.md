@@ -102,6 +102,13 @@ Built files are under '*tee-hardware/fpga/Xilinx/VC707/VC707.runs/impl_1/*'
 - Then on the '*Project Settings*' on the left, now choose '*Implementation*' -> in the '*Settings*' on the right, at the '*Strategy*' option, choose '*Congestion_SpreadLogic_high*'
 - '*Apply*' then '*OK*'. Now you can re-build the Vivado again.
 
+**Generate .mcs by command line**
+
+You could generate the .mcs file from the .bit file using Vivado command line:
+```
+write_cfgmem -format mcs -interface bpix16 -size 128 -loadbit {up 0x0 <...point to the bit file...>/FPGAVC707.bit} -file <...point to the wanted mcs file>/FPGAVC707.bit.mcs -force
+```
+
 **For demo on DE4 & TR4:**
 
 - Open the Quartus tool, select '*File*' then '*Open Project*'
