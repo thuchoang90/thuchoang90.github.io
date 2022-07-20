@@ -172,7 +172,7 @@ To install the Verilator:
 stand where you want to install Verilator
 $ git clone http://git.veripool.org/git/verilator
 $ cd verilator/
-$ git checkout v4.220
+$ git checkout stable
 $ unset VERILATOR_ROOT    #For bash, unsetenv for csh
 $ autoconf                #this is to create the ./configure script
 $ ./configure             #then run the script
