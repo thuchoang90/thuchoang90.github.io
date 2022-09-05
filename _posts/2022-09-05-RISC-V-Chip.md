@@ -20,13 +20,13 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Floorplan</font></b></p>
 
-<img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.jpg" class="chipimg">
 
-<p align="center"><b><font size=4>Layout</font></b></p>
+<p align="center"><b><font size=5>Layout</font></b></p>
 
-<img src="/assets/sources/ChipCollection/CryPro-22-02-layout.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/CryPro-22-02-layout.jpg" class="chipimg">
 
-<p align="center"><b><font size=3>Barechip</font></b></p>
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/CryPro-22-02-chip.jpg" class="chipimg">
 
@@ -36,11 +36,11 @@ tags: Chip-Collection
 
 **Floorplan**
 
-<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-floorplan.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-floorplan.jpg" class="chipimg">
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-layout.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -50,11 +50,11 @@ tags: Chip-Collection
 
 **Floorplan**
 
-<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-floorplan.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-floorplan.jpg" class="chipimg">
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-layout.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -64,11 +64,11 @@ tags: Chip-Collection
 
 **Floorplan**
 
-<img src="/assets/sources/ChipCollection/TEEHW-21-02-floorplan.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-21-02-floorplan.jpg" class="chipimg">
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/TEEHW-21-02-layout.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-21-02-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -78,7 +78,7 @@ tags: Chip-Collection
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -88,7 +88,7 @@ tags: Chip-Collection
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -98,7 +98,7 @@ tags: Chip-Collection
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/TEEHW-20-01-layout.PNG" class="chipimg">
+<img src="/assets/sources/ChipCollection/TEEHW-20-01-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -110,7 +110,7 @@ tags: Chip-Collection
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/VexRiscv-20-01-layout.PNG" class="chipimg">
+<img src="/assets/sources/ChipCollection/VexRiscv-20-01-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -120,7 +120,7 @@ tags: Chip-Collection
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/VexRiscv-19-08-layout.PNG" class="chipimg">
+<img src="/assets/sources/ChipCollection/VexRiscv-19-08-layout.jpg" class="chipimg">
 
 **Barechip**
 
@@ -132,7 +132,7 @@ tags: Chip-Collection
 
 **Layout**
 
-<img src="/assets/sources/ChipCollection/Freedom-19-10-layout.PNG" class="chipimg">
+<img src="/assets/sources/ChipCollection/Freedom-19-10-layout.jpg" class="chipimg">
 
 **Barechip**
 
