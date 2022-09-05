@@ -1,3 +1,10 @@
+---
+layout: post
+title: "RISC-V Chip Collection"
+categories: Project
+tags: Chip-Collection
+---
+
 <style>
   .chipimg {
     float:center;
@@ -5,12 +12,6 @@
     max-width:1000px;
   }
 </style>
----
-layout: post
-title: "RISC-V Chip Collection"
-categories: Project
-tags: Chip-Collection
----
 
 ## I. Crypto Processor (CryPro) Chips
 
