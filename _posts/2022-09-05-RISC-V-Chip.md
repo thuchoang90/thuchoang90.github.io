@@ -18,15 +18,15 @@ tags: Chip-Collection
 
 ### IV.1) CryPro Single-core Rocket-chip with TLS-1.3 Compatible Crypto-cores
 
-<p align="center"><b><font size=6>Floorplan</font></b></p>
+<p align="center"><b><font size=5>Floorplan</font></b></p>
 
 <img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.png" class="chipimg">
 
-**Layout**
+<p align="center"><b><font size=4>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/CryPro-22-02-layout.png" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=3>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/CryPro-22-02-chip.jpg" class="chipimg">
 
