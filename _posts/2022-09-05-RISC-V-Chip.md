@@ -10,7 +10,7 @@ tags: Chip-Collection
     float:center;
     height:auto;
     width:100%;
-    max-width:700px;
+    max-width:650px;
   }
 </style>
 
@@ -18,7 +18,7 @@ tags: Chip-Collection
 
 ### IV.1) CryPro Single-core Rocket-chip with TLS-1.3 Compatible Crypto-cores
 
-<p align="center"><b><font size=7>Floorplan</font></b></p>
+<p align="center"><b><font size=6>Floorplan</font></b></p>
 
 <img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.png" class="chipimg">
 
@@ -114,7 +114,7 @@ tags: Chip-Collection
 
 **Barechip**
 
-<img src="/assets/sources/ChipCollection/VexRiscv-20-01-chip.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/VexRiscv-20-01-chip.jpg" class="chipimg">
 
 ### II.1) VexRiscv SOTB Chip
 
@@ -124,7 +124,7 @@ tags: Chip-Collection
 
 **Barechip**
 
-<img src="/assets/sources/ChipCollection/VexRiscv-19-08-chip.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/VexRiscv-19-08-chip.jpg" class="chipimg">
 
 ## I. Freedom Chips
 
@@ -136,4 +136,4 @@ tags: Chip-Collection
 
 **Barechip**
 
-<img src="/assets/sources/ChipCollection/Freedom-19-10-chip.png" class="chipimg">
+<img src="/assets/sources/ChipCollection/Freedom-19-10-chip.jpg" class="chipimg">
