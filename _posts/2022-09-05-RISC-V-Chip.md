@@ -11,6 +11,26 @@ tags: Chip-Collection
 
 ## III. VexRiscv Chips
 
+### III. a) VexRiscv SOTB Chip
+
+**Layout**
+
+![Branching](/assets/sources/ChipCollection/VexRiscv-20-01-layout.PNG)
+
+**Barechip**
+
+![Branching](/assets/sources/ChipCollection/VexRiscv-20-01-chip.png)
+
+### III. b) VexRiscv ROHM Chip
+
+**Layout**
+
+![Branching](/assets/sources/ChipCollection/VexRiscv-19-08-layout.PNG)
+
+**Barechip**
+
+![Branching](/assets/sources/ChipCollection/VexRiscv-19-08-chip.png)
+
 ## IV. Freedom Chips
 
 ### IV. a) Freedom Quad-core Rocket-chip
