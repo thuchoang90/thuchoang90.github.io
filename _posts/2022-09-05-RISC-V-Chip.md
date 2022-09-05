@@ -12,6 +12,13 @@ tags: Chip-Collection
     width:100%;
     max-width:650px;
   }
+  .table {
+    border-collapse: collapse;
+    width: 50%;
+  }
+  .td {
+    text-align: center;
+  }
 </style>
 
 ## IV. Crypto Processor (CryPro) Chips
@@ -150,11 +157,24 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Summary</font></b></p>
 
-|-------------|------------|
-| **Process** | ROHM-180nm |
-| **Die**     | 5\*7.5-mm2 |
-| **ISA**     | RV64GC     |
-| **Core**    | Rocket\*4  |
+<table class="center">
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5x7.5-mm2</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocketx4</td>
+  </tr>
+</table>
 
 <p align="center"><b><font size=5>Layout</font></b></p>
 
