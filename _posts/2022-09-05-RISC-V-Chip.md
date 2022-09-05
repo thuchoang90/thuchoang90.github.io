@@ -85,6 +85,16 @@ tags: Chip-Collection
 
 ![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4252-chip.jpg)
 
+### II. f) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores
+
+**Layout**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-20-01-layout.PNG)
+
+**Barechip**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-20-01-chip.jpg)
+
 ## III. VexRiscv Chips
 
 ### III. a) VexRiscv SOTB Chip
