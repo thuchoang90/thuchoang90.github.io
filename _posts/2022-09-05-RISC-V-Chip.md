@@ -7,7 +7,7 @@ tags: Chip-Collection
 
 ## I. Crypto Processor (CryPro) Chips
 
-### I. a) CryPro TLS-1.3 Compatible Chip
+### I. a) CryPro Single-core Rocket-chip with TLS-1.3 Compatible Crypto-cores
 
 **Floorplan**
 
@@ -23,7 +23,7 @@ tags: Chip-Collection
 
 ## II. Trusted Execution Environment (TEE) Hardware Chips
 
-### II. a) TEEHW 64-bit Dual Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
+### II. a) TEEHW 64-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
 
 **Floorplan**
 
@@ -37,7 +37,7 @@ tags: Chip-Collection
 
 ![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4253-chip.jpg)
 
-### II. b) TEEHW 32-bit Dual Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
+### II. b) TEEHW 32-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
 
 **Floorplan**
 
@@ -51,7 +51,7 @@ tags: Chip-Collection
 
 ![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4252-chip.jpg)
 
-### II. c) TEEHW 64-bit Dual Rocket-chip with Crypto-cores and TRNG
+### II. c) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores and TRNG
 
 **Floorplan**
 
@@ -64,6 +64,26 @@ tags: Chip-Collection
 **Barechip**
 
 ![Branching](/assets/sources/ChipCollection/TEEHW-21-02-chip.jpg)
+
+### II. d) TEEHW 64-bit Single-core Boom with Crypto-cores
+
+**Layout**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.png)
+
+**Barechip**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4254-chip.jpg)
+
+### II. e) TEEHW 32-bit Dual-core Rocket-Boom with Crypto-cores
+
+**Layout**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.png)
+
+**Barechip**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4252-chip.jpg)
 
 ## III. VexRiscv Chips
 
