@@ -5,7 +5,21 @@ categories: Project
 tags: Chip-Collection
 ---
 
-## I. Crypto Processor Chips
+## I. Crypto Processor (CryPro) Chips
+
+### I. a) CryPro TLS-1.3 Compatible Chip
+
+**Floorplan**
+
+![Branching](/assets/sources/ChipCollection/CryPro-22-02-floorplan.png)
+
+**Layout**
+
+![Branching](/assets/sources/ChipCollection/CryPro-22-02-layout.png)
+
+**Barechip**
+
+![Branching](/assets/sources/ChipCollection/CryPro-22-02-chip.jpg)
 
 ## II. Trusted Execution Environment (TEE) Hardware Chips
 
