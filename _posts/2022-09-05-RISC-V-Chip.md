@@ -9,6 +9,7 @@ tags: Chip-Collection
   .chipimg {
     float:center;
     height:auto;
+    width:33%;
     max-width:1000px;
   }
 </style>
