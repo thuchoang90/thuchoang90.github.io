@@ -18,6 +18,8 @@ tags: Chip-Collection
 
 ### IV.1) CryPro Single-core Rocket-chip with TLS-1.3 Compatible Crypto-cores
 
+<p align="center"><b><font size=5>Summary</font></b></p>
+
 <p align="center"><b><font size=5>Floorplan</font></b></p>
 
 <img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.jpg" class="chipimg">
@@ -34,73 +36,85 @@ tags: Chip-Collection
 
 ### III.6) TEEHW 64-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
 
-**Floorplan**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Floorplan</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-floorplan.jpg" class="chipimg">
 
-**Layout**
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-chip.jpg" class="chipimg">
 
 ### III.5) TEEHW 32-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
 
-**Floorplan**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Floorplan</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-floorplan.jpg" class="chipimg">
 
-**Layout**
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-chip.jpg" class="chipimg">
 
 ### III.4) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores and TRNG
 
-**Floorplan**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Floorplan</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-02-floorplan.jpg" class="chipimg">
 
-**Layout**
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-02-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-21-02-chip.jpg" class="chipimg">
 
 ### III.3) TEEHW 64-bit Single-core Boom with Crypto-cores
 
-**Layout**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-chip.jpg" class="chipimg">
 
 ### III.2) TEEHW 32-bit Dual-core Rocket-Boom with Crypto-cores
 
-**Layout**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-chip.jpg" class="chipimg">
 
 ### III.1) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores
 
-**Layout**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-20-01-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/TEEHW-20-01-chip.jpg" class="chipimg">
 
@@ -108,21 +122,25 @@ tags: Chip-Collection
 
 ### II.2) VexRiscv ROHM Chip
 
-**Layout**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/VexRiscv-20-01-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/VexRiscv-20-01-chip.jpg" class="chipimg">
 
 ### II.1) VexRiscv SOTB Chip
 
-**Layout**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/VexRiscv-19-08-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/VexRiscv-19-08-chip.jpg" class="chipimg">
 
@@ -130,10 +148,12 @@ tags: Chip-Collection
 
 ### I.1) Freedom Quad-core Rocket-chip
 
-**Layout**
+<p align="center"><b><font size=5>Summary</font></b></p>
+
+<p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/Freedom-19-10-layout.jpg" class="chipimg">
 
-**Barechip**
+<p align="center"><b><font size=5>Barechip</font></b></p>
 
 <img src="/assets/sources/ChipCollection/Freedom-19-10-chip.jpg" class="chipimg">
