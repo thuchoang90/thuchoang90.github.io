@@ -23,7 +23,7 @@ tags: Chip-Collection
 
 ## II. Trusted Execution Environment (TEE) Hardware Chips
 
-### II. a) TEEHW 64-bit Dual Rocket-Boom with Secure Boot Sub-system
+### II. a) TEEHW 64-bit Dual Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
 
 **Floorplan**
 
@@ -37,7 +37,7 @@ tags: Chip-Collection
 
 ![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4253-chip.jpg)
 
-### II. b) TEEHW 32-bit Dual Rocket-Boom with Secure Boot Sub-system
+### II. b) TEEHW 32-bit Dual Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
 
 **Floorplan**
 
@@ -50,6 +50,20 @@ tags: Chip-Collection
 **Barechip**
 
 ![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4252-chip.jpg)
+
+### II. c) TEEHW 64-bit Dual Rocket-chip with Crypto-cores and TRNG
+
+**Floorplan**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-21-02-floorplan.png)
+
+**Layout**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-21-02-layout.png)
+
+**Barechip**
+
+![Branching](/assets/sources/ChipCollection/TEEHW-21-02-chip.jpg)
 
 ## III. VexRiscv Chips
 
