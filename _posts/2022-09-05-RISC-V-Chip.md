@@ -10,7 +10,7 @@ tags: Chip-Collection
     float:center;
     height:auto;
     width:100%;
-    max-width:1200px;
+    max-width:800px;
   }
 </style>
 
@@ -24,11 +24,11 @@ tags: Chip-Collection
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/CryPro-22-02-layout.png)
+<img src="/assets/sources/ChipCollection/CryPro-22-02-layout.png" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/CryPro-22-02-chip.jpg)
+<img src="/assets/sources/ChipCollection/CryPro-22-02-chip.jpg" class="chipimg">
 
 ## II. Trusted Execution Environment (TEE) Hardware Chips
 
@@ -36,73 +36,73 @@ tags: Chip-Collection
 
 **Floorplan**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4253-floorplan.png)
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-floorplan.png" class="chipimg">
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4253-layout.png)
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-layout.png" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4253-chip.jpg)
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-chip.jpg" class="chipimg">
 
 ### II. b) TEEHW 32-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG
 
 **Floorplan**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4252-floorplan.png)
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-floorplan.png" class="chipimg">
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4252-layout.png)
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-layout.png" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-06-R4252-chip.jpg)
+<img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-chip.jpg" class="chipimg">
 
 ### II. c) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores and TRNG
 
 **Floorplan**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-02-floorplan.png)
+<img src="/assets/sources/ChipCollection/TEEHW-21-02-floorplan.png" class="chipimg">
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-02-layout.png)
+<img src="/assets/sources/ChipCollection/TEEHW-21-02-layout.png" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-21-02-chip.jpg)
+<img src="/assets/sources/ChipCollection/TEEHW-21-02-chip.jpg" class="chipimg">
 
 ### II. d) TEEHW 64-bit Single-core Boom with Crypto-cores
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.png)
+<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.png" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4254-chip.jpg)
+<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-chip.jpg" class="chipimg">
 
 ### II. e) TEEHW 32-bit Dual-core Rocket-Boom with Crypto-cores
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.png)
+<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.png" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-20-06-R4252-chip.jpg)
+<img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-chip.jpg" class="chipimg">
 
 ### II. f) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-20-01-layout.PNG)
+<img src="/assets/sources/ChipCollection/TEEHW-20-01-layout.PNG" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/TEEHW-20-01-chip.jpg)
+<img src="/assets/sources/ChipCollection/TEEHW-20-01-chip.jpg" class="chipimg">
 
 ## III. VexRiscv Chips
 
@@ -110,21 +110,21 @@ tags: Chip-Collection
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/VexRiscv-19-08-layout.PNG)
+<img src="/assets/sources/ChipCollection/VexRiscv-19-08-layout.PNG" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/VexRiscv-19-08-chip.png)
+<img src="/assets/sources/ChipCollection/VexRiscv-19-08-chip.png" class="chipimg">
 
 ### III. b) VexRiscv ROHM Chip
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/VexRiscv-20-01-layout.PNG)
+<img src="/assets/sources/ChipCollection/VexRiscv-20-01-layout.PNG" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/VexRiscv-20-01-chip.png)
+<img src="/assets/sources/ChipCollection/VexRiscv-20-01-chip.png" class="chipimg">
 
 ## IV. Freedom Chips
 
@@ -132,8 +132,8 @@ tags: Chip-Collection
 
 **Layout**
 
-![Branching](/assets/sources/ChipCollection/Freedom-19-10-layout.PNG)
+<img src="/assets/sources/ChipCollection/Freedom-19-10-layout.PNG" class="chipimg">
 
 **Barechip**
 
-![Branching](/assets/sources/ChipCollection/Freedom-19-10-chip.png)
+<img src="/assets/sources/ChipCollection/Freedom-19-10-chip.png" class="chipimg">
