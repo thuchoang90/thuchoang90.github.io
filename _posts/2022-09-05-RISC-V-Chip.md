@@ -1,3 +1,10 @@
+<style>
+  .chipimg {
+    float:center;
+    height:auto;
+    max-width:1000px;
+  }
+</style>
 ---
 layout: post
 title: "RISC-V Chip Collection"
@@ -11,7 +18,7 @@ tags: Chip-Collection
 
 **Floorplan**
 
-![Branching](/assets/sources/ChipCollection/CryPro-22-02-floorplan.png)
+<img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.png" class="chipimg">
 
 **Layout**
 
