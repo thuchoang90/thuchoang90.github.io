@@ -164,7 +164,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Die</b></td>
-    <td>5x7.5-mm2</td>
+    <td>5<span>&#215;</span>7.5-mm<sup>2</sup></td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -172,7 +172,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Core</b></td>
-    <td>Rocketx4</td>
+    <td>Rocket<span>&#215;</span>4</td>
   </tr>
 </table>
 
