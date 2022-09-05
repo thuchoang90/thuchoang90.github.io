@@ -133,6 +133,25 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Summary</font></b></p>
 
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>2.5<span>&#215;</span>2.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IM</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>VexRiscv (<span>&#215;</span>1)</td>
+  </tr>
+</table>
+
 <p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/VexRiscv-20-01-layout.jpg" class="chipimg">
@@ -144,6 +163,25 @@ tags: Chip-Collection
 ### II.1) VexRiscv SOTB Chip
 
 <p align="center"><b><font size=5>Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>SOTB-65nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>2<span>&#215;</span>1.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IM</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>VexRiscv (<span>&#215;</span>1)</td>
+  </tr>
+</table>
 
 <p align="center"><b><font size=5>Layout</font></b></p>
 
@@ -174,7 +212,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Core</b></td>
-    <td>Rocket<span>&#215;</span>4</td>
+    <td>Rocket (<span>&#215;</span>4)</td>
   </tr>
 </table>
 
