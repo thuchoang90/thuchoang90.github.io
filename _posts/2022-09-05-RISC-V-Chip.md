@@ -38,7 +38,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Feb. 2022</sup></td>
+    <td>Feb. 2022</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -87,7 +87,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Jun. 2021</sup></td>
+    <td>Jun. 2021</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -134,7 +134,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Jun. 2021</sup></td>
+    <td>Jun. 2021</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -181,7 +181,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Feb. 2021</sup></td>
+    <td>Feb. 2021</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -228,7 +228,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Jun. 2020</sup></td>
+    <td>Jun. 2020</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -267,7 +267,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Jun. 2020</sup></td>
+    <td>Jun. 2020</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -306,7 +306,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Jan. 2020</sup></td>
+    <td>Jan. 2020</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -347,7 +347,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Jan. 2020</sup></td>
+    <td>Jan. 2020</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -382,7 +382,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Aug. 2019</sup></td>
+    <td>Aug. 2019</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
@@ -419,7 +419,7 @@ tags: Chip-Collection
   </tr>
   <tr>
     <td><b>Fab. Date</b></td>
-    <td>Oct. 2019</sup></td>
+    <td>Oct. 2019</td>
   </tr>
   <tr>
     <td><b>ISA</b></td>
