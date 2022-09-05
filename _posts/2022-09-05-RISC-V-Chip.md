@@ -15,8 +15,10 @@ tags: Chip-Collection
   .table {
     border-collapse: collapse;
     width: 100%;
-    margin-left: auto; 
-    margin-right: auto;
+  }
+  .table.center {
+  margin-left: auto; 
+  margin-right: auto;
   }
   .td {
     text-align: center;
@@ -133,7 +135,7 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Summary</font></b></p>
 
-<table>
+<table class="center">
   <tr>
     <td><b>Process</b></td>
     <td>ROHM-180nm</td>
@@ -164,7 +166,7 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Summary</font></b></p>
 
-<table>
+<table class="center">
   <tr>
     <td><b>Process</b></td>
     <td>SOTB-65nm</td>
@@ -197,7 +199,7 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Summary</font></b></p>
 
-<table>
+<table class="center">
   <tr>
     <td><b>Process</b></td>
     <td>ROHM-180nm</td>
