@@ -14,7 +14,9 @@ tags: Chip-Collection
   }
   .table {
     border-collapse: collapse;
-    width: 50%;
+    width: 100%;
+    margin-left: auto; 
+    margin-right: auto;
   }
   .td {
     text-align: center;
@@ -157,7 +159,7 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Summary</font></b></p>
 
-<table class="center">
+<table>
   <tr>
     <td><b>Process</b></td>
     <td>ROHM-180nm</td>
