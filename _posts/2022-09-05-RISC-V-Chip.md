@@ -150,6 +150,12 @@ tags: Chip-Collection
 
 <p align="center"><b><font size=5>Summary</font></b></p>
 
+|-------------|------------|
+| **Process** | ROHM-180nm |
+| **Die**     | 5\*7.5-mm2 |
+| **ISA**     | RV64GC     |
+| **Core**    | Rocket\*4  |
+
 <p align="center"><b><font size=5>Layout</font></b></p>
 
 <img src="/assets/sources/ChipCollection/Freedom-19-10-layout.jpg" class="chipimg">
