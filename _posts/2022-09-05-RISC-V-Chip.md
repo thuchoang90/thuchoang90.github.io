@@ -10,7 +10,7 @@ tags: Chip-Collection
     float:center;
     height:auto;
     width:100%;
-    max-width:800px;
+    max-width:600px;
   }
 </style>
 
@@ -18,7 +18,7 @@ tags: Chip-Collection
 
 ### IV.1) CryPro Single-core Rocket-chip with TLS-1.3 Compatible Crypto-cores
 
-**Floorplan**
+<p align="center"><b><font size=+4>Floorplan</font></b></p>
 
 <img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.png" class="chipimg">
 
