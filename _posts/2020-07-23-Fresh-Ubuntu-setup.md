@@ -152,17 +152,13 @@ $ git log --all --decorate --oneline --graph
 The source code for hardware is written in the Scala language.
 
 Scala is a language, Chisel is a library.
-
 Scala itself is not originally designed for "hardware coding." But with the Chisel library attached to it, then we have a new way for "hardware coding."
 
 Sbt is a Scala compiler.
-
 Sbt will compile Scala to Java. Then, a generator script will compile Java to FIRRTL. And finally, another generator script will compile FIRRTL to the actual Verilog code.
 
 Now we need to install Scala and sbt.
-
 For Scala, follow the [scala-lang.org](https://www.scala-lang.org/download/) to install.
-
 For sbt, follow the [scala-sbt.org](https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html) to install.
 
 ### II. c) Verilator
