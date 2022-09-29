@@ -157,7 +157,7 @@ Scala itself is not originally designed for "hardware coding." But with the Chis
 
 Sbt is a Scala compiler.
 
-Sbt will compile Scala to Java. Then, a generator script will compile Java to FIRRTL. And finally, another generator script will compile FIRRTIL to the actual Verilog code.
+Sbt will compile Scala to Java. Then, a generator script will compile Java to FIRRTL. And finally, another generator script will compile FIRRTL to the actual Verilog code.
 
 Now we need to install Scala and sbt.
 
