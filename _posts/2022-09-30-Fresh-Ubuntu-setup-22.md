@@ -230,9 +230,7 @@ $ sudo make install
 Configuration files for RISC-V CPU: [riscv-openocd](/assets/sources/other/riscv-openocd.cfg)
 You should download them and put them under the ```riscv-openocd/``` folder.
 
-### II. h) Vivado 2016.4
-
-(because the VC707 project now can compatible only with the 2016.4 version of Vivado)
+### II. h) Vivado
 
 **Check your eth0 interface:**
 
@@ -253,7 +251,7 @@ Finally, reboot again for the computer to update the new ethernet interface.
 
 **Download and Install:**
 
-First, download the Vivado 2016.4 from [xilinx.com](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html) (linux .bin file self extract). Then, cd to the downloaded .bin file and run:
+First, download the Vivado from [xilinx.com](https://www.xilinx.com/support/download.html) (linux .bin file self extract). Then, cd to the downloaded .bin file and run:
 ```shell
 $ chmod +x Xilinx_....bin
 $ sudo ./Xilinx_....bin
