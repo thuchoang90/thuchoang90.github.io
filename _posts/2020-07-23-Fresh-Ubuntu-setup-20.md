@@ -344,7 +344,7 @@ $ git submodule update --init --recursive
 Note: if it prints:
     fatal: clone of '...' into submodule path '...' failed
 Then:
-$ git config url."https://".insteadOf git://
+$ git config --global url."https://".insteadOf git://
 $ git submodule update --init --recursive
 ```
 
