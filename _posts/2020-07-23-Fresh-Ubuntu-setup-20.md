@@ -182,18 +182,19 @@ In general, follows the guide here to install: https://verilator.org/guide/lates
 ### II. d) QEMU
 
 QEMU is an emulation tool, not a simulation tool. It does not simulate anything (.v codes, .scala codes, or .c codes, etc.).
-It emulates the behavioral that a correct CPU should behave. Reference [link](https://github.com/riscv/riscv-qemu/tree/riscv-qemu-4.0.0).
+It emulates the behavioral that a correct CPU should behave.
+Reference link: [github](https://github.com/qemu/qemu) and [wiki](https://wiki.qemu.org/Documentation/Platforms/RISCV).
 
 To install the RISC-V QEMU:
 ```shell
 stand where you want to install RISC-V QEMU
-$ git clone https://github.com/riscv/riscv-qemu.git
+$ git clone https://github.com/qemu/qemu.git riscv-qemu
 $ cd riscv-qemu/
-$ git checkout riscv-qemu-4.0.0   #commit 62a172e on 19-Mar-2019
+$ git checkout stable-5.0   #commit 386b2a57 on 15-Sep-2020
 $ git submodule update --init --recursive
 $ mkdir build
 $ cd build
-$ ../configure
+$ ../configure --target-list=riscv64-softmmu --disable-werror
 $ make -j`nproc`
 ```
 
