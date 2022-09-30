@@ -251,13 +251,13 @@ Finally, reboot again for the computer to update the new ethernet interface.
 
 **Download and Install:**
 
-First, download the Vivado from [xilinx.com](https://www.xilinx.com/support/download.html) (linux .bin file self extract). Then, cd to the downloaded .bin file and run:
+First, download the Vivado for Linux from [xilinx.com](https://www.xilinx.com/support/download.html) (linux .bin file self extract). Then, cd to the downloaded .bin file and run:
 ```shell
 $ chmod +x Xilinx_....bin
-$ sudo ./Xilinx_....bin
+$ ./Xilinx_....bin
 ```
 
-The GUI for installation will be load. Choose to install the Vivado HL Design Edition and wait for the installer to complete.
+The GUI for installation will be load. Choose to install the Vivado / Vivado ML Standard and wait for the installer to complete.
 
 **Install cable driver:**
 ```shell
