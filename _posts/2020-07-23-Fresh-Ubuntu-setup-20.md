@@ -357,9 +357,9 @@ $ ./configure --prefix=[path] --enable-multilib
 For example:
 $ ./configure --prefix=/opt/riscv --enable-multilib
 ```
-For details on configuration, follows the guide in: https://github.com/riscv-collab/riscv-gnu-toolchain
+For other configurations, follow: https://github.com/riscv-collab/riscv-gnu-toolchain
 
-After install the dependencies, clone the toolchain-making folder, and set the configurations, now you can ```$ make``` the toolchain by:
+Now you can ```$ make``` the toolchain by:
 ```shell
 for elf-toolchain (or baremetal toolchain) to run directly on the CPU (like MCU):
 $ sudo make -j`nproc`
@@ -368,4 +368,4 @@ for linux-toolchain to run on the Linux that run on the CPU (like OS app):
 $ sudo make linux -j`nproc`
 ```
 
-*Note*: to re-make again, it is better to ```$ sudo make clean``` beforehand.
+*Note*: to re-make another configuration, it is better to ```$ sudo make clean``` beforehand.
