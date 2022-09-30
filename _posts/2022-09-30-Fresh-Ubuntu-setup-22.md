@@ -157,6 +157,8 @@ Scala itself is not originally designed for "hardware coding." But with the Chis
 Sbt is a Scala compiler.
 Sbt will compile Scala to Java. Then, a generator script will compile Java to FIRRTL. And finally, another generator script will compile FIRRTL to the actual Verilog code.
 
+In short: Scala -> Java -> FIRRTL -> Verilog (1st arrow is done by SBT, 2nd & 3rd arrows are done by Java)
+
 Now we need to install Scala and sbt.
 For Scala, follow the [scala-lang.org](https://www.scala-lang.org/download/) to install.
 For sbt, follow the [scala-sbt.org](https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html) to install.
@@ -200,25 +202,15 @@ $ make -j`nproc`
 
 ### II. e) Idea IntelliJ
 
-Scala is a programming language, and Chisel is a library.
-
-SBT is the tool to compile the Scala sources.
-
-In Chisel desiging flow, SBT is used to generate from the Scala sources to Java executives. Then, Java executives create FIRRTL. Finally, generator (also a Java executive) generates Verilog code from FIRRTL codes.
-
-In short: Scala -> Java -> FIRRTL -> Verilog (1st arrow is done by SBT, 2nd & 3rd arrows are done by Java)
-
-**Idea IntelliJ** is a tool for compiling scala codes. It much more like a GUI for the SBT tool.
+**Idea IntelliJ** is a GUI for sbt (which is a scala compiler).
 After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by ```./idea.sh```
 
 ### II. f) Eclipse
 
-Eclipse is the tool for writing software codes (C/C++), to build, to run, and to debug the software.
+Eclipse is an open-source IDE (mostly for C/C++) to build, to run, and to debug a software.
 
 Download the gnu-mcu-eclipse (linux version) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
 Then extract it and copy the folder to any place you want. The execution file is at: ```[Eclipse folder]/eclipse/eclipse```
-
-You will be aksed to install plugins at the first launch of the program, remember to choose install the Scala language support.
 
 ### II. g) OpenOCD
 
