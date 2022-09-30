@@ -270,7 +270,7 @@ $ sudo ./install_drivers
 
 Just download from the [fpgasoftware.intel.com](http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct) and install.
 Choose to download the Intel Quartus Prime Standard Edition.
-The Quartus execution file is located at ```intelFPGA/18.1/quartus/bin/```
+The Quartus execution file is located at ```intelFPGA/21.1/quartus/bin/quartus```
 
 Note: if running Quartus fail due to ```libpng12``` error, then you need to install it manually (just download & install):
 for [32-bit](https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108507/+files/libpng12-dev_1.2.54-1ubuntu1.1_i386.deb),
