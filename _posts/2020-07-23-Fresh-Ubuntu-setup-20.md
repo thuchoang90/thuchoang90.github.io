@@ -340,6 +340,12 @@ GCC 4.9:    $ git checkout fe4c7d9583a3c06df08a7f013a901fd6a3456bfd
 Finally:
 ```shell
 $ git submodule update --init --recursive
+
+Note: if it prints:
+    fatal: clone of '...' into submodule path '...' failed
+Then:
+$ git config url."https://".insteadOf git://
+$ git submodule update --init --recursive
 ```
 
 ### III. b) Config & Make
