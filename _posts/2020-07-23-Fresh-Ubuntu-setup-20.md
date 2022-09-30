@@ -224,7 +224,7 @@ $ git submodule update --init --recursive
 $ ./bootstrap
 $ ./configure --enable-ftdi --enable-dummy
 $ make -j`nproc`
-$ sudo make install -j`nproc`
+$ sudo make install
 ```
 
 Configuration files for RISC-V CPU: [riscv-openocd](/assets/sources/other/riscv-openocd.cfg)
