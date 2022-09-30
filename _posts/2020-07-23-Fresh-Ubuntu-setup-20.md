@@ -210,7 +210,7 @@ After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.
 Eclipse is an open-source IDE (mostly for C/C++) to build, to run, and to debug a software.
 
 Download the gnu-mcu-eclipse (linux version) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
-Then extract it and copy the folder to any place you want. The execution file is at: ```[Eclipse folder]/eclipse/eclipse```
+Then extract it and copy the folder to any place you want. The execution file is at: ```./eclipse/eclipse```
 
 ### II. g) OpenOCD
 
@@ -262,7 +262,7 @@ The GUI for installation will be load. Choose to install the Vivado / Vivado ML 
 **Install cable driver:**
 ```shell
 cd to Vivado installed folder:
-$ cd ...Xilinx/Vivado/2016.4/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+$ cd ...Xilinx/Vivado/2022.1/data/xicom/cable_drivers/lin64/install_script/install_drivers/
 $ sudo ./install_drivers
 ```
 
