@@ -22,6 +22,7 @@ syntax on
 Update & upgrade everything:
 ```shell
 If your machine has proxy, replace the **http://[address]:[port]** with your proxy address:
+
 $ echo 'Acquire::http::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
 $ echo 'Acquire::https::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
 $ echo 'Acquire::ftp::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
@@ -32,7 +33,6 @@ $ sudo apt install openjdk-8-jdk
 ```
 
 Then install dependencies:
-
 ```
 For 20.04-LTS (Focal Fossa):
 $ sudo apt install curl git npm autoconf perl python3 make g++ flex bison ccache \
@@ -51,23 +51,6 @@ libmpc-dev libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils 
 libexpat-dev wget gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync \
 cmake llvm-dev clang libclang-dev ninja-build expat libexpat1-dev tmux bzip2 lbzip2 \
 libssl-dev screen expect makeself p7zip-full
-```
-
-And other dependencies:
-
-```
-$ sudo apt install gnutls-bin uuid-dev libpopt-dev libncurses5-dev libncursesw5-dev unzip expat gcc tmux wget
-$ sudo apt install bzip2 patch vim-common lbzip2 expect makeself patch npm libexpat1-dev device-tree-compiler
-$ sudo apt install cpio rsync cmake llvm-9-dev clang-9 libclang-9-dev
-```
-	
-And the final dependency:
-```shell
-For Ubuntu version > 16.04:
-$ sudo apt-get install libpng-dev
-
-For Ubuntu version < or = 16.04:
-$ sudo apt-get install libpng12-dev
 ```
 
 Update proxy if your machine has proxy:
