@@ -150,9 +150,7 @@ Sbt will compile Scala to Java. Then, a generator script will compile Java to FI
 
 In short: Scala -> Java -> FIRRTL -> Verilog (1st arrow is done by SBT, 2nd & 3rd arrows are done by Java)
 
-Now we need to install Scala and sbt.
-For Scala, follow the [scala-lang.org](https://www.scala-lang.org/download/) to install.
-For sbt, follow the [scala-sbt.org](https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html) to install.
+Now we need to install sbt. Follow the [scala-sbt.org](https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html) to install.
 
 ### II. c) Verilator
 
