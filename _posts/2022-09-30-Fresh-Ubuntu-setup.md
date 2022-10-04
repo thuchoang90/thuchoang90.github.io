@@ -34,15 +34,23 @@ $ sudo apt install openjdk-8-jdk
 Then install dependencies:
 
 ```
-$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev
-$ sudo apt-get install libusb-1.0-0-dev gawk build-essential bison flex texinfo gperf libtool libssl-dev
-$ sudo apt-get install libpixman-1-dev patchutils bc zlib1g-dev libglib2.0-dev binutils-dev libboost-all-dev
-$ sudo apt-get install device-tree-compiler pkg-config libexpat-dev python libpython3-dev python-pip-whl
-$ sudo apt-get install python-capstone virtualenv git make g++ libusb-1.0.0-dev libusb-dev libyaml-dev xorg-dev
-$ sudo apt-get install libudev-dev libts-dev libgl1-mesa-dev libglu1-mesa-dev libasound2-dev libpulse-dev
-$ sudo apt-get install libopenal-dev libogg-dev libvorbis-dev libaudiofile-dev libfreetype6-dev libdbus-1-dev
-$ sudo apt-get install libdirectfb-dev libsdl2-dev ninja-build dialog
-$ sudo apt-get install libncurses5 libncurses5-dev libncursesw5 libncursesw5-dev libtinfo5 libtinfo-dev
+For 20.04-LTS (Focal Fossa):
+$ sudo apt install curl git npm autoconf perl python3 make g++ flex bison ccache \
+libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlibc zlib1g zlib1g-dev python \
+libglib2.0-dev libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev \
+libmpc-dev libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc \
+libexpat-dev wget gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync \
+cmake llvm-9-dev clang-9 libclang-9-dev ninja-build expat libexpat1-dev tmux bzip2 lbzip2 \
+libssl-dev screen expect makeself p7zip-full
+
+For 22.04-LTS (Jammy Jellyfish):
+$ sudo apt install curl git npm autoconf perl python2 python3 make g++ flex bison ccache \
+libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev pkg-config \
+libglib2.0-dev libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev \
+libmpc-dev libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc \
+libexpat-dev wget gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync \
+cmake llvm-dev clang libclang-dev ninja-build expat libexpat1-dev tmux bzip2 lbzip2 \
+libssl-dev screen expect makeself p7zip-full
 ```
 
 And other dependencies:
