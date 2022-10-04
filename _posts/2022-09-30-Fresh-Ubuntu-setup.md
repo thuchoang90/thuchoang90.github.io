@@ -146,9 +146,9 @@ Scala is a language, Chisel is a library.
 Scala itself is not originally designed for "hardware coding." But with the Chisel library attached to it, then we have a new way for "hardware coding."
 
 Sbt is a Scala compiler.
-Sbt will compile Scala to Java. Then, a generator script will compile Java to FIRRTL. And finally, another generator script will compile FIRRTL to the actual Verilog code.
+Sbt will compile Scala to Java. Then, executing Java will give us FIRRTL. And finally, a FIRRTL compiler will compile FIRRTL to the actual Verilog code.
 
-In short: Scala -> Java -> FIRRTL -> Verilog (1st arrow is done by SBT, 2nd & 3rd arrows are done by Java)
+In short: Scala -> Java -> FIRRTL -> Verilog (1st arrow is done by SBT, 2nd arrow is done by Java, and 3rd arrows is done by FIRRTL compiler)
 
 Now we need to install sbt. Follow the [scala-sbt.org](https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html) to install.
 
