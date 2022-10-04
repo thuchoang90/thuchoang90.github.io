@@ -84,7 +84,7 @@ Finally, reboot the machine.
 
 ### II. a) Github
 
-Some tips for using Github:
+When working with RISC-V, you will be using Github all the times. These are some tips for using Github:
 
 To git clone
 ```shell
