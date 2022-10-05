@@ -29,11 +29,15 @@ $ echo 'Acquire::ftp::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/a
 
 $ sudo apt update
 $ sudo apt upgrade
+```
+
+Need to install openjdk version 8:
+```shell
 $ sudo apt install openjdk-8-jdk
 ```
 
 Then install dependencies:
-```
+```shell
 $ sudo apt install curl git npm autoconf perl python3 make g++ flex bison ccache \
 libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev \
 libglib2.0-dev libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev \
