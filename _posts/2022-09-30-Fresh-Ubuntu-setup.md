@@ -198,7 +198,7 @@ After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.
 
 Eclipse is an open-source IDE (mostly for C/C++) to build, to run, and to debug a software.
 
-Download the gnu-mcu-eclipse (linux version) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
+Download the gnu-mcu-eclipse (linux version x86_64) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
 Then extract it and copy the folder to any place you want. The execution file is at: ```./eclipse/eclipse```
 
 ### II. g) OpenOCD
