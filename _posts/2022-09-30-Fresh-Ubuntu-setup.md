@@ -35,7 +35,7 @@ $ sudo apt install openjdk-8-jdk
 Then install dependencies:
 ```
 For 20.04-LTS (Focal Fossa):
-$ sudo apt install curl git npm autoconf perl python3 make g++ flex bison ccache \
+$ sudo apt install curl git npm autoconf perl python3 make g++ flex bison ccache minicom \
 libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlibc zlib1g zlib1g-dev python \
 libglib2.0-dev libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev \
 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc wget \
@@ -49,7 +49,7 @@ libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev pkg-
 libglib2.0-dev libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev \
 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc wget \
 libexpat-dev gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync cmake \
-llvm-dev clang libclang-dev ninja-build expat libexpat1-dev tmux bzip2 lbzip2 screen \
+llvm-dev clang libclang-dev ninja-build expat libexpat1-dev tmux bzip2 lbzip2 screen minicom \
 libssl-dev expect makeself p7zip-full libusb-dev libyaml-dev libsdl2-dev libftdi-dev libftdi1
 ```
 
