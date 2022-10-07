@@ -39,12 +39,12 @@ $ sudo apt install openjdk-8-jdk
 Then install dependencies:
 ```shell
 $ sudo apt install curl git npm autoconf perl python3 make g++ flex bison ccache \
-libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev \
-libglib2.0-dev libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev \
-libmpc-dev libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc \
-libexpat-dev wget gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync \
-cmake ninja-build expat libexpat1-dev tmux bzip2 lbzip2 libssl-dev screen expect \
-makeself p7zip-full libusb-dev libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom
+libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev libglib2.0-dev \
+libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev libmpc-dev \
+libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc libexpat-dev wget \
+gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync cmake ninja-build \
+expat libexpat1-dev tmux bzip2 lbzip2 libssl-dev screen expect makeself p7zip-full \
+libusb-dev libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom libtinfo5
 
 For 20.04-LTS (Focal Fossa):
 $ sudo apt install zlibc python llvm-9-dev clang-9 libclang-9-dev
