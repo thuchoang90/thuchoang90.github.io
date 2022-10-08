@@ -46,11 +46,16 @@ gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync cmake ninja-
 expat libexpat1-dev tmux bzip2 lbzip2 libssl-dev screen expect makeself p7zip-full \
 libusb-dev libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom libtinfo5
 
-For 20.04-LTS (Focal Fossa):
+For Ubuntu 20.04-LTS (Focal Fossa):
 $ sudo apt install zlibc python llvm-9-dev clang-9 libclang-9-dev
 
-For 22.04-LTS (Jammy Jellyfish):
+For Ubuntu 22.04-LTS (Jammy Jellyfish):
 $ sudo apt install python2 pkg-config llvm-dev clang libclang-dev
+```
+
+In Ubuntu 22.04-LTS (Jammy Jellyfish), do the following to make the **python** default to **python2** instead of **python3**:
+```shell
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
 ```
 
 Update proxy if your machine has proxy:
