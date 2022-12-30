@@ -148,6 +148,7 @@ sitemap: true
 # this and add the path to the pages in order as they should show up
 header_pages:
    - index.html
+   - teaching.html
    - tutorial.html
    - project.html
    - tags.html
