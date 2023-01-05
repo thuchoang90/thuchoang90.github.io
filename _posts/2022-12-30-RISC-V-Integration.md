@@ -15,10 +15,10 @@ Learn how to add your <ins>custom hardware</ins> *(in Verilog or VHDL)* from an 
 |:---:|---|
 | 1 | RISC-V Introduction |
 | 2 | VexRiscv: a Simple 32-bit MCU |
-| 3 | Rocket Computer System |
-| 4 | Boot Sequence and Software |
-| 5 | Making a Custom Hardware |
-| 6 | Custom hardware with External IOs |
+| 3 | Computer System with Rocket:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction and System Modifications |
+| 4 | Computer System with Rocket:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boot Sequence and Software |
+| 5 | Computer System with Rocket:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Making a Custom Hardware |
+| 6 | Computer System with Rocket:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware with External IOs |
 | 7 | Course Summary |
 
 **Week #1:** RISC-V Introduction
@@ -29,19 +29,19 @@ Learn how to add your <ins>custom hardware</ins> *(in Verilog or VHDL)* from an 
 - **Description:**
 - **Purpose:**
 
-**Week #3:** Rocket Computer System
+**Week #3:** Computer System with Rocket: Introduction and System Modifications
 - **Description:**
 - **Purpose:**
 
-**Week #4:** Boot Sequence and Software
+**Week #4:** Computer System with Rocket: Boot Sequence and Software
 - **Description:**
 - **Purpose:**
 
-**Week #5:** Making a Custom Hardware
+**Week #5:** Computer System with Rocket: Making a Custom Hardware
 - **Description:**
 - **Purpose:**
 
-**Week #6:** Custom Hardware with External IOs
+**Week #6:** Computer System with Rocket: Custom Hardware with External IOs
 - **Description:**
 - **Purpose:**
 
