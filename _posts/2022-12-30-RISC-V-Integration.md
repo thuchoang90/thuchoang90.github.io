@@ -13,7 +13,7 @@ Then, learn how to control and debug your module in <ins>software</ins> after re
 
 ### Course Requirement
 
-Participants must have prior **digital design** knowledge and know how to use **Verilog** *(or VHDL)* language.
+Participants <ins>must</ins> have **digital design** knowledge and know how to use **Verilog** *(or VHDL)* language.
 <br>
 Participants <ins>don't</ins> need to know **Scala-CHISEL** to learn this course.
 
@@ -50,7 +50,7 @@ Participants <ins>don't</ins> need to know **Scala-CHISEL** to learn this course
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for your custom hardware. Finally, learn how to control your custom hardware in software via the memory-mapped structure.
 
 **Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Custom Hardware with External IOs
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini review for the previous week. Then, create a new custom hardware, this time it will use external IOs/pins. Finally, learn how to write a Scala wrapper for that blackblox , generate the system, test with software.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 **Week #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
