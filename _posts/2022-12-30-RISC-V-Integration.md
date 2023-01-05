@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "RISC-V Computer System Integration"
+title: "01: RISC-V Computer System Integration"
 categories: Teaching
 tags: RISC-V-Courses
 ---
 
 ### Core Knowledge
 
-Learn how to add your **custom hardware** *(in Verilog or VHDL)* from an existing RISC-V computer system. Then, learn how to **control/debug** your module in <ins>software</ins> after regenerating the system.
+Learn how to add your **custom hardware** *(in Verilog or VHDL)* from an existing RISC-V computer system.
+<br>
+Then, learn how to **control/debug** your module in <ins>software</ins> after regenerating the system.
 
 ### Course Requirement
 
