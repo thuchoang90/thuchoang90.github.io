@@ -5,15 +5,15 @@ categories: Teaching
 tags: RISC-V-Courses
 ---
 
-# Core Knowledge
+## Core Knowledge
 
 Learn how to add your <ins>custom hardware</ins> *(in Verilog or VHDL)* from an existing RISC-V computer system. Then, learn how to <ins>control/debug</ins> your module in <ins>software</ins> after regenerating the system.
 
-# Course Requirement
+## Course Requirement
 
 
 
-# Classes
+## Classes
 
 | Week | Title |
 |:---:|---|
