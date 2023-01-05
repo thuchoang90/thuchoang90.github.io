@@ -20,3 +20,24 @@ Learn how to add your <ins>custom hardware</ins> *(in Verilog or VHDL)* from an 
 | 5 | Making a Custom Hardware | | |
 | 6 | Custom hardware with External IOs | | |
 | 7 | Course Summary | | |
+
+| \:Fruits         ||  Food   :|
+|:-------- |:------ |:-------- |
+| Apple    | Banana |  Orange  |
+| Apple    | Banana |  Orange  |
+
+
+|          | Fruits\::        ||
+|:-------- |:------ |:-------- |
+| Apple    | Banana |  Orange  |
+| Apple    | Banana |  Orange  |
+
+
+|: \:Fruits       :||          |:       Food     :||
+|:-------- |:------ |:-------- |:-------- |:------ |
+| Apple    | Banana |  Orange  |:   Strawberry    :|
+| Apple  &  Banana || ^^       |    Peach        :||
+
+
+|: \:Fruits       :||          |:       Food     :||
+| Apple    | Banana |  Orange  |:   Strawberry    :|
