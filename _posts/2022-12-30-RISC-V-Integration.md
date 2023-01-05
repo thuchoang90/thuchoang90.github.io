@@ -9,7 +9,7 @@ tags: RISC-V-Courses
 
 Learn how to add your **custom hardware** *(in Verilog or VHDL)* to an existing RISC-V computer system.
 <br>
-Then, learn how to **control** and **debug** your module in <ins>software</ins> after regenerating the system.
+Then, learn how to **control** and **debug** your module in <ins>software</ins> after regenerating the hardware system.
 
 ### Course Requirement
 
