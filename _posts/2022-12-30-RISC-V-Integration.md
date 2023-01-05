@@ -33,24 +33,24 @@ Participants don't need to know Scala-CHISEL before to learn this course.
 
 **Week #2:**&nbsp;&nbsp;&nbsp;&nbsp;VexRiscv: a Simple 32-bit MCU
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Study about VexRiscv, how to make hardware, compile software, and debug (on Verilator, not FPGA)
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;Get familiar with "$ make" in a Unix system when working with RISC-V.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get familiar with "$ make" in a Unix system when working with RISC-V.
 
 **Week #3:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Introduction and System Modifications
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 **Week #4:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Boot Sequence and Software
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 **Week #5:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Making a Custom Hardware
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 **Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Custom Hardware with External IOs
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 **Week #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
