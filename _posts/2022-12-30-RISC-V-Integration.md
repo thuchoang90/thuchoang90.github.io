@@ -12,7 +12,7 @@ Learn how to add your **custom hardware** *(in Verilog or VHDL)* from an existin
 ### Course Requirement
 
 Participants must have prior digital design knowledge and know how to use Verilog/VHDL language to design a hardware circuit.
-
+<br>
 Participants don't need to know Scala-CHISEL before to learn this course.
 
 ### Course List
