@@ -7,11 +7,13 @@ tags: RISC-V-Courses
 
 ### Core Knowledge
 
-Learn how to add your <ins>custom hardware</ins> *(in Verilog or VHDL)* from an existing RISC-V computer system. Then, learn how to <ins>control/debug</ins> your module in <ins>software</ins> after regenerating the system.
+Learn how to add your **custom hardware** *(in Verilog or VHDL)* from an existing RISC-V computer system. Then, learn how to **control/debug** your module in <ins>software</ins> after regenerating the system.
 
 ### Course Requirement
 
+Participants must have prior digital design knowledge and know how to use Verilog/VHDL language to design a hardware circuit.
 
+Participants don't need to know Scala-CHISEL before to learn this course.
 
 ### Course List
 
