@@ -17,7 +17,9 @@ Participants <ins>must</ins> have **digital design** knowledge and know how to u
 <br>
 Participants <ins>don't</ins> need to know the **Scala-CHISEL** language to learn this course.
 
-Exercises in this course use the Arty-A7 FPGA board. Participants need to have an Arty-A7 to learn this course. Note: both 35T and 100T versions of the FPGA are ok.
+Exercises in this course use the Arty-A7 FPGA board. Participants need to have an Arty-A7 to learn this course.
+<br>
+*Note:* both 35T and 100T versions of the FPGA are ok.
 
 ### Course List
 
