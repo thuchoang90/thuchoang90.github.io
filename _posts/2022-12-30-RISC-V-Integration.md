@@ -9,13 +9,13 @@ tags: RISC-V-Courses
 
 Learn how to add your **custom hardware** *(written in Verilog or VHDL)* to an existing RISC-V computer system.
 <br>
-Then, learn how to control and debug your module in <ins>software</ins> after regenerating the hardware system.
+Learn how to control and debug your custom hardware in <ins>software</ins> after regenerating the system.
 
 ### Course Requirement
 
 Participants <ins>must</ins> have **digital design** knowledge and know how to use **Verilog** *(or VHDL)* language.
 <br>
-Participants <ins>don't</ins> need to know **Scala-CHISEL** to learn this course.
+Participants <ins>don't</ins> need to know the **Scala-CHISEL** language to learn this course.
 
 ### Course List
 
@@ -23,10 +23,10 @@ Participants <ins>don't</ins> need to know **Scala-CHISEL** to learn this course
 |:---:|---|
 | 1 | RISC-V Introduction |
 | 2 | VexRiscv: a Simple 32-bit MCU |
-| 3 | Computer System with Rocket: Introduction and System Modifications |
-| 4 | Computer System with Rocket: Boot Sequence and Software |
-| 5 | Computer System with Rocket: Making a Custom Hardware |
-| 6 | Computer System with Rocket: Custom Hardware with External IOs |
+| 3 | Rocket Computer System: Introduction and System Modification |
+| 4 | Rocket Computer System: Boot Sequence and Software |
+| 5 | Rocket Computer System: Making a Custom Hardware |
+| 6 | Rocket Computer System: Custom Hardware with External IOs |
 | 7 | Course Summary |
 
 **Week #1:**&nbsp;&nbsp;&nbsp;&nbsp;RISC-V Introduction
@@ -37,19 +37,19 @@ Participants <ins>don't</ins> need to know **Scala-CHISEL** to learn this course
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Study about VexRiscv, how to make hardware, compile software, and debug *(on Verilator)*.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get familiar with "$ make" in a Unix system when working with RISC-V.
 
-**Week #3:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Introduction and System Modifications
+**Week #3:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Introduction and System Modification
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the Chipyard library, Rocket core, hardware architecture, and the Makefile system. Learn how to Git clone, make, and program the system with the Arty-A7 FPGA. Finally, learn how to change some of the configurations in the system and the core processor.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get familiar with a complex RISC-V folder structure using the Chipyard setup. Get used to the Arty-A7 FPGA board. Learn about system details and how to change some of the configurations.
 
-**Week #4:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Boot Sequence and Software
+**Week #4:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Boot Sequence and Software
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Describe the system's boot sequence with the default software. Then, learn to change the default program with your custom codes.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learn how a computer system boots from a boot ROM to a hard drive *(such as an SD card)* and, finally, to RAM. Learn about making a custom program for that computer system.
 
-**Week #5:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Making a Custom Hardware
+**Week #5:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Making a Custom Hardware
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Make a custom Verilog hardware *(GCD circuit)* and test it by simulation. Then, learn how to write a Scala wrapper and attach that GCD circuit as a black box. Finally, generate the system with the new peripheral and write software to control it.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for your custom hardware. Finally, learn how to control your custom hardware in software via the memory-mapped structure.
 
-**Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System with Rocket: Custom Hardware with External IOs
+**Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Custom Hardware with External IOs
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini review for the previous week. Then, create a new custom hardware, this time it will use external IOs/pins. Finally, learn how to write a Scala wrapper for that blackblox , generate the system, test with software.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
