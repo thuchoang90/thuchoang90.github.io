@@ -58,5 +58,5 @@ Exercises in this course use the Arty-A7 FPGA board. Participants need to have a
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mostly re-do the work of the previous week. This time, learn to use external IOs/pins with your custom hardware.
 
 **Week #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review from soft to hard (top-down): software and boot flow, device tree, toolchain and ISA, hardware and system architecture, Makefile system, and system (Scala) modification. Then, review how to add custom hardware to the system and control it in software after boot.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reviewing all the knowledge and concluding what students have learned.
