@@ -54,8 +54,8 @@ Exercises in this course use the Arty-A7 FPGA board. Participants need to have a
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for your custom hardware. Finally, learn how to control your custom hardware in software via the memory-mapped structure.
 
 **Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Custom Hardware with External IOs
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini review for the previous week. Then, create a new custom hardware, this time it will use external IOs/pins. Finally, learn how to write a Scala wrapper for that blackblox , generate the system, test with software.
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini-review for the previous week. Repeat the previous work with custom hardware with external IOs/pins.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mostly re-do the work of the previous week. This time, learn to use external IOs/pins with your custom hardware.
 
 **Week #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
