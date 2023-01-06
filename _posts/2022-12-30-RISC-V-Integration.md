@@ -34,7 +34,7 @@ Exercises in this course use the Arty-A7 FPGA board. Participants need to have a
 | 7 | Course Summary |
 
 **Week #1:**&nbsp;&nbsp;&nbsp;&nbsp;RISC-V Introduction
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce ISA, RISC-V, and what you can learn after the course.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce ISA, RISC-V, and what you can do after the course.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For participants to learn the idea of RISC-V, ISA, and what is a computer system in general.
 
 **Week #2:**&nbsp;&nbsp;&nbsp;&nbsp;VexRiscv: a Simple 32-bit MCU
@@ -50,7 +50,7 @@ Exercises in this course use the Arty-A7 FPGA board. Participants need to have a
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learn how a computer system boots from a boot ROM to a hard drive *(such as an SD card)* and, finally, to RAM. Learn about making a custom program for that computer system.
 
 **Week #5:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Making a Custom Hardware
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Make a custom Verilog hardware *(GCD circuit)* and test it by simulation. Then, learn how to write a Scala wrapper and attach that GCD circuit as a black box. Finally, generate the system with the new peripheral and write software to control it.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Make a custom Verilog hardware *(GCD circuit)* and test it by simulation. Then, learn how to write a Scala wrapper and attach that Verilog hardware as a black box. Finally, generate the system with the new peripheral and write software to control it.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for your custom hardware. Finally, learn how to control your custom hardware in software via the memory-mapped structure.
 
 **Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Custom Hardware with External IOs
