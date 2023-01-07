@@ -7,7 +7,7 @@ tags: RISC-V-Courses
 
 ### Core Knowledge
 
-
+Learn how to modify a RISC-V computer system for security purposes: secure boot, cryptographic acceleration, prevent sidechannel attacks, etc.
 
 ### Course Requirement
 
