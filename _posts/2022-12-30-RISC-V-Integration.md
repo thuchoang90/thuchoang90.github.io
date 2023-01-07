@@ -15,7 +15,7 @@ Learn how to control and debug your custom hardware in <ins>software</ins> after
 
 Participants <ins>must</ins> have **digital design** knowledge and know how to use **Verilog** *(or VHDL)* language.
 <br>
-Participants <ins>don't</ins> need to know the **Scala-CHISEL** language to learn this course.
+Participants <ins>don't need</ins> to know the **Scala-CHISEL** language to learn this course.
 
 Exercises in this course use the Arty-A7 FPGA board. Participants need to have an Arty-A7 to learn this course.
 <br>
