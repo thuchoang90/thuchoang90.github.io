@@ -73,6 +73,6 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 
 **Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review everything from the beginning to the end: VLSI flow, logic gates and transistors, standard cells, backend design flow, how to do a hierarchy layout, and finally, how to put everything into a frame.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reviewing all the knowledge and concluding what students have learned.
 
