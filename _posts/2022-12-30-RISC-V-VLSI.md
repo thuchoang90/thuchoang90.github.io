@@ -31,7 +31,7 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 
 ### Course List
 
-| Week | Title |
+| Lecture | Title |
 |:---:|---|
 | 1 | VLSI Flow Introduction |
 | 2 | Review Basis: Logic Gates, CMOS, and Standard Cells |
@@ -41,37 +41,37 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 | 6 | Fullchip (Frame) Integration: Multiple Power Supplies |
 | 7 | Course Summary |
 
-**Week #1:**&nbsp;&nbsp;&nbsp;&nbsp;VLSI Flow Introduction
+**Lecture #1:**&nbsp;&nbsp;&nbsp;&nbsp;VLSI Flow Introduction
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the VLSI flow and the template's folder structure.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the VLSI flow and basic steps in making a chip. Get introduced to the template (make-script) folder structure.
 
-**Week #2:**&nbsp;&nbsp;&nbsp;&nbsp;Review Basis: Logic Gates, CMOS, and Standard Cells
+**Lecture #2:**&nbsp;&nbsp;&nbsp;&nbsp;Review Basis: Logic Gates, CMOS, and Standard Cells
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review basic knowledge of logic gates, transistor schematics, MOSFET architecture, modeling, digital standard cells, and design rules.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make sure that everybody shares the same common knowledge, including MOSFET architecture, how logic gates are translated to transistors, the importance of modeling, and why standard cells are needed in digital design.
 
-**Week #3:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Simple System with Flat Layout
+**Lecture #3:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Simple System with Flat Layout
+<br>
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Run the flat layout template with the CPU-and-RAM design. Then, practice with the VexRiscv SoC.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+**Lecture #4:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Complex System with Hierarchy Layout
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-**Week #4:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Complex System with Hierarchy Layout
+**Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Single Power Supply
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-**Week #5:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Single Power Supply
+**Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Multiple Power Supplies
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-**Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Multiple Power Supplies
-<br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-**Week #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
+**Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reviewing all the knowledge and concluding what students have learned.
