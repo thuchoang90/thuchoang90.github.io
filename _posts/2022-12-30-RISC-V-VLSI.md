@@ -23,7 +23,7 @@ UEC students will study with the <ins>ROHM-180nm</ins> process (licensed via <a 
 <br>
 Oversea participants will study with the <ins><a href="https://github.com/google/skywater-pdk">skywater-130nm</a></ins> process (open license).
 
-**About the design tool:**
+**About the design tools:**
 <br>
 UEC students will practice with a <ins>mixed script</ins> of Cadence, Synopsys, and Mentor Graphic (licensed via <a href="http://www.vdec.u-tokyo.ac.jp/">VDEC</a>).
 <br>
@@ -33,7 +33,7 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 
 | Week | Title |
 |:---:|---|
-| 1 | VLSI Design Flow Introduction |
+| 1 | VLSI Flow Introduction |
 | 2 | Review Basis: Logic Gates, CMOS, and Standard Cells |
 | 3 | Core Implementation: Simple System with Flat Layout |
 | 4 | Core Implementation: Complex System with Hierarchy Layout |
@@ -41,9 +41,9 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 | 6 | Fullchip (Frame) Integration: Multiple Power Supplies |
 | 7 | Course Summary |
 
-**Week #1:**&nbsp;&nbsp;&nbsp;&nbsp;VLSI Design Flow Introduction
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**Week #1:**&nbsp;&nbsp;&nbsp;&nbsp;VLSI Flow Introduction
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the VLSI flow and the template's folder structure.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the VLSI flow and basic steps in making a chip. Get introduced to the template (make-script) folder structure.
 
 **Week #2:**&nbsp;&nbsp;&nbsp;&nbsp;Review Basis: Logic Gates, CMOS, and Standard Cells
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
