@@ -54,12 +54,12 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 **Lecture #3:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Simple System with Flat Layout
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Run the flat layout template with the CPU-and-RAM design. Then, practice with the VexRiscv SoC.
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the difficulties in making a huge digital circuit.
 
 **Lecture #4:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Complex System with Hierarchy Layout
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the hierarchy layout template and compare it with the flat layout. Then, practice with the Rocket computer system (generated in lecture 9).
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know how to make a huge digital circuit with a hierarchy floorplan and practice it with a complex computer system.
 
 **Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Single Power Supply
 <br>
