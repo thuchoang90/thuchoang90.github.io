@@ -55,13 +55,13 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 
 **Week #5:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Making a Custom Hardware
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Make a custom Verilog hardware *(GCD circuit)* and test it by simulation. Then, learn how to write a Scala wrapper and attach that Verilog hardware as a black box. Finally, generate the system with the new peripheral and write software to control it.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Make a custom Verilog hardware *(GCD circuit)* and test it by simulation. Then, learn how to write a Scala wrapper and attach that Verilog hardware as a black box. Finally, regenerate the system and write a software to control the new peripheral.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for your custom hardware. Finally, learn how to control your custom hardware in software via the memory-mapped structure.
 
 **Week #6:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Custom Hardware with External IOs
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini-review for the previous week. Repeat the previous work with custom hardware with external IOs/pins.
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mostly re-do the work of the previous week. This time, learn to use external IOs/pins with your custom hardware.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini-review for the previous week. Repeat the previous work with custom hardware that has external IOs/pins.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Practice the previous work. This time, learn to use external IOs/pins with your custom hardware.
 
 **Week #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 <br>
