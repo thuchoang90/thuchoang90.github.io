@@ -42,37 +42,29 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 | 7 | Course Summary |
 
 **Lecture #1:**&nbsp;&nbsp;&nbsp;&nbsp;VLSI Flow Introduction
-<br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the VLSI flow and the template's folder structure.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the VLSI flow and basic steps in making a chip. Get introduced to the template (make-script) folder structure.
 
 **Lecture #2:**&nbsp;&nbsp;&nbsp;&nbsp;Review Basis: Logic Gates, CMOS, and Standard Cells
-<br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review basic knowledge of logic gates, transistor schematics, MOSFET architecture, modeling, digital standard cells, and design rules.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make sure that everybody shares the same common knowledge, including MOSFET architecture, how logic gates are translated to transistors, the importance of modeling, and why standard cells are needed in digital design.
 
 **Lecture #3:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Simple System with Flat Layout
-<br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Run the flat layout template with the CPU-and-RAM design. Then, practice with the VexRiscv SoC.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the difficulties in making a huge digital circuit.
 
 **Lecture #4:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Complex System with Hierarchy Layout
-<br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the hierarchy layout template and compare it with the flat layout. Then, practice with the Rocket computer system (generated in lecture 9).
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know how to make a huge digital circuit with a hierarchy floorplan and practice it with a complex computer system.
 
 **Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Single Power Supply
-<br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the packaging and socket, and then introduce the Fullchip script. Finally, make a frame integration with VexRiscv and Rocket cores.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understanding the packaging and fullchip integration process. Practice it with the two layouts of VexRiscv and Rocket in lectures 3 and 4.
 
 **Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Multiple Power Supplies
-<br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Repeat the fullchip integration process with multiple power supplies instead of one.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand that the packaging with multiple cores needs multiple separate power supplies.
 
 **Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
-<br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review everything from the beginning to the end: VLSI flow, logic gates and transistors, standard cells, backend design flow, how to do a hierarchy layout, and finally, how to put everything into a frame.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reviewing all the knowledge and concluding what students have learned.
-
