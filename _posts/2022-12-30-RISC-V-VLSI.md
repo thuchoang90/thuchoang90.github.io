@@ -49,7 +49,7 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 **Week #2:**&nbsp;&nbsp;&nbsp;&nbsp;Review Basis: Logic Gates, CMOS, and Standard Cells
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review basic knowledge of logic gates, transistor schematics, MOSFET architecture, modeling, digital standard cells, and design rules.
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make sure that everybody shares the same common knowledge, including MOSFET architecture, how logic gates are translated to transistors, the importance of modeling, and why standard cells are needed in digital design.
 
 **Week #3:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Simple System with Flat Layout
 <br>
