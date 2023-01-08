@@ -63,13 +63,13 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 
 **Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Single Power Supply
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the packaging and socket, and then introduce the Fullchip script. Finally, make a frame integration with VexRiscv and Rocket cores.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understanding the packaging and fullchip integration process. Practice it with the two layouts of VexRiscv and Rocket in lectures 3 and 4.
 
 **Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Multiple Power Supplies
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Repeat the fullchip integration process with multiple power supplies instead of one.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand that the packaging with multiple cores needs multiple separate power supplies.
 
 **Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 <br>
