@@ -65,5 +65,5 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 
 **Week #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review from soft to hard (top-down): software and boot flow, device tree, toolchain and ISA, hardware and system architecture, Makefile system, and system (Scala) modification. Then, review how to add custom hardware to the system and control it in software after boot.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review from soft to hard (top-down): software and boot flow, device tree, toolchain and ISA, hardware and system architecture, Makefile system, and system (Scala) modification. Then, review how to add custom hardware and control it in the software after boot.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reviewing all the knowledge and concluding what students have learned.
