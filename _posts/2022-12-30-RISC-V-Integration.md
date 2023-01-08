@@ -45,13 +45,13 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 
 **Week #3:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Introduction and System Modification
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the Chipyard library, Rocket core, hardware architecture, and the Makefile system. Learn how to Git clone, make, and program the system with the Arty-A7 FPGA. Finally, learn how to change some of the configurations in the system and the core processor.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the Chipyard library, Rocket core, hardware architecture, and the Makefile system. Learn how to Git clone, make, and program with the Arty-A7 FPGA. Finally, learn how to change some of the system configurations.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get familiar with a complex RISC-V folder structure using the Chipyard setup. Get used to the Arty-A7 FPGA board. Learn about system details and how to change some of the configurations.
 
 **Week #4:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Boot Sequence and Software
 <br>
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Describe the system's boot sequence with the default software. Then, learn to change the default program with your custom codes.
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learn how a computer system boots from a boot ROM to a hard drive *(such as an SD card)* and, finally, to RAM. Learn about making a custom program for that computer system.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learn how a computer system boots from a boot ROM to a hard drive *(SD card)* and, finally, to RAM. Learn about making a custom program for that computer system.
 
 **Week #5:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Making a Custom Hardware
 <br>
