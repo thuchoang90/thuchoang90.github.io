@@ -60,7 +60,7 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 
 **Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System: Custom Hardware with External IOs
 <br>
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini-review for the previous week. Repeat the previous work with custom hardware that has external IOs/pins.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A mini-review for the previous lecture. Repeat the previous work with custom hardware that has external IOs/pins.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Practice the previous work. This time, learn to use external IOs/pins with your custom hardware.
 
 **Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
