@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "04: VLSI Design with RISC-V SoC"
+title: "04: Advanced VLSI Design with RISC-V SoC"
 categories: Teaching
 tags: RISC-V-Courses
 ---
 
 ### Core Knowledge
 
-Understand the **V**ery **L**arge-**S**cale **I**ntegration circuit *(VLSI)* design flow.
+Understand the **V**ery **L**arge-**S**cale **I**ntegration circuit *(VLSI)* design flow complex digital systems.
 <br>
 Practice with RISC-V System-on-Chip *(SoC)*: flat layout with a simple system and hierarchy layout with a complex system.
 
