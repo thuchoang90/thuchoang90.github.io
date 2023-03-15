@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "04: Advanced VLSI Design with RISC-V SoC"
+title: "Advanced VLSI Design with RISC-V SoC"
 categories: Teaching
 tags: RISC-V-Courses
 ---
@@ -54,7 +54,7 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the difficulties in making a huge digital circuit.
 
 **Lecture #4:**&nbsp;&nbsp;&nbsp;&nbsp;Core Implementation: Complex System with Hierarchy Layout
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the hierarchy layout template and compare it with the flat layout. Then, practice with the Rocket computer system (generated in lecture 9).
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the hierarchy layout template and compare it with the flat layout. Then, practice with the Rocket computer system.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know how to make a huge digital circuit with a hierarchy floorplan and practice it with a complex computer system.
 
 **Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;Fullchip (Frame) Integration: Single Power Supply
