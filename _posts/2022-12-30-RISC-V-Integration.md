@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "01: RISC-V Computer System Integration"
+title: "RISC-V Computer System Integration"
 categories: Teaching
 tags: RISC-V-Courses
 ---
