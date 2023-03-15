@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "02: Hardware Design with CHISEL"
+title: "Hardware Design with CHISEL"
 categories: Teaching
 tags: RISC-V-Courses
 ---
