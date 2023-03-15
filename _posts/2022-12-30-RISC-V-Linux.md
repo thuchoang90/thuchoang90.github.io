@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "03: Linux on RISC-V"
+title: "Linux on RISC-V"
 categories: Teaching
 tags: RISC-V-Courses
 ---
