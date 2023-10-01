@@ -7,7 +7,7 @@ tags: RISC-V-Courses
 
 ### Core Knowledge
 
-Understand the **V**ery **L**arge-**S**cale **I**ntegration circuit *(VLSI)* design flow complex digital systems.
+Understand the **V**ery **L**arge-**S**cale **I**ntegration circuit *(VLSI)* design flow with complex digital systems.
 <br>
 Practice with RISC-V System-on-Chip *(SoC)*: flat layout with a simple system and hierarchy layout with a complex system.
 
