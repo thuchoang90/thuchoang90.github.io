@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Advanced VLSI Design with RISC-V SoC"
+title: "Advanced VLSI Design"
 categories: Teaching
 tags: RISC-V-Courses
 ---
@@ -9,13 +9,11 @@ tags: RISC-V-Courses
 
 Understand the **V**ery **L**arge-**S**cale **I**ntegration circuit *(VLSI)* design flow with complex digital systems.
 <br>
-Practice with RISC-V System-on-Chip *(SoC)*: flat layout with a simple system and hierarchy layout with a complex system.
+Practice with System-on-Chip *(SoC)*: flat layout for a simple system and hierarchy layout for a complex system.
 
 ### Course Requirement
 
 Participants <ins>must</ins> have **digital design** knowledge and know how to use **Verilog** *(or VHDL)* language.
-<br>
-Participants <ins>don't need</ins> to know the **Scala-CHISEL** language to learn this course.
 
 **About the PDK:**
 <br>
