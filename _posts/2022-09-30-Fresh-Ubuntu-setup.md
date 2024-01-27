@@ -44,7 +44,7 @@ libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev libmpc
 libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc libexpat-dev wget \
 gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync cmake ninja-build \
 expat libexpat1-dev tmux bzip2 lbzip2 libssl-dev screen expect makeself p7zip-full \
-libusb-dev libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom libtinfo5 libpopt-dev
+libusb-dev libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom libtinfo5 libpopt-dev help2man
 
 For Ubuntu 20.04-LTS (Focal Fossa):
 $ sudo apt install zlibc python llvm-9-dev clang-9 libclang-9-dev
