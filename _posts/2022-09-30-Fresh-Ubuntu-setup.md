@@ -186,7 +186,7 @@ To install the RISC-V QEMU:
 stand where you want to install RISC-V QEMU
 $ git clone https://github.com/qemu/qemu.git riscv-qemu
 $ cd riscv-qemu/
-$ git checkout stable-5.0   #commit 386b2a57 on 15-Sep-2020
+$ git checkout stable-8.1   #commit c95e38d3 on 22-Dec-2023
 $ git submodule update --init --recursive
 $ mkdir build
 $ cd build
