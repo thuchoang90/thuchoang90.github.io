@@ -185,7 +185,7 @@ $ git checkout stable-8.1   #commit c95e38d3 on 22-Dec-2023
 $ git submodule update --init --recursive
 $ mkdir build
 $ cd build
-$ ../configure --target-list=riscv64-softmmu --disable-werror
+$ ../configure --target-list=riscv64-softmmu
 $ make -j`nproc`
 ```
 
