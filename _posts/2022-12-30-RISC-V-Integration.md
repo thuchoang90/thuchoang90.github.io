@@ -39,8 +39,8 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To learn what is a computer system in general. To learn the idea of RISC-V and ISA. To know what RISC-V is capable of and what we can do with RISC-V.
 
 **Lecture #2:**&nbsp;&nbsp;&nbsp;&nbsp;Creating Project with Chipyard
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;N/A
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce Chipyard library and explain its structure. Show how to git clone and make. Learn how to create a new Chisel project using this Chipyard library as a template.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know how to use the Chipyard library. Know how to create a new Chisel project using Chipyard template.
 
 **Lecture #3:**&nbsp;&nbsp;&nbsp;&nbsp;Computer System on Arty-A7
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the RISC-V computer system. Learn how to Git clone and make the system. Learn how to program with the Arty-A7 FPGA board. Learn how to change some of the system configurations.
@@ -59,9 +59,9 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Practice the previous work. This time, learn to use external IOs/pins with your custom hardware.
 
 **Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware on ROCC
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;N/A
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the ROCC. Reuse the GCD circuit, but this time attach it to the ROCC instead of the peripheral. Finally, learn how to control the ROCC module with software.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand that there are options for putting in custom hardware: peripheral or ROCC, each with a different purpose. Know how to do ROCC and control it with software.
 
 **Lecture #8:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review from soft to hard (top-down): software and boot flow, device tree, toolchain and ISA, hardware and system architecture, Makefile system, and system (Scala) modification. Then, review how to add custom hardware and control it in the software after boot.
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reviewing all the knowledge and concluding what students have learned.
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A top-down review from ISA to software and hardware.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review all lectures related to RISC-V computer system.
