@@ -9,7 +9,7 @@ tags: RISC-V-Courses
 
 Understand the **V**ery **L**arge-**S**cale **I**ntegration circuit *(VLSI)* design flow.
 <br>
-Know how to design a Standard Cell (StdCell), then complete a StdCell library for full digital design flow.
+Know how to design a Standard Cell (*StdCell*), then complete a StdCell *library* for full digital design flow.
 <br>
 Know how to integrate various designs, digital or analog alike, into a FullChip frame.
 
@@ -21,7 +21,7 @@ Participants <ins>must</ins> have **digital design** knowledge and know how to u
 <br>
 UEC students will study with the <ins>ROHM-180nm</ins> process (licensed via <a href="http://www.vdec.u-tokyo.ac.jp/">VDEC</a>).
 <br>
-Oversea participants will study with the <ins><a href="https://github.com/google/skywater-pdk">skywater-130nm</a></ins> process (open license).
+Oversea participants will study with the <ins><a href="https://github.com/google/skywater-pdk">skywater-130nm</a></ins> or <ins><a href="https://eda.ncsu.edu/freepdk/freepdk45/">openPDK45</a></ins> processes (open licenses).
 
 **About the design tools:**
 <br>
