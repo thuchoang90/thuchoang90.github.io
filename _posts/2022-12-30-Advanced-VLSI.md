@@ -74,8 +74,8 @@ custom cells. Explain the “rules” in standard cell design. Give an example o
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the full flow of digital design. Know how to use the full flow digital design template.
 
 **Lecture #8:**&nbsp;&nbsp;&nbsp;&nbsp;Analog Design Flow
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;N/a
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N/A
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the differences between analog and digital design flows. Show how to do the design rules checks, verifications, and post-layout simulation manually. Guide on creating other necessary files for FullChip integration.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the differences between analog and digital design flows. Know how to do the design rules check and other verifications manually on the layout. Finally, know how to create other necessary files for the FullChip integration.
 
 **Lecture #9:**&nbsp;&nbsp;&nbsp;&nbsp;IO-cell and FullChip Integration
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the FullChip integration task and explain the steps. Guide on using the FullChip integration template.
