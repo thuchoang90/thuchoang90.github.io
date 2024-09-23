@@ -30,9 +30,8 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 | 3 | Computer System on Arty-A7 |
 | 4 | Boot Sequence and Software |
 | 5 | Custom Hardware on Peripheral |
-| 6 | Peripheral Custom Hardware with External IOs |
-| 7 | Custom Hardware on ROCC |
-| 8 | Course Summary |
+| 6 | Custom Hardware on ROCC |
+| 7 | Course Summary |
 
 **Lecture #1:**&nbsp;&nbsp;&nbsp;&nbsp;RISC-V Introduction
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the structure of a typical computer system. Introduce RISC-V and RISC-V ISA. Giving materials and some RISC-V news.
@@ -54,14 +53,10 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Explain the GCD circuit and how to write a Scala wrapper for that circuit. Finally, learn how to write software to control the new hardware.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for custom hardware. Learn how to control the custom hardware in software.
 
-**Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Peripheral Custom Hardware with External IOs
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Repeat the previous work with custom hardware that has external IOs/pins.
-- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Practice the previous work. This time, learn to use external IOs/pins with your custom hardware.
-
-**Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware on ROCC
+**Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware on ROCC
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the ROCC. Reuse the GCD circuit, but this time attach it to the ROCC instead of the peripheral. Finally, learn how to control the ROCC module with software.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand that there are options for putting in custom hardware: peripheral or ROCC, each with a different purpose. Know how to do ROCC and control it with software.
 
-**Lecture #8:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
+**Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;A top-down review from ISA to software and hardware.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review all lectures related to RISC-V computer system.
