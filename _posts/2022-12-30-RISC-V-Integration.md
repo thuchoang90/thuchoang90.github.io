@@ -30,7 +30,7 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 | 3 | Computer System on Arty-A7 |
 | 4 | Boot Sequence and Software |
 | 5 | Custom Hardware on Peripheral |
-| 6 | Custom Hardware on ROCC |
+| 6 | Custom Hardware in ROCC |
 | 7 | Course Summary |
 
 **Lecture #1:**&nbsp;&nbsp;&nbsp;&nbsp;RISC-V Introduction
@@ -53,7 +53,7 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Explain the GCD circuit and how to write a Scala wrapper for that circuit. Finally, learn how to write software to control the new hardware.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for custom hardware. Learn how to control the custom hardware in software.
 
-**Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware on ROCC
+**Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware in ROCC
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the ROCC. Reuse the GCD circuit, but this time attach it to the ROCC instead of the peripheral. Finally, learn how to control the ROCC module with software.
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand that there are options for putting in custom hardware: peripheral or ROCC, each with a different purpose. Know how to do ROCC and control it with software.
 
