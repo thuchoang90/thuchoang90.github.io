@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="/jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="/jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2024-12-09T09:24:14+00:00</updated><id>/jekyll-theme-yat/feed.xml</id><title type="html">Thuctorial</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>thuchoang90</name></author><entry><title type="html">Advanced VLSI Design</title><link href="/jekyll-theme-yat/teaching/2022/12/30/Advanced-VLSI.html" rel="alternate" type="text/html" title="Advanced VLSI Design" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/Advanced-VLSI</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/Advanced-VLSI.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Understand the <strong>V</strong>ery <strong>L</strong>arge-<strong>S</strong>cale <strong>I</strong>ntegration circuit <em>(VLSI)</em> design flow.
+<br />
+Know how to design a Standard Cell (<em>StdCell</em>), then complete a StdCell <em>library</em> for full digital design flow.
+<br />
+Know how to integrate various designs, digital or analog alike, into a FullChip frame.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have <strong>digital design</strong> knowledge and know how to use <strong>Verilog</strong> <em>(or VHDL)</em> language.</p>
+
+<p><strong>About the PDK:</strong>
+<br />
+UEC students will study with the <ins>ROHM-180nm</ins> process (licensed via <a href="http://www.vdec.u-tokyo.ac.jp/">VDEC</a>).
+<br />
+Oversea participants will study with the <ins><a href="https://github.com/google/skywater-pdk">skywater-130nm</a></ins> or <ins><a href="https://eda.ncsu.edu/freepdk/freepdk45/">openPDK45</a></ins> processes (open licenses).</p>
+
+<p><strong>About the design tools:</strong>
+<br />
+UEC students will practice with a <ins>mixed script</ins> of Cadence, Synopsys, and Mentor Graphic (licensed via <a href="http://www.vdec.u-tokyo.ac.jp/">VDEC</a>).
+<br />
+For oversea participants, the oversea partner <strong>must</strong> provide the tool’s license. Depending on which license the oversea partner has <em>(Cadence or Synopsys, Mentor Graphic or not)</em>, we will provide the appropriate script.</p>
+
+<h3 id="course-list">Course List</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Lecture</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td>VLSI Introduction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td>Review MOSFET and Schematic</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td>Layout with Virtuoso</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td>Standard Cell Library</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td>Back-end Synthesis</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td>Back-end Place-and-Route</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td>Full Digital Design Flow</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td>Analog Design Flow</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9</td>
+      <td>IO-cell and FullChip Integration</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10</td>
+      <td>Course Summary</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Lecture #1:</strong>    VLSI Introduction</p>
+<ul>
+  <li><em>Description:</em>    Introduce the overall VLSI flow and show some VLSI applications. Explain digital design flow with an example. Explain necessary files when we design circuits. Finally, introduce EDA tools for VLSI design.</li>
+  <li><em>Purpose:</em>         Understand the overall VLSI flow. Distinguish between designing flow and manufacturing flow. Understand steps in digital design flow. Understand what files we need before designing circuits.</li>
+</ul>
+
+<p><strong>Lecture #2:</strong>    Review MOSFET and Schematic</p>
+<ul>
+  <li><em>Description:</em>    Briefly review MOSFET characteristics and Boolean functions. Show what needs to be done at the transistor-level optimization. Finally, show how to use tool for schematic design with simulation.</li>
+  <li><em>Purpose:</em>         Review the basic knowledge about MOSFET and Boolean algebra. Understand how transistor-level optimization is different with logic-gate-level optimization. Know how to use tool for schematic design.</li>
+</ul>
+
+<p><strong>Lecture #3:</strong>    Layout with Virtuoso</p>
+<ul>
+  <li><em>Description:</em>    Introduce stick diagram via examples, and then show how to planning with it. Guide on using tool for drawing layout of an inverter circuit. Finally, show how to use tool for design rules check, and then run post-layout simulation with script.</li>
+  <li><em>Purpose:</em>         Study about the usage of stick diagram in sketching layouts. Know how to use tool for drawing layout. Know how to check design rules and run post-layout simulation.</li>
+</ul>
+
+<p><strong>Lecture #4:</strong>    Standard Cell Library</p>
+<ul>
+  <li><em>Description:</em>    Introduce the cell-based method and explain the differences between standard and
+custom cells. Explain the “rules” in standard cell design. Give an example of a standard cell library, then explain each component.</li>
+  <li><em>Purpose:</em>         Understand the cell-based method. Understand the “rules” when designing a standard cell. Distinguish different components in a standard cell library, and understand which cell-type is for which purpose.</li>
+</ul>
+
+<p><strong>Lecture #5:</strong>    Back-end Synthesis</p>
+<ul>
+  <li><em>Description:</em>    Guide on how to create various library files from the layouts. Guide on using tool for synthesis. Guide on checking the synthesis results.</li>
+  <li><em>Purpose:</em>         Know how to create necessary files for a Standard Cell (StdCell) library from the existing layouts. Know how to use tool for synthesis.</li>
+</ul>
+
+<p><strong>Lecture #6:</strong>    Back-end Place-and-Route</p>
+<ul>
+  <li><em>Description:</em>    Guide on creating the necessary LEF files. Guide on using tool for Place-and-Route (PnR). Guide on checking the PnR results.</li>
+  <li><em>Purpose:</em>         Know how to create abstractions (LEF files) for layouts. Know how to use tool for Place-and-Route.</li>
+</ul>
+
+<p><strong>Lecture #7:</strong>    Full Digital Design Flow</p>
+<ul>
+  <li><em>Description:</em>    Explain the completed full digital design flow. Guide on using the full flow digital design template.</li>
+  <li><em>Purpose:</em>         Understand the full flow of digital design. Know how to use the full flow digital design template.</li>
+</ul>
+
+<p><strong>Lecture #8:</strong>    Analog Design Flow</p>
+<ul>
+  <li><em>Description:</em>    Explain the differences between analog and digital design flows. Show how to do the design rules checks, verifications, and post-layout simulation manually. Guide on creating other necessary files for FullChip integration.</li>
+  <li><em>Purpose:</em>         Understand the differences between analog and digital design flows. Know how to do the design rules check and other verifications manually on the layout. Finally, know how to create other necessary files for the FullChip integration.</li>
+</ul>
+
+<p><strong>Lecture #9:</strong>    IO-cell and FullChip Integration</p>
+<ul>
+  <li><em>Description:</em>    Introduce the FullChip integration task and explain the steps. Guide on using the FullChip integration template.</li>
+  <li><em>Purpose:</em>         Understand the task of FullChip integration and its steps. Know how to use the FullChip integration template.</li>
+</ul>
+
+<p><strong>Lecture #10:</strong>    Course Summary</p>
+<ul>
+  <li><em>Description:</em>    The CMOS characteristics are briefly reviewed and followed up with a guide to the schematic and layout with Virtuoso. Then, review all the steps of making a standard cell library and follow up with the detailed digital design flow and FullChip integration flow</li>
+  <li><em>Purpose:</em>         Review all lectures related to VLSI design flow.</li>
+</ul>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V-Courses" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">Hardware Design with CHISEL</title><link href="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-CHISEL.html" rel="alternate" type="text/html" title="Hardware Design with CHISEL" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/RISC-V-CHISEL</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-CHISEL.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Learn the <strong>Scala-CHISEL</strong> language and how to design a hardware circuit with it.
+<br />
+Learn how to create <ins>a new</ins> <strong>RISC-V computer system</strong> using <ins>open-source libraries</ins>.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have <strong>digital design</strong> knowledge and know how to use <strong>Verilog</strong> <em>(or VHDL)</em> language.</p>
+
+<h3 id="course-list">Course List</h3>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V-Courses" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">Cyber-security with RISC-V Computer System</title><link href="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-CyberSecurity.html" rel="alternate" type="text/html" title="Cyber-security with RISC-V Computer System" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/RISC-V-CyberSecurity</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-CyberSecurity.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Learn how to modify a <ins>RISC-V computer system</ins> for <strong>security purposes</strong>.
+<br />
+<strong>Examples:</strong> cryptographic accelerators, secure boot, side-channel attacks, <em>etc</em>.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have studied courses <a href="../../../../teaching/2022/12/30/RISC-V-Integration">01: RISC-V Computer System Integration</a>, <a href="../../../../teaching/2022/12/30/RISC-V-CHISEL">02: Hardware Design with CHISEL</a>, and <a href="../../../../teaching/2022/12/30/RISC-V-Linux">03: Linux on RISC-V</a>.</p>
+
+<p>Exercises in this course use the <a href="https://digilent.com/reference/programmable-logic/arty-a7/start">Arty-A7</a> FPGA board. Participants need to have an Arty-A7 to learn this course.
+<br />
+<em>Note:</em> both 35T and 100T versions of the FPGA are ok.</p>
+
+<h3 id="course-list">Course List</h3>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V-Courses" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">RISC-V Computer System Integration</title><link href="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Integration.html" rel="alternate" type="text/html" title="RISC-V Computer System Integration" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Integration</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Integration.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Learn how to add your <strong>custom hardware</strong> <em>(written in Verilog or VHDL)</em> to an existing RISC-V computer system.
+<br />
+Learn how to control and debug your custom hardware in <ins>software</ins> after regenerating the system.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have <strong>digital design</strong> knowledge and know how to use <strong>Verilog</strong> <em>(or VHDL)</em> language.
+<br />
+Participants <ins>don’t need</ins> to know the <strong>Scala-CHISEL</strong> language to learn this course.</p>
+
+<p>Exercises in this course use the <a href="https://digilent.com/reference/programmable-logic/arty-a7/start">Arty-A7</a> FPGA board. Participants need to have an Arty-A7 to learn this course.
+<br />
+<em>Note:</em> both 35T and 100T versions of the FPGA are ok.</p>
+
+<h3 id="course-list">Course List</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Lecture</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td>RISC-V Introduction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td>Creating Project with Chipyard</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td>Computer System on Arty-A7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td>Boot Sequence and Software</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td>Custom Hardware on Peripheral</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td>Custom Hardware in ROCC</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td>Course Summary</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Lecture #1:</strong>    RISC-V Introduction</p>
+<ul>
+  <li><em>Description:</em>    Explain the structure of a typical computer system. Introduce RISC-V and RISC-V ISA. Giving materials and some RISC-V news.</li>
+  <li><em>Purpose:</em>         To learn what is a computer system in general. To learn the idea of RISC-V and ISA. To know what RISC-V is capable of and what we can do with RISC-V.</li>
+</ul>
+
+<p><strong>Lecture #2:</strong>    Creating Project with Chipyard</p>
+<ul>
+  <li><em>Description:</em>    Introduce Chipyard library and explain its structure. Show how to git clone and make. Learn how to create a new Chisel project using this Chipyard library as a template.</li>
+  <li><em>Purpose:</em>         Know how to use the Chipyard library. Know how to create a new Chisel project using Chipyard template.</li>
+</ul>
+
+<p><strong>Lecture #3:</strong>    Computer System on Arty-A7</p>
+<ul>
+  <li><em>Description:</em>    Introduce the RISC-V computer system. Learn how to Git clone and make the system. Learn how to program with the Arty-A7 FPGA board. Learn how to change some of the system configurations.</li>
+  <li><em>Purpose:</em>         Get familiar with a complex RISC-V folder structure using Chipyard. Get used to the Arty-A7 FPGA board. Learn about system details and how to change some of the configurations.</li>
+</ul>
+
+<p><strong>Lecture #4:</strong>    Boot Sequence and Software</p>
+<ul>
+  <li><em>Description:</em>    Describe the typical boot flow of computer systems. Describe our system’s boot sequence with the default software. Learn how to change the default program with your custom codes.</li>
+  <li><em>Purpose:</em>         Learn the typical boot flow of computer systems. Understand the boot flow of our computer system. Learn how to make a custom program for our computer system.</li>
+</ul>
+
+<p><strong>Lecture #5:</strong>    Custom Hardware on Peripheral</p>
+<ul>
+  <li><em>Description:</em>    Explain the TileLink bus protocol and the peripheral’s memory-mapped communication. Explain the GCD circuit and how to write a Scala wrapper for that circuit. Finally, learn how to write software to control the new hardware.</li>
+  <li><em>Purpose:</em>         Know about the TitleLink protocol. Understand the memory-mapped communication in a computer system. Learn how to write a Scala wrapper for custom hardware. Learn how to control the custom hardware in software.</li>
+</ul>
+
+<p><strong>Lecture #6:</strong>    Custom Hardware in ROCC</p>
+<ul>
+  <li><em>Description:</em>    Explain the ROCC. Reuse the GCD circuit, but this time attach it to the ROCC instead of the peripheral. Finally, learn how to control the ROCC module with software.</li>
+  <li><em>Purpose:</em>         Understand that there are options for putting in custom hardware: peripheral or ROCC, each with a different purpose. Know how to do ROCC and control it with software.</li>
+</ul>
+
+<p><strong>Lecture #7:</strong>    Course Summary</p>
+<ul>
+  <li><em>Description:</em>    A top-down review from ISA to software and hardware.</li>
+  <li><em>Purpose:</em>         Review all lectures related to RISC-V computer system.</li>
+</ul>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V-Courses" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">Linux on RISC-V</title><link href="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Linux.html" rel="alternate" type="text/html" title="Linux on RISC-V" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Linux</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Linux.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Learn how to make a <strong>Linux</strong> image and <strong>boot</strong> your RISC-V computer system.
+<br />
+Then, learn to <strong>control</strong> your <ins>custom hardware</ins> in <strong>User mode</strong> after boot.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have studied course <a href="../../../../teaching/2022/12/30/RISC-V-Integration">01: RISC-V Computer System Integration</a>.
+<br />
+Participants <ins>don’t need</ins> to know the <strong>Scala-CHISEL</strong> language to learn this course.</p>
+
+<p>Exercises in this course use the <a href="https://digilent.com/reference/programmable-logic/arty-a7/start">Arty-A7</a> FPGA board. Participants need to have an Arty-A7 to learn this course.
+<br />
+<em>Note:</em> both 35T and 100T versions of the FPGA are ok.</p>
+
+<h3 id="course-list">Course List</h3>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V-Courses" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">Fresh Ubuntu machine setup for working with RISC-V</title><link href="/jekyll-theme-yat/tutorial/2022/09/30/Fresh-Ubuntu-setup.html" rel="alternate" type="text/html" title="Fresh Ubuntu machine setup for working with RISC-V" /><published>2022-09-30T00:00:00+00:00</published><updated>2022-09-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/tutorial/2022/09/30/Fresh-Ubuntu-setup</id><content type="html" xml:base="/jekyll-theme-yat/tutorial/2022/09/30/Fresh-Ubuntu-setup.html"><![CDATA[<h2 id="i-dependencies--proxy">I. Dependencies &amp; Proxy</h2>
+
+<p>To make <code class="language-plaintext highlighter-rouge">vi</code> more comfortable:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>vim
+<span class="nv">$ </span>vi ~/.vimrc
+</code></pre></div></div>
+
+<p>Then add this two lines below:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set </span>nocompatible
+syntax on
+</code></pre></div></div>
+
+<p>Update &amp; upgrade everything:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If your machine has proxy, replace the <span class="k">**</span>http://[address]:[port]<span class="k">**</span> with your proxy address:
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::http::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::https::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::ftp::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+
+<span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt upgrade
+</code></pre></div></div>
+
+<p>Need to install openjdk version 8:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>openjdk-8-jdk
+</code></pre></div></div>
+
+<p>Then install dependencies:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>curl git npm autoconf perl python3 make g++ flex bison ccache <span class="se">\</span>
+libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev libglib2.0-dev <span class="se">\</span>
+libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev libmpc-dev <span class="se">\</span>
+libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc libexpat-dev wget <span class="se">\</span>
+gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync cmake ninja-build <span class="se">\</span>
+expat libexpat1-dev tmux bzip2 lbzip2 libssl-dev screen expect makeself p7zip-full libusb-dev <span class="se">\</span>
+libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom libtinfo5 libpopt-dev help2man python3-venv
+
+For Ubuntu 20.04-LTS <span class="o">(</span>Focal Fossa<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>zlibc python llvm-9-dev clang-9 libclang-9-dev
+
+For Ubuntu 22.04-LTS <span class="o">(</span>Jammy Jellyfish<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python2 pkg-config llvm-dev clang libclang-dev
+</code></pre></div></div>
+
+<p>Update proxy if your machine has proxy:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Replace the <span class="k">**</span>http://[address]:[port]<span class="k">**</span> with your proxy address:
+
+<span class="k">for </span>wget
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'http_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'https_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'ftp_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+
+<span class="k">for </span>git
+<span class="nv">$ </span>git config <span class="nt">--global</span> https.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> http.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> ftp.proxy http://[address]:[port]
+
+<span class="k">for </span>npm
+<span class="nv">$ </span>npm config <span class="nb">set </span>proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>https-proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>ftp-proxy http://[address]:[port]/
+
+<span class="k">for </span>curl
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'proxy = "http://[address]:[port]"'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> ~/.curlrc
+</code></pre></div></div>
+
+<p>Finally, reboot the machine.</p>
+
+<hr />
+
+<h2 id="ii-risc-v-tools">II. RISC-V Tools</h2>
+
+<h3 id="ii-a-github">II. a) Github</h3>
+
+<p>When working with RISC-V, you will be using Github all the times. These are some tips for using Github:</p>
+
+<p>To git clone</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span>          <span class="c">#clone and keep the original name for the cloned folder</span>
+<span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span> &lt;name&gt;   <span class="c">#clone and change the name for the cloned folder</span>
+</code></pre></div></div>
+
+<p>To track your changes</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff                                        <span class="c">#list the differences of your folder</span>
+<span class="nv">$ </span>git diff &lt;branch-name&gt;                          <span class="c">#list the differences of your folder compare to another branch</span>
+<span class="nv">$ </span>git diff &lt;src-branch&gt;..&lt;des-branch&gt;             <span class="c">#list the differences between two branches</span>
+<span class="nv">$ </span>git diff &lt;commit-hash&gt;                          <span class="c">#list the differences of your folder compare to the old commit</span>
+<span class="nv">$ </span>git diff &lt;src-commit-hash&gt;..&lt;des-commit-hash&gt;   <span class="c">#list the differences between two commits</span>
+</code></pre></div></div>
+
+<p>To update your folder FROM github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull                  <span class="c">#pull from the current branch</span>
+<span class="nv">$ </span>git pull &lt;branch-name&gt;    <span class="c">#pull from another branch</span>
+</code></pre></div></div>
+
+<p>To update your folder TO github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status                          <span class="c">#to see changes for commit</span>
+<span class="nv">$ </span>git add &lt;file-name&gt; &lt;folder-name&gt;   <span class="c">#first, add every changes of yours</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"&lt;some message&gt;"</span>      <span class="c">#make a commit with &lt;some message&gt; attached</span>
+<span class="nv">$ </span>git push                            <span class="c">#this one will push to the current branch, OR</span>
+<span class="nv">$ </span>git push &lt;branch-name&gt;              <span class="c">#push to another branch</span>
+</code></pre></div></div>
+
+<p>To switch to another branch and commit</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout &lt;branch-name&gt;                    <span class="c">#switch to another branch</span>
+<span class="nv">$ </span>git checkout &lt;commit-hash&gt;                    <span class="c">#rollback to the old commit in the same branch</span>
+<span class="nv">$ </span>git checkout <span class="nt">-b</span> &lt;branch-name&gt; &lt;commit-hash&gt;   <span class="c">#switch to another branch and rollback to the old commit of that branch</span>
+</code></pre></div></div>
+
+<p>To patch file</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="o">&gt;</span> patch-file     <span class="c">#export current changes into a patch-file</span>
+<span class="nv">$ </span>git format-patch &lt;src branch or commit&gt;..&lt;des branch or commit&gt; <span class="nt">--stdout</span> <span class="o">&gt;</span> patch-file
+                            <span class="c">#export a patch-file from &lt;src branch or commit&gt; to &lt;des branch or commit&gt;</span>
+<span class="nv">$ </span>patch <span class="nt">-p1</span> &lt; patch-file    <span class="c">#update your folder with the patch-file</span>
+</code></pre></div></div>
+
+<p>To see the status of repo</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log
+<span class="nv">$ </span>git log <span class="nt">--oneline</span>
+<span class="nv">$ </span>git log <span class="nt">--all</span> <span class="nt">--decorate</span> <span class="nt">--oneline</span> <span class="nt">--graph</span>
+</code></pre></div></div>
+
+<h3 id="ii-b-scala--sbt">II. b) Scala &amp; sbt:</h3>
+
+<p>The source code for hardware is written in the Scala language.</p>
+
+<p>Scala is a language, Chisel is a library.
+Scala itself is not originally designed for “hardware coding.” But with the Chisel library attached to it, then we have a new way for “hardware coding.”</p>
+
+<p>Sbt is a Scala compiler.
+Sbt will compile Scala to Java. Then, executing Java will give us FIRRTL. And finally, a FIRRTL compiler will compile FIRRTL to the actual Verilog code.</p>
+
+<p>In short: Scala -&gt; Java -&gt; FIRRTL -&gt; Verilog (1st arrow is done by SBT, 2nd arrow is done by Java, and 3rd arrows is done by FIRRTL compiler)</p>
+
+<p>Now we need to install sbt. Follow the <a href="https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html">scala-sbt.org</a> to install.</p>
+
+<h3 id="ii-c-verilator">II. c) Verilator</h3>
+
+<p>Verilator is a cycle-accurate behavioral model, and it is used to simulate the Verilog codes at cycle level (like ModelSim).</p>
+
+<p>To install the Verilator:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stand where you want to <span class="nb">install </span>Verilator
+<span class="nv">$ </span>git clone http://git.veripool.org/git/verilator
+<span class="nv">$ </span><span class="nb">cd </span>verilator/
+<span class="nv">$ </span>git checkout stable
+<span class="nv">$ </span><span class="nb">unset </span>VERILATOR_ROOT    <span class="c">#For bash, unsetenv for csh</span>
+<span class="nv">$ </span>autoconf                <span class="c">#this is to create the ./configure script</span>
+<span class="nv">$ </span>./configure             <span class="c">#then run the script</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+<p>In general, follows the guide here to install: https://verilator.org/guide/latest/install.html</p>
+
+<h3 id="ii-d-qemu">II. d) QEMU</h3>
+
+<p>QEMU is an emulation tool, not a simulation tool. It does not simulate anything (.v codes, .scala codes, or .c codes, etc.).
+It emulates the behavioral that a correct CPU should behave.
+Reference link: <a href="https://github.com/qemu/qemu">github</a> and <a href="https://wiki.qemu.org/Documentation/Platforms/RISCV">wiki</a>.</p>
+
+<p>To install the RISC-V QEMU:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stand where you want to <span class="nb">install </span>RISC-V QEMU
+<span class="nv">$ </span>git clone https://github.com/qemu/qemu.git riscv-qemu
+<span class="nv">$ </span><span class="nb">cd </span>riscv-qemu/
+<span class="nv">$ </span>git checkout stable-8.1   <span class="c">#commit c95e38d3 on 22-Dec-2023</span>
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>../configure <span class="nt">--target-list</span><span class="o">=</span>riscv64-softmmu
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="ii-e-idea-intellij">II. e) Idea IntelliJ</h3>
+
+<p><strong>Idea IntelliJ</strong> is a GUI for sbt (which is a scala compiler).
+After download the <strong>Idea IntelliJ</strong> from <a href="https://www.jetbrains.com/idea/">jetbrains.com</a>, extract it and run it by <code class="language-plaintext highlighter-rouge">./idea.sh</code></p>
+
+<h3 id="ii-f-eclipse">II. f) Eclipse</h3>
+
+<p>Eclipse is an open-source IDE (mostly for C/C++) to build, to run, and to debug a software.</p>
+
+<p>Download the gnu-mcu-eclipse (linux version x86_64) from the <a href="https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases">website</a>.
+Then extract it and copy the folder to any place you want. The execution file is at: <code class="language-plaintext highlighter-rouge">./eclipse/eclipse</code></p>
+
+<h3 id="ii-g-openocd">II. g) OpenOCD</h3>
+
+<p>Open OCD (OCD: On-Chip Debugger) is a tool to control a CPU via a debugger, thus allowing us to load a program, and run or debug that program.</p>
+
+<p>To install &amp; make OpenOCD:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-openocd.git    <span class="c">#branch riscv commit 54e5d253 on 5-Mar-2020</span>
+<span class="nv">$ </span><span class="nb">cd </span>riscv-openocd/
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span>./bootstrap
+<span class="nv">$ </span>./configure <span class="nt">--enable-ftdi</span> <span class="nt">--enable-dummy</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Configuration files for RISC-V CPU: <a href="/assets/sources/other/riscv-openocd.cfg">riscv-openocd</a>
+You should download them and put them under the <code class="language-plaintext highlighter-rouge">riscv-openocd/</code> folder.</p>
+
+<h3 id="ii-h-vivado">II. h) Vivado</h3>
+
+<p><strong>Check your eth0 interface:</strong></p>
+
+<p>Type <code class="language-plaintext highlighter-rouge">$ ifconfig -a</code> to make sure that the network interface name is <code class="language-plaintext highlighter-rouge">eth0</code>.
+If not, the Vivado cannot recognize the license from the NAT interface.
+Then, the network interface name must be rename by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/default/grub
+
+Then add this line beneath those GRUB... lines:
+    <span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"net.ifnames=0 biosdevname=0"</span>
+
+Then:
+<span class="nv">$ </span><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg
+</code></pre></div></div>
+
+<p>Finally, reboot again for the computer to update the new ethernet interface.</p>
+
+<p><strong>Download and Install:</strong></p>
+
+<p>First, download the Vivado for Linux from <a href="https://www.xilinx.com/support/download.html">xilinx.com</a> (linux .bin file self extract). Then, cd to the downloaded .bin file and run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x Xilinx_....bin
+<span class="nv">$ </span>./Xilinx_....bin
+</code></pre></div></div>
+
+<p>The GUI for installation will be load. Choose to install the Vivado / Vivado ML Standard and wait for the installer to complete.</p>
+
+<p><strong>Install cable driver:</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>to Vivado installed folder:
+<span class="nv">$ </span><span class="nb">cd</span> ...Xilinx/Vivado/2022.1/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+<span class="nv">$ </span><span class="nb">sudo</span> ./install_drivers
+</code></pre></div></div>
+
+<h3 id="ii-i-quartus">II. i) Quartus</h3>
+
+<p>Just download from the <a href="http://fpgasoftware.intel.com/?edition=standard&amp;platform=linux&amp;download_manager=direct">fpgasoftware.intel.com</a> and install.
+Choose to download the Intel Quartus Prime Standard Edition.
+The Quartus execution file is located at <code class="language-plaintext highlighter-rouge">intelFPGA/21.1/quartus/bin/quartus</code></p>
+
+<p><strong>Install cable driver:</strong></p>
+
+<p>Create two 51- and 52- files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/51-usbblaster.rules
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/52-usbblaster.rules
+</code></pre></div></div>
+
+<p>And add these lines on both files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># USB-Blaster</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6001"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6002"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span> 
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6003"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>   
+
+<span class="c"># USB-Blaster II</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6010"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6810"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+</code></pre></div></div>
+
+<p>After that, you may:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>service udev restart
+</code></pre></div></div>
+
+<p>Or even reboot the computer if it’s still not recognize the cable.</p>
+
+<hr />
+
+<h2 id="iii-risc-v-toolchain">III. RISC-V Toolchain</h2>
+
+<p>Toolchain for RISC-V CPU. Reference <a href="https://github.com/riscv/riscv-gnu-toolchain">link</a>.</p>
+
+<h3 id="iii-a-git-clone">III. a) Git clone</h3>
+
+<p>Git clone the toolchain-making on github:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-gnu-toolchain
+<span class="nv">$ </span><span class="nb">cd </span>riscv-gnu-toolchain/
+</code></pre></div></div>
+
+<p>Current mainstream is gcc 11.1
+If you want to use older gcc (recommend 8.2 version):</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GCC 11.1:   <span class="nv">$ </span>git checkout 995778bd3315faddd709948190ca76fb10b43188
+GCC 10.2:   <span class="nv">$ </span>git checkout a838c5dfe91c3ef29218747fa266ce24ae2cf052
+GCC 10.1:   <span class="nv">$ </span>git checkout f13b418e9a2e90308b3881adc13413c933d363ee
+GCC 9.2:    <span class="nv">$ </span>git checkout 345f419e1f783139dd3353eb09bb3efaa000bad9
+GCC 8.3:    <span class="nv">$ </span>git checkout afcc8bc655d30cf6af054ac1d3f5f89d0627aa79
+GCC 8.2:    <span class="nv">$ </span>git checkout fa1fcaba7f883b20e14f1613bf4bb1028bec6e43
+GCC 8.1:    <span class="nv">$ </span>git checkout af5aa9f3fad527c14b3a8d3885d05d06931070ae
+GCC 7.2:    <span class="nv">$ </span>git checkout 686320c1fee0519f12117d0b6c9ef22b5fa4db16
+GCC 7.1:    <span class="nv">$ </span>git checkout dcda255e1f3d114e8d12b23c80b80382b51109d6
+GCC 6.1:    <span class="nv">$ </span>git checkout 39fb67144cd7228f72c00be330bc80e649105878
+GCC 5.3:    <span class="nv">$ </span>git checkout 105ffc3043c234d82b792b7e6950f286ff2bc65d
+GCC 5.2:    <span class="nv">$ </span>git checkout 28fccff586e77d73d1ef58d0e3f2d167065513b0
+GCC 5.1:    <span class="nv">$ </span>git checkout add1510c7b0f9cdf7e55ebd60d9744d2c740fe24
+GCC 4.9:    <span class="nv">$ </span>git checkout fe4c7d9583a3c06df08a7f013a901fd6a3456bfd
+</code></pre></div></div>
+
+<p>Finally:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+
+Note: <span class="k">if </span>it prints:
+    fatal: unable to connect to github.com:
+Then:
+<span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://"</span>.insteadOf git://
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+</code></pre></div></div>
+
+<h3 id="iii-b-config--make">III. b) Config &amp; Make</h3>
+
+<p>The configuration command format:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=[</span>path] <span class="nt">--enable-multilib</span>
+
+For example:
+<span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=</span>/opt/riscv <span class="nt">--enable-multilib</span>
+</code></pre></div></div>
+<p>For other onfigurations, follow: https://github.com/riscv-collab/riscv-gnu-toolchain</p>
+
+<p>Now you can <code class="language-plaintext highlighter-rouge">$ make</code> the toolchain by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>elf-toolchain <span class="o">(</span>or baremetal toolchain<span class="o">)</span> to run directly on the CPU <span class="o">(</span>like MCU<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+
+<span class="k">for </span>linux-toolchain to run on the Linux that run on the CPU <span class="o">(</span>like OS app<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make linux <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p><em>Note</em>: to re-make another configuration, it is better to <code class="language-plaintext highlighter-rouge">$ sudo make clean</code> beforehand.</p>]]></content><author><name>thuchoang90</name></author><category term="Tutorial" /><category term="RISC-V" /><summary type="html"><![CDATA[I. Dependencies &amp; Proxy]]></summary></entry><entry><title type="html">RISC-V Chip Collection</title><link href="/jekyll-theme-yat/project/2022/09/05/RISC-V-Chip.html" rel="alternate" type="text/html" title="RISC-V Chip Collection" /><published>2022-09-05T00:00:00+00:00</published><updated>2022-09-05T00:00:00+00:00</updated><id>/jekyll-theme-yat/project/2022/09/05/RISC-V-Chip</id><content type="html" xml:base="/jekyll-theme-yat/project/2022/09/05/RISC-V-Chip.html"><![CDATA[<style>
+  .chipimg {
+    float:center;
+    height:auto;
+    width:100%;
+    max-width:650px;
+  }
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .td {
+    text-align: center;
+  }
+</style>
+
+<h2 id="iv-crypto-processor-crypro-chips">IV. Crypto Processor (CryPro) Chips</h2>
+
+<h3 id="iv1-crypro-single-core-rocket-chip-with-tls-13-compatible-crypto-cores">IV.1) CryPro Single-core Rocket-chip with TLS-1.3 Compatible Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Feb. 2022</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IMAC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES-GCM, ChaCha20, Poly1305, AEAD, Ed/EC-DSA, HMAC-SHA2, RSA-1024, SHA3-512, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/CryPro-22-02-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/CryPro-22-02-chip.jpg" class="chipimg" /></p>
+
+<h2 id="iii-trusted-execution-environment-tee-hardware-chips">III. Trusted Execution Environment (TEE) Hardware Chips</h2>
+
+<h3 id="iii6-teehw-64-bit-dual-core-rocket-boom-with-secure-boot-sub-system-crypto-cores-and-trng">III.6) TEEHW 64-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>7.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2021</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1) + Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, Ed25519, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii5-teehw-32-bit-dual-core-rocket-boom-with-secure-boot-sub-system-crypto-cores-and-trng">III.5) TEEHW 32-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2021</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IMAC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1) + Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii4-teehw-64-bit-dual-core-rocket-chip-with-crypto-cores-and-trng">III.4) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores and TRNG</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Feb. 2021</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>2)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, Ed25519, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-02-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-02-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-02-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii3-teehw-64-bit-single-core-boom-with-crypto-cores">III.3) TEEHW 64-bit Single-core Boom with Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and Ed25519</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii2-teehw-32-bit-dual-core-rocket-boom-with-crypto-cores">III.2) TEEHW 32-bit Dual-core Rocket-Boom with Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IMAC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1) + Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and Ed25519</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii1-teehw-64-bit-dual-core-rocket-chip-with-crypto-cores">III.1) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jan. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>2)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and Ed25519</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-01-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-01-chip.jpg" class="chipimg" /></p>
+
+<h2 id="ii-vexriscv-chips">II. VexRiscv Chips</h2>
+
+<h3 id="ii2-vexriscv-rohm-chip">II.2) VexRiscv ROHM Chip</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>2.5<span>&#215;</span>2.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jan. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IM</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>VexRiscv (<span>&#215;</span>1)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-20-01-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-20-01-chip.jpg" class="chipimg" /></p>
+
+<h3 id="ii1-vexriscv-sotb-chip">II.1) VexRiscv SOTB Chip</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>SOTB-65nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>2<span>&#215;</span>1.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Aug. 2019</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IM</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>VexRiscv (<span>&#215;</span>1)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-19-08-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-19-08-chip.jpg" class="chipimg" /></p>
+
+<h2 id="i-freedom-chips">I. Freedom Chips</h2>
+
+<h3 id="i1-freedom-quad-core-rocket-chip">I.1) Freedom Quad-core Rocket-chip</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>7.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Oct. 2019</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>4)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/Freedom-19-10-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/Freedom-19-10-chip.jpg" class="chipimg" /></p>]]></content><author><name>thuchoang90</name></author><category term="Project" /><category term="Chip-Collection" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Keystone 64-bit build using CMake</title><link href="/jekyll-theme-yat/project/2020/11/12/Keystone-cmake-64.html" rel="alternate" type="text/html" title="Keystone 64-bit build using CMake" /><published>2020-11-12T00:00:00+00:00</published><updated>2020-11-12T00:00:00+00:00</updated><id>/jekyll-theme-yat/project/2020/11/12/Keystone-cmake-64</id><content type="html" xml:base="/jekyll-theme-yat/project/2020/11/12/Keystone-cmake-64.html"><![CDATA[<h2 id="i-keystone">I. Keystone</h2>
+
+<h3 id="i-a-using-their-prebuilt-toolchain-gcc-72">I. a) Using their prebuilt toolchain (gcc-7.2)</h3>
+
+<p><em>Note:</em> because their prebuilt toolchain is <code class="language-plaintext highlighter-rouge">RV64GC</code>, so for the <code class="language-plaintext highlighter-rouge">RV64IMAC</code> build please follow the guide in <a href="#i-b-using-our-local-toolchain-gcc-83-in-this-example">I. b) Using our local toolchain</a>.</p>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone <span class="nt">-b</span> dev https://github.com/keystone-enclave/keystone.git keystone-rv64gc
+  <span class="c">#commit e448fa32 on 19-Oct-2020</span>
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc/
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Download prebuilt toolchain:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh   <span class="c">#this will download the prebuilt toolchain (gcc-7.2) and set things up</span>
+<span class="nv">$ </span><span class="nb">.</span> source.sh       <span class="c">#update PATH</span>
+</code></pre></div></div>
+
+<p>Update sdk examples:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>sdk/
+<span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t[ ]*freemem_size[ ]*=[ ]*48/size_t freemem_size = 2/g'</span> examples/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span>make examples
+<span class="nv">$ </span><span class="nb">cd</span> ../../   <span class="c">#back outside</span>
+</code></pre></div></div>
+
+<p>Create build folder then make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span>cmake ..
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>make run-tests    <span class="c">#after this, a bbl.bin file is generated</span>
+</code></pre></div></div>
+
+<h3 id="i-b-using-our-local-toolchain-gcc-83-in-this-example">I. b) Using our local toolchain (gcc-8.3 in this example)</h3>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If build <span class="k">for </span>RV64GC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> local-tc-cmake https://github.com/thuchoang90/keystone.git keystone-rv64gc-local
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc-local/
+
+If build <span class="k">for </span>RV64IMAC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> local-tc-cmake https://github.com/thuchoang90/keystone.git keystone-rv64imac
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64imac/
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH.
+If build <span class="k">for </span>RV64GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64gc      <span class="c">#point to RV64GC toolchain</span>
+If build <span class="k">for </span>RV64IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64imac    <span class="c">#point to RV64IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin/:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Update submodule:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh   <span class="c">#this time, it won't download the prebuilt toolchain, just update the submodule</span>
+</code></pre></div></div>
+
+<p>Do the following if build for <code class="language-plaintext highlighter-rouge">RV64IMAC</code>, skip if build for <code class="language-plaintext highlighter-rouge">RV64GC</code>:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./patches/imac-patch.sh
+</code></pre></div></div>
+
+<p>Update sdk example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>sdk/
+<span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t[ ]*freemem_size[ ]*=[ ]*48/size_t freemem_size = 2/g'</span> examples/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span>make examples
+<span class="nv">$ </span><span class="nb">cd</span> ../../   <span class="c">#back outside</span>
+</code></pre></div></div>
+
+<p>Create build folder then make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span>cmake ..
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>make run-tests    <span class="c">#after this, a bbl.bin file is generated</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ii-keystone-demo">II. Keystone-demo</h2>
+
+<p>Check PATH:</p>
+<ul>
+  <li>Pair with the prebuilt-toolchain of Keystone: <em>(Note: prebuilt-toolchain is <code class="language-plaintext highlighter-rouge">RV64GC</code>, so if you want to build for <code class="language-plaintext highlighter-rouge">RV64IMAC</code> please follow the local-built-toolchain)</em></li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>          <span class="c">#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH</span>
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc/   <span class="c">#go to your keystone folder</span>
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/build   <span class="c">#point to the build folder</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Pair with the local-built-toolchain of Keystone:</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#go to your keystone folder</span>
+    <span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc-local/
+Or: <span class="nv">$ </span><span class="nb">cd </span>keystone-rv64imac/
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH
+If build <span class="k">for </span>RV64GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64gc      <span class="c">#point to RV64GC toolchain</span>
+If build <span class="k">for </span>RV64IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64imac    <span class="c">#point to RV64IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin/:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk/build
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/build   <span class="c">#point to the build folder</span>
+</code></pre></div></div>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ../    <span class="c">#go back outside</span>
+<span class="nv">$ </span>git clone <span class="nt">-b</span> cmake https://github.com/thuchoang90/keystone-demo.git keystone-demo-rv64
+</code></pre></div></div>
+
+<p>Make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>keystone-demo-rv64/
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span>./quick-start.sh    <span class="c">#type Y when asked</span>
+<span class="nv">$ </span><span class="nb">.</span> copybins.sh       <span class="c">#copy binaries to keystone overlay</span>
+</code></pre></div></div>
+
+<p>Update keystone-demo to keystone build folder:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="k">}</span>    <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make image                  <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<p><em>Note:</em> there is kind of a bug with <code class="language-plaintext highlighter-rouge">script/run-qemu.sh</code>, so do this to make sure that the <code class="language-plaintext highlighter-rouge">script/run-qemu.sh</code> will run smoother later:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>&lt;open a new terminal&gt;
+<span class="nv">$ </span><span class="nb">cd</span> &lt;to the keystone build folder&gt;
+<span class="nv">$ </span>./script/run-qemu.sh
+</code></pre></div></div>
+
+<p>Log in by the id of <code class="language-plaintext highlighter-rouge">root</code> and the password of <code class="language-plaintext highlighter-rouge">sifive</code>.
+Then exit qemu by <code class="language-plaintext highlighter-rouge">poweroff</code>.
+If it got stuck with <code class="language-plaintext highlighter-rouge">Power off</code> then just close the terminal.</p>
+
+<p>To update the new hash value to the <code class="language-plaintext highlighter-rouge">keystone-demo/</code> folder, do the followings:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Now go back with the original terminal ealier</span>
+<span class="nv">$ </span><span class="nb">cd</span> ../../keystone-demo-rv64/              <span class="c">#first, cd back to the keystone-demo directory</span>
+<span class="nv">$ </span>./scripts/get_attestation.sh ./include    <span class="c">#if it stuck at "Power off", just Ctrl+C</span>
+<span class="nv">$ </span><span class="nb">rm </span>build/trusted_client.riscv
+<span class="nv">$ </span>make <span class="nt">-C</span> build/ trusted_client.riscv
+<span class="nv">$ </span><span class="nb">.</span> copybins.sh
+  <span class="c">#after this step, the app is updated with the correct hash value and coppied to the keystone directory</span>
+
+<span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="k">}</span>    <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make image                  <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<p><em>Note:</em> sometimes <code class="language-plaintext highlighter-rouge">./scripts/get_attestation.sh ./include</code> encountered a problem like this:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spawn ./scripts/run-qemu.sh
+<span class="k">****</span> Running QEMU SSH on port 3000 <span class="k">****</span>
+qemu-system-riscv64: Could not <span class="nb">set </span>up host forwarding rule <span class="s1">'tcp::3000-:22'</span>
+expect: spawn <span class="nb">id </span>exp4 not open
+    <span class="k">while </span>executing
+<span class="s2">"expect "</span><span class="k">*</span>?assword<span class="s2">" { send "</span>sifive<span class="se">\r</span><span class="s2">" }"</span>
+Could not extract the SM_HASH!
+</code></pre></div></div>
+
+<p>Then just change the SSH port in <code class="language-plaintext highlighter-rouge">${KEYSTONE_BUILD_DIR}/scripts/get_attestation.sh</code> from:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HOST_PORT</span><span class="o">=</span><span class="k">${</span><span class="nv">HOST_PORT</span>:<span class="p">=</span><span class="s2">"</span><span class="k">$((</span><span class="m">3000</span> <span class="o">+</span> RANDOM <span class="o">%</span> <span class="m">3000</span><span class="k">))</span><span class="s2">"</span><span class="k">}</span><span class="p">;</span>
+</code></pre></div></div>
+<p>To any fix number like this for example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HOST_PORT</span><span class="o">=</span><span class="k">${</span><span class="nv">HOST_PORT</span>:<span class="p">=</span><span class="s2">"</span><span class="k">$((</span><span class="m">3222</span><span class="k">))</span><span class="s2">"</span><span class="k">}</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="iii-run-test-on-qemu">III. Run Test on QEMU</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> &lt;keystone folder&gt;                <span class="c">#go to your keystone folder</span>
+<span class="nv">$ </span><span class="nb">cd </span>build/                           <span class="c">#go to build folder</span>
+<span class="nv">$ </span>./scripts/run-qemu.sh
+  <span class="c">#Login by the id of 'root' and the password of 'sifive'</span>
+
+<span class="nv">$ </span>insmod keystone-driver.ko           <span class="c">#install driver</span>
+
+To <span class="k">do </span>the initial <span class="nb">test</span>:
+<span class="nv">$ </span><span class="nb">time</span> ./tests.ke                     <span class="c">#ok if 'Attestation report SIGNATURE is valid' is printed</span>
+
+To <span class="k">do </span>the keystone-demo <span class="nb">test</span>:
+<span class="nv">$ </span><span class="nb">cd </span>keystone-demo/                   <span class="c">#go to the keystone-demo test</span>
+<span class="nv">$ </span>./demo-server.riscv &amp;               <span class="c">#run host in localhost</span>
+<span class="nv">$ </span>./trusted_client.riscv localhost    <span class="c">#connect to localhost and test</span>
+</code></pre></div></div>
+<p>It is okay if the <strong>Attestation signature and enclave hash are valid</strong> is printed.
+Exit the security monitor by:	<code class="language-plaintext highlighter-rouge">$ q</code>. And exit the QEMU by: <code class="language-plaintext highlighter-rouge">$ poweroff</code>.</p>
+
+<p><em>Note:</em> sometimes <code class="language-plaintext highlighter-rouge">./scripts/run-qemu.sh</code> encountered a problem like this:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">****</span> Running QEMU SSH on port 5291 <span class="k">****</span>
+overriding secure boot ROM <span class="o">(</span>file: /home/ubuntu/Projects/Keystone/CMake/keystone-rv64gc-local/build/bootrom.build/bootrom.bin<span class="o">)</span>
+boot ROM size: 54061
+fdt dumped at 58157
+qemu-system-riscv64: <span class="nt">-device</span> virtio-blk-device,drive<span class="o">=</span>hd0: Failed to get <span class="s2">"write"</span> lock
+Is another process using the image <span class="o">[</span>/home/ubuntu/Projects/Keystone/CMake/keystone-rv64gc-local/build/buildroot.build/images/rootfs.ext2]?
+</code></pre></div></div>
+
+<p>Then just remake the image and rerun again:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make image <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>./scripts/run-qemu.sh
+</code></pre></div></div>]]></content><author><name>thuchoang90</name></author><category term="Project" /><category term="RISC-V" /><category term="TEE" /><summary type="html"><![CDATA[I. Keystone]]></summary></entry><entry><title type="html">Keystone 32-bit build using CMake</title><link href="/jekyll-theme-yat/project/2020/11/05/Keystone-cmake-32.html" rel="alternate" type="text/html" title="Keystone 32-bit build using CMake" /><published>2020-11-05T00:00:00+00:00</published><updated>2020-11-05T00:00:00+00:00</updated><id>/jekyll-theme-yat/project/2020/11/05/Keystone-cmake-32</id><content type="html" xml:base="/jekyll-theme-yat/project/2020/11/05/Keystone-cmake-32.html"><![CDATA[<h2 id="i-keystone">I. Keystone</h2>
+
+<p><em>Note:</em> because their prebuilt toolchain is <code class="language-plaintext highlighter-rouge">RV64GC</code>, so for the <code class="language-plaintext highlighter-rouge">RV32GC</code> or <code class="language-plaintext highlighter-rouge">RV32IMAC</code> build we’ll using our local toolchain only.</p>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If build <span class="k">for </span>RV32GC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> dev-rv32-cmake https://github.com/thuchoang90/keystone.git keystone-rv32gc
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv32gc/
+
+If build <span class="k">for </span>RV32IMAC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> dev-rv32-cmake https://github.com/thuchoang90/keystone.git keystone-rv32imac
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv32imac/
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH:
+If build <span class="k">for </span>RV32GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv32gc      <span class="c">#point to RV32GC toolchain</span>
+If build <span class="k">for </span>RV32IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv32imac    <span class="c">#point to RV32IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin/:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk
+</code></pre></div></div>
+
+<p>Update submodule:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh   <span class="c">#this time, it won't download the prebuilt toolchain, just update the submodule</span>
+
+<span class="nv">$ </span>make <span class="nt">-C</span> sdk       <span class="c">#make sdk</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">EYRIE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk/rts/eyrie
+<span class="nv">$ </span>./sdk/scripts/init.sh <span class="nt">--runtime</span> eyrie <span class="nt">--force</span>
+</code></pre></div></div>
+
+<p>Create build folder:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build/
+</code></pre></div></div>
+
+<p>Make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cmake .. <span class="nt">-DRISCV32</span><span class="o">=</span>y
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Build the keystone-test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g'</span> ../sdk/examples/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span>make run-tests    <span class="c">#after this, a bbl.bin file is generated</span>
+</code></pre></div></div>]]></content><author><name>thuchoang90</name></author><category term="Project" /><category term="RISC-V" /><category term="TEE" /><summary type="html"><![CDATA[I. Keystone]]></summary></entry><entry><title type="html">Keystone 32-bit build using Makefile</title><link href="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-32.html" rel="alternate" type="text/html" title="Keystone 32-bit build using Makefile" /><published>2020-07-24T00:00:00+00:00</published><updated>2020-07-24T00:00:00+00:00</updated><id>/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-32</id><content type="html" xml:base="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-32.html"><![CDATA[<h2 id="i-keystone">I. Keystone</h2>
+
+<p><em>Note:</em> because their prebuilt toolchain is <code class="language-plaintext highlighter-rouge">RV64GC</code>, so for the <code class="language-plaintext highlighter-rouge">RV32GC</code> or <code class="language-plaintext highlighter-rouge">RV32IMAC</code> build we’ll using our local-toolchain only.</p>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If build <span class="k">for </span>RV32GC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> dev-rv32 https://github.com/thuchoang90/keystone.git keystone-rv32gc
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv32gc/
+
+If build <span class="k">for </span>RV32IMAC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> dev-rv32 https://github.com/thuchoang90/keystone.git keystone-rv32imac
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv32imac/
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH:
+If build <span class="k">for </span>RV32GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv32gc
+If build <span class="k">for </span>RV32IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv32imac
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk
+</code></pre></div></div>
+
+<p>Update submodule:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh
+</code></pre></div></div>
+
+<p>Do the following if build for <code class="language-plaintext highlighter-rouge">RV32IMAC</code>, skip if build for <code class="language-plaintext highlighter-rouge">RV32GC</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ patch -p1 &lt; patches/rv32imac.patch
+</code></pre></div></div>
+
+<p>Finally, make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+
+<span class="nv">$ </span>make <span class="nt">-C</span> sdk   <span class="c">#make sdk</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">EYRIE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk/rts/eyrie
+<span class="nv">$ </span>./sdk/scripts/init.sh <span class="nt">--runtime</span> eyrie <span class="nt">--force</span>
+</code></pre></div></div>
+
+<p>Build the keystone-test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g'</span> ./sdk/examples/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span>./sdk/examples/tests/vault.sh
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>    <span class="c">#after this, a bbl.bin file is generated in hifive-work/bbl.bin</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ii-keystone-demo">II. Keystone-demo</h2>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#go to your keystone folder</span>
+      <span class="nv">$ </span><span class="nb">cd </span>keystone-rv32gc/
+Or:   <span class="nv">$ </span><span class="nb">cd </span>keystone-rv32imac/
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH:
+If build <span class="k">for </span>RV32GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv32gc      <span class="c">#point to RV32GC toolchain</span>
+If build <span class="k">for </span>RV32IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv32imac    <span class="c">#point to RV32IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk
+</code></pre></div></div>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ../    <span class="c">#go back outside</span>
+<span class="nv">$ </span>git clone <span class="nt">-b</span> dev-rv32 https://github.com/thuchoang90/keystone-demo.git keystone-demo-rv32
+</code></pre></div></div>
+
+<p>Make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>keystone-demo-rv32/
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span>./quick-start.sh    <span class="c">#type Y when asked</span>
+  <span class="c">#after this step, a new app is generated and coppied to the keystone directory</span>
+</code></pre></div></div>
+
+<p>Update keystone-demo to the <code class="language-plaintext highlighter-rouge">keystone/</code> folder:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_DIR</span><span class="k">}</span>    <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>        <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<p>However, it will be a false attestation. To update the new hash value, do the followings:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ../keystone-demo-rv32/   <span class="c">#first, cd back to the keystone-demo directory</span>
+<span class="nv">$ </span>make getandsethash
+<span class="nv">$ </span><span class="nb">rm </span>trusted_client.riscv
+<span class="nv">$ </span>make trusted_client.riscv
+<span class="nv">$ </span>make copybins
+  <span class="c">#after this step, the app is updated with the correct hash value and coppied to the keystone directory</span>
+
+<span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_DIR</span><span class="k">}</span>    <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>        <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="iii-run-test-on-qemu">III. Run Test on QEMU</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> &lt;keystone folder&gt;        <span class="c">#go to your keystone folder</span>
+<span class="nv">$ </span>./scripts/run-qemu.sh       <span class="c">#login by the id of 'root' and the password of 'sifive'</span>
+<span class="nv">$ </span>insmod keystone-driver.ko   <span class="c">#install driver</span>
+</code></pre></div></div>
+
+<p>To do the initial test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">time</span> ./tests/tests.ke
+</code></pre></div></div>
+<p>It is okay if the <strong>Attestation report SIGNATURE is valid</strong> is printed</p>
+
+<p>To do the keystone-demo test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>keystone-demo/                   <span class="c">#go to the keystone-demo test</span>
+<span class="nv">$ </span>./enclave-host.riscv &amp;              <span class="c">#run host in localhost</span>
+<span class="nv">$ </span>./trusted_client.riscv localhost    <span class="c">#connect to localhost and test</span>
+</code></pre></div></div>
+<p>It is okay if the <strong>Attestation signature and enclave hash are valid</strong> is printed.
+Exit the security monitor by: <code class="language-plaintext highlighter-rouge">$ q</code>. And exit the QEMU by:  <code class="language-plaintext highlighter-rouge">$ poweroff</code>.</p>]]></content><author><name>thuchoang90</name></author><category term="Project" /><category term="RISC-V" /><category term="TEE" /><summary type="html"><![CDATA[I. Keystone]]></summary></entry></feed>
