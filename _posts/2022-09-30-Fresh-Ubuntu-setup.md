@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fresh Ubuntu machine setup for working with RISC-V
+title: Fresh Ubuntu (20.04 & 22.04) setup for working with RISC-V
 categories: Tutorial
 tags: RISC-V
 ---
