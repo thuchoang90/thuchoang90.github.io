@@ -19,9 +19,7 @@ set nocompatible
 syntax on
 ```
 
-If your machine needs proxy, then: (don't do this if you don't have proxy)
-
-Replace the **http://[address]:[port]** with your proxy address:
+If your machine needs proxy, then (don't do this if you don't have proxy) replace the **http://[address]:[port]** with your proxy address:
 ```shell
 $ echo 'Acquire::http::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
 $ echo 'Acquire::https::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
@@ -41,12 +39,10 @@ python3-tomli libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex 
 texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake \
 libglib2.0-dev libslirp-dev minicom npm perl make g++ ccache net-tools wget gcc \
 patch vim-common device-tree-compiler uuid-dev unzip cpio rsync expat screen \
-expect makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang
+expect makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang verilator
 ```
 
-If your machine needs proxy, then: (don't do this if you don't have proxy)
-
-Replace the **http://[address]:[port]** with your proxy address:
+If your machine needs proxy, then (don't do this if you don't have proxy) replace the **http://[address]:[port]** with your proxy address:
 ```shell
 for wget
 $ echo 'http_proxy = http://[address]:[port]/' | sudo tee -a /etc/wgetrc
@@ -143,25 +139,7 @@ In short: Scala -> Java -> FIRRTL -> Verilog (1st arrow is done by SBT, 2nd arro
 
 Now we need to install sbt. Follow the [scala-sbt.org](https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html) to install.
 
-### II. c) Verilator
-
-Verilator is a cycle-accurate behavioral model, and it is used to simulate the Verilog codes at cycle level (like ModelSim).
-
-To install the Verilator:
-```shell
-stand where you want to install Verilator
-$ git clone http://git.veripool.org/git/verilator
-$ cd verilator/
-$ git checkout stable
-$ unset VERILATOR_ROOT    #For bash, unsetenv for csh
-$ autoconf                #this is to create the ./configure script
-$ ./configure             #then run the script
-$ make -j`nproc`
-$ sudo make install
-```
-In general, follows the guide here to install: https://verilator.org/guide/latest/install.html
-
-### II. d) QEMU
+### II. c) QEMU
 
 QEMU is an emulation tool, not a simulation tool. It does not simulate anything (.v codes, .scala codes, or .c codes, etc.).
 It emulates the behavioral that a correct CPU should behave.
@@ -180,19 +158,19 @@ $ ../configure --target-list=riscv64-softmmu
 $ make -j`nproc`
 ```
 
-### II. e) Idea IntelliJ
+### II. d) Idea IntelliJ
 
 **Idea IntelliJ** is a GUI for sbt (which is a scala compiler).
 After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by ```./idea.sh```
 
-### II. f) Eclipse
+### II. e) Eclipse
 
 Eclipse is an open-source IDE (mostly for C/C++) to build, to run, and to debug a software.
 
 Download the gnu-mcu-eclipse (linux version x86_64) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
 Then extract it and copy the folder to any place you want. The execution file is at: ```./eclipse/eclipse```
 
-### II. g) OpenOCD
+### II. f) OpenOCD
 
 Open OCD (OCD: On-Chip Debugger) is a tool to control a CPU via a debugger, thus allowing us to load a program, and run or debug that program.
 
@@ -210,7 +188,7 @@ $ sudo make install
 Configuration files for RISC-V CPU: [riscv-openocd](/assets/sources/other/riscv-openocd.cfg)
 You should download them and put them under the ```riscv-openocd/``` folder.
 
-### II. h) Vivado
+### II. g) Vivado
 
 **Check your eth0 interface:**
 
@@ -246,7 +224,7 @@ $ cd ...Xilinx/Vivado/2022.1/data/xicom/cable_drivers/lin64/install_script/insta
 $ sudo ./install_drivers
 ```
 
-### II. i) Quartus
+### II. h) Quartus
 
 Just download from the [fpgasoftware.intel.com](http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct) and install.
 Choose to download the Intel Quartus Prime Standard Edition.
