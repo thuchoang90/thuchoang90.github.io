@@ -150,7 +150,7 @@ To install the RISC-V QEMU:
 stand where you want to install RISC-V QEMU
 $ git clone https://github.com/qemu/qemu.git riscv-qemu
 $ cd riscv-qemu/
-$ git checkout stable-8.1   #commit c95e38d3 on 22-Dec-2023
+$ git checkout stable-9.2   #commit cac3fb44 on 8-Feb-2025
 $ git submodule update --init --recursive
 $ mkdir build
 $ cd build
@@ -158,19 +158,12 @@ $ ../configure --target-list=riscv64-softmmu
 $ make -j`nproc`
 ```
 
-### II. d) Idea IntelliJ
+### II. d) Visual Studio Code
 
-**Idea IntelliJ** is a GUI for sbt (which is a scala compiler).
-After download the **Idea IntelliJ** from [jetbrains.com](https://www.jetbrains.com/idea/), extract it and run it by ```./idea.sh```
+Let's download a GUI for our programming. In this case, is for sbt (which is a scala compiler).
+Just follow the guide from [code.visualstudio.com](https://code.visualstudio.com/docs/setup/linux).
 
-### II. e) Eclipse
-
-Eclipse is an open-source IDE (mostly for C/C++) to build, to run, and to debug a software.
-
-Download the gnu-mcu-eclipse (linux version x86_64) from the [website](https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases).
-Then extract it and copy the folder to any place you want. The execution file is at: ```./eclipse/eclipse```
-
-### II. f) OpenOCD
+### II. e) OpenOCD
 
 Open OCD (OCD: On-Chip Debugger) is a tool to control a CPU via a debugger, thus allowing us to load a program, and run or debug that program.
 
@@ -188,7 +181,7 @@ $ sudo make install
 Configuration files for RISC-V CPU: [riscv-openocd](/assets/sources/other/riscv-openocd.cfg)
 You should download them and put them under the ```riscv-openocd/``` folder.
 
-### II. g) Vivado
+### II. f) Vivado
 
 **Check your eth0 interface:**
 
@@ -224,7 +217,7 @@ $ cd ...Xilinx/Vivado/2022.1/data/xicom/cable_drivers/lin64/install_script/insta
 $ sudo ./install_drivers
 ```
 
-### II. h) Quartus
+### II. g) Quartus
 
 Just download from the [fpgasoftware.intel.com](http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct) and install.
 Choose to download the Intel Quartus Prime Standard Edition.
@@ -297,6 +290,7 @@ $ git submodule update --init --recursive
 Note: if it prints:
     fatal: unable to connect to github.com:
 Then:
+$ git config --global url."https://github.com/qemu".insteadOf git://git.qemu-project.org
 $ git config --global url."https://".insteadOf git://
 $ git submodule update --init --recursive
 ```
