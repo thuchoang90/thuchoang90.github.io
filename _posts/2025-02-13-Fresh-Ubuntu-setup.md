@@ -19,7 +19,7 @@ set nocompatible
 syntax on
 ```
 
-If your machine needs proxy, then (don't do this if you don't have proxy) replace the **http://[address]:[port]** with your proxy address:
+If your machine needs proxy, replace the **http://[address]:[port]** with your proxy address: (don't do this if you don't have proxy)
 ```shell
 $ echo 'Acquire::http::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
 $ echo 'Acquire::https::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
@@ -42,7 +42,7 @@ patch vim-common device-tree-compiler uuid-dev unzip cpio rsync expat screen exp
 makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang verilator libusb-1.0-0-dev
 ```
 
-If your machine needs proxy, then (don't do this if you don't have proxy) replace the **http://[address]:[port]** with your proxy address:
+If your machine needs proxy, replace the **http://[address]:[port]** with your proxy address: (don't do this if you don't have proxy)
 ```shell
 for wget
 $ echo 'http_proxy = http://[address]:[port]/' | sudo tee -a /etc/wgetrc
@@ -160,7 +160,7 @@ $ make -j`nproc`
 
 ### II. d) Visual Studio Code
 
-Let's download a GUI for our programming. In this case, is for sbt (which is a scala compiler).
+Let's download a GUI for our programming.
 Just follow the guide from [code.visualstudio.com](https://code.visualstudio.com/docs/setup/linux).
 
 ### II. e) OpenOCD
@@ -209,24 +209,30 @@ Finally, reboot again for the computer to update the new ethernet interface.
 
 First, download the Vivado for Linux from [xilinx.com](https://www.xilinx.com/support/download.html) (linux .bin file self extract). Then, cd to the downloaded .bin file and run:
 ```shell
-$ chmod +x Xilinx_....bin
-$ ./Xilinx_....bin
+$ chmod +x FPGAs_....bin
+$ ./FPGAs_....bin
 ```
 
-The GUI for installation will be load. Choose to install the Vivado / Vivado ML Standard and wait for the installer to complete.
+The GUI for installation will be load. Choose to install the **Vivado** and then **Vivado ML Standard** and wait for the installer to complete.
 
 **Install cable driver:**
 ```shell
 cd to Vivado installed folder:
-$ cd ...Xilinx/Vivado/2022.1/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+$ cd ...Xilinx/Vivado/2024.2/data/xicom/cable_drivers/lin64/install_script/install_drivers/
 $ sudo ./install_drivers
 ```
 
 ### II. g) Quartus
 
 Just download from the [fpgasoftware.intel.com](http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct) and install.
-Choose to download the Intel Quartus Prime Standard Edition.
-The Quartus execution file is located at ```intelFPGA/21.1/quartus/bin/quartus```
+Choose to download the **Quartus Prime Standard Edition**.
+Similarly, cd to the downloaded .bin file and run:
+```shell
+$ chmod +x qinst-....bin
+$ ./qinst-....bin
+```
+
+The Quartus execution file is located at ```intelFPGA/23.1std/quartus/bin/quartus```
 
 **Install cable driver:**
 
