@@ -19,44 +19,35 @@ set nocompatible
 syntax on
 ```
 
-Update & upgrade everything:
-```shell
-If your machine has proxy, replace the **http://[address]:[port]** with your proxy address:
+If your machine needs proxy, then: (don't do this if you don't have proxy)
 
+Replace the **http://[address]:[port]** with your proxy address:
+```shell
 $ echo 'Acquire::http::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
 $ echo 'Acquire::https::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
 $ echo 'Acquire::ftp::proxy "http://[address]:[port]";' | sudo tee -a /etc/apt/apt.conf
+```
 
+Update & upgrade everything:
+```shell
 $ sudo apt update
 $ sudo apt upgrade
 ```
 
-Need to install openjdk version 8:
+Install dependencies:
 ```shell
-$ sudo apt install openjdk-8-jdk
+$ sudo apt-get install autoconf automake autotools-dev curl python3 python3-pip \
+python3-tomli libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex \
+texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake \
+libglib2.0-dev libslirp-dev minicom npm perl make g++ ccache net-tools wget gcc \
+patch vim-common device-tree-compiler uuid-dev unzip cpio rsync expat screen \
+expect makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang
 ```
 
-Then install dependencies:
-```shell
-$ sudo apt install curl git npm autoconf perl python3 make g++ flex bison ccache \
-libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev libglib2.0-dev \
-libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev libmpc-dev \
-libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc libexpat-dev wget \
-gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync cmake ninja-build \
-expat libexpat1-dev tmux bzip2 lbzip2 libssl-dev screen expect makeself p7zip-full libusb-dev \
-libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom libtinfo5 libpopt-dev help2man python3-venv
+If your machine needs proxy, then: (don't do this if you don't have proxy)
 
-For Ubuntu 20.04-LTS (Focal Fossa):
-$ sudo apt install zlibc python llvm-9-dev clang-9 libclang-9-dev
-
-For Ubuntu 22.04-LTS (Jammy Jellyfish):
-$ sudo apt install python2 pkg-config llvm-dev clang libclang-dev
-```
-
-Update proxy if your machine has proxy:
-```shell
 Replace the **http://[address]:[port]** with your proxy address:
-
+```shell
 for wget
 $ echo 'http_proxy = http://[address]:[port]/' | sudo tee -a /etc/wgetrc
 $ echo 'https_proxy = http://[address]:[port]/' | sudo tee -a /etc/wgetrc
