@@ -39,7 +39,8 @@ python3-tomli libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex 
 texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake \
 libglib2.0-dev libslirp-dev minicom npm perl make g++ ccache net-tools wget gcc \
 patch vim-common device-tree-compiler uuid-dev unzip cpio rsync expat screen expect \
-makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang verilator libusb-1.0-0-dev
+makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang verilator \
+libusb-1.0-0-dev libtool-bin help2man
 ```
 
 If your machine needs proxy, replace the **http://[address]:[port]** with your proxy address: (don't do this if you don't have proxy)
