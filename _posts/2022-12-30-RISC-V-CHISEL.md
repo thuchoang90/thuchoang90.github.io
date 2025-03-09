@@ -2,7 +2,7 @@
 layout: post
 title: "Hardware Design with CHISEL"
 categories: Teaching
-tags: RISC-V-Courses
+tags: RISC-V Courses Chisel
 ---
 
 ### Core Knowledge
