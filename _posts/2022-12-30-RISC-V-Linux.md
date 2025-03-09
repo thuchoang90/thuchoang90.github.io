@@ -2,7 +2,7 @@
 layout: post
 title: "Linux on RISC-V"
 categories: Teaching
-tags: RISC-V-Courses
+tags: RISC-V Courses Linux
 ---
 
 ### Core Knowledge
