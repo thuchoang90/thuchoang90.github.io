@@ -2,7 +2,7 @@
 layout: post
 title: "FIC application: auto-exposure histogram equalization camera"
 categories: Project
-tags: Image-Processing
+tags: Image-Processing FPGA
 ---
 <style>
   .container {
