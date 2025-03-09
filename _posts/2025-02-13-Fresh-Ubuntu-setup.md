@@ -2,7 +2,7 @@
 layout: post
 title: Fresh Ubuntu (24.04) setup for working with RISC-V
 categories: Tutorial
-tags: RISC-V
+tags: RISC-V Linux tutorial
 ---
 
 ## I. Dependencies & Proxy
