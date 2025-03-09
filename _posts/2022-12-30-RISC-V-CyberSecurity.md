@@ -2,7 +2,7 @@
 layout: post
 title: "Cyber-security with RISC-V Computer System"
 categories: Teaching
-tags: RISC-V-Courses
+tags: RISC-V Courses Cyber-security
 ---
 
 ### Core Knowledge
