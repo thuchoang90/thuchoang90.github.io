@@ -2,7 +2,7 @@
 layout: post
 title: "Keystone 32-bit build using Makefile"
 categories: Project
-tags: RISC-V TEE
+tags: RISC-V TEE Linux
 ---
 
 ## I. Keystone
