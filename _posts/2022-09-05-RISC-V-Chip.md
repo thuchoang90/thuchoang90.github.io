@@ -2,7 +2,7 @@
 layout: post
 title: "RISC-V Chip Collection"
 categories: Project
-tags: Chips
+tags: Chips VLSI RISC-V
 ---
 
 <style>
