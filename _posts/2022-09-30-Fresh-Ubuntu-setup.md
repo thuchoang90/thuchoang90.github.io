@@ -2,7 +2,7 @@
 layout: post
 title: Fresh Ubuntu (20.04 & 22.04) setup for working with RISC-V
 categories: Tutorial
-tags: RISC-V
+tags: RISC-V Linux Tutorial
 ---
 
 ## I. Dependencies & Proxy
