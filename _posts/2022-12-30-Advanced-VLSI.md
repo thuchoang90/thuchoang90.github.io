@@ -2,7 +2,7 @@
 layout: post
 title: "Advanced VLSI Design"
 categories: Teaching
-tags: RISC-V-Courses
+tags: RISC-V Courses VLSI
 ---
 
 ### Core Knowledge
