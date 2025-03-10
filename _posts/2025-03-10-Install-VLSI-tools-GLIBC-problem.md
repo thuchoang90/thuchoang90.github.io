@@ -55,13 +55,15 @@ According to this example, the minimum required GLIBC version is `2.11` .<br/>
 
 From the website, we have `2.41` (*the latest*), `2.39` (*Ubuntu24.04*), `2.35` (*Ubuntu22.04*), `2.31` (*Ubuntu20.04*), `2.27` (*Ubuntu18.04*), and so on.
 
-Let's say, I know my tool was released around 2020. -> So, `2.31` (*Ubuntu20.04*) sounds reasonable. Let's do that first. -> And if that doesn't work, we'll try `2.27` (*Ubuntu18.04*), and so on.<br/>
+Let's say, I know my tool was released around 2020. -> So, `2.31` (*Ubuntu20.04*) sounds reasonable. Let's do that first.<br/>
+-> And if that doesn't work, we'll try `2.27` (*Ubuntu18.04*), and so on.
 
 Just note which version you want to get; you don't need to download anything (yet).
 
 - **Step 5:** Download the Ubuntu .iso image from the website: [https://ubuntu.com/download/alternative-downloads](https://ubuntu.com/download/alternative-downloads)
 
-From the previous step, we have already chosen *Ubuntu20.04* (with GLIBC version `2.31`). -> So let's download that **Ubuntu 20.04LTS** .iso image.
+From the previous step, we have already chosen *Ubuntu20.04* (with GLIBC version `2.31`).<br/>
+-> So let's download that **Ubuntu 20.04LTS** .iso image.
 
 To mount the .iso file, usually just double-click is enough.<br/>
 Then, go to the .iso mounted folder and navigate to the `casper/` folder.<br/>
@@ -75,11 +77,12 @@ Finally, let's copy that data to our system in `/usr/`; let's say, `/usr/glibc-2
 ```shell
    $ sudo cp -rf ~/Downloads/unsquashfs/usr /usr/glibc-2.31
 ```
-After this, you can now run the tool with overridden `$PATH` and `$LD_LIBRARY_PATH` .
+After this, you can now run the tool with the overridden `$PATH` and `$LD_LIBRARY_PATH` .
 
 - **Step 6:** Before running the tool with `/usr/glibc-2.31/` , we need to modify the **ELF file**'s *linker-PATH*.
 
-Because we're going to mess with the **ELF file**, it's better to save the *original* **ELF file** to *another* **ELF file**. For example: `$ cp ./finesim ./finesim.bak`
+Because we're going to mess with the **ELF file**, it's better to save the *original* **ELF file** to *another* **ELF file**.<br/>
+For example: `$ cp ./finesim ./finesim.bak`
 
 To change the **ELF file**'s *linker-PATH*, use the command:
 ```shell
@@ -91,7 +94,8 @@ For example:
 ```
 <ins>*Note:*</ins> This `patchelf --set-interpreter` must point to the *executable* **ELF file**, *NOT* the **run rile**.
 
-- **Step 7:** Finally, we can run the tool with `/usr/glibc-2.31/` . To do that, simply run the *executable* **ELF file** (*NOT* the **run file**) with overridden `$PATH` and `$LD_LIBRARY_PATH`, like this:
+- **Step 7:** Finally, we can run the tool with `/usr/glibc-2.31/` .<br/>
+To do that, simply run the *executable* **ELF file** (*NOT* the **run file**) with overridden `$PATH` and `$LD_LIBRARY_PATH`, like this:
 ```shell
    $ PATH=/usr/glibc-2.31/bin LD_LIBRARY_PATH=/usr/glibc-2.31/lib/x86_64-linux-gnu ./finesim
 ```
@@ -106,7 +110,8 @@ Now, the error looks like this:
    ./finesim: /usr/glibc-2.31/lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /lib/libncurses.so.5)
 ```
 It is working. The `libc.so.6` is already at the correct location at `/usr/glibc-2.31/lib/x86_64-linux-gnu/` . So, it's not about the `libc.so.6` .<br/>
--> In the above example, `libncurses.so.5` is the one that is missing in the `/usr/glibc-2.31/` folder.<br/>
+-> In the above example, `libncurses.so.5` is the one that is missing in the `/usr/glibc-2.31/` folder.
+
 To deal with the missing .so files, follow the next step.
 
 - **Step 8:** For the missing .so files in the `/usr/glibc-2.31/lib/x86_64-linux-gnu/` , first, let's do a quick check and search for a similar name in the `/usr/glibc-2.31/` (*NOT* in the `lib/x86_64-linux-gnu/`) folder:
@@ -114,8 +119,7 @@ To deal with the missing .so files, follow the next step.
    $ cd /usr/glibc-2.31/
    $ find . -name "<name>.so*"
 ```
-Sometimes, the missing .so files are still in the `/usr/glibc-2.31/` , just not in the `lib/x86_64-linux-gnu/` one.
-
+Sometimes, the missing .so files are still in the `/usr/glibc-2.31/` , just not in the `lib/x86_64-linux-gnu/` one.<br/>
 If that is the case, simply create a symbolic link in the `/usr/glibc-2.31/lib/x86_64-linux-gnu/` .<br/>
 The command: `$ sudo ln -s <source file> <destination file>`
 
@@ -123,11 +127,13 @@ If a similar .so file is not found in `/usr/glibc-2.31/` , let's check the apt p
 
 - **Step 9:** Go to this website: [https://packages.ubuntu.com/](https://packages.ubuntu.com/)
 
-Select the *released* Ubuntu version you want to download. In my case, it is **focal (20.04LTS)** because I chose the GLIBC version `2.31` from **Ubuntu20.04** in *step 4*.
+Select the *released* Ubuntu version you want to download.<br/>
+In my case, it is **focal (20.04LTS)** because I chose the GLIBC version `2.31` from **Ubuntu20.04** in *step 4*.
 
 Scroll down and hit **"All packages"** to display everything (this will take a while to load).
 
-Like the error shown in the example (in *step 7*), the package I want to download is `libncurses.so.5` . -> So, I search for the name `libncurses5` .<br/>
+Like the error shown in the example (in *step 7*), the package I want to download is `libncurses.so.5` .<br/>
+-> So, I search for the name `libncurses5` .<br/>
 -> For `libncurses5` , I found **"libncurses5 (6.2-0ubuntu2.1 ..."** seems good. -> So, let's take it as an example.
 
 When you go to the package page, you can see the **"[list of files]"** to confirm that the file you're looking for is there.<br/>
@@ -160,8 +166,7 @@ For example:
 ```shell
    $ find libncurses5/ -name "*.so*" -exec sudo cp '{}' /usr/glibc-2.31/lib/x86_64-linux-gnu/ ';'
 ```
-That's done. Let's try to run the tool again.
-
+That's done. Let's try to run the tool again.<br/>
 This time, it gets a new error:
 ```shell
    ./finesim: /lib/libtinfo.so.5: version `NCURSES_TINFO_5.6.20061217' not found (required by /usr/glibc-2.31/lib/x86_64-linux-gnu/libncurses.so.5)
@@ -180,8 +185,7 @@ a) The easiest way is to modify the `~/.bashrc` , put in `alias` which records t
 -> This is the fastest way. However, it could miss some environment settings set up by the **run file**.
 
 b) Therefore, the safe way is to modify the **run file** itself.<br/>
-Because the **run file** is actually a **.sh file**, it will eventually call the *executable* **ELF file** somewhere in its content.
-
+Because the **run file** is actually a **.sh file**, it will eventually call the *executable* **ELF file** somewhere in its content.<br/>
 -> We have to find those places and replace them `<command>` with `PATH=... LD_LIBRARY_PATH=... <command>`.<br/>
 This takes more effort but is the safest option.
 
@@ -274,22 +278,20 @@ e) Select `C compiler`<br/>
 -> Pick the one that you choose in the previous step.<br/>
 -> `Exit` back outside.
 
-Done, `Save` and `Exit` the GUI.
-
-Final step, build it:
+Done, `Save` and `Exit` the GUI.<br/>
+Final step, build it: *(this gonna take a while)*
 ```shell
    $ env -u LD_LIBRARY_PATH time ./ct-ng build CT_JOBS=`nproc`
 ```
-This gonna take a while.
 
-- **Step 7:** When the build is completed, the files you want are in: `install/x86_64-unknown-linux-gnu/x86_64-unknown-linux-gnu/sysroot`
+- **Step 7:** When the build is completed,<br/>
+the files you want are in: `install/x86_64-unknown-linux-gnu/x86_64-unknown-linux-gnu/sysroot`
 
 Let's copy them to, like, `/usr/glibc-2.31` :
 ```shell
    $ sudo cp -rf install/x86_64-unknown-linux-gnu/x86_64-unknown-linux-gnu/sysroot /usr/glibc-2.31
 ```
-Now, you can run your tool with the overridden `$PATH` and `$LD_LIBRARY_PATH` .
-
+Now, you can run your tool with the overridden `$PATH` and `$LD_LIBRARY_PATH` .<br/>
 <ins>*Note:*</ins> If you want to rebuild the **crosstool-ng**, just remove the `install/` and `.build/` folders and start again.
 
 The rest of this solution repeats the same *steps 6 to 10* as in the <ins>other solution</ins>, with some differences:
@@ -298,6 +300,6 @@ a) The *linker-PATH* `ld-linux-x86-64.so.2` is in the `/usr/glibc-2.31/lib/` fol
 
 b) For the `$PATH` and `$LD_LIBRARY_PATH` , they should point to:
 ```shell
-   PATH=/usr/test/usr/bin          #(instead of PATH=/usr/glibc-2.31/bin as in the other solution)
-   LD_LIBRARY_PATH=/usr/test/lib   #(instead of LD_LIBRARY_PATH=/usr/glibc-2.31/lib/x86_64-linux-gnu as in the other solution)
+   PATH=/usr/test/usr/bin          #(instead of /usr/glibc-2.31/bin as in the other solution)
+   LD_LIBRARY_PATH=/usr/test/lib   #(instead of /usr/glibc-2.31/lib/x86_64-linux-gnu as in the other solution)
 ```
