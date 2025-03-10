@@ -194,22 +194,19 @@ If the tool shows errors (mostly related to those .so files) and does not open, 
 Fix the missing or wrong `<name>.so.<number>` file:
 
 - **Step 1:** Check if the `<name>.so.<number>` or the `<name>.so` in the system or not.<br/>
-The check command: `$ whereis <name>.so.<number>`<br/>
-or: `$ whereis <name>.so`<br/>
--> If not found, proceed to *step 2*.</br>
+The check command: `$ whereis <name>.so.<number>` or: `$ whereis <name>.so`<br/>
+-> If not found, proceed to *step 2*.<br/>
 -> If found, create a symbolic link and link it back to the `/usr/lib/` folder.<br/>
 The link command: `$ ln -s /path/to/filename /usr/lib/<name>.so.<number>`
 
 - **Step 2:** If the `<name>.so.<number>` or `<name>.so` file cannot be found by `whereis`, then try to `apt install` it first.<br/>
-The apt install command: `$ sudo apt-get install <name>`<br/>
-or maybe: `$ sudo apt-get install <name><number>`<br/>
+The apt install command: `$ sudo apt-get install <name>` or: `$ sudo apt-get install <name><number>`<br/>
 <ins>*Note:*</ins> The `<name>` is usually all <ins>de-capitalized</ins>, and <ins>NO dot</ins> `.` in between the `<name>` and the `<number>` .<br/>
 -> If the apt package or the exact version is unavailable, proceed to *step 3*.
 
-- **Step 3:** In this step, you have to download the `<name>.so.<number>` manually.<br/>
-Go to this website: [https://pkgs.org/](https://pkgs.org/)<br/>
-Search for the full name of `<name>.so.<number>` .<br/>
-Pick either **Solus** or **FreeBSD/NetBSD**. Beware of the 32-bit or 64-bit version, pick the one you need. Download it, untar it.<br/>
+- **Step 3:** In this step, you have to download the `<name>.so.<number>` manually. Go to this website: [https://pkgs.org/](https://pkgs.org/)<br/>
+Search for the full name of `<name>.so.<number>` . Pick either **Solus** or **FreeBSD/NetBSD**.<br/>
+Beware of the 32-bit or 64-bit version, pick the one you need. Download it, untar it.<br/>
 Beware of the link files, after untar, always use `ll` to check, not `ls` -> So you can see where the link is going to.<br/>
 Copy only the content file (NOT the link file) to the `/usr/lib/` folder.<br/>
 Then, go to the `/usr/lib/` folder and re-create the link file by: `$ sudo ln -s <raw file> <name>.so.<number>` .
