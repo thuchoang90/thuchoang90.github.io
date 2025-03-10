@@ -51,7 +51,7 @@ According to this example, the minimum required GLIBC version is `2.11` .<br/>
 <ins>*Note 2:*</ins> Remember, you checked only the *executable* **ELF file**. However, there may be more run/lib files behind, and they could request a more recent version of GLIBC.<br/>
 -> So, don't downgrade it too far, and if you have to upgrade it, upgrade only the requested version (not the latest).
 
-- **Step 4:** You need to decide which GLIBC version you want. Check the source: https://launchpad.net/ubuntu/+source/glibc/
+- **Step 4:** You need to decide which GLIBC version you want. Check the source: [https://launchpad.net/ubuntu/+source/glibc/](https://launchpad.net/ubuntu/+source/glibc/)
 
 From the website, we have `2.41` (*the latest*), `2.39` (*Ubuntu24.04*), `2.35` (*Ubuntu22.04*), `2.31` (*Ubuntu20.04*), `2.27` (*Ubuntu18.04*), and so on.
 
@@ -59,7 +59,7 @@ Let's say, I know my tool was released around 2020. -> So, `2.31` (*Ubuntu20.04*
 
 Just note which version you want to get; you don't need to download anything (yet).
 
-- **Step 5:** Download the Ubuntu .iso image from the website: https://ubuntu.com/download/alternative-downloads
+- **Step 5:** Download the Ubuntu .iso image from the website: [https://ubuntu.com/download/alternative-downloads](https://ubuntu.com/download/alternative-downloads)
 
 From the previous step, we have already chosen *Ubuntu20.04* (with GLIBC version `2.31`). -> So let's download that **Ubuntu 20.04LTS** .iso image.
 
@@ -121,7 +121,7 @@ The command: `$ sudo ln -s <source file> <destination file>`
 
 If a similar .so file is not found in `/usr/glibc-2.31/` , let's check the apt package in the next step.
 
-- **Step 9:** Go to this website: https://packages.ubuntu.com/
+- **Step 9:** Go to this website: [https://packages.ubuntu.com/](https://packages.ubuntu.com/)
 
 Select the *released* Ubuntu version you want to download. In my case, it is **focal (20.04LTS)** because I chose the GLIBC version `2.31` from **Ubuntu20.04** in *step 4*.
 
@@ -226,8 +226,8 @@ So, we have the following information: *Linux* `6.11.0`, *Binutils* `2.42`, and 
 -> Note all of that, we're moving to the actual action.
 
 - **Step 6:** We'll use the **crosstool-ng** tool.<br/>
-Its GibHub: https://github.com/crosstool-ng/crosstool-ng<br/>
-and its docs: https://crosstool-ng.github.io/docs/
+Its GibHub: [https://github.com/crosstool-ng/crosstool-ng](https://github.com/crosstool-ng/crosstool-ng)<br/>
+and its docs: [https://crosstool-ng.github.io/docs/](https://crosstool-ng.github.io/docs/)
 
 Basically, this is the tool that allows you to create a custom root filesystem.<br/>
 -> It'll build the whole thing, a whole package, all as one.<br/>
