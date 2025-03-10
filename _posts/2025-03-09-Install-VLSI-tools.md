@@ -11,7 +11,7 @@ Install some dependencies:
 $ sudo apt install ksh csh zsh patchelf
 ```
 Make changes to **YOUR** `~/.bashrc` according to the [example](/assets/sources/other/bashrc).<br/>
-In the example, watch from the mark `# VLSI-CAD TOOLS` <ins>to the end</ins>.<br/>
+In the example, watch from the mark `# VLSI-CAD TOOLS` *<ins>to the end</ins>*.<br/>
 Make sure to put the correct installation folder to those `export ...` .
 
 The **bin-PATH** and **HOME-PATH** are two different things and serve different purposes.<br/>
@@ -22,9 +22,9 @@ You can change the **bin-PATH** names, but please keep the **HOME-PATH** names b
 - **Step 1:** After downloading all the data, unzip all the tarballs.
 
 - **Step 2:** If there are multi-part tarballs (like `...1of4`, `...2of4`, etc.), extract each tarball, and then merge all the folders into one.<br/>
-You can run it by the terminal: `$ mv <name>_*/*` .
+You can run it by the terminal: `$ mv <name>_*/* .`
 
-- **Step 3:** To run the installation GUI: `$ IScape/iscape/bin/iscape.sh` .
+- **Step 3:** To run the installation GUI: `$ IScape/iscape/bin/iscape.sh`
 
 - **Step 4:** On the GUI, select the `Local directory/Media install` and browse to the `CDROM1` folder in the merged folder in *step 2*.
 
@@ -49,7 +49,7 @@ When you decided which `oa_...` folder to use,<br/>
 -> put the correct **PATH** to the `OA_HOME` in the `~/.bashrc` .<br/>
 -> put the correct `OA_UNSUPPORTED_PLAT` in the `~/.bashrc`, too.<br/>
 The `OA_UNSUPPORTED_PLAT` must match the name `linux_rhel...` in the `$OA_HOME/lib/` folder.<br/>
-**Note:** The suffix `_64` must be removed from the `OA_UNSUPPORTED_PLAT` .
+<ins>*Note:*</ins> The suffix `_64` must be removed from the `OA_UNSUPPORTED_PLAT` .
    
 Finally, open the `$OA_HOME/bin/sysname` and change the 1st line from `#!/bin/sh` to `#!/bin/bash` .
 
@@ -103,8 +103,8 @@ For example, if you previously installed the `aok...` version, you now have to '
 - **Step 2:** In the **calibre** installation path: `$ vi pkgs/icv_calenv/pvt/calibre_host_info`<br/>
 <ins>At the end</ins> of the file, write these two lines in:
 ```shell
-      OS_VENDOR='redhat'
-      OS_MAJOR_REV='8'
+   OS_VENDOR='redhat'
+   OS_MAJOR_REV='8'
 ```
 
 ### III. 3) MENTOR GRAPHICS Tool List
@@ -203,9 +203,9 @@ The link command: `$ ln -s /path/to/filename /usr/lib/<name>.so.<number>`
 - **Step 2:** If the `<name>.so.<number>` or `<name>.so` file cannot be found by `whereis`, then try to `apt install` it first.<br/>
 The apt install command: `$ sudo apt-get install <name>`<br/>
 or maybe: `$ sudo apt-get install <name><number>`<br/>
-*Note:* The `<name>` is usually all <ins>de-capitalized</ins>, and <ins>NO dot</ins> `.` in between the `<name>` and the `<number>` .<br/>
+<ins>*Note:*</ins> The `<name>` is usually all <ins>de-capitalized</ins>, and <ins>NO dot</ins> `.` in between the `<name>` and the `<number>` .<br/>
 -> If the apt package or the exact version is unavailable, proceed to *step 3*.
-   
+
 - **Step 3:** In this step, you have to download the `<name>.so.<number>` manually.<br/>
 Go to this website: https://pkgs.org/<br/>
 Search for the full name of `<name>.so.<number>` .<br/>
@@ -220,24 +220,24 @@ Then, go to the `/usr/lib/` folder and re-create the link file by: `$ sudo ln -s
 ### V. 2) Other Errors
 - **Problem 1:** If the error says something about `undefined symbol`, for example:
 ```shell
-      undefined symbol: ucal_openTimeZones_50
+   undefined symbol: ucal_openTimeZones_50
 ```
-Maybe it's still about the missing .so file, let's `grep -r` and see if something comes up: `$ grep -r ucal_openTimeZones_50`
+Maybe it's still about the missing .so file, let's `grep -r` and see if something comes up: `$ grep -r ucal_openTimeZones_50` :
 ```shell
-      grep: tools.lnx86/lib/cdnslibicui18n.so.50.1.2: binary file matches
-      grep: tools.lnx86/lib/64bit/cdnslibicui18n.so.50.1.2: binary file matches
-      grep: tools.lnx86/Qt/v5/64bit/lib/libcdsQt5Core.so.5.15.9: binary file matches
+   grep: tools.lnx86/lib/cdnslibicui18n.so.50.1.2: binary file matches
+   grep: tools.lnx86/lib/64bit/cdnslibicui18n.so.50.1.2: binary file matches
+   grep: tools.lnx86/Qt/v5/64bit/lib/libcdsQt5Core.so.5.15.9: binary file matches
 ```
 In this case, it means you're missing the `cdnslibicui18n.so` file.<br/>
--> So, let's repeat from the step 1 in the previous section.
+-> So, let's repeat from the *step 1* in the <ins>*previous section*</ins>.
 
 - **Problem 2:** If these kind of errors show up: `operator`, `unexpected`, `syntax error`; for example:
 ```shell
-      test: unexpected operator
-      Syntax error: redirection unexpected
-      Syntax error: "(" unexpected
-      [: 0: unexpected operator
-      /bin/sh: 0: Illegal option -h
+   test: unexpected operator
+   Syntax error: redirection unexpected
+   Syntax error: "(" unexpected
+   [: 0: unexpected operator
+   /bin/sh: 0: Illegal option -h
 ```
 Then, this is about the bash-script environment.<br/>
 Open the run file, change the 1st line from `#!/bin/sh` to `#!/bin/bash` and try again.
@@ -245,7 +245,7 @@ Open the run file, change the 1st line from `#!/bin/sh` to `#!/bin/bash` and try
 - **Problem 3:** If the error says something about `GLIBC`, it could be very serious or still about some missing .so files.<br/>
 Take a closer look at the error message. If it said something like this:
 ```shell
-      tools.lnx86/lib/64bit/<name>.so.<number>: version `GLIBC_X.X' not found (required by ...)
+   tools.lnx86/lib/64bit/<name>.so.<number>: version `GLIBC_X.X' not found (required by ...)
 ```
 Look closely at the **PATH** of the `<name>.so.<number>` file, and you'll see it uses its own local lib of `tools.lnx86/lib/64bit/`, not the system's lib like `/usr/...` or `/lib/...` .<br/>
 -> Maybe the system doesn't have that `<name>.so.<number>` file -> The tool is trying to use its own local version, which is causing the problem.<br/>
@@ -253,19 +253,21 @@ Look closely at the **PATH** of the `<name>.so.<number>` file, and you'll see it
 
 - **Problem 4:** Same as the previous problem, however, this time, the **PATH** of the `<name>.so.<number>` DO belongs to the system's lib. For example:
 ```shell
-      /lib/x86_64-linux-gnu/<name>.so.<number>: version `GLIBC_X.X' not found (required by ...)
+   /lib/x86_64-linux-gnu/<name>.so.<number>: version `GLIBC_X.X' not found (required by ...)
 ```
 Yeah, in this case, this is serious. Mismatching **GLIBC** between the tool and its host is a horror for any Linux dev.<br/>
 Just a sanity check, let's still do a `$ whereis <name>.so.<number>` .<br/>
+
 If the `<name>.so.<number>` is there, properly linked, but the error persists, then you're left with only one option: <ins>upgrade</ins> or <ins>downgrade</ins> the **GLIBC** (which is not recommended anywhere).<br/>
+
 **GLIBC** *IS* the Kernel. Messing with it could destroy your OS, so do it at your own risk.<br/>
-When you're ready, check the guide [GLIBC_problem](/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem).
+When you're ready, check the [Install VLSI-CAD Tools with GLIBC_Problem](/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem) guide.
 
 ### V. 3) Backup Solution
-**Note:** This solution is a backup and not recommended because tricking the VLSI-CAD tools this way could lead to unforeseen problems.<br/>
+**NOTE:** This solution is a backup and not recommended because tricking the VLSI-CAD tools this way could lead to unforeseen problems.<br/>
 Sometimes, it causes problems for other tools, not even the VLSI-CAD tools.
 
-You can create a 'fake' redhat-release file by: `$ sudo vi /etc/redhat-release`<br/>
+You can create a 'fake' **redhat-release** file by: `$ sudo vi /etc/redhat-release`<br/>
 Then, write this line:
 ```shell
    CentOS Linux release 8.<sub-version>.<date> (Core)
