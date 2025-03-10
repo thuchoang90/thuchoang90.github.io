@@ -208,7 +208,7 @@ The apt install command: `$ sudo apt-get install <name>` or: `$ sudo apt-get ins
 Search for the full name of `<name>.so.<number>` . Pick either **Solus** or **FreeBSD/NetBSD**.<br/>
 Beware of the 32-bit or 64-bit version, pick the one you need. Download it, untar it.<br/>
 Beware of the link files, after untar, always use `ll` to check, not `ls` -> So you can see where the link is going to.<br/>
-Copy only the content file (NOT the link file) to the `/usr/lib/` folder.<br/>
+Copy only the content file (*NOT* the link file) to the `/usr/lib/` folder.<br/>
 Then, go to the `/usr/lib/` folder and re-create the link file by: `$ sudo ln -s <raw file> <name>.so.<number>` .
 
 - **Step 4:** If the error still exists and says `ELF32` or `ELF64` wrong, you copied the wrong 32/64-bit version.<br/>
@@ -245,8 +245,8 @@ Take a closer look at the error message. If it said something like this:
    tools.lnx86/lib/64bit/<name>.so.<number>: version `GLIBC_X.X' not found (required by ...)
 ```
 Look closely at the **PATH** of the `<name>.so.<number>` file, and you'll see it uses its own local lib of `tools.lnx86/lib/64bit/`, not the system's lib like `/usr/...` or `/lib/...` .<br/>
--> Maybe the system doesn't have that `<name>.so.<number>` file -> The tool is trying to use its own local version, which is causing the problem.<br/>
--> To know for sure, try `whereis` the `<name>.so.<number>` and check if the system has it or not. -> This means you're repeating the *step 1* in the <ins>previous section</ins>.
+Maybe the system doesn't have that `<name>.so.<number>` file -> The tool is trying to use its own local version, which is causing the problem.<br/>
+To know for sure, try `whereis` the `<name>.so.<number>` and check if the system has it or not. -> This means you're repeating the *step 1* in the <ins>previous section</ins>.
 
 - **Problem 4:** Same as the previous problem, however, this time, the **PATH** of the `<name>.so.<number>` DO belongs to the system's lib. For example:
 ```shell
