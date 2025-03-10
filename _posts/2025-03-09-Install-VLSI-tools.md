@@ -97,7 +97,7 @@ After installed, when you're trying to run the **calibre** and get this error:
 This means the tool checked your OS version and said it doesn't support the OS.<br/>
 -> Follow these steps to bypass the check:
 
-- **Step 1:** Check this website: https://calibre.mentorcloudservices.com/docs/Calibre_OS_Roadmap.htm<br/>
+- **Step 1:** Check this website: [https://calibre.mentorcloudservices.com/docs/Calibre_OS_Roadmap.htm](https://calibre.mentorcloudservices.com/docs/Calibre_OS_Roadmap.htm)<br/>
 For example, if you previously installed the `aok...` version, you now have to 'trick' the tool into thinking that your machine is a RedHat 8 version.
 
 - **Step 2:** In the **calibre** installation path: `$ vi pkgs/icv_calenv/pvt/calibre_host_info`<br/>
@@ -207,7 +207,7 @@ or maybe: `$ sudo apt-get install <name><number>`<br/>
 -> If the apt package or the exact version is unavailable, proceed to *step 3*.
 
 - **Step 3:** In this step, you have to download the `<name>.so.<number>` manually.<br/>
-Go to this website: https://pkgs.org/<br/>
+Go to this website: [https://pkgs.org/](https://pkgs.org/)<br/>
 Search for the full name of `<name>.so.<number>` .<br/>
 Pick either **Solus** or **FreeBSD/NetBSD**. Beware of the 32-bit or 64-bit version, pick the one you need. Download it, untar it.<br/>
 Beware of the link files, after untar, always use `ll` to check, not `ls` -> So you can see where the link is going to.<br/>
@@ -272,7 +272,7 @@ Then, write this line:
 ```shell
    CentOS Linux release 8.<sub-version>.<date> (Core)
 ```
-For the `<sub-version>` and `<date>`, check this website: https://access.redhat.com/articles/3078<br/>
+For the `<sub-version>` and `<date>`, check this website: [https://access.redhat.com/articles/3078](https://access.redhat.com/articles/3078)<br/>
 The `<date>` is a 4-digit number: first 2-digit for year, and last 2-digit for month.
 
 For example, if you want to pick the RedHat 7.0 version, then:
