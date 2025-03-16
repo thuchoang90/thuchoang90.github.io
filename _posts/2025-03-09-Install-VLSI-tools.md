@@ -147,7 +147,7 @@ After installed, to check if the tool works, try to run the following:
    $ fpga/U-2023.03/bin/synplify_pro
    $ fusioncompiler/W-2024.09/bin/fc_shell
    $ fusioncompiler/W-2024.09/bin/icc2_lm_shell
-   $ fusioncompiler/W-2024.09/bin/lm_shel
+   $ fusioncompiler/W-2024.09/bin/lm_shell
    $ hercules/B-2008.09-SP5-1/bin/amd64/hercules
    $ hsim/Q-2020.03-SP2/hsimplus/bin/hsim
    $ hspice/W-2024.09-1/hspice/bin/hspice
