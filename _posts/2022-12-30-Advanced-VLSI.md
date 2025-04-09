@@ -62,8 +62,8 @@ For oversea participants, the oversea partner **must** provide the tool's licens
 - *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understand the cell-based method, the “rules” when designing a standard cell, the various components in a standard cell library, and which cell type is for which purpose.
 
 **Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;Characterization and Abstraction
-- *Description:*
-- *Purpose:*
+- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain how to create various library files from the original layout. Guide on how to create library files using a characterization tool. Guide on how to create abstract files using an abstraction tool.
+- *Purpose:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Know how to use characterization and abstraction tools to create various library files from the original layout.
 
 **Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Synthesis
 - *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Guide on how to create various library files from the layouts. Guide on using tool for synthesis. Guide on checking the synthesis results.
