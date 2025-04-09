@@ -12,6 +12,8 @@ Understand the **V**ery **L**arge-**S**cale **I**ntegration circuit *(VLSI)* des
 Know how to design a Standard Cell (*StdCell*), then complete a StdCell *library* for full digital design flow.
 <br>
 Know how to integrate various designs, digital or analog alike, into a FullChip frame.
+<br>
+Design a custom digital integrated circuit using industrial-grade CAD tools.
 
 ### Course Requirement
 
