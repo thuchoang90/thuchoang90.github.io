@@ -8,7 +8,7 @@ tags: VLSI Linux Tutorial
 ## I. Preparation
 Install some dependencies:
 ```shell
-$ sudo apt install ksh csh zsh patchelf
+$ sudo apt install ksh csh zsh patchelf xvfb
 ```
 Make changes to **YOUR** `~/.bashrc` according to the [example](/assets/sources/other/bashrc).<br/>
 In the example, watch from the mark `# VLSI-CAD TOOLS` *<ins>to the end</ins>*.<br/>
