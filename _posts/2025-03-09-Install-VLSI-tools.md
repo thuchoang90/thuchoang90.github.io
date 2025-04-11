@@ -106,6 +106,16 @@ For example, if you previously installed the `aok...` version, you now have to '
    OS_VENDOR='redhat'
    OS_MAJOR_REV='8'
 ```
+In the calibre's installation folder, there is a folder named **tmp** or **temp**.<br>
+That is a symbolic link, and it has to be true.<br>
+If you see it is showing red, means the link is broken. -> You have to correct it.
+
+Usually, the **tmp** folder in Ubuntu filesystem is at **/tmp**.<br>
+So, do the following to re-correct the link:
+```shell
+   $ rm tmp
+   $ sudo ln -s /tmp tmp
+```
 
 ### III. 3) MENTOR GRAPHICS Tool List
 After installed, to check if the tool works, try to run the following:
