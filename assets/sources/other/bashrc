@@ -171,7 +171,8 @@ export HOME_0IN="$Mentor/0-in"
 export AFS_ROOT="$Mentor/AMSV/amsv"
 export CALIBRE_HOME="$Mentor/Calibre"
 export EXEMPLAR="$Mentor/LeonardSpectrum"
-export MGC_HOME="$Mentor/Pyxis"
+#export MGC_HOME="$Mentor/Pyxis"
+export MGC_HOME=$CALIBRE_HOME
 # Mentor list
 export Mentor_tools="$ZeroIn:$AMSV:$Calibre:$DFT:$LeonardSpectrum:$ModelSim:$Pyxis:$QuetaSim:$Tanner"
 
