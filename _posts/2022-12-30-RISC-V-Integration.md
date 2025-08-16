@@ -33,23 +33,23 @@ Exercises in this course use the <a href="https://digilent.com/reference/program
 | 6 | Custom Hardware in ROCC |
 | 7 | Course Summary |
 
-**Lecture #1:**&nbsp;&nbsp;&nbsp;&nbsp;**RISC-V Introduction**<br>
+**Lecture #1:&nbsp;&nbsp;&nbsp;&nbsp;RISC-V Introduction**<br>
 Explain the structure of a typical computer system. Introduce RISC-V and RISC-V ISA. Giving materials and some RISC-V news.
 
-**Lecture #2:**&nbsp;&nbsp;&nbsp;&nbsp;**Chipyard Design Framework**<br>
+**Lecture #2:&nbsp;&nbsp;&nbsp;&nbsp;Chipyard Design Framework**<br>
 Introduce the Chipyard library and explain its structure. Show how to git clone and make. Learn how to create a new Chisel project using this Chipyard library as a template.
 
-**Lecture #3:**&nbsp;&nbsp;&nbsp;&nbsp;**Rocket Computer System**<br>
+**Lecture #3:&nbsp;&nbsp;&nbsp;&nbsp;Rocket Computer System**<br>
 Introduce the RISC-V computer system. Learn how to Git clone and make the system. Learn how to program with the Arty-A7 FPGA board. Learn how to change some of the system configurations.
 
-**Lecture #4:**&nbsp;&nbsp;&nbsp;&nbsp;**Boot Sequence and Software**<br>
+**Lecture #4:&nbsp;&nbsp;&nbsp;&nbsp;Boot Sequence and Software**<br>
 Describe the typical boot flow of computer systems. Describe our system's boot sequence using the default software. Learn how to change the default program with your custom code.
 
-**Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;**Custom Hardware on Peripheral**<br>
+**Lecture #5:&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware on Peripheral**<br>
 Explain the TileLink bus protocol and the peripheral's memory-mapped communication. Explain the GCD circuit and how to write a Scala wrapper for that circuit. Finally, learn how to write software to control the new hardware.
 
-**Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;**Custom Hardware in ROCC**<br>
+**Lecture #6:&nbsp;&nbsp;&nbsp;&nbsp;Custom Hardware in ROCC**<br>
 Explain the ROCC. Reuse the GCD circuit, but this time attach it to the ROCC instead of the peripheral. Finally, learn how to control the ROCC module with software.
 
-**Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;**Course Summary**<br>
+**Lecture #7:&nbsp;&nbsp;&nbsp;&nbsp;Course Summary**<br>
 A top-down review from ISA to software and hardware.
