@@ -40,46 +40,46 @@ Participants <ins>must</ins> have **digital design** knowledge and know how to u
 | 15 | Course Summary |
 
 **Lecture #1:**&nbsp;&nbsp;&nbsp;&nbsp;VLSI Introduction
-- *Description:* Introduce the overall VLSI flow and show some VLSI applications. Explain the necessary files when designing circuits. Finally, EDA tools for VLSI design will be introduced.
+Introduce the overall VLSI flow and show some VLSI applications. Explain the necessary files when designing circuits. Finally, EDA tools for VLSI design will be introduced.
 
 **Lecture #2:**&nbsp;&nbsp;&nbsp;&nbsp;MOSFET, CMOS, and Logic
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Briefly review MOSFET characteristics and Boolean functions. Show what needs to be done at the transistor-level optimization. Review the basics of logic design using CMOS. Showing how to make an optimization schematic given a Boolean function.
+Briefly review MOSFET characteristics and Boolean functions. Show what needs to be done at the transistor-level optimization. Review the basics of logic design using CMOS. Showing how to make an optimization schematic given a Boolean function.
 
 **Lecture #3:**&nbsp;&nbsp;&nbsp;&nbsp;Delay and Power Models
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the non-restoring element in schematic design. Explain the RC delay model used in the multi-stage schematic optimization. Giving several examples of the RC delay model. Explain the power model used in VLSI circuits, including static power and dynamic power examples.
+Explain the non-restoring element in schematic design. Explain the RC delay model used in the multi-stage schematic optimization. Several examples of the RC delay model are given. Explain the power model used in VLSI circuits, including static power and dynamic power examples.
 
 **Lecture #4:**&nbsp;&nbsp;&nbsp;&nbsp;SPICE and Schematic
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the SPICE language. Explain how to use SPICE for transistor-level circuit simulation with examples. Finally, show how to use tools for schematic design with simulation.
+Explain the SPICE language. Explain how to use SPICE for transistor-level circuit simulation with examples. Finally, show how to use tools for schematic design with simulation.
 
 **Lecture #5:**&nbsp;&nbsp;&nbsp;&nbsp;Interconnect and Layout
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the stick diagram method via examples. Provide a guide on using tools to draw a layout of an inverter circuit. Finally, show how to use a tool for design rules check and then run a post-layout simulation with a script.
+Introduce the stick diagram method via examples. Provide a guide on using tools to draw a layout of an inverter circuit. Finally, show how to use a tool for design rules check and then run a post-layout simulation with a script.
 
 **Lecture #6:**&nbsp;&nbsp;&nbsp;&nbsp;Standard Cell Library
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Introduce the cell-based method and explain the differences between standard and custom cells. Explain the "rules" in standard cell design. Give an example of a standard cell library, then explain each component.
+Introduce the cell-based method and explain the differences between standard and custom cells. Explain the "rules" in standard cell design. Give an example of a standard cell library, then explain each component.
 
 **Lecture #7:**&nbsp;&nbsp;&nbsp;&nbsp;Characterization
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain how to create various library files from the original layout. Guide on how to create library files using a characterization tool and an abstraction tool.
+Explain how to create various library files from the original layout. Guide on how to create library files using a characterization tool and an abstraction tool.
 
 **Lecture #8:**&nbsp;&nbsp;&nbsp;&nbsp;Synthesis
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Guide on using tool for synthesis. Guide on checking the synthesis results and do the post-synthesis netlist simulation.
+Guide on using the tool for synthesis. Guide on checking the synthesis results and doing the post-synthesis netlist simulation.
 
 **Lecture #9:**&nbsp;&nbsp;&nbsp;&nbsp;Timing Analysis
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the latch and flipflop designs. Explain the timing requirements in circuit design. Show how to write an SDC constraint. Finally, show how to check timing for the given synthesized netlist.
+Explain the latch and flip-flop designs. Explain the timing requirements in circuit design. Show how to write an SDC constraint. Finally, show how to check timing for the given synthesized netlist.
 
 **Lecture #10:**&nbsp;&nbsp;&nbsp;&nbsp;Place and Route
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Guide on using tools for Place-and-Route (PnR). Guide on checking the PnR results and do the post-layout netlist simulation.
+Guide on using tools for Place-and-Route (PnR). Guide on checking the PnR results and doing the post-layout netlist simulation.
 
 **Lecture #11:**&nbsp;&nbsp;&nbsp;&nbsp;Verification
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the formal verification and physical verification. Explain the reason for antenna and metal density checking. Explain the completed full digital design flow. Finally, guide on using the full-flow digital design template.
+Explain the formal verification and physical verification. Explain the reason for antenna and metal density checking. Explain the completed full digital design flow. Finally, a guide on using the full-flow digital design template.
 
 **Lecture #12:**&nbsp;&nbsp;&nbsp;&nbsp;Macro Integration
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the differences between analog/custom and digital design flows. Show how to manually perform the design rules checks, verifications, and post-layout simulation. Provide a guide on creating other necessary files for FullChip integration.
+Explain the differences between analog/custom and digital design flows. Show how to manually perform the design rules checks, verifications, and post-layout simulation. Provide a guide on creating other necessary files for FullChip integration.
 
 **Lecture #13:**&nbsp;&nbsp;&nbsp;&nbsp;IOs and FullChip
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Explain the latchup and ESD phenomenon. Introduce the IO designs, frame, and package. Introduce the FullChip integration task and explain the steps. Guide on using the FullChip integration template.
+Explain the latchup and ESD phenomenon. Introduce the IO designs, frame, and package. Introduce the FullChip integration task and explain the steps. Guide on using the FullChip integration template.
 
 **Lecture #14:**&nbsp;&nbsp;&nbsp;&nbsp;Advanced Topics
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Give explanation on several advanced topics such as synchronizer, FinFet vs. SOI, design for test, and clock gating.
+Give an explanation of several advanced topics such as synchronizer, FinFet vs. SOI, design for test, and clock gating.
 
 **Lecture #15:**&nbsp;&nbsp;&nbsp;&nbsp;Course Summary
-- *Description:*&nbsp;&nbsp;&nbsp;&nbsp;Review all lectures related to Advanced VLSI Design course.
+Review all lectures related to the Advanced VLSI Design course.
