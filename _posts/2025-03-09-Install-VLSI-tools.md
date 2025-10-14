@@ -68,6 +68,8 @@ After installed, to check if the tool works, try to run the following:
    $ INNOVUS/bin/innovus
    $ JasperGold/bin/jaspergold
    $ LIBERATE/bin/liberate
+   $ MVS/bin/lpa
+   $ PEGASUS/bin/pegasus
    $ PVS/bin/pvs
    $ QUANTUS/bin/quantus
    $ SIGRITY/tools/bin/3dworkbench
