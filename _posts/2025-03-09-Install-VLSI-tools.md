@@ -185,6 +185,7 @@ After installed, to check if the tool works, try to run the following:
    $ rtl_architect/T-2022.03-SP1/bin/rtl_shell
    $ sentaurus/W-2024.09/bin/qtx
    $ sentaurus_explorer/W-2024.09/bin/spx
+   $ siliconsmart/V-2023.12-SP1-7/bin/siliconsmart
    $ slitho/U-2022.12/bin/slitho
    $ slitho_pwa/U-2022.12/bin/pwa
    $ spxviewer/W-2024.09/bin/spx_routeview
