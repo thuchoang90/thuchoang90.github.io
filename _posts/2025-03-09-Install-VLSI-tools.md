@@ -61,6 +61,7 @@ After installed, to check if the tool works, try to run the following:
    $ DDI/bin/genus
    $ DDI/bin/innovus
    $ DDI/bin/joules
+   $ EMX/bin/emx
    $ GENUS/bin/genus
    $ IC23/bin/virtuoso
    $ IC618/bin/virtuoso
