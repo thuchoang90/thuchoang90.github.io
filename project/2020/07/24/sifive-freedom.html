@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SiFive Freedom: a Rocket-chip computer system | Thuctorial</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="SiFive Freedom: a Rocket-chip computer system">
+<meta name="author" content="thuchoang90">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="I. Hardware">
+<meta property="og:description" content="I. Hardware">
+<link rel="canonical" href="/jekyll-theme-yat/project/2020/07/24/sifive-freedom.html">
+<meta property="og:url" content="/jekyll-theme-yat/project/2020/07/24/sifive-freedom.html">
+<meta property="og:site_name" content="Thuctorial">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-07-24T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="SiFive Freedom: a Rocket-chip computer system">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"thuchoang90"},"dateModified":"2020-07-24T00:00:00+00:00","datePublished":"2020-07-24T00:00:00+00:00","description":"I. Hardware","headline":"SiFive Freedom: a Rocket-chip computer system","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/project/2020/07/24/sifive-freedom.html"},"url":"/jekyll-theme-yat/project/2020/07/24/sifive-freedom.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Thuctorial">
+<script>
+  function initGoogleAnalytics() {
+    var doNotTrack = (window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
+      navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1");
+    var enableDNT = "true" == "true";
+
+    if (!enableDNT || !doNotTrack) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'Tracking ID', 'auto');
+      ga('send', 'pageview');
+    }
+  }
+  window.addEventListener("load", initGoogleAnalytics);
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Thuctorial" src="" onerror="this.style.display='none'">
+  Thuctorial
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/teaching.html">TEACHING</a><a class="page-link" href="/jekyll-theme-yat/tutorial.html">TUTORIAL</a><a class="page-link" href="/jekyll-theme-yat/project.html">PROJECT</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a><a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="vi">
+          
+          <img src="https://cdn.countryflags.com/thumbs/vietnam/flag-400.png" title="Vietnamese">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">SiFive Freedom: a Rocket-chip computer system</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2020-07-24T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jul 24, 2020
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 13 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#RISC-V">#RISC-V</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#TEE">#TEE</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#FPGA">#FPGA</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Linux">#Linux</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="i-hardware">I. Hardware</h2>
+
+<p>SiFive freedom demo on VC707 FPGA board is using the <strong>U540</strong> core with the ISA of <code class="language-plaintext highlighter-rouge">RV64GC</code>.
+Original <a href="https://github.com/sifive/freedom">repository</a>. Modified <a href="https://github.com/thuchoang90/freedom">repository</a>.</p>
+
+<p>To build on VC707 FPGA, you need Xilinx Vivado design software. Install it in <a href="/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-h-vivado-20164">Fresh-Ubuntu-setup</a>.</p>
+
+<h3 id="i-a-build">I. a) Build</h3>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/thuchoang90/freedom.git	
+<span class="nv">$ </span><span class="nb">cd </span>freedom/
+<span class="nv">$ </span>git checkout keystone-fpga    <span class="c">#commit 76dd152a on 5-Nov-2019</span>
+
+This will <span class="s1">'submodule update'</span> without download the toolchain again, and also patch the fpga-shells submodule afterward
+<span class="nv">$ </span><span class="nb">.</span> update.sh
+</code></pre></div></div>
+
+<h4 id="i-make">(i) Make</h4>
+
+<p>Before <code class="language-plaintext highlighter-rouge">$ make</code>, remember to set the environment (see <a href="#i-b-other-utilities">I. b) Other Utilities</a>) simply by: <code class="language-plaintext highlighter-rouge">$ . setenv.sh</code></p>
+
+<p>The format for <code class="language-plaintext highlighter-rouge">$ make</code> command is:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is <span class="k">for </span>creating .v files:
+<span class="nv">$ </span>make <span class="o">[</span>CONFIG] <span class="o">[</span>MODEL] <span class="o">[</span>BOOTROM_DIR] <span class="o">[</span>BUILD_DIR] <span class="nt">-f</span> Makefile.vc707-u500devkit verilog <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+
+This is <span class="k">for </span>Vivado build:
+<span class="nv">$ </span>make <span class="o">[</span>CONFIG] <span class="o">[</span>MODEL] <span class="o">[</span>BOOTROM_DIR] <span class="o">[</span>BUILD_DIR] <span class="nt">-f</span> Makefile.vc707-u500devkit mcs <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">[CONFIG]</code> option is for selecting the frequency:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONFIG=DevKitU500FPGADesign_WithDevKit50MHz (default value)
+       DevKitU500FPGADesign_WithDevKit100MHz
+       DevKitU500FPGADesign_WithDevKit125MHz
+       DevKitU500FPGADesign_WithDevKit150MHz
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">[MODEL]</code> option is for selecting the PCIe option:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With PCIe build (default value):
+  MODEL=VC707PCIeShell
+
+Without PCIe build:
+  MODEL=VC707BaseShell
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">[BOOTROM_DIR]</code> option is to specify the bootrom directory that you want to use:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Using the sifive's sdboot (default value):
+  BOOTROM_DIR=`pwd`/bootrom/sdboot
+
+Using the keystone's zsfl+fsbl boot:
+  BOOTROM_DIR=`pwd`/bootrom/freedom-u540-c000-bootloader
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">[BUILD_DIR]</code> option is to specify the build directory:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BUILD_DIR=`pwd`/builds/&lt;name&gt;
+
+Example:
+  BUILD_DIR=`pwd`/builds/vc707-u500devkit
+</code></pre></div></div>
+
+<p>Example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To build with PCIe, 125MHz, using sifive<span class="s1">'s sdboot:
+$ make CONFIG=DevKitU500FPGADesign_WithDevKit125MHz BUILD_DIR=`pwd`/builds/vc707-u500devkit-withpcie-sdboot -f Makefile.vc707-u500devkit verilog -j`nproc`
+$ make CONFIG=DevKitU500FPGADesign_WithDevKit125MHz BUILD_DIR=`pwd`/builds/vc707-u500devkit-withpcie-sdboot -f Makefile.vc707-u500devkit mcs -j`nproc`
+
+To build without PCIe, 150MHz, using sifive'</span>s sdboot:
+<span class="nv">$ </span>make <span class="nv">CONFIG</span><span class="o">=</span>DevKitU500FPGADesign_WithDevKit150MHz <span class="nv">MODEL</span><span class="o">=</span>VC707BaseShell <span class="nv">BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/builds/vc707-u500devkit-nopcie-sdboot <span class="nt">-f</span> Makefile.vc707-u500devkit verilog <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>make <span class="nv">CONFIG</span><span class="o">=</span>DevKitU500FPGADesign_WithDevKit150MHz <span class="nv">MODEL</span><span class="o">=</span>VC707BaseShell <span class="nv">BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/builds/vc707-u500devkit-nopcie-sdboot <span class="nt">-f</span> Makefile.vc707-u500devkit mcs <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+
+To build with PCIe, 125MHz, using keystone<span class="s1">'s zsbl-fsbl boot:
+$ make CONFIG=DevKitU500FPGADesign_WithDevKit125MHz BOOTROM_DIR=`pwd`/bootrom/freedom-u540-c000-bootloader BUILD_DIR=`pwd`/builds/vc707-u500devkit-withpcie-keystoneboot -f Makefile.vc707-u500devkit verilog -j`nproc`
+$ make CONFIG=DevKitU500FPGADesign_WithDevKit125MHz BOOTROM_DIR=`pwd`/bootrom/freedom-u540-c000-bootloader BUILD_DIR=`pwd`/builds/vc707-u500devkit-withpcie-keystoneboot -f Makefile.vc707-u500devkit mcs -j`nproc`
+
+To build without PCIe, 150MHz, using keystone'</span>s zsbl-fsbl boot:
+<span class="nv">$ </span>make <span class="nv">CONFIG</span><span class="o">=</span>DevKitU500FPGADesign_WithDevKit150MHz <span class="nv">MODEL</span><span class="o">=</span>VC707BaseShell <span class="nv">BOOTROM_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/bootrom/freedom-u540-c000-bootloader <span class="nv">BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/builds/vc707-u500devkit-nopcie-keystoneboot <span class="nt">-f</span> Makefile.vc707-u500devkit verilog <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>make <span class="nv">CONFIG</span><span class="o">=</span>DevKitU500FPGADesign_WithDevKit150MHz <span class="nv">MODEL</span><span class="o">=</span>VC707BaseShell <span class="nv">BOOTROM_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/bootrom/freedom-u540-c000-bootloader <span class="nv">BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/builds/vc707-u500devkit-nopcie-keystoneboot <span class="nt">-f</span> Makefile.vc707-u500devkit mcs <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>To clean and build again:</p>
+
+<ul>
+  <li>Remove the <code class="language-plaintext highlighter-rouge">builds/&lt;name&gt;</code> folder</li>
+  <li>If you used the keystone’s zsbl-fsbl boot process, then go the <code class="language-plaintext highlighter-rouge">bootrom/freedom-u540-c000-bootloader/</code> folder and <code class="language-plaintext highlighter-rouge">$ make clean</code>
+</li>
+  <li>Finally, go to the top folder and <code class="language-plaintext highlighter-rouge">$ make</code> again.</li>
+</ul>
+
+<h4 id="ii-notes">(ii) Notes</h4>
+
+<p><strong>1:</strong> Guide for program &amp; debug on VC707 can be found here: <a href="/project/2020/07/24/vc707-program-debug">VC707 program and debug guide</a>.</p>
+
+<p><strong>2:</strong> Internal coding structure of the SiFive Freedom folder can be found here: <a href="/project/2020/04/27/freedom-chisel">SiFive Freedom chisel code structure</a>.</p>
+
+<p><strong>3:</strong> The maximum frequency for the VC707 board with PCIE is 125MHz, and without PCIE is 150MHz.</p>
+
+<p><strong>4:</strong> Sometime the <code class="language-plaintext highlighter-rouge">$ make mcs</code> end with timing error and did not continue to generate the final mcs files for the flash programming, but still, it did generate the <strong><em>.bit</em></strong> file. Then, we can manually generate the <strong><em>.mcs</em></strong> from the <strong><em>.bit</em></strong>:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>builds/&lt;name&gt;/obj/   <span class="c">#cd to the build folder</span>
+
+For VC707PCIeShell:
+<span class="nv">$ </span>vivado <span class="nt">-nojournal</span> <span class="nt">-mode</span> batch <span class="nt">-source</span> ../../../fpga-shells/xilinx/common/tcl/write_cfgmem.tcl <span class="nt">-tclargs</span> vc707 VC707PCIeShell.mcs VC707PCIeShell.bit
+
+For VC707BaseShell:
+<span class="nv">$ </span>vivado <span class="nt">-nojournal</span> <span class="nt">-mode</span> batch <span class="nt">-source</span> ../../../fpga-shells/xilinx/common/tcl/write_cfgmem.tcl <span class="nt">-tclargs</span> vc707 VC707BaseShell.mcs VC707BaseShell.bit
+</code></pre></div></div>
+
+<p><strong>5:</strong> Built files are under <code class="language-plaintext highlighter-rouge">builds/&lt;name&gt;/obj/</code>. The important built files are:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VC707Shell.v                        <span class="c">#the verilog source code</span>
+VC707Shell.mcs and VC707Shell.prm   <span class="c">#the two files for flash programming</span>
+VC707Shell.bit                      <span class="c">#the bitstream file for direct programming</span>
+</code></pre></div></div>
+
+<h3 id="i-b-other-utilities">I. b) Other utilities</h3>
+
+<p>To quickly set build environment:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vi setenv.sh    <span class="c">#and change the correct corresponding paths in your machine</span>
+
+Then from this point forward, you can auto <span class="nb">set </span>your environment by simply:
+<span class="nv">$ </span><span class="nb">.</span> setenv.sh
+</code></pre></div></div>
+
+<p>If you want to change the ROM size:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BootRom size is declared <span class="k">in </span>the file:
+	rocket-chip/src/main/scala/devices/tilelink/MaskROM.scala
+
+On the line 12:
+	<span class="k">case</span> class MaskROMParams<span class="o">(</span>address: BigInt, name: String, depth: Int <span class="o">=</span> 2048, width: Int <span class="o">=</span> 32<span class="p">)</span>
+
+Change the &lt;depth&gt; value to change the size.
+</code></pre></div></div>
+
+<p>If you want to change the modules’ addresses, number of CPU cores, etc:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The declarations are <span class="k">in </span>the file:
+	src/main/scala/unleashed/DevKitConfigs.scala
+
+But remember to change the addresses on the software as well. These files:
+	bootrom/sdboot/include/platform.h
+	bootrom/sdboot/linker/memory.lds
+	bootrom/freedom-u540-c000-bootloader/sifive/platform.h
+	bootrom/freedom-u540-c000-bootloader/memory_vc707.lds
+</code></pre></div></div>
+
+<p><em>TODO</em>: script to auto update ROM size, modules’ addresses, and number of CPU to software</p>
+
+<h3 id="i-c-use-with-idea-intellij">I. c) Use with Idea IntelliJ</h3>
+
+<p>Guide to install Idea IntelliJ is in <a href="/tutorial/2020/07/23/Fresh-Ubuntu-setup#h-ii-e-idea-intellij">Fresh-Ubuntu-setup</a>.</p>
+
+<p>To import the freedom folder to the <strong>Idea IntelliJ</strong> tool:</p>
+
+<ul>
+  <li>If the freedom folder wasn’t compiled before, go ahead and <code class="language-plaintext highlighter-rouge">$ make verilog</code> for the first time (no need to <code class="language-plaintext highlighter-rouge">$ make mcs</code> though). This act is just for download the dependencies, because the Idea IntelliJ has trouble with dependencies download.</li>
+  <li>
+<strong>Big note:</strong> when <code class="language-plaintext highlighter-rouge">$ make verilog</code>, please notice that there will be one line looks like this, you should copy it for later use:</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> /home/ubuntu/project/freedom/rocket-chip/sbt-launch.jar ++2.12.4 <span class="s2">"runMain freechips.rocketchip.system.Generator /home/ubuntu/project/freedom/builds/chip uec.nedo.chip ChipShell uec.nedo.chip ChipDesignTop"</span>
+<span class="o">(</span>the content may be differ on your machine<span class="o">)</span>
+
+In the first <span class="nb">time</span> <span class="s1">'make'</span>, it usually appears near after this line:
+	<span class="o">[</span>success] Total <span class="nb">time</span>: xxx s, completed xxx, xxx, xx:xx:xx
+In the NOT first <span class="nb">time</span> <span class="s1">'make'</span>, it usually appears right away
+</code></pre></div></div>
+
+<ul>
+  <li>Open the Idea IntelliJ tool, and choose ‘<em>Import Project</em>’</li>
+  <li>Then choose ‘<em>sbt</em>’ then hit ‘<em>Next</em>’</li>
+  <li>Tick the ‘<em>for imports</em>’ and ‘<em>for builds</em>’ options in the <strong><em>Use sbt shell</em></strong> then hit ‘<em>Finish</em>’</li>
+  <li>Wait for it to sync for the first time. This first time sync will fail</li>
+  <li>After that, go to the tab <strong><em>sbt shell</em></strong> and type <strong><em>++2.12.4</em></strong>, and then type <strong><em>compile</em></strong>, and wait!</li>
+  <li>After the compile, go to the <strong><em>sbt</em></strong> tab on the MOST RIGHT EDGE and hit the reload button, it will re-sync for the second time</li>
+  <li>After the second time sync, if it still fail, I have no idea ¯\<em>(ツ)</em>/¯</li>
+</ul>
+
+<p>To debug with the <strong>Idea IntelliJ</strong> tool:</p>
+
+<ul>
+  <li>Before debugging it, you have to build it first. Go to the <strong><em>sbt shell</em></strong> tab and type <strong><em>++2.12.4</em></strong> then type <strong><em>compile</em></strong>
+</li>
+  <li>Please notice that there might be a task name <em>Indexing</em> still running in the background, wait for it to finish.</li>
+  <li>After ‘compile’ succeed and ‘<em>Indexing</em>’ finished, click the <strong><em>Add Configuration…</em></strong> button right next to the build button (at the top-bar to the right). Then hit the <strong><em>+</em></strong> button to add a new configuration, and choose the <strong><em>JAR Application</em></strong> setting</li>
+  <li>Now get back to the “ <em>java -jar</em> “ example note earlier:
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>java -jar /home/ubuntu/project/freedom/rocket-chip/sbt-launch.jar ++2.12.4 "runMain freechips.rocketchip.system.Generator /home/ubuntu/project/freedom/builds/chip uec.nedo.chip ChipShell uec.nedo.chip ChipDesignTop"
+</code></pre></div>    </div>
+    <p>The <strong><em>/home/ubuntu/project/freedom/rocket-chip/sbt-launch.jar</em></strong> part will go to the <strong><em>Path to JAR:</em></strong></p>
+
+    <p>The <strong><em>++2.12.4 “runMain freechips.rocketchip.system.Generator /home/ubuntu/project/freedom/builds/chip uec.nedo.chip ChipShell uec.nedo.chip ChipDesignTop”</em></strong> part will go to the <strong><em>Program arguments:</em></strong></p>
+
+    <p>Everythiing else just leave as they are, then click ‘<em>Apply</em>’ and ‘<em>OK</em>’. Now you can debug with freedom folder.</p>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="ii-software">II. Software</h2>
+
+<h3 id="ii-a-without-tee-keystone-build">II. a) Without TEE (KeyStone-build)</h3>
+
+<p>Original <a href="https://github.com/sifive/freedom-u-sdk">repository</a>. Modified <a href="https://github.com/mcd500/freedom-u-sdk/">repository</a>.</p>
+
+<p><em>TODO</em>: currently, this way uses the prebuilt toolchain of gcc 7. In the future, this need to be upgraded to the current mainstream toolchain of sifive-freedom, gcc 9.2. Then after that, we can avoid to download the prebuilt toolchain again.</p>
+
+<h4 id="i-git-clone">(i) Git clone</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/mcd500/freedom-u-sdk.git
+<span class="nv">$ </span><span class="nb">cd </span>freedom-u-sdk
+<span class="nv">$ </span>git checkout linux_u500vc707devkit_config   <span class="c">#commit 29fe529f on 12-Apr-2019</span>
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+</code></pre></div></div>
+
+<p><em>Note:</em> sometimes the <strong>riscv-gnu-toolchain</strong> submodule fails to clone. If that happened, we have to git clone it manually:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-rf</span> riscv-gnu-toolchain    <span class="c">#first, remove the corrupted folder</span>
+<span class="nv">$ </span>git clone https://github.com/riscv/riscv-gnu-toolchain.git    <span class="c">#then clone a new</span>
+<span class="nv">$ </span><span class="nb">cd </span>riscv-gnu-toolchain/
+<span class="nv">$ </span>git checkout b4dae89
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span><span class="nb">cd</span> ../    <span class="c">#get back to the top folder of freedom-u-sdk</span>
+</code></pre></div></div>
+
+<h4 id="ii-make-the-bblbin">(ii) Make the bbl.bin</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">unset </span>RISCV   <span class="c">#make sure that there is nothing on the RISCV variable</span>
+
+Export your toolchains to the PATH <span class="o">(</span>both the elf &amp; linux toolchains<span class="o">)</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/opt/riscv64gc/bin/:<span class="nv">$PATH</span>
+
+Then <span class="s1">'make'</span> with PCIE:
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span> <span class="nv">BOARD</span><span class="o">=</span>vc707devkit
+
+or <span class="s1">'make'</span> without PCIE:
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span> <span class="nv">BOARD</span><span class="o">=</span>vc707devkit_nopci
+</code></pre></div></div>
+
+<h4 id="iii-write-sd-card--boot-on">(iii) Write SD card &amp; boot on</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>work/bbl.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">bs</span><span class="o">=</span>4096 <span class="nv">conv</span><span class="o">=</span>fsync
+  <span class="c">#where X is the number of the USB device</span>
+</code></pre></div></div>
+
+<p>Put in the SD card to the board, program the board, then wait for the board to boot on. Communicate with the board via UART:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>minicom <span class="nt">-b</span> 115200 <span class="nt">-D</span> /dev/ttyUSBx
+  <span class="c">#where x is the number of connected USB-UART</span>
+  <span class="c">#login by the id of 'root' and the password of 'sifive'</span>
+</code></pre></div></div>
+
+<h3 id="ii-b-with-tee-keystone-build">II. b) With TEE (KeyStone-build)</h3>
+
+<p>Reference link: <a href="https://github.com/keystone-enclave/keystone">github.com/keystone-enclave</a> for the KeyStone project.</p>
+
+<h4 id="i-partition-the-sd-card">(i) Partition the SD card</h4>
+
+<p>Use the <strong>gptfdisk</strong> tool to create 4 partitions in the SD card.</p>
+
+<p>If you don’t have the <strong>gptfdisk tool</strong>, then do the followings to install it:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/tmagik/gptfdisk.git
+  <span class="c">#branch master commit 3d6a1587 on 9-Dec-2018</span>
+<span class="nv">$ </span><span class="nb">cd </span>gptfdisk/
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>To use gptfdisk:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>gptfdisk/            <span class="c">#go to gptfdisk folder</span>
+<span class="nv">$ </span><span class="nb">sudo</span> ./gdisk /dev/sd?   <span class="c">#point to the sd-card</span>
+
+Some commands:
+<span class="nv">$ </span>p   <span class="c">#print partitions information</span>
+<span class="nv">$ </span>d   <span class="c">#delete partition</span>
+<span class="nv">$ </span>n   <span class="c">#create new partition</span>
+<span class="nv">$ </span>w   <span class="c">#write partition</span>
+</code></pre></div></div>
+
+<p>The partitions after created:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number  Start <span class="o">(</span>sector<span class="o">)</span>  End <span class="o">(</span>sector<span class="o">)</span>  Size        Code    Name
+1       2048            67583         32.0 MiB    5202    SiFive bare-metal <span class="o">(</span>...
+2       264192          15759326      7.4 GiB     8300    Linux filesystem
+4       67584           67839         128.0 KiB   5201    SiFive FSBL <span class="o">(</span>first-...
+</code></pre></div></div>
+
+<h4 id="ii-prepare-bbl--fsbl">(ii) Prepare BBL &amp; FSBL</h4>
+
+<p><strong>For the bbl.bin:</strong></p>
+
+<p>Follow the instruction to make the <strong>bbl.bin</strong> of the Keystone &amp; Keystone demo: <a href="/project/2020/07/24/Keystone-makefile-64">Keystone 64-bit Makefile</a>, <a href="/project/2020/07/24/Keystone-makefile-32">Keystone 32-bit Makefile</a>, <a href="/project/2020/11/12/Keystone-cmake-64">Keystone 64-bit CMake</a>, or <a href="/project/2020/11/05/Keystone-cmake-32">Keystone 32-bit CMake</a>.</p>
+
+<p>The <strong>bbl.bin</strong> is for the 1st partition of the SD card:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> &lt;keystone folder&gt;    <span class="c">#cd to your keystone folder</span>
+<span class="nv">$ </span><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>hifive-work/bbl.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX1 <span class="nv">bs</span><span class="o">=</span>4096 <span class="nv">conv</span><span class="o">=</span>fsync
+  <span class="c">#where the X1 is the 1st partition of the USB device</span>
+</code></pre></div></div>
+
+<p><strong>For the fsbl.bin:</strong></p>
+
+<p>After the hardware make (section <a href="#i-a-build">I. a) Build</a> above), there is a <strong>vc707fsbl.bin</strong> file inside the folder <strong>bootrom/freedom-u540-c000-bootloader/</strong>. That file is for the 4th partition of the SD card:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> &lt;your freedom folder&gt;
+<span class="nv">$ </span><span class="nb">cd </span>bootrom/freedom-u540-c000-bootloader/
+<span class="nv">$ </span><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>vc707fsbl.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX4 <span class="nv">bs</span><span class="o">=</span>4096 <span class="nv">conv</span><span class="o">=</span>fsync
+  <span class="c">#where the X4 is the 4th partition of the USB device</span>
+</code></pre></div></div>
+
+<h4 id="iii-boot-on--run-the-test">(iii) Boot on &amp; run the test</h4>
+
+<p>Finally, put in the SD card to the board, program the board, then wait for the board to boot on. Communicate with the board via UART:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>minicom <span class="nt">-b</span> 115200 <span class="nt">-D</span> /dev/ttyUSBx
+  <span class="c">#where x is the number of connected USB-UART</span>
+  <span class="c">#login by the id of 'root' and the password of 'sifive'</span>
+</code></pre></div></div>
+
+<p>To run the keystone test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>insmod keystone-driver.ko           <span class="c">#install driver</span>
+<span class="nv">$ </span><span class="nb">time</span> ./tests/tests.ke               <span class="c">#okay if the 'Attestation report SIGNATURE is valid' is printed</span>
+<span class="nv">$ </span><span class="nb">cd </span>keystone-demo/                   <span class="c">#go to the keystone-demo test</span>
+<span class="nv">$ </span>./enclave-host.riscv &amp;              <span class="c">#run host in localhost</span>
+<span class="nv">$ </span>./trusted_client.riscv localhost    <span class="c">#connect to localhost and test</span>
+</code></pre></div></div>
+<p>It is okay if the <strong>Attestation signature and enclave hash are valid</strong> is printed.</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-64.html" title="Keystone 64-bit build using Makefile">Keystone 64-bit build using Makefile</a><a class="next" href="/jekyll-theme-yat/project/2020/07/24/vc707-program-debug.html" title="SiFive Freedom: VC707 program and debug guide">SiFive Freedom: VC707 program and debug...</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-64.html" title="SiFive Freedom: VC707 program and debug guide">Keystone 64-bit build using Makefile</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html" title="SiFive Freedom: VC707 program and debug guide">Fresh Ubuntu (24.04) setup for working with RISC-V</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/markdown/2018/05/26/mathjax-test.html" title="SiFive Freedom: VC707 program and debug guide">Mathjax Test</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/project/2019/05/01/FIC-video-hist.html" title="SiFive Freedom: VC707 program and debug guide">FIC application: auto-exposure histogram equalization camera</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">Content</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Enjoy building world!</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

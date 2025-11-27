@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Install VLSI-CAD tools on Ubuntu (24.04) | Thuctorial</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Install VLSI-CAD tools on Ubuntu (24.04)">
+<meta name="author" content="thuchoang90">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="I. Preparation Install some dependencies: $ sudo apt install ksh csh zsh patchelf xvfb Make changes to YOUR ~/.bashrc according to the example. In the example, watch from the mark # VLSI-CAD TOOLS to the end. Make sure to put the correct installation folder to those export ... .">
+<meta property="og:description" content="I. Preparation Install some dependencies: $ sudo apt install ksh csh zsh patchelf xvfb Make changes to YOUR ~/.bashrc according to the example. In the example, watch from the mark # VLSI-CAD TOOLS to the end. Make sure to put the correct installation folder to those export ... .">
+<link rel="canonical" href="/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools.html">
+<meta property="og:url" content="/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools.html">
+<meta property="og:site_name" content="Thuctorial">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-03-09T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Install VLSI-CAD tools on Ubuntu (24.04)">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"thuchoang90"},"dateModified":"2025-03-09T00:00:00+00:00","datePublished":"2025-03-09T00:00:00+00:00","description":"I. Preparation Install some dependencies: $ sudo apt install ksh csh zsh patchelf xvfb Make changes to YOUR ~/.bashrc according to the example. In the example, watch from the mark # VLSI-CAD TOOLS to the end. Make sure to put the correct installation folder to those export ... .","headline":"Install VLSI-CAD tools on Ubuntu (24.04)","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools.html"},"url":"/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Thuctorial">
+<script>
+  function initGoogleAnalytics() {
+    var doNotTrack = (window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
+      navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1");
+    var enableDNT = "true" == "true";
+
+    if (!enableDNT || !doNotTrack) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'Tracking ID', 'auto');
+      ga('send', 'pageview');
+    }
+  }
+  window.addEventListener("load", initGoogleAnalytics);
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Thuctorial" src="" onerror="this.style.display='none'">
+  Thuctorial
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/teaching.html">TEACHING</a><a class="page-link" href="/jekyll-theme-yat/tutorial.html">TUTORIAL</a><a class="page-link" href="/jekyll-theme-yat/project.html">PROJECT</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a><a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="vi">
+          
+          <img src="https://cdn.countryflags.com/thumbs/vietnam/flag-400.png" title="Vietnamese">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Install VLSI-CAD tools on Ubuntu (24.04)</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2025-03-09T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Mar 09, 2025
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 15 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#VLSI">#VLSI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Linux">#Linux</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Tutorial">#Tutorial</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="i-preparation">I. Preparation</h2>
+<p>Install some dependencies:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>ksh csh zsh patchelf xvfb
+</code></pre></div></div>
+<p>Make changes to <strong>YOUR</strong> <code class="language-plaintext highlighter-rouge">~/.bashrc</code> according to the <a href="/assets/sources/other/bashrc">example</a>.<br>
+In the example, watch from the mark <code class="language-plaintext highlighter-rouge"># VLSI-CAD TOOLS</code> <em><ins>to the end</ins></em>.<br>
+Make sure to put the correct installation folder to those <code class="language-plaintext highlighter-rouge">export ...</code> .</p>
+
+<p>The <strong>bin-PATH</strong> and <strong>HOME-PATH</strong> are two different things and serve different purposes.<br>
+You can change the <strong>bin-PATH</strong> names, but please keep the <strong>HOME-PATH</strong> names because the tool’s environment needs those exact <strong>HOME-PATH</strong> names.</p>
+
+<h2 id="ii-install-cadence-tools">II. Install CADENCE Tools</h2>
+<h3 id="ii-1-installation">II. 1) Installation</h3>
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> After downloading all the data, unzip all the tarballs.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> If there are multi-part tarballs (like <code class="language-plaintext highlighter-rouge">...1of4</code>, <code class="language-plaintext highlighter-rouge">...2of4</code>, etc.), extract each tarball, and then merge all the folders into one.<br>
+You can run it by the terminal: <code class="language-plaintext highlighter-rouge">$ mv &lt;name&gt;_*/* .</code></p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> To run the installation GUI: <code class="language-plaintext highlighter-rouge">$ IScape/iscape/bin/iscape.sh</code></p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> On the GUI, select the <code class="language-plaintext highlighter-rouge">Local directory/Media install</code> and browse to the <code class="language-plaintext highlighter-rouge">CDROM1</code> folder in the merged folder in <em>step 2</em>.</p>
+  </li>
+  <li>
+    <p><strong>Step 5:</strong> Follow the GUI, choose the installation folder, start, wait -&gt; done.<br>
+It is best to wait for the GUI and do nothing; don’t interact with other terminals; the GUI is quite fragile!</p>
+  </li>
+  <li>
+    <p><strong>Step 6:</strong> If there are many versions, install the LOWEST (or OLDEST) version FIRST.</p>
+  </li>
+  <li>
+    <p><strong>Step 7:</strong> If there are Base, Hotfix, and Update on the SAME VERSION, the install sequence should be: Base -&gt; Hotfix -&gt; Update.<br>
+Please DON’T install Hotfix/Update in a separate folder with the Base.</p>
+  </li>
+  <li>
+    <p><strong>Step 8:</strong> After the installation, you can remove the <code class="language-plaintext highlighter-rouge">install/</code> and <code class="language-plaintext highlighter-rouge">installData/</code> folders to restore some spaces.</p>
+  </li>
+</ul>
+
+<h3 id="ii-2-about-the-oa_home">II. 2) About the OA_HOME</h3>
+<p>All the Cadence tools require an <code class="language-plaintext highlighter-rouge">OA_HOME</code> .<br>
+Each tool sometimes carries its own local <code class="language-plaintext highlighter-rouge">oa_...</code> folder (not always).</p>
+
+<p>We need to look for those local <code class="language-plaintext highlighter-rouge">oa_...</code> folders and choose the one with the latest <code class="language-plaintext highlighter-rouge">linux_rhel...</code> in its <code class="language-plaintext highlighter-rouge">lib/</code> .<br>
+Usually, <strong>INNOVUS</strong> or <strong>IC</strong> will have the latest version.</p>
+
+<p>When you decided which <code class="language-plaintext highlighter-rouge">oa_...</code> folder to use,<br>
+-&gt; put the correct <strong>PATH</strong> to the <code class="language-plaintext highlighter-rouge">OA_HOME</code> in the <code class="language-plaintext highlighter-rouge">~/.bashrc</code> .<br>
+-&gt; put the correct <code class="language-plaintext highlighter-rouge">OA_UNSUPPORTED_PLAT</code> in the <code class="language-plaintext highlighter-rouge">~/.bashrc</code>, too.<br>
+The <code class="language-plaintext highlighter-rouge">OA_UNSUPPORTED_PLAT</code> must match the name <code class="language-plaintext highlighter-rouge">linux_rhel...</code> in the <code class="language-plaintext highlighter-rouge">$OA_HOME/lib/</code> folder.<br>
+<ins><em>Note:</em></ins> The suffix <code class="language-plaintext highlighter-rouge">_64</code> must be removed from the <code class="language-plaintext highlighter-rouge">OA_UNSUPPORTED_PLAT</code> .</p>
+
+<p>Finally, open the <code class="language-plaintext highlighter-rouge">$OA_HOME/bin/sysname</code> and change the 1st line from <code class="language-plaintext highlighter-rouge">#!/bin/sh</code> to <code class="language-plaintext highlighter-rouge">#!/bin/bash</code> .</p>
+
+<h3 id="ii-3-cadence-tool-list">II. 3) CADENCE Tool List</h3>
+<p>After installed, to check if the tool works, try to run the following:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>ASSURA/bin/assura
+   <span class="nv">$ </span>CONFRML/bin/lec_64
+   <span class="nv">$ </span>DDI/bin/genus
+   <span class="nv">$ </span>DDI/bin/innovus
+   <span class="nv">$ </span>DDI/bin/joules
+   <span class="nv">$ </span>EMX/bin/emx
+   <span class="nv">$ </span>GENUS/bin/genus
+   <span class="nv">$ </span>IC23/bin/virtuoso
+   <span class="nv">$ </span>IC618/bin/virtuoso
+   <span class="nv">$ </span>ICADV/bin/virtuoso
+   <span class="nv">$ </span>INNOVUS/bin/innovus
+   <span class="nv">$ </span>JasperGold/bin/jaspergold
+   <span class="nv">$ </span>LIBERATE/bin/liberate
+   <span class="nv">$ </span>MODUS/bin/modus
+   <span class="nv">$ </span>MVS/bin/lpa
+   <span class="nv">$ </span>PEGASUS/bin/pegasus
+   <span class="nv">$ </span>PVS/bin/pvs
+   <span class="nv">$ </span>QUANTUS/bin/quantus
+   <span class="nv">$ </span>SIGRITY/tools/bin/3dworkbench
+   <span class="nv">$ </span>SPB/bin/XScale
+   <span class="nv">$ </span>SPECTRE/bin/spectre
+   <span class="nv">$ </span>SSV/bin/tempus
+   <span class="nv">$ </span>STRATUS/bin/stratus
+   <span class="nv">$ </span>XCELIUM/tools/bin/xrun
+</code></pre></div></div>
+<p>As long as the tool opens (maybe complains about the license), then you are fine.<br>
+If the tool shows errors (mostly related to those .so files) and does not open, then you have to try to fix the errors.</p>
+
+<h2 id="iii-install-mentor-graphics-tools">III. Install MENTOR GRAPHICS Tools</h2>
+<h3 id="iii-1-installation">III. 1) Installation</h3>
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Untar all the tarballs.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Run the <code class="language-plaintext highlighter-rouge">.exe</code>, <code class="language-plaintext highlighter-rouge">.bin</code>, <code class="language-plaintext highlighter-rouge">.mib</code>, or <code class="language-plaintext highlighter-rouge">.aol</code> directly and follow the guide in the terminal.<br>
+(for <strong>calibre</strong> tool, choose the <code class="language-plaintext highlighter-rouge">aok...</code> version if Ubuntu)</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> After the installation, you can remove the <code class="language-plaintext highlighter-rouge">_msidata/</code> and <code class="language-plaintext highlighter-rouge">install.aol/</code> folders to restore some spaces.</p>
+  </li>
+</ul>
+
+<h3 id="iii-2-fix-calibre-error">III. 2) Fix Calibre Error</h3>
+<p>After installed, when you’re trying to run the <strong>calibre</strong> and get this error:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Invalid operating system environment, <span class="nv">VENDOR</span><span class="o">=</span>unknown OS <span class="nv">VERSION</span><span class="o">=</span>24
+</code></pre></div></div>
+<p>This means the tool checked your OS version and said it doesn’t support the OS.<br>
+-&gt; Follow these steps to bypass the check:</p>
+
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Check this website: <a href="https://calibre.mentorcloudservices.com/docs/Calibre_OS_Roadmap.htm">https://calibre.mentorcloudservices.com/docs/Calibre_OS_Roadmap.htm</a><br>
+For example, if you previously installed the <code class="language-plaintext highlighter-rouge">aok...</code> version, you now have to ‘trick’ the tool into thinking that your machine is a RedHat 8 version.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> In the <strong>calibre</strong> installation path: <code class="language-plaintext highlighter-rouge">$ vi pkgs/icv_calenv/pvt/calibre_host_info</code><br>
+<ins>At the end</ins> of the file, write these two lines in:</p>
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nv">OS_VENDOR</span><span class="o">=</span><span class="s1">'redhat'</span>
+ <span class="nv">OS_MAJOR_REV</span><span class="o">=</span><span class="s1">'8'</span>
+</code></pre></div>    </div>
+    <p>In the calibre’s installation folder, there is a folder named <strong>tmp</strong> or <strong>temp</strong>.<br>
+That is a symbolic link, and it has to be true.<br>
+If you see it is showing red, means the link is broken. -&gt; You have to correct it.</p>
+  </li>
+</ul>
+
+<p>Usually, the <strong>tmp</strong> folder in Ubuntu filesystem is at <strong>/tmp</strong>.<br>
+So, do the following to re-correct the link:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span><span class="nb">rm </span>tmp
+   <span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /tmp tmp
+</code></pre></div></div>
+
+<h3 id="iii-3-mentor-graphics-tool-list">III. 3) MENTOR GRAPHICS Tool List</h3>
+<p>After installed, to check if the tool works, try to run the following:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>0-in/linux_x86_64/bin/0in
+   <span class="nv">$ </span>AMSV/amsv/bin/afs
+   <span class="nv">$ </span>Calibre/bin/calibre
+   <span class="nv">$ </span>DFT/bin/dftadvisor
+   <span class="nv">$ </span>LeonardSpectrum/bin/Linux/spectrum
+   <span class="nv">$ </span>ModelSim/bin/vsim
+   <span class="nv">$ </span>Pyxis/bin/da_ic
+   <span class="nv">$ </span>QuestaSim/bin/vlib
+</code></pre></div></div>
+<p>As long as the tool opens (maybe complains about the license), then you are fine.<br>
+If the tool shows errors (mostly related to those .so files) and does not open, then you have to try to fix the errors.</p>
+
+<h2 id="iv-install-synopsys-tools">IV. Install SYNOPSYS Tools</h2>
+<h3 id="iv-1-installation">IV. 1) Installation</h3>
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Go to the <code class="language-plaintext highlighter-rouge">synopsys_installer/</code> folder and run the <code class="language-plaintext highlighter-rouge">.run</code> file.<br>
+It’ll self-extract into a series of files. The <code class="language-plaintext highlighter-rouge">setup.sh</code> is the one we need.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Open the installation GUI by running that <code class="language-plaintext highlighter-rouge">setup.sh</code> .<br>
+<ins><em>Note:</em></ins> the <code class="language-plaintext highlighter-rouge">Site ID Number</code> = <code class="language-plaintext highlighter-rouge">000</code> is ok.</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> Browse to each folder, set the target installation folder, install, wait -&gt; done.<br>
+<ins><em>Note 1:</em></ins> The download folder (containning those .spf files) and the destination folder must be different; the GUI wants that.<br>
+-&gt; In my experience, I set the destination folder = <code class="language-plaintext highlighter-rouge">.../Synopsys/</code> while my download folder = <code class="language-plaintext highlighter-rouge">.../Synopsys/toolname/</code> .<br>
+<ins><em>Note 2:</em></ins> You might have to re-run the <code class="language-plaintext highlighter-rouge">setup.sh</code> GUI after each installation.</p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> If you see an error about <strong>OVERLAY</strong>, another tool must be installed first.<br>
+<ins><em>Note:</em></ins> The versions of the required TOOL and the OVERLAY TOOL must match in order to continue with the installation.</p>
+  </li>
+</ul>
+
+<h3 id="iv-2-synopsys-tool-list">IV. 2) SYNOPSYS Tool List</h3>
+<p>After installed, to check if the tool works, try to run the following:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>customcompiler/W-2024.09/bin/custom_compiler
+   <span class="nv">$ </span>finesim/Q-2020.03-SP1/bin/finesim
+   <span class="nv">$ </span>formality/W-2024.09/bin/fm_shell
+   <span class="nv">$ </span>fpga/U-2023.03/bin/synplify_pro
+   <span class="nv">$ </span>fusioncompiler/W-2024.09/bin/fc_shell
+   <span class="nv">$ </span>fusioncompiler/W-2024.09/bin/icc2_lm_shell
+   <span class="nv">$ </span>fusioncompiler/W-2024.09/bin/lm_shell
+   <span class="nv">$ </span>hercules/B-2008.09-SP5-1/bin/amd64/hercules
+   <span class="nv">$ </span>hsim/Q-2020.03-SP2/hsimplus/bin/hsim
+   <span class="nv">$ </span>hspice/W-2024.09-1/hspice/bin/hspice
+   <span class="nv">$ </span>icc/W-2024.09/bin/icc_shell
+   <span class="nv">$ </span>icc2/W-2024.09/bin/icc2_shell
+   <span class="nv">$ </span>icv_workbench/V-2023.09-SP2/bin/linux64/icvwb
+   <span class="nv">$ </span>icvalidator/W-2024.09-2/bin/icv64
+   <span class="nv">$ </span>idq/R-2020.09-SP4/linux64/iddq/bin/ipro
+   <span class="nv">$ </span>library_compiler/W-2024.09/bin/lc_shell
+   <span class="nv">$ </span>milkyway/W-2024.09/bin/linux64/Milkyway
+   <span class="nv">$ </span>nanotime/V-2023.12-SP5/bin/nt_shell
+   <span class="nv">$ </span>primelib/T-2022.03-1/bin/primelib
+   <span class="nv">$ </span>primerail/M-2017.06-SP3/bin/pr_shell
+   <span class="nv">$ </span>primesim/T-2022.06-SP2-2/bin/primesim
+   <span class="nv">$ </span>primetime/U-2022.12-SP5-4/bin/pt_shell
+   <span class="nv">$ </span>primewave/W-2024.09/bin/primewave
+   <span class="nv">$ </span>primewavereliability/W-2024.09/bin/primewave_reliability
+   <span class="nv">$ </span>quantumatk/W-2024.09-SP1/bin/quantumatk
+   <span class="nv">$ </span>quickcap/W-2024.09/bin/quickcap
+   <span class="nv">$ </span>raphael/T-2022.03/bin/raphael
+   <span class="nv">$ </span>raphael_fx/T-2022.03-SP1/bin/raphael_fx
+   <span class="nv">$ </span>rtl_architect/T-2022.03-SP1/bin/rtl_shell
+   <span class="nv">$ </span>sentaurus/W-2024.09/bin/qtx
+   <span class="nv">$ </span>sentaurus_explorer/W-2024.09/bin/spx
+   <span class="nv">$ </span>siliconsmart/V-2023.12-SP1-7/bin/siliconsmart
+   <span class="nv">$ </span>slitho/U-2022.12/bin/slitho
+   <span class="nv">$ </span>slitho_pwa/U-2022.12/bin/pwa
+   <span class="nv">$ </span>spxviewer/W-2024.09/bin/spx_routeview
+   <span class="nv">$ </span>spyglass/V-2023.12/SPYGLASS_HOME/bin/spyglass
+   <span class="nv">$ </span>starrc/V-2023.12-SP5/bin/starrc_shell
+   <span class="nv">$ </span>syn/W-2024.09/bin/dc_shell
+   <span class="nv">$ </span>taurus/S_2021.06/bin/medici
+   <span class="nv">$ </span>tetramax/R-2020.09-SP4/bin/tmax2
+   <span class="nv">$ </span>vcs/W-2024.09/bin/vcs
+   <span class="nv">$ </span>vc_static/S-2021.09-SP2-4/bin/vc_static_shell
+   <span class="nv">$ </span>verdi/T-2022.06-SP1-1/bin/verdi
+   <span class="nv">$ </span>waveview/W-2024.09-2/bin/wv
+   <span class="nv">$ </span>xa/W-2024.09-1/bin/xa
+</code></pre></div></div>
+<p>As long as the tool opens (maybe complains about the license), then you are fine.<br>
+If the tool shows errors (mostly related to those .so files) and does not open, then you have to try to fix the errors.</p>
+
+<h2 id="v-fix-so-error">V. Fix .so Error</h2>
+<h3 id="v-1-fix-missing-so-files">V. 1) Fix Missing .so Files</h3>
+<p>Fix the missing or wrong <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> file:</p>
+
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Check if the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> or the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so</code> in the system or not.<br>
+The check command: <code class="language-plaintext highlighter-rouge">$ whereis &lt;name&gt;.so.&lt;number&gt;</code> or: <code class="language-plaintext highlighter-rouge">$ whereis &lt;name&gt;.so</code><br>
+-&gt; If not found, proceed to <em>step 2</em>.<br>
+-&gt; If found, create a symbolic link and link it back to the <code class="language-plaintext highlighter-rouge">/usr/lib/</code> folder.<br>
+The link command: <code class="language-plaintext highlighter-rouge">$ ln -s /path/to/filename /usr/lib/&lt;name&gt;.so.&lt;number&gt;</code></p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> If the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so</code> file cannot be found by <code class="language-plaintext highlighter-rouge">whereis</code>, then try to <code class="language-plaintext highlighter-rouge">apt install</code> it first.<br>
+The apt install command: <code class="language-plaintext highlighter-rouge">$ sudo apt-get install &lt;name&gt;</code> or: <code class="language-plaintext highlighter-rouge">$ sudo apt-get install &lt;name&gt;&lt;number&gt;</code><br>
+<ins><em>Note:</em></ins> The <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> is usually all <ins>de-capitalized</ins>, and <ins>NO dot</ins> <code class="language-plaintext highlighter-rouge">.</code> in between the <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> and the <code class="language-plaintext highlighter-rouge">&lt;number&gt;</code> .<br>
+-&gt; If the apt package or the exact version is unavailable, proceed to <em>step 3</em>.</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> In this step, you have to download the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> manually. Go to this website: <a href="https://pkgs.org/">https://pkgs.org/</a><br>
+Search for the full name of <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> . Pick either <strong>Solus</strong> or <strong>FreeBSD/NetBSD</strong>.<br>
+Beware of the 32-bit or 64-bit version, pick the one you need. Download it, untar it.<br>
+Beware of the link files, after untar, always use <code class="language-plaintext highlighter-rouge">ll</code> to check, not <code class="language-plaintext highlighter-rouge">ls</code> -&gt; So you can see where the link is going to.<br>
+Copy only the content file (<em>NOT</em> the link file) to the <code class="language-plaintext highlighter-rouge">/usr/lib/</code> folder.<br>
+Then, go to the <code class="language-plaintext highlighter-rouge">/usr/lib/</code> folder and re-create the link file by: <code class="language-plaintext highlighter-rouge">$ sudo ln -s &lt;raw file&gt; &lt;name&gt;.so.&lt;number&gt;</code> .</p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> If the error still exists and says <code class="language-plaintext highlighter-rouge">ELF32</code> or <code class="language-plaintext highlighter-rouge">ELF64</code> wrong, you copied the wrong 32/64-bit version.<br>
+-&gt; Repeat <em>step 3</em> and download the corrected ones.</p>
+  </li>
+</ul>
+
+<h3 id="v-2-other-errors">V. 2) Other Errors</h3>
+<ul>
+  <li>
+<strong>Problem 1:</strong> If the error says something about <code class="language-plaintext highlighter-rouge">undefined symbol</code>, for example:
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> undefined symbol: ucal_openTimeZones_50
+</code></pre></div>    </div>
+    <p>Maybe it’s still about the missing .so file, let’s <code class="language-plaintext highlighter-rouge">grep -r</code> and see if something comes up: <code class="language-plaintext highlighter-rouge">$ grep -r ucal_openTimeZones_50</code> :</p>
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nb">grep</span>: tools.lnx86/lib/cdnslibicui18n.so.50.1.2: binary file matches
+ <span class="nb">grep</span>: tools.lnx86/lib/64bit/cdnslibicui18n.so.50.1.2: binary file matches
+ <span class="nb">grep</span>: tools.lnx86/Qt/v5/64bit/lib/libcdsQt5Core.so.5.15.9: binary file matches
+</code></pre></div>    </div>
+    <p>In this case, it means you’re missing the <code class="language-plaintext highlighter-rouge">cdnslibicui18n.so</code> file.<br>
+-&gt; So, let’s repeat from the <em>step 1</em> in the <ins><em>previous section</em></ins>.</p>
+  </li>
+  <li>
+<strong>Problem 2:</strong> If these kind of errors show up: <code class="language-plaintext highlighter-rouge">operator</code>, <code class="language-plaintext highlighter-rouge">unexpected</code>, <code class="language-plaintext highlighter-rouge">syntax error</code>; for example:
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nb">test</span>: unexpected operator
+ Syntax error: redirection unexpected
+ Syntax error: <span class="s2">"("</span> unexpected
+ <span class="o">[</span>: 0: unexpected operator
+ /bin/sh: 0: Illegal option <span class="nt">-h</span>
+</code></pre></div>    </div>
+    <p>Then, this is about the bash-script environment.<br>
+Open the run file, change the 1st line from <code class="language-plaintext highlighter-rouge">#!/bin/sh</code> to <code class="language-plaintext highlighter-rouge">#!/bin/bash</code> and try again.</p>
+  </li>
+  <li>
+<strong>Problem 3:</strong> If the error says something about <code class="language-plaintext highlighter-rouge">GLIBC</code>, it could be very serious or still about some missing .so files.<br>
+Take a closer look at the error message. If it said something like this:
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> tools.lnx86/lib/64bit/&lt;name&gt;.so.&lt;number&gt;: version <span class="sb">`</span>GLIBC_X.X<span class="s1">' not found (required by ...)
+</span></code></pre></div>    </div>
+    <p>Look closely at the <strong>PATH</strong> of the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> file, and you’ll see it uses its own local lib of <code class="language-plaintext highlighter-rouge">tools.lnx86/lib/64bit/</code>, not the system’s lib like <code class="language-plaintext highlighter-rouge">/usr/...</code> or <code class="language-plaintext highlighter-rouge">/lib/...</code> .<br>
+Maybe the system doesn’t have that <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> file -&gt; The tool is trying to use its own local version, which is causing the problem.<br>
+To know for sure, try <code class="language-plaintext highlighter-rouge">whereis</code> the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> and check if the system has it or not. -&gt; This means you’re repeating the <em>step 1</em> in the <ins>previous section</ins>.</p>
+  </li>
+  <li>
+<strong>Problem 4:</strong> Same as the previous problem, however, this time, the <strong>PATH</strong> of the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> DO belongs to the system’s lib. For example:
+    <div class="language-shell highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> /lib/x86_64-linux-gnu/&lt;name&gt;.so.&lt;number&gt;: version <span class="sb">`</span>GLIBC_X.X<span class="s1">' not found (required by ...)
+</span></code></pre></div>    </div>
+    <p>Yeah, in this case, this is serious. Mismatching <strong>GLIBC</strong> between the tool and its host is a horror for any Linux dev.<br>
+Just a sanity check, let’s still do a <code class="language-plaintext highlighter-rouge">$ whereis &lt;name&gt;.so.&lt;number&gt;</code> .<br></p>
+  </li>
+</ul>
+
+<p>If the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> is there, properly linked, but the error persists, then you’re left with only one option: <ins>upgrade</ins> or <ins>downgrade</ins> the <strong>GLIBC</strong> (which is not recommended anywhere).<br></p>
+
+<p><strong>GLIBC</strong> <em>IS</em> the Kernel. Messing with it could destroy your OS, so do it at your own risk.<br>
+When you’re ready, check the <a href="/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem">Install VLSI-CAD Tools with GLIBC_Problem</a> guide.</p>
+
+<h3 id="v-3-backup-solution">V. 3) Backup Solution</h3>
+<p><strong>NOTE:</strong> This solution is a backup and not recommended because tricking the VLSI-CAD tools this way could lead to unforeseen problems.<br>
+Sometimes, it causes problems for other tools, not even the VLSI-CAD tools.</p>
+
+<p>You can create a ‘fake’ <strong>redhat-release</strong> file by: <code class="language-plaintext highlighter-rouge">$ sudo vi /etc/redhat-release</code><br>
+Then, write this line:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 8.&lt;sub-version&gt;.&lt;<span class="nb">date</span><span class="o">&gt;</span> <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>
+<p>For the <code class="language-plaintext highlighter-rouge">&lt;sub-version&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;date&gt;</code>, check this website: <a href="https://access.redhat.com/articles/3078">https://access.redhat.com/articles/3078</a><br>
+The <code class="language-plaintext highlighter-rouge">&lt;date&gt;</code> is a 4-digit number: first 2-digit for year, and last 2-digit for month.</p>
+
+<p>For example, if you want to pick the RedHat 7.0 version, then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 7.0.1406 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>
+<p>If you want to pick the RedHat 8.0 version, then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 8.0.1905 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>
+<p>If you want to pick the RedHat 8.10 version, then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 8.10.2405 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html" title="Fresh Ubuntu (24.04) setup for working with RISC-V">Fresh Ubuntu (24.04) setup for working...</a><a class="next" href="/jekyll-theme-yat/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem.html" title="Install VLSI-CAD tools with GLIBC problem">Install VLSI-CAD tools with GLIBC problem...</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/teaching/2022/12/30/Advanced-VLSI.html" title="Install VLSI-CAD tools with GLIBC problem">Advanced VLSI Design</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/markdown/2017/06/10/quick-mardown-example.html" title="Install VLSI-CAD tools with GLIBC problem">Quick markdown example</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-32.html" title="Install VLSI-CAD tools with GLIBC problem">Keystone 32-bit build using Makefile</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/misc/2016/05/19/super-short-article.html" title="Install VLSI-CAD tools with GLIBC problem">Some articles are just so short that we have to make the...</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">Content</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Enjoy building world!</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

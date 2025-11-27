@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fresh Ubuntu (24.04) setup for working with RISC-V | Thuctorial</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Fresh Ubuntu (24.04) setup for working with RISC-V">
+<meta name="author" content="thuchoang90">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="I. Dependencies &amp; Proxy">
+<meta property="og:description" content="I. Dependencies &amp; Proxy">
+<link rel="canonical" href="/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html">
+<meta property="og:url" content="/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html">
+<meta property="og:site_name" content="Thuctorial">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-02-13T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Fresh Ubuntu (24.04) setup for working with RISC-V">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"thuchoang90"},"dateModified":"2025-02-13T00:00:00+00:00","datePublished":"2025-02-13T00:00:00+00:00","description":"I. Dependencies &amp; Proxy","headline":"Fresh Ubuntu (24.04) setup for working with RISC-V","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html"},"url":"/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Thuctorial">
+<script>
+  function initGoogleAnalytics() {
+    var doNotTrack = (window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
+      navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1");
+    var enableDNT = "true" == "true";
+
+    if (!enableDNT || !doNotTrack) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'Tracking ID', 'auto');
+      ga('send', 'pageview');
+    }
+  }
+  window.addEventListener("load", initGoogleAnalytics);
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Thuctorial" src="" onerror="this.style.display='none'">
+  Thuctorial
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/teaching.html">TEACHING</a><a class="page-link" href="/jekyll-theme-yat/tutorial.html">TUTORIAL</a><a class="page-link" href="/jekyll-theme-yat/project.html">PROJECT</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a><a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="vi">
+          
+          <img src="https://cdn.countryflags.com/thumbs/vietnam/flag-400.png" title="Vietnamese">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Fresh Ubuntu (24.04) setup for working with RISC-V</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2025-02-13T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 13, 2025
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 11 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#RISC-V">#RISC-V</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Linux">#Linux</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Tutorial">#Tutorial</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="i-dependencies--proxy">I. Dependencies &amp; Proxy</h2>
+
+<p>To make <code class="language-plaintext highlighter-rouge">vi</code> more comfortable:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>vim
+<span class="nv">$ </span>vi ~/.vimrc
+</code></pre></div></div>
+
+<p>Then add this two lines below:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set </span>nocompatible
+syntax on
+</code></pre></div></div>
+
+<p>If your machine needs proxy, replace the <strong>http://[address]:[port]</strong> with your proxy address: (don’t do this if you don’t have proxy)</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::http::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::https::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::ftp::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+</code></pre></div></div>
+
+<p>Update &amp; upgrade everything:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt upgrade
+</code></pre></div></div>
+
+<p>Install dependencies:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>autoconf automake autotools-dev curl python3 python3-pip <span class="se">\</span>
+python3-tomli libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex <span class="se">\</span>
+texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake <span class="se">\</span>
+libglib2.0-dev libslirp-dev minicom npm perl make g++ ccache net-tools wget gcc <span class="se">\</span>
+patch vim-common device-tree-compiler uuid-dev unzip cpio rsync expat screen expect <span class="se">\</span>
+makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang verilator <span class="se">\</span>
+libusb-1.0-0-dev libtool-bin help2man
+</code></pre></div></div>
+
+<p>If your machine needs proxy, replace the <strong>http://[address]:[port]</strong> with your proxy address: (don’t do this if you don’t have proxy)</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>wget
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'http_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'https_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'ftp_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+
+<span class="k">for </span>git
+<span class="nv">$ </span>git config <span class="nt">--global</span> https.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> http.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> ftp.proxy http://[address]:[port]
+
+<span class="k">for </span>npm
+<span class="nv">$ </span>npm config <span class="nb">set </span>proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>https-proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>ftp-proxy http://[address]:[port]/
+
+<span class="k">for </span>curl
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'proxy = "http://[address]:[port]"'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> ~/.curlrc
+</code></pre></div></div>
+
+<p>Finally, reboot the machine.</p>
+
+<hr>
+
+<h2 id="ii-risc-v-tools">II. RISC-V Tools</h2>
+
+<h3 id="ii-a-github">II. a) Github</h3>
+
+<p>When working with RISC-V, you will be using Github all the times. These are some tips for using Github:</p>
+
+<p>To git clone</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span>          <span class="c">#clone and keep the original name for the cloned folder</span>
+<span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span> &lt;name&gt;   <span class="c">#clone and change the name for the cloned folder</span>
+</code></pre></div></div>
+
+<p>To track your changes</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff                                        <span class="c">#list the differences of your folder</span>
+<span class="nv">$ </span>git diff &lt;branch-name&gt;                          <span class="c">#list the differences of your folder compare to another branch</span>
+<span class="nv">$ </span>git diff &lt;src-branch&gt;..&lt;des-branch&gt;             <span class="c">#list the differences between two branches</span>
+<span class="nv">$ </span>git diff &lt;commit-hash&gt;                          <span class="c">#list the differences of your folder compare to the old commit</span>
+<span class="nv">$ </span>git diff &lt;src-commit-hash&gt;..&lt;des-commit-hash&gt;   <span class="c">#list the differences between two commits</span>
+</code></pre></div></div>
+
+<p>To update your folder FROM github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull                  <span class="c">#pull from the current branch</span>
+<span class="nv">$ </span>git pull &lt;branch-name&gt;    <span class="c">#pull from another branch</span>
+</code></pre></div></div>
+
+<p>To update your folder TO github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status                          <span class="c">#to see changes for commit</span>
+<span class="nv">$ </span>git add &lt;file-name&gt; &lt;folder-name&gt;   <span class="c">#first, add every changes of yours</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"&lt;some message&gt;"</span>      <span class="c">#make a commit with &lt;some message&gt; attached</span>
+<span class="nv">$ </span>git push                            <span class="c">#this one will push to the current branch, OR</span>
+<span class="nv">$ </span>git push &lt;branch-name&gt;              <span class="c">#push to another branch</span>
+</code></pre></div></div>
+
+<p>To switch to another branch and commit</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout &lt;branch-name&gt;                    <span class="c">#switch to another branch</span>
+<span class="nv">$ </span>git checkout &lt;commit-hash&gt;                    <span class="c">#rollback to the old commit in the same branch</span>
+<span class="nv">$ </span>git checkout <span class="nt">-b</span> &lt;branch-name&gt; &lt;commit-hash&gt;   <span class="c">#switch to another branch and rollback to the old commit of that branch</span>
+</code></pre></div></div>
+
+<p>To patch file</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="o">&gt;</span> patch-file     <span class="c">#export current changes into a patch-file</span>
+<span class="nv">$ </span>git format-patch &lt;src branch or commit&gt;..&lt;des branch or commit&gt; <span class="nt">--stdout</span> <span class="o">&gt;</span> patch-file
+                            <span class="c">#export a patch-file from &lt;src branch or commit&gt; to &lt;des branch or commit&gt;</span>
+<span class="nv">$ </span>patch <span class="nt">-p1</span> &lt; patch-file    <span class="c">#update your folder with the patch-file</span>
+</code></pre></div></div>
+
+<p>To see the status of repo</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log
+<span class="nv">$ </span>git log <span class="nt">--oneline</span>
+<span class="nv">$ </span>git log <span class="nt">--all</span> <span class="nt">--decorate</span> <span class="nt">--oneline</span> <span class="nt">--graph</span>
+</code></pre></div></div>
+
+<h3 id="ii-b-scala--sbt">II. b) Scala &amp; sbt:</h3>
+
+<p>The source code for hardware is written in the Scala language.</p>
+
+<p>Scala is a language, Chisel is a library.
+Scala itself is not originally designed for “hardware coding.” But with the Chisel library attached to it, then we have a new way for “hardware coding.”</p>
+
+<p>Sbt is a Scala compiler.
+Sbt will compile Scala to Java. Then, executing Java will give us FIRRTL. And finally, a FIRRTL compiler will compile FIRRTL to the actual Verilog code.</p>
+
+<p>In short: Scala -&gt; Java -&gt; FIRRTL -&gt; Verilog (1st arrow is done by SBT, 2nd arrow is done by Java, and 3rd arrows is done by FIRRTL compiler)</p>
+
+<p>Now we need to install sbt. Follow the <a href="https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html">scala-sbt.org</a> to install.</p>
+
+<h3 id="ii-c-qemu">II. c) QEMU</h3>
+
+<p>QEMU is an emulation tool, not a simulation tool. It does not simulate anything (.v codes, .scala codes, or .c codes, etc.).
+It emulates the behavioral that a correct CPU should behave.
+Reference link: <a href="https://github.com/qemu/qemu">github</a> and <a href="https://wiki.qemu.org/Documentation/Platforms/RISCV">wiki</a>.</p>
+
+<p>To install the RISC-V QEMU:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stand where you want to <span class="nb">install </span>RISC-V QEMU
+<span class="nv">$ </span>git clone https://github.com/qemu/qemu.git riscv-qemu
+<span class="nv">$ </span><span class="nb">cd </span>riscv-qemu/
+<span class="nv">$ </span>git checkout stable-9.2   <span class="c">#commit cac3fb44 on 8-Feb-2025</span>
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>../configure <span class="nt">--target-list</span><span class="o">=</span>riscv64-softmmu
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="ii-d-visual-studio-code">II. d) Visual Studio Code</h3>
+
+<p>Let’s download a GUI for our programming.
+Just follow the guide from <a href="https://code.visualstudio.com/docs/setup/linux">code.visualstudio.com</a>.</p>
+
+<h3 id="ii-e-openocd">II. e) OpenOCD</h3>
+
+<p>Open OCD (OCD: On-Chip Debugger) is a tool to control a CPU via a debugger, thus allowing us to load a program, and run or debug that program.</p>
+
+<p>To install &amp; make OpenOCD:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-openocd.git    <span class="c">#branch riscv commit 8f595704 on 31-Jan-2025</span>
+<span class="nv">$ </span><span class="nb">cd </span>riscv-openocd/
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span><span class="nb">cd </span>jimtcl/
+<span class="nv">$ </span>./configure
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+<span class="nv">$ </span><span class="nb">cd</span> ../
+<span class="nv">$ </span>./bootstrap
+<span class="nv">$ </span>./configure <span class="nt">--enable-ftdi</span> <span class="nt">--enable-dummy</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Configuration files for RISC-V CPU: <a href="/assets/sources/other/riscv-openocd.cfg">riscv-openocd</a>
+You should download them and put them under the <code class="language-plaintext highlighter-rouge">riscv-openocd/</code> folder.</p>
+
+<h3 id="ii-f-vivado">II. f) Vivado</h3>
+
+<p><strong>Check your eth0 interface:</strong></p>
+
+<p>Type <code class="language-plaintext highlighter-rouge">$ ifconfig -a</code> to make sure that the network interface name is <code class="language-plaintext highlighter-rouge">eth0</code>.
+If not, the Vivado cannot recognize the license from the NAT interface.
+Then, the network interface name must be rename by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/default/grub
+
+Then add this line beneath those GRUB... lines:
+    <span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"net.ifnames=0 biosdevname=0"</span>
+
+Then:
+<span class="nv">$ </span><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg
+</code></pre></div></div>
+
+<p>Finally, reboot again for the computer to update the new ethernet interface.</p>
+
+<p><strong>Download and Install:</strong></p>
+
+<p>First, download the Vivado for Linux from <a href="https://www.xilinx.com/support/download.html">xilinx.com</a> (linux .bin file self extract). Then, cd to the downloaded .bin file and run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x FPGAs_....bin
+<span class="nv">$ </span>./FPGAs_....bin
+</code></pre></div></div>
+
+<p>The GUI for installation will be load. Choose to install the <strong>Vivado</strong> and then <strong>Vivado ML Standard</strong> and wait for the installer to complete.</p>
+
+<p><strong>Install cable driver:</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>to Vivado installed folder:
+<span class="nv">$ </span><span class="nb">cd</span> ...Xilinx/Vivado/2024.2/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+<span class="nv">$ </span><span class="nb">sudo</span> ./install_drivers
+</code></pre></div></div>
+
+<h3 id="ii-g-quartus">II. g) Quartus</h3>
+
+<p>Just download from the <a href="http://fpgasoftware.intel.com/?edition=standard&platform=linux&download_manager=direct">fpgasoftware.intel.com</a> and install.
+Choose to download the <strong>Quartus Prime Standard Edition</strong>.
+Similarly, cd to the downloaded .bin file and run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x qinst-....bin
+<span class="nv">$ </span>./qinst-....bin
+</code></pre></div></div>
+
+<p>The Quartus execution file is located at <code class="language-plaintext highlighter-rouge">intelFPGA/23.1std/quartus/bin/quartus</code></p>
+
+<p><strong>Install cable driver:</strong></p>
+
+<p>Create two 51- and 52- files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/51-usbblaster.rules
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/52-usbblaster.rules
+</code></pre></div></div>
+
+<p>And add these lines on both files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># USB-Blaster</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6001"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6002"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span> 
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6003"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>   
+
+<span class="c"># USB-Blaster II</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6010"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6810"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+</code></pre></div></div>
+
+<p>After that, you may:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>service udev restart
+</code></pre></div></div>
+
+<p>Or even reboot the computer if it’s still not recognize the cable.</p>
+
+<hr>
+
+<h2 id="iii-risc-v-toolchain">III. RISC-V Toolchain</h2>
+
+<p>Toolchain for RISC-V CPU. Reference <a href="https://github.com/riscv/riscv-gnu-toolchain">link</a>.</p>
+
+<h3 id="iii-a-git-clone">III. a) Git clone</h3>
+
+<p>Git clone the toolchain-making on github:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-gnu-toolchain
+<span class="nv">$ </span><span class="nb">cd </span>riscv-gnu-toolchain/
+</code></pre></div></div>
+
+<p>Current mainstream is gcc 14.2.
+If you want to use older gcc (recommend 8.2), just check out that version.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GCC 14.2:   <span class="nv">$ </span>git checkout 795267df36fcf1269f2bd596ac42e0e91ad9cfd3
+GCC 13.2:   <span class="nv">$ </span>git checkout 0e53b8d56232236dd74b586c1568295a2985910e
+GCC 12.2:   <span class="nv">$ </span>git checkout 9f0c0979e205c580ced4a06fb10ddf9095cfd400
+GCC 11.1:   <span class="nv">$ </span>git checkout 52735e2177f762388cdc6212680e6bf4c0c2f899
+GCC 10.2:   <span class="nv">$ </span>git checkout a838c5dfe91c3ef29218747fa266ce24ae2cf052
+GCC 9.2:    <span class="nv">$ </span>git checkout 41775b55a038d10068664e819628a15e45f60055
+GCC 8.3:    <span class="nv">$ </span>git checkout afcc8bc655d30cf6af054ac1d3f5f89d0627aa79
+GCC 8.2:    <span class="nv">$ </span>git checkout 7d6d68fb1d1c553dd0ee8b48352667032d389f61
+GCC 7.1:    <span class="nv">$ </span>git checkout 4e51f2641f21f1f37640c788b7f438d2f0968a3c
+GCC 6.1:    <span class="nv">$ </span>git checkout 7fb29464d64c6fcac83ef6b2346db0f0c6c01c23
+GCC 5.3:    <span class="nv">$ </span>git checkout 105ffc3043c234d82b792b7e6950f286ff2bc65d
+GCC 4.9:    <span class="nv">$ </span>git checkout 1743584a9ee845e4dd507bcbe18a83cb1c2a7579
+</code></pre></div></div>
+
+<p>Finally:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+</code></pre></div></div>
+
+<p>Note: if it prints:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   fatal: clone of <span class="s1">'git://...
+   Failed to clone ... Retry scheduled
+</span></code></pre></div></div>
+
+<p>Then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://github.com/qemu"</span>.insteadOf git://git.qemu-project.org
+<span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://gitlab.freedesktop.org/pixman/pixman"</span>.insteadOf git://anongit.freedesktop.org/pixman
+<span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://"</span>.insteadOf git://
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+</code></pre></div></div>
+
+<h3 id="iii-b-config--make">III. b) Config &amp; Make</h3>
+
+<p>The configuration command format:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=[</span>path] <span class="nt">--enable-multilib</span>
+
+For example:
+<span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=</span>/opt/riscv <span class="nt">--enable-multilib</span>
+</code></pre></div></div>
+<p>For other configurations, follow: https://github.com/riscv-collab/riscv-gnu-toolchain</p>
+
+<p>Now you can <code class="language-plaintext highlighter-rouge">$ make</code> the toolchain by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>elf-toolchain <span class="o">(</span>or baremetal toolchain<span class="o">)</span> to run directly on the CPU <span class="o">(</span>like MCU<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+
+<span class="k">for </span>linux-toolchain to run on the Linux that run on the CPU <span class="o">(</span>like OS app<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make linux <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p><em>Note</em>: to re-make another configuration, it is better to <code class="language-plaintext highlighter-rouge">$ sudo make clean</code> beforehand.</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Integration.html" title="RISC-V Computer System Integration">RISC-V Computer System Integration</a><a class="next" href="/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools.html" title="Install VLSI-CAD tools on Ubuntu (24.04)">Install VLSI-CAD tools on Ubuntu (24.04)...</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/project/2020/04/27/freedom-chisel.html" title="Install VLSI-CAD tools on Ubuntu (24.04)">SiFive Freedom: chisel code structure</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/jekyll/2018/12/07/welcome-to-jekyll.html" title="Install VLSI-CAD tools on Ubuntu (24.04)">Welcome to Jekyll!</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/project/2020/07/24/crypto-core.html" title="Install VLSI-CAD tools on Ubuntu (24.04)">TEE-HW with cryptographic accelerators</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/example/2017/12/18/video-example.html" title="Install VLSI-CAD tools on Ubuntu (24.04)">Video example</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">Content</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Enjoy building world!</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Keystone 64-bit build using Makefile | Thuctorial</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Keystone 64-bit build using Makefile">
+<meta name="author" content="thuchoang90">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="I. Keystone">
+<meta property="og:description" content="I. Keystone">
+<link rel="canonical" href="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-64.html">
+<meta property="og:url" content="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-64.html">
+<meta property="og:site_name" content="Thuctorial">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-07-24T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Keystone 64-bit build using Makefile">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"thuchoang90"},"dateModified":"2020-07-24T00:00:00+00:00","datePublished":"2020-07-24T00:00:00+00:00","description":"I. Keystone","headline":"Keystone 64-bit build using Makefile","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-64.html"},"url":"/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-64.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Thuctorial">
+<script>
+  function initGoogleAnalytics() {
+    var doNotTrack = (window.doNotTrack === "1" || navigator.doNotTrack === "1" ||
+      navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1");
+    var enableDNT = "true" == "true";
+
+    if (!enableDNT || !doNotTrack) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'Tracking ID', 'auto');
+      ga('send', 'pageview');
+    }
+  }
+  window.addEventListener("load", initGoogleAnalytics);
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Thuctorial" src="" onerror="this.style.display='none'">
+  Thuctorial
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/teaching.html">TEACHING</a><a class="page-link" href="/jekyll-theme-yat/tutorial.html">TUTORIAL</a><a class="page-link" href="/jekyll-theme-yat/project.html">PROJECT</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a><a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="vi">
+          
+          <img src="https://cdn.countryflags.com/thumbs/vietnam/flag-400.png" title="Vietnamese">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Keystone 64-bit build using Makefile</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2020-07-24T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jul 24, 2020
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#RISC-V">#RISC-V</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#TEE">#TEE</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Linux">#Linux</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="i-keystone">I. Keystone</h2>
+
+<h3 id="i-a-using-their-prebuilt-toolchain-gcc-72">I. a) Using their prebuilt toolchain (gcc-7.2)</h3>
+
+<p><em>Note:</em> because their prebuilt toolchain is <code class="language-plaintext highlighter-rouge">RV64GC</code>, so for the <code class="language-plaintext highlighter-rouge">RV64IMAC</code> build please follow the guide in <a href="#i-b-using-our-local-toolchain-gcc-83-in-this-example">I. b) Using our local toolchain</a>.</p>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/keystone-enclave/keystone.git keystone-rv64gc
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc/
+<span class="nv">$ </span>git checkout 276e14b6e53130fd5278f700ab1b99332ca143fd   <span class="c">#commit on 23-Nov-2019</span>
+  <span class="c">#this is the commit right before upgrading to CMake</span>
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH</span>
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Download prebuilt toolchain &amp; make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh   <span class="c">#this will download their prebuilt toolchain (gcc-7.2) and set things up</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Build the keystone-test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g'</span> ./tests/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span>./tests/tests/vault.sh
+<span class="nv">$ </span>make image <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>    <span class="c">#after this, a bbl.bin file is generated in hifive-work/bbl.bin</span>
+</code></pre></div></div>
+
+<h3 id="i-b-using-our-local-toolchain-gcc-83-in-this-example">I. b) Using our local toolchain (gcc-8.3 in this example)</h3>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If build <span class="k">for </span>RV64GC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> local-tc https://github.com/thuchoang90/keystone.git keystone-rv64gc-local
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc-local/
+
+If build <span class="k">for </span>RV64IMAC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> local-tc https://github.com/thuchoang90/keystone.git keystone-rv64imac
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64imac/
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH:
+If build <span class="k">for </span>RV64GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64gc      <span class="c">#point to RV64GC toolchain</span>
+If build <span class="k">for </span>RV64IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64imac    <span class="c">#point to RV64IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin/:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk
+</code></pre></div></div>
+
+<p>Update submodule:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh   <span class="c">#this time, it won't download the prebuilt toolchain, just update the submodule</span>
+</code></pre></div></div>
+
+<p>Do the following if build for <code class="language-plaintext highlighter-rouge">RV64IMAC</code>, skip if build for <code class="language-plaintext highlighter-rouge">RV64GC</code>:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./scripts/imac-patch.sh
+</code></pre></div></div>
+
+<p>Finally, make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Build the keystone-test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g'</span> ./tests/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span>./tests/tests/vault.sh
+<span class="nv">$ </span>make image <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>    <span class="c">#after this, a bbl.bin file is generated in hifive-work/bbl.bin</span>
+</code></pre></div></div>
+
+<p><em>Note:</em> using local toolchain cause trouble on running QEMU, but totally fine with FPGA.</p>
+
+<hr>
+
+<h2 id="ii-keystone-demo">II. Keystone-demo</h2>
+
+<p>Check PATH:</p>
+<ul>
+  <li>For prebuilt-toolchain Keystone:</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>          <span class="c">#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH</span>
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc/   <span class="c">#go to your keystone folder</span>
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<ul>
+  <li>For local-toolchain Keystone:</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#go to your keystone folder</span>
+      <span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc-local/
+Or:   <span class="nv">$ </span><span class="nb">cd </span>keystone-rv64imac/
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH:
+If build <span class="k">for </span>RV64GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64gc      <span class="c">#point to RV64GC toolchain</span>
+If build <span class="k">for </span>RV64IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64imac    <span class="c">#point to RV64IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin/:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk
+</code></pre></div></div>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ../    <span class="c">#go back outside</span>
+<span class="nv">$ </span>git clone https://github.com/keystone-enclave/keystone-demo.git keystone-demo-rv64
+  <span class="c">#branch master commit a25084ea on 18-Dec-2019</span>
+</code></pre></div></div>
+
+<p>Make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>keystone-demo-rv64/
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span>./quick-start.sh    <span class="c">#type Y when asked</span>
+  <span class="c">#after this step, a new app is generated and coppied to the keystone directory</span>
+</code></pre></div></div>
+
+<p>Update keystone-demo to the <code class="language-plaintext highlighter-rouge">keystone/</code> folder:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_DIR</span><span class="k">}</span>      <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make image <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>    <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<p><strong><em>Note on local-toolchain:</em></strong> because the QEMU fail on Keystone with local-toolchain, thus the <code class="language-plaintext highlighter-rouge">$ make getandsethash</code> below can’t run on local-toolchain. This is a TODO. The following step is for prebuilt-toolchain only.</p>
+
+<p>To update the new hash value, do the followings:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ../keystone-demo-rv64/   <span class="c">#first, cd back to the keystone-demo directory</span>
+<span class="nv">$ </span>make getandsethash
+<span class="nv">$ </span><span class="nb">rm </span>trusted_client.riscv
+<span class="nv">$ </span>make trusted_client.riscv
+<span class="nv">$ </span>make copybins
+  <span class="c">#after this step, the app is updated with the correct hash value and coppied to the keystone directory</span>
+
+<span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_DIR</span><span class="k">}</span>          <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make image <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>        <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="iii-run-test-on-qemu">III. Run Test on QEMU</h2>
+
+<p><em>Note:</em> Keystone with local-toolchain has trouble on running QEMU (but totally fine with FPGA), so this is for prebuilt-toolchain only.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> &lt;keystone folder&gt;        <span class="c">#go to your keystone folder</span>
+<span class="nv">$ </span>./scripts/run-qemu.sh       <span class="c">#login by the id of 'root' and the password of 'sifive'</span>
+<span class="nv">$ </span>insmod keystone-driver.ko   <span class="c">#install driver</span>
+</code></pre></div></div>
+
+<p>To do the initial test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">time</span> ./tests/tests.ke
+</code></pre></div></div>
+<p>It is okay if <strong>Attestation report SIGNATURE is valid</strong> is printed.</p>
+
+<p>To do the keystone-demo test:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>keystone-demo/                   <span class="c">#go to the keystone-demo test</span>
+<span class="nv">$ </span>./enclave-host.riscv &amp;              <span class="c">#run host in localhost</span>
+<span class="nv">$ </span>./trusted_client.riscv localhost    <span class="c">#connect to localhost and test</span>
+</code></pre></div></div>
+<p>It is okay if the <strong>Attestation signature and enclave hash are valid</strong> is printed.
+Exit the security monitor by: <code class="language-plaintext highlighter-rouge">$ q</code>. And exit the QEMU by: <code class="language-plaintext highlighter-rouge">$ poweroff</code>.</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-32.html" title="Keystone 32-bit build using Makefile">Keystone 32-bit build using Makefile</a><a class="next" href="/jekyll-theme-yat/project/2020/07/24/sifive-freedom.html" title="SiFive Freedom: a Rocket-chip computer system">SiFive Freedom: a Rocket-chip computer system...</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/project/2020/07/24/sifive-freedom.html" title="SiFive Freedom: a Rocket-chip computer system">SiFive Freedom: a Rocket-chip computer system</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/project/2020/07/24/Keystone-makefile-32.html" title="SiFive Freedom: a Rocket-chip computer system">Keystone 32-bit build using Makefile</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem.html" title="SiFive Freedom: a Rocket-chip computer system">Install VLSI-CAD tools with GLIBC problem</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/project/2020/07/23/VexRiscv.html" title="SiFive Freedom: a Rocket-chip computer system">VexRiscv: A 32-bit RISC-V Microcontroller</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">Content</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Enjoy building world!</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

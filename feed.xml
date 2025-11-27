@@ -1,0 +1,2218 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="/jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2025-11-27T04:15:27+00:00</updated><id>/jekyll-theme-yat/feed.xml</id><title type="html">Thuctorial</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>thuchoang90</name></author><entry><title type="html">Computer Design and SoC</title><link href="/jekyll-theme-yat/teaching/2025/08/16/SoC.html" rel="alternate" type="text/html" title="Computer Design and SoC" /><published>2025-08-16T00:00:00+00:00</published><updated>2025-08-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2025/08/16/SoC</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2025/08/16/SoC.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Learn how to design a <strong>simple processor</strong> with the <em>RISC-V ISA</em>.
+<br />
+Learn various design techniques used in <ins>modern processors</ins>, such as out-of-order and cache systems.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have <strong>digital design</strong> knowledge and know how to use <strong>Verilog</strong> <em>(or VHDL)</em> language.
+<br />
+Participants <ins>must</ins> be familiar with <strong>FPGA</strong> work.</p>
+
+<p>Exercises in this course use the <a href="https://digilent.com/reference/programmable-logic/arty-a7/start">Arty-A7</a> FPGA board. Participants need to have an Arty-A7 to learn this course.
+<br />
+<em>Note:</em> both 35T and 100T versions of the FPGA are ok.</p>
+
+<h3 id="course-list">Course List</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Lecture</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td>Introduction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td>RTL Coding</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td>Arithmetic</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td>Single-Cycle</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td>Benchmarking</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td>Verification</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td>Pipelining</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td>Branch Prediction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9</td>
+      <td>Caches</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10</td>
+      <td>Memory</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11</td>
+      <td>Interconnects</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12</td>
+      <td>Superscalar</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">13</td>
+      <td>Out-of-Order</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">14</td>
+      <td>Multicore</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">15</td>
+      <td>Accelerators</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Lecture #1:    Introduction</strong><br />
+Description</p>
+
+<p><strong>Lecture #2:    RTL Coding</strong><br />
+Description</p>
+
+<p><strong>Lecture #3:    Arithmetic</strong><br />
+Description</p>
+
+<p><strong>Lecture #4:    Single-Cycle</strong><br />
+Description</p>
+
+<p><strong>Lecture #5:    Benchmarking</strong><br />
+Description</p>
+
+<p><strong>Lecture #6:    Verification</strong><br />
+Description</p>
+
+<p><strong>Lecture #7:    Pipelining</strong><br />
+Description</p>
+
+<p><strong>Lecture #8:    Branch Prediction</strong><br />
+Description</p>
+
+<p><strong>Lecture #9:    Caches</strong><br />
+Description</p>
+
+<p><strong>Lecture #10:    Memory</strong><br />
+Description</p>
+
+<p><strong>Lecture #11:    Interconnects</strong><br />
+Description</p>
+
+<p><strong>Lecture #12:    Superscalar</strong><br />
+Description</p>
+
+<p><strong>Lecture #13:    Out-of-Order</strong><br />
+Description</p>
+
+<p><strong>Lecture #14:    Multicore</strong><br />
+Description</p>
+
+<p><strong>Lecture #15:    Accelerators</strong><br />
+Description</p>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V" /><category term="Courses" /><category term="FPGA" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">Install VLSI-CAD tools with GLIBC problem</title><link href="/jekyll-theme-yat/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem.html" rel="alternate" type="text/html" title="Install VLSI-CAD tools with GLIBC problem" /><published>2025-03-10T00:00:00+00:00</published><updated>2025-03-10T00:00:00+00:00</updated><id>/jekyll-theme-yat/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem</id><content type="html" xml:base="/jekyll-theme-yat/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem.html"><![CDATA[<p><ins><strong>WARNING:</strong></ins> Like I said, this solution could destroy your OS if you’re not careful enough.<br />
+Reinstalling OS and all the VLSI-CAD tools is not fun. So, do it at your own risk.</p>
+
+<h2 id="i-main-solution">I. Main Solution</h2>
+<ul>
+  <li><strong>Step 1:</strong> First of all, check your GLIBC version:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>ldd <span class="nt">--version</span>
+</code></pre></div>    </div>
+    <p>Example print-out:</p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ldd <span class="o">(</span>Ubuntu GLIBC 2.39-0ubuntu8.4<span class="o">)</span> 2.39
+</code></pre></div>    </div>
+    <p>I’m using Ubuntu 24.04, and according to this, my GLIBC version is <code class="language-plaintext highlighter-rouge">2.39</code> .<br />
+-&gt; This means <code class="language-plaintext highlighter-rouge">2.39</code> is not working. So we have to downgrade it (or upgrade it, we don’t know yet).</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Note on the <strong>run file</strong> in the <code class="language-plaintext highlighter-rouge">bin/</code> folder vs. the <em>executable</em> <strong>ELF file</strong>:<br />
+The <strong>run file</strong> in a tool’s <code class="language-plaintext highlighter-rouge">bin/</code> is usually a <strong>.sh file</strong> to set the environment. It will eventually call to the actual <em>executable</em> <strong>ELF file</strong>, but it is <em>NOT</em> the <strong>ELF file</strong>.<br />
+-&gt; To know where the <strong>ELF file</strong> is, the easiest way is to run the <strong>run file</strong>. -&gt; The true <strong>PATH</strong> to the <strong>ELF file</strong> will shown in the error.<br />
+-&gt; The <code class="language-plaintext highlighter-rouge">$ objdump</code> command in the next step must point to the <em>executable</em> <strong>ELF file</strong>, <em>NOT</em> the <strong>run file</strong>.</p>
+  </li>
+  <li><strong>Step 3:</strong> Sometimes the error says which version it is looking for, and sometimes it just says <code class="language-plaintext highlighter-rouge">GLIBC_PRIVATE</code> .<br />
+-&gt; Regardless of what it said, even if it stated which version, don’t believe it yet.<br />
+We need to check it manually. The check command:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>objdump <span class="nt">-T</span> /path/to/the/executable/ELF/file | <span class="nb">grep </span>GLIBC_ | <span class="nb">sed</span> <span class="s1">'s/.*GLIBC_\([.0-9]*\).*/\1/g'</span> | <span class="nb">sort</span> <span class="nt">-Vu</span>
+</code></pre></div>    </div>
+    <p>Example print-out:</p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 2.2.5
+ 2.3
+ 2.3.2
+ 2.3.3
+ 2.3.4
+ 2.4
+ 2.6
+ 2.7
+ 2.11
+</code></pre></div>    </div>
+    <p>According to this example, the minimum required GLIBC version is <code class="language-plaintext highlighter-rouge">2.11</code> .<br />
+-&gt; Combined with the previous information in <em>step 1</em>, we now know we have to <em>DOWNGRADE</em> the GLIBC to the range: <code class="language-plaintext highlighter-rouge">2.39</code> &gt; <strong>wanted-version</strong> &gt;= <code class="language-plaintext highlighter-rouge">2.11</code>.</p>
+  </li>
+</ul>
+
+<p><ins><em>Note 1:</em></ins> Downgrade or upgrade depends on what information you get from <em>steps 1 and 3</em>. In my example, this will be a downgrade, but it might be an upgrade on your machine.</p>
+
+<p><ins><em>Note 2:</em></ins> Remember, you checked only the <em>executable</em> <strong>ELF file</strong>. However, there may be more run/lib files behind, and they could request a more recent version of GLIBC.<br />
+-&gt; So, don’t downgrade it too far, and if you have to upgrade it, upgrade only the requested version (not the latest).</p>
+
+<ul>
+  <li><strong>Step 4:</strong> You need to decide which GLIBC version you want. Check the source: <a href="https://launchpad.net/ubuntu/+source/glibc/">https://launchpad.net/ubuntu/+source/glibc/</a></li>
+</ul>
+
+<p>From the website, we have <code class="language-plaintext highlighter-rouge">2.41</code> (<em>the latest</em>), <code class="language-plaintext highlighter-rouge">2.39</code> (<em>Ubuntu24.04</em>), <code class="language-plaintext highlighter-rouge">2.35</code> (<em>Ubuntu22.04</em>), <code class="language-plaintext highlighter-rouge">2.31</code> (<em>Ubuntu20.04</em>), <code class="language-plaintext highlighter-rouge">2.27</code> (<em>Ubuntu18.04</em>), and so on.</p>
+
+<p>Let’s say, I know my tool was released around 2020. -&gt; So, <code class="language-plaintext highlighter-rouge">2.31</code> (<em>Ubuntu20.04</em>) sounds reasonable. Let’s do that first.<br />
+-&gt; And if that doesn’t work, we’ll try <code class="language-plaintext highlighter-rouge">2.27</code> (<em>Ubuntu18.04</em>), and so on.</p>
+
+<p>Just note which version you want to get; you don’t need to download anything (yet).</p>
+
+<ul>
+  <li><strong>Step 5:</strong> Download the Ubuntu .iso image from the website: <a href="https://ubuntu.com/download/alternative-downloads">https://ubuntu.com/download/alternative-downloads</a></li>
+</ul>
+
+<p>From the previous step, we have already chosen <em>Ubuntu20.04</em> (with GLIBC version <code class="language-plaintext highlighter-rouge">2.31</code>).<br />
+-&gt; So let’s download that <strong>Ubuntu 20.04LTS</strong> .iso image.</p>
+
+<p>To mount the .iso file, usually just double-click is enough.<br />
+Then, go to the .iso mounted folder and navigate to the <code class="language-plaintext highlighter-rouge">casper/</code> folder.<br />
+There, you will find the <code class="language-plaintext highlighter-rouge">filesystem.squashfs</code> file.<br />
+-&gt; Open a new terminal from there, then do this to unsquash it to your <code class="language-plaintext highlighter-rouge">Downloads/</code> folder:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span><span class="nb">sudo </span>unsquashfs <span class="nt">-d</span> ~/Downloads/unsquashfs filesystem.squashfs
+</code></pre></div></div>
+<p>This will unsquash all the .iso disc data to your <code class="language-plaintext highlighter-rouge">~/Downloads/unsquashfs</code> folder.<br />
+Finally, let’s copy that data to our system in <code class="language-plaintext highlighter-rouge">/usr/</code>; let’s say, <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31</code> :</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span><span class="nb">sudo cp</span> <span class="nt">-rf</span> ~/Downloads/unsquashfs/usr /usr/glibc-2.31
+</code></pre></div></div>
+<p>After this, you can now run the tool with the overridden <code class="language-plaintext highlighter-rouge">$PATH</code> and <code class="language-plaintext highlighter-rouge">$LD_LIBRARY_PATH</code> .</p>
+
+<ul>
+  <li><strong>Step 6:</strong> Before running the tool with <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/</code> , we need to modify the <strong>ELF file</strong>’s <em>linker-PATH</em>.</li>
+</ul>
+
+<p>Because we’re going to mess with the <strong>ELF file</strong>, it’s better to save the <em>original</em> <strong>ELF file</strong> to <em>another</em> <strong>ELF file</strong>.<br />
+For example: <code class="language-plaintext highlighter-rouge">$ cp ./finesim ./finesim.bak</code></p>
+
+<p>To change the <strong>ELF file</strong>’s <em>linker-PATH</em>, use the command:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>patchelf <span class="nt">--set-interpreter</span> &lt;linker-PATH&gt; &lt;filename&gt;
+</code></pre></div></div>
+<p>For example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>patchelf <span class="nt">--set-interpreter</span> /usr/glibc-2.31/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ./finesim
+</code></pre></div></div>
+<p><ins><em>Note:</em></ins> This <code class="language-plaintext highlighter-rouge">patchelf --set-interpreter</code> must point to the <em>executable</em> <strong>ELF file</strong>, <em>NOT</em> the <strong>run rile</strong>.</p>
+
+<ul>
+  <li><strong>Step 7:</strong> Finally, we can run the tool with <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/</code> .<br />
+To do that, simply run the <em>executable</em> <strong>ELF file</strong> (<em>NOT</em> the <strong>run file</strong>) with overridden <code class="language-plaintext highlighter-rouge">$PATH</code> and <code class="language-plaintext highlighter-rouge">$LD_LIBRARY_PATH</code>, like this:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ PATH</span><span class="o">=</span>/usr/glibc-2.31/bin <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/glibc-2.31/lib/x86_64-linux-gnu ./finesim
+</code></pre></div>    </div>
+    <p><ins><em>Note:</em></ins> This <code class="language-plaintext highlighter-rouge">./finesim</code> is the <em>executable</em> <strong>ELF file</strong>, <em>NOT</em> the <strong>run file</strong>.</p>
+  </li>
+</ul>
+
+<p>Previously, the error is like this:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ./finesim: /lib/x86_64-linux-gnu/libpthread.so.0: version <span class="sb">`</span>GLIBC_PRIVATE<span class="s1">' not found (required by ./finesim)
+</span></code></pre></div></div>
+<p>Now, the error looks like this:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ./finesim: /usr/glibc-2.31/lib/x86_64-linux-gnu/libc.so.6: version <span class="sb">`</span>GLIBC_2.33<span class="s1">' not found (required by /lib/libncurses.so.5)
+</span></code></pre></div></div>
+<p>It is working. The <code class="language-plaintext highlighter-rouge">libc.so.6</code> is already at the correct location at <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/lib/x86_64-linux-gnu/</code> . So, it’s not about the <code class="language-plaintext highlighter-rouge">libc.so.6</code> .<br />
+-&gt; In the above example, <code class="language-plaintext highlighter-rouge">libncurses.so.5</code> is the one that is missing in the <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/</code> folder.</p>
+
+<p>To deal with the missing .so files, follow the next step.</p>
+
+<ul>
+  <li><strong>Step 8:</strong> For the missing .so files in the <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/lib/x86_64-linux-gnu/</code> , first, let’s do a quick check and search for a similar name in the <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/</code> (<em>NOT</em> in the <code class="language-plaintext highlighter-rouge">lib/x86_64-linux-gnu/</code>) folder:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">cd</span> /usr/glibc-2.31/
+ <span class="nv">$ </span>find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"&lt;name&gt;.so*"</span>
+</code></pre></div>    </div>
+    <p>Sometimes, the missing .so files are still in the <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/</code> , just not in the <code class="language-plaintext highlighter-rouge">lib/x86_64-linux-gnu/</code> one.<br />
+If that is the case, simply create a symbolic link in the <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/lib/x86_64-linux-gnu/</code> .<br />
+The command: <code class="language-plaintext highlighter-rouge">$ sudo ln -s &lt;source file&gt; &lt;destination file&gt;</code></p>
+  </li>
+</ul>
+
+<p>If a similar .so file is not found in <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/</code> , let’s check the apt package in the next step.</p>
+
+<ul>
+  <li><strong>Step 9:</strong> Go to this website: <a href="https://packages.ubuntu.com/">https://packages.ubuntu.com/</a></li>
+</ul>
+
+<p>Select the <em>released</em> Ubuntu version you want to download.<br />
+In my case, it is <strong>focal (20.04LTS)</strong> because I chose the GLIBC version <code class="language-plaintext highlighter-rouge">2.31</code> from <strong>Ubuntu20.04</strong> in <em>step 4</em>.</p>
+
+<p>Scroll down and hit <strong>“All packages”</strong> to display everything (this will take a while to load).</p>
+
+<p>Like the error shown in the example (in <em>step 7</em>), the package I want to download is <code class="language-plaintext highlighter-rouge">libncurses.so.5</code> .<br />
+-&gt; So, I search for the name <code class="language-plaintext highlighter-rouge">libncurses5</code> .<br />
+-&gt; For <code class="language-plaintext highlighter-rouge">libncurses5</code> , I found <strong>“libncurses5 (6.2-0ubuntu2.1 …“</strong> seems good. -&gt; So, let’s take it as an example.</p>
+
+<p>When you go to the package page, you can see the <strong>“[list of files]”</strong> to confirm that the file you’re looking for is there.<br />
+-&gt; Once you’re ready, select the link that fits your <strong>“Architecture”</strong> (in my case, <em>amd64</em>), and it’ll lead you to the download page.</p>
+
+<p>On the download page, look for <ins><strong>3 info</strong></ins>: the <em>mirror link</em>, the <em>subdirectory</em>, and the <em>.deb filename</em>.<br />
+-&gt; Then, you can download it by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>wget &lt;mirror <span class="nb">link</span><span class="o">&gt;</span>/&lt;subdirectory&gt;/&lt;the .deb filename&gt;
+</code></pre></div></div>
+<p>For example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>wget security.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.2-0ubuntu2.1_amd64.deb
+</code></pre></div></div>
+<p>After downloading, DO NOT install it, just EXTRACT. The extract command:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>dpkg-deb <span class="nt">-x</span> &lt;the .deb filename&gt; &lt;folder name&gt;
+</code></pre></div></div>
+<p>For example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>dpkg-deb <span class="nt">-x</span> libncurses5_6.2-0ubuntu2.1_amd64.deb libncurses5
+</code></pre></div></div>
+<p>In the next step, do not copy <em>just one</em> .so file.<br />
+Because those .so files are usually linked, let’s copy <ins><em>every</em></ins> .so files there.<br />
+To do that, use this command:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>find &lt;folder name&gt; <span class="nt">-name</span> <span class="s2">"*.so*"</span> <span class="nt">-exec</span> <span class="nb">sudo cp</span> <span class="s1">'{}'</span> &lt;destination folder&gt; <span class="s1">';'</span>
+</code></pre></div></div>
+<p>For example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>find libncurses5/ <span class="nt">-name</span> <span class="s2">"*.so*"</span> <span class="nt">-exec</span> <span class="nb">sudo cp</span> <span class="s1">'{}'</span> /usr/glibc-2.31/lib/x86_64-linux-gnu/ <span class="s1">';'</span>
+</code></pre></div></div>
+<p>That’s done. Let’s try to run the tool again.<br />
+This time, it gets a new error:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ./finesim: /lib/libtinfo.so.5: version <span class="sb">`</span>NCURSES_TINFO_5.6.20061217<span class="s1">' not found (required by /usr/glibc-2.31/lib/x86_64-linux-gnu/libncurses.so.5)
+</span></code></pre></div></div>
+<p>Take a closer look, and you’ll see that the <code class="language-plaintext highlighter-rouge">libncurses.so.5</code> is already at the correct location of <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/lib/x86_64-linux-gnu/</code> .<br />
+-&gt; So, it’s not about the <code class="language-plaintext highlighter-rouge">libncurses.so.5</code> -&gt; <code class="language-plaintext highlighter-rouge">libtinfo.so.5</code> is the one that is missing.</p>
+
+<p>You know what to do next: repeat the <ins><em>previous step</em></ins> and <ins><em>this step</em></ins> again, rinse and repeat until all the problems are gone.</p>
+
+<ul>
+  <li><strong>Step 10:</strong> Once the <em>executable</em> <strong>ELF file</strong> (<em>NOT</em> the <strong>run file</strong>) can run with the overridden <code class="language-plaintext highlighter-rouge">$PATH</code> and <code class="language-plaintext highlighter-rouge">$LD_LIBRARY_PATH</code> , you can make it permanent in two ways:</li>
+</ul>
+
+<p>a) The easiest way is to modify the <code class="language-plaintext highlighter-rouge">~/.bashrc</code> , put in <code class="language-plaintext highlighter-rouge">alias</code> which records the whole command <code class="language-plaintext highlighter-rouge">PATH=... LD_LIBRARY_PATH=... /path/to/the/executable/ELF/file</code> . For example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">alias </span><span class="nv">finesim</span><span class="o">=</span><span class="s1">'PATH=/usr/glibc-2.31/bin LD_LIBRARY_PATH=/usr/glibc-2.31/lib/x86_64-linux-gnu/ ~/VLSI-CAD/Synopsys/finesim/Q-2020.03-SP1/finesim/platform/linux64/finesim'</span>
+</code></pre></div></div>
+<p>-&gt; This is the fastest way. However, it could miss some environment settings set up by the <strong>run file</strong>.</p>
+
+<p>b) Therefore, the safe way is to modify the <strong>run file</strong> itself.<br />
+Because the <strong>run file</strong> is actually a <strong>.sh file</strong>, it will eventually call the <em>executable</em> <strong>ELF file</strong> somewhere in its content.<br />
+-&gt; We have to find those places and replace them <code class="language-plaintext highlighter-rouge">&lt;command&gt;</code> with <code class="language-plaintext highlighter-rouge">PATH=... LD_LIBRARY_PATH=... &lt;command&gt;</code>.<br />
+This takes more effort but is the safest option.</p>
+
+<h2 id="ii-backup-solution">II. Backup Solution</h2>
+<p><strong>NOTE:</strong> This solution was abandoned because later, I discovered that downloading the Ubuntu .iso image and then unsquash it is faster than this solution.</p>
+
+<p>However, this solution has an advantage.<br />
+-&gt; This solution allows you to rebuild an <em>OLDER</em> version of GLIBC with the <em>NEWER</em> version of GCC/Binutils/Linux, while downloading the .iso image can only give you the <em>OLDER</em> version of <ins>everything</ins>.<br />
+-&gt; This is why I keep this solution as a backup here.</p>
+
+<p>Repeat the same <em>steps 1 to 4</em> as in the <ins>other solution</ins>, then:</p>
+
+<ul>
+  <li><strong>Step 5:</strong> Besides the <em>GLIBC</em> version, you also need other information such as <em>Linux</em> version, <em>GCC</em> version, and <em>binutils</em> version of your machine.<br />
+-&gt; By default, you WILL want to keep other things as same as your running machine.<br />
+-&gt; That would be perfect. So, let’s do that.</li>
+</ul>
+
+<p>To check your Linux version:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span><span class="nb">uname</span> <span class="nt">-a</span>
+</code></pre></div></div>
+<p>Example print-out:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Linux thuc-UEC 6.11.0-17-generic
+</code></pre></div></div>
+<p>To check your binutils version:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>ld <span class="nt">-v</span>
+</code></pre></div></div>
+<p>Example print-out:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   GNU ld <span class="o">(</span>GNU Binutils <span class="k">for </span>Ubuntu<span class="o">)</span> 2.42
+</code></pre></div></div>
+<p>To check your GCC version:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>gcc <span class="nt">--version</span>
+</code></pre></div></div>
+<p>Example print-out:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  gcc <span class="o">(</span>Ubuntu 13.3.0-6ubuntu2~24.04<span class="o">)</span> 13.3.0
+</code></pre></div></div>
+<p>So, we have the following information: <em>Linux</em> <code class="language-plaintext highlighter-rouge">6.11.0</code>, <em>Binutils</em> <code class="language-plaintext highlighter-rouge">2.42</code>, and <em>GCC</em> <code class="language-plaintext highlighter-rouge">13.3.0</code> .<br />
+-&gt; Note all of that, we’re moving to the actual action.</p>
+
+<ul>
+  <li><strong>Step 6:</strong> We’ll use the <strong>crosstool-ng</strong> tool.<br />
+Its GibHub: <a href="https://github.com/crosstool-ng/crosstool-ng">https://github.com/crosstool-ng/crosstool-ng</a><br />
+and its docs: <a href="https://crosstool-ng.github.io/docs/">https://crosstool-ng.github.io/docs/</a></li>
+</ul>
+
+<p>Basically, this is the tool that allows you to create a custom root filesystem.<br />
+-&gt; It’ll build the whole thing, a whole package, all as one.<br />
+-&gt; Less headache about mismatched versions between <em>GCC</em>, <em>GLIBC</em>, <em>binutils</em>, <em>Linux</em>, etc.</p>
+
+<p>To make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>git clone https://github.com/crosstool-ng/crosstool-ng
+   <span class="nv">$ </span><span class="nb">cd </span>crosstool-ng/
+   <span class="nv">$ </span><span class="nb">mkdir install</span>
+   <span class="nv">$ </span><span class="nb">cd install</span>/
+   <span class="nv">$ </span><span class="nb">export </span><span class="nv">CT_PREFIX</span><span class="o">=</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>
+   <span class="nv">$ </span><span class="nb">mkdir </span>src
+   <span class="nv">$ </span><span class="nb">cd</span> ../
+   <span class="nv">$ </span>./bootstrap
+   <span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=</span><span class="nv">$CT_PREFIX</span> <span class="nt">--enable-local</span>
+   <span class="nv">$ </span>make
+   <span class="nv">$ </span>./ct-ng x86_64-unknown-linux-gnu
+   <span class="nv">$ </span>./ct-ng menuconfig
+</code></pre></div></div>
+<p>After this, a GUI will come up. -&gt; We need to modify several things in <code class="language-plaintext highlighter-rouge">menuconfig</code> :</p>
+
+<p>a) Select <code class="language-plaintext highlighter-rouge">Paths and misc options</code><br />
+-&gt; Modify the <code class="language-plaintext highlighter-rouge">Local tarballs directory</code> from <code class="language-plaintext highlighter-rouge">${HOME}/src</code> to <code class="language-plaintext highlighter-rouge">${CT_PREFIX}/src</code><br />
+-&gt; <code class="language-plaintext highlighter-rouge">Exit</code> back outside.</p>
+
+<p>b) Select <code class="language-plaintext highlighter-rouge">Operating System</code><br />
+-&gt; Select <code class="language-plaintext highlighter-rouge">Version of linux</code><br />
+-&gt; Pick the one that is EQUAL or OLDER than the one you choose in the previous step.<br />
+-&gt; <code class="language-plaintext highlighter-rouge">Exit</code> back outside.</p>
+
+<p>c) Select <code class="language-plaintext highlighter-rouge">Binary utilities</code><br />
+-&gt; Select <code class="language-plaintext highlighter-rouge">Version of binutils</code><br />
+-&gt; Pick the one that you choose in the previous step.<br />
+-&gt; <code class="language-plaintext highlighter-rouge">Exit</code> back outside.</p>
+
+<p>d) Select <code class="language-plaintext highlighter-rouge">C-library</code><br />
+-&gt; Select <code class="language-plaintext highlighter-rouge">Version of glibc</code><br />
+-&gt; Pick the one that you choose in the previous step.<br />
+-&gt; <code class="language-plaintext highlighter-rouge">Exit</code> back outside.</p>
+
+<p>e) Select <code class="language-plaintext highlighter-rouge">C compiler</code><br />
+-&gt; Select <code class="language-plaintext highlighter-rouge">Version of gcc</code><br />
+-&gt; Pick the one that you choose in the previous step.<br />
+-&gt; <code class="language-plaintext highlighter-rouge">Exit</code> back outside.</p>
+
+<p>Done, <code class="language-plaintext highlighter-rouge">Save</code> and <code class="language-plaintext highlighter-rouge">Exit</code> the GUI.<br />
+Final step, build it: <em>(this gonna take a while)</em></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span><span class="nb">env</span> <span class="nt">-u</span> LD_LIBRARY_PATH <span class="nb">time</span> ./ct-ng build <span class="nv">CT_JOBS</span><span class="o">=</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Step 7:</strong> When the build is completed,<br />
+the files you want are in: <code class="language-plaintext highlighter-rouge">install/x86_64-unknown-linux-gnu/x86_64-unknown-linux-gnu/sysroot</code></li>
+</ul>
+
+<p>Let’s copy them to, like, <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31</code> :</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span><span class="nb">sudo cp</span> <span class="nt">-rf</span> <span class="nb">install</span>/x86_64-unknown-linux-gnu/x86_64-unknown-linux-gnu/sysroot /usr/glibc-2.31
+</code></pre></div></div>
+<p>Now, you can run your tool with the overridden <code class="language-plaintext highlighter-rouge">$PATH</code> and <code class="language-plaintext highlighter-rouge">$LD_LIBRARY_PATH</code> .<br />
+<ins><em>Note:</em></ins> If you want to rebuild the <strong>crosstool-ng</strong>, just remove the <code class="language-plaintext highlighter-rouge">install/</code> and <code class="language-plaintext highlighter-rouge">.build/</code> folders and start again.</p>
+
+<p>The rest of this solution repeats the same <em>steps 6 to 10</em> as in the <ins>other solution</ins>, with some differences:</p>
+
+<p>a) The <em>linker-PATH</em> <code class="language-plaintext highlighter-rouge">ld-linux-x86-64.so.2</code> is in the <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/lib/</code> folder, <em>NOT</em> in the <code class="language-plaintext highlighter-rouge">/usr/glibc-2.31/lib/x86_64-linux-gnu/</code> folder as in the <ins>other solution</ins>.</p>
+
+<p>b) For the <code class="language-plaintext highlighter-rouge">$PATH</code> and <code class="language-plaintext highlighter-rouge">$LD_LIBRARY_PATH</code> , they should point to:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">PATH</span><span class="o">=</span>/usr/test/usr/bin          <span class="c">#(instead of /usr/glibc-2.31/bin as in the other solution)</span>
+   <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/test/lib   <span class="c">#(instead of /usr/glibc-2.31/lib/x86_64-linux-gnu as in the other solution)</span>
+</code></pre></div></div>]]></content><author><name>thuchoang90</name></author><category term="Tutorial" /><category term="VLSI" /><category term="Linux" /><category term="Tutorial" /><summary type="html"><![CDATA[WARNING: Like I said, this solution could destroy your OS if you’re not careful enough. Reinstalling OS and all the VLSI-CAD tools is not fun. So, do it at your own risk.]]></summary></entry><entry><title type="html">Install VLSI-CAD tools on Ubuntu (24.04)</title><link href="/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools.html" rel="alternate" type="text/html" title="Install VLSI-CAD tools on Ubuntu (24.04)" /><published>2025-03-09T00:00:00+00:00</published><updated>2025-03-09T00:00:00+00:00</updated><id>/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools</id><content type="html" xml:base="/jekyll-theme-yat/tutorial/2025/03/09/Install-VLSI-tools.html"><![CDATA[<h2 id="i-preparation">I. Preparation</h2>
+<p>Install some dependencies:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>ksh csh zsh patchelf xvfb
+</code></pre></div></div>
+<p>Make changes to <strong>YOUR</strong> <code class="language-plaintext highlighter-rouge">~/.bashrc</code> according to the <a href="/assets/sources/other/bashrc">example</a>.<br />
+In the example, watch from the mark <code class="language-plaintext highlighter-rouge"># VLSI-CAD TOOLS</code> <em><ins>to the end</ins></em>.<br />
+Make sure to put the correct installation folder to those <code class="language-plaintext highlighter-rouge">export ...</code> .</p>
+
+<p>The <strong>bin-PATH</strong> and <strong>HOME-PATH</strong> are two different things and serve different purposes.<br />
+You can change the <strong>bin-PATH</strong> names, but please keep the <strong>HOME-PATH</strong> names because the tool’s environment needs those exact <strong>HOME-PATH</strong> names.</p>
+
+<h2 id="ii-install-cadence-tools">II. Install CADENCE Tools</h2>
+<h3 id="ii-1-installation">II. 1) Installation</h3>
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> After downloading all the data, unzip all the tarballs.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> If there are multi-part tarballs (like <code class="language-plaintext highlighter-rouge">...1of4</code>, <code class="language-plaintext highlighter-rouge">...2of4</code>, etc.), extract each tarball, and then merge all the folders into one.<br />
+You can run it by the terminal: <code class="language-plaintext highlighter-rouge">$ mv &lt;name&gt;_*/* .</code></p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> To run the installation GUI: <code class="language-plaintext highlighter-rouge">$ IScape/iscape/bin/iscape.sh</code></p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> On the GUI, select the <code class="language-plaintext highlighter-rouge">Local directory/Media install</code> and browse to the <code class="language-plaintext highlighter-rouge">CDROM1</code> folder in the merged folder in <em>step 2</em>.</p>
+  </li>
+  <li>
+    <p><strong>Step 5:</strong> Follow the GUI, choose the installation folder, start, wait -&gt; done.<br />
+It is best to wait for the GUI and do nothing; don’t interact with other terminals; the GUI is quite fragile!</p>
+  </li>
+  <li>
+    <p><strong>Step 6:</strong> If there are many versions, install the LOWEST (or OLDEST) version FIRST.</p>
+  </li>
+  <li>
+    <p><strong>Step 7:</strong> If there are Base, Hotfix, and Update on the SAME VERSION, the install sequence should be: Base -&gt; Hotfix -&gt; Update.<br />
+Please DON’T install Hotfix/Update in a separate folder with the Base.</p>
+  </li>
+  <li>
+    <p><strong>Step 8:</strong> After the installation, you can remove the <code class="language-plaintext highlighter-rouge">install/</code> and <code class="language-plaintext highlighter-rouge">installData/</code> folders to restore some spaces.</p>
+  </li>
+</ul>
+
+<h3 id="ii-2-about-the-oa_home">II. 2) About the OA_HOME</h3>
+<p>All the Cadence tools require an <code class="language-plaintext highlighter-rouge">OA_HOME</code> .<br />
+Each tool sometimes carries its own local <code class="language-plaintext highlighter-rouge">oa_...</code> folder (not always).</p>
+
+<p>We need to look for those local <code class="language-plaintext highlighter-rouge">oa_...</code> folders and choose the one with the latest <code class="language-plaintext highlighter-rouge">linux_rhel...</code> in its <code class="language-plaintext highlighter-rouge">lib/</code> .<br />
+Usually, <strong>INNOVUS</strong> or <strong>IC</strong> will have the latest version.</p>
+
+<p>When you decided which <code class="language-plaintext highlighter-rouge">oa_...</code> folder to use,<br />
+-&gt; put the correct <strong>PATH</strong> to the <code class="language-plaintext highlighter-rouge">OA_HOME</code> in the <code class="language-plaintext highlighter-rouge">~/.bashrc</code> .<br />
+-&gt; put the correct <code class="language-plaintext highlighter-rouge">OA_UNSUPPORTED_PLAT</code> in the <code class="language-plaintext highlighter-rouge">~/.bashrc</code>, too.<br />
+The <code class="language-plaintext highlighter-rouge">OA_UNSUPPORTED_PLAT</code> must match the name <code class="language-plaintext highlighter-rouge">linux_rhel...</code> in the <code class="language-plaintext highlighter-rouge">$OA_HOME/lib/</code> folder.<br />
+<ins><em>Note:</em></ins> The suffix <code class="language-plaintext highlighter-rouge">_64</code> must be removed from the <code class="language-plaintext highlighter-rouge">OA_UNSUPPORTED_PLAT</code> .</p>
+
+<p>Finally, open the <code class="language-plaintext highlighter-rouge">$OA_HOME/bin/sysname</code> and change the 1st line from <code class="language-plaintext highlighter-rouge">#!/bin/sh</code> to <code class="language-plaintext highlighter-rouge">#!/bin/bash</code> .</p>
+
+<h3 id="ii-3-cadence-tool-list">II. 3) CADENCE Tool List</h3>
+<p>After installed, to check if the tool works, try to run the following:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>ASSURA/bin/assura
+   <span class="nv">$ </span>CONFRML/bin/lec_64
+   <span class="nv">$ </span>DDI/bin/genus
+   <span class="nv">$ </span>DDI/bin/innovus
+   <span class="nv">$ </span>DDI/bin/joules
+   <span class="nv">$ </span>EMX/bin/emx
+   <span class="nv">$ </span>GENUS/bin/genus
+   <span class="nv">$ </span>IC23/bin/virtuoso
+   <span class="nv">$ </span>IC618/bin/virtuoso
+   <span class="nv">$ </span>ICADV/bin/virtuoso
+   <span class="nv">$ </span>INNOVUS/bin/innovus
+   <span class="nv">$ </span>JasperGold/bin/jaspergold
+   <span class="nv">$ </span>LIBERATE/bin/liberate
+   <span class="nv">$ </span>MODUS/bin/modus
+   <span class="nv">$ </span>MVS/bin/lpa
+   <span class="nv">$ </span>PEGASUS/bin/pegasus
+   <span class="nv">$ </span>PVS/bin/pvs
+   <span class="nv">$ </span>QUANTUS/bin/quantus
+   <span class="nv">$ </span>SIGRITY/tools/bin/3dworkbench
+   <span class="nv">$ </span>SPB/bin/XScale
+   <span class="nv">$ </span>SPECTRE/bin/spectre
+   <span class="nv">$ </span>SSV/bin/tempus
+   <span class="nv">$ </span>STRATUS/bin/stratus
+   <span class="nv">$ </span>XCELIUM/tools/bin/xrun
+</code></pre></div></div>
+<p>As long as the tool opens (maybe complains about the license), then you are fine.<br />
+If the tool shows errors (mostly related to those .so files) and does not open, then you have to try to fix the errors.</p>
+
+<h2 id="iii-install-mentor-graphics-tools">III. Install MENTOR GRAPHICS Tools</h2>
+<h3 id="iii-1-installation">III. 1) Installation</h3>
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Untar all the tarballs.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Run the <code class="language-plaintext highlighter-rouge">.exe</code>, <code class="language-plaintext highlighter-rouge">.bin</code>, <code class="language-plaintext highlighter-rouge">.mib</code>, or <code class="language-plaintext highlighter-rouge">.aol</code> directly and follow the guide in the terminal.<br />
+(for <strong>calibre</strong> tool, choose the <code class="language-plaintext highlighter-rouge">aok...</code> version if Ubuntu)</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> After the installation, you can remove the <code class="language-plaintext highlighter-rouge">_msidata/</code> and <code class="language-plaintext highlighter-rouge">install.aol/</code> folders to restore some spaces.</p>
+  </li>
+</ul>
+
+<h3 id="iii-2-fix-calibre-error">III. 2) Fix Calibre Error</h3>
+<p>After installed, when you’re trying to run the <strong>calibre</strong> and get this error:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Invalid operating system environment, <span class="nv">VENDOR</span><span class="o">=</span>unknown OS <span class="nv">VERSION</span><span class="o">=</span>24
+</code></pre></div></div>
+<p>This means the tool checked your OS version and said it doesn’t support the OS.<br />
+-&gt; Follow these steps to bypass the check:</p>
+
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Check this website: <a href="https://calibre.mentorcloudservices.com/docs/Calibre_OS_Roadmap.htm">https://calibre.mentorcloudservices.com/docs/Calibre_OS_Roadmap.htm</a><br />
+For example, if you previously installed the <code class="language-plaintext highlighter-rouge">aok...</code> version, you now have to ‘trick’ the tool into thinking that your machine is a RedHat 8 version.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> In the <strong>calibre</strong> installation path: <code class="language-plaintext highlighter-rouge">$ vi pkgs/icv_calenv/pvt/calibre_host_info</code><br />
+<ins>At the end</ins> of the file, write these two lines in:</p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">OS_VENDOR</span><span class="o">=</span><span class="s1">'redhat'</span>
+ <span class="nv">OS_MAJOR_REV</span><span class="o">=</span><span class="s1">'8'</span>
+</code></pre></div>    </div>
+    <p>In the calibre’s installation folder, there is a folder named <strong>tmp</strong> or <strong>temp</strong>.<br />
+That is a symbolic link, and it has to be true.<br />
+If you see it is showing red, means the link is broken. -&gt; You have to correct it.</p>
+  </li>
+</ul>
+
+<p>Usually, the <strong>tmp</strong> folder in Ubuntu filesystem is at <strong>/tmp</strong>.<br />
+So, do the following to re-correct the link:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span><span class="nb">rm </span>tmp
+   <span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /tmp tmp
+</code></pre></div></div>
+
+<h3 id="iii-3-mentor-graphics-tool-list">III. 3) MENTOR GRAPHICS Tool List</h3>
+<p>After installed, to check if the tool works, try to run the following:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>0-in/linux_x86_64/bin/0in
+   <span class="nv">$ </span>AMSV/amsv/bin/afs
+   <span class="nv">$ </span>Calibre/bin/calibre
+   <span class="nv">$ </span>DFT/bin/dftadvisor
+   <span class="nv">$ </span>LeonardSpectrum/bin/Linux/spectrum
+   <span class="nv">$ </span>ModelSim/bin/vsim
+   <span class="nv">$ </span>Pyxis/bin/da_ic
+   <span class="nv">$ </span>QuestaSim/bin/vlib
+</code></pre></div></div>
+<p>As long as the tool opens (maybe complains about the license), then you are fine.<br />
+If the tool shows errors (mostly related to those .so files) and does not open, then you have to try to fix the errors.</p>
+
+<h2 id="iv-install-synopsys-tools">IV. Install SYNOPSYS Tools</h2>
+<h3 id="iv-1-installation">IV. 1) Installation</h3>
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Go to the <code class="language-plaintext highlighter-rouge">synopsys_installer/</code> folder and run the <code class="language-plaintext highlighter-rouge">.run</code> file.<br />
+It’ll self-extract into a series of files. The <code class="language-plaintext highlighter-rouge">setup.sh</code> is the one we need.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Open the installation GUI by running that <code class="language-plaintext highlighter-rouge">setup.sh</code> .<br />
+<ins><em>Note:</em></ins> the <code class="language-plaintext highlighter-rouge">Site ID Number</code> = <code class="language-plaintext highlighter-rouge">000</code> is ok.</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> Browse to each folder, set the target installation folder, install, wait -&gt; done.<br />
+<ins><em>Note 1:</em></ins> The download folder (containning those .spf files) and the destination folder must be different; the GUI wants that.<br />
+-&gt; In my experience, I set the destination folder = <code class="language-plaintext highlighter-rouge">.../Synopsys/</code> while my download folder = <code class="language-plaintext highlighter-rouge">.../Synopsys/toolname/</code> .<br />
+<ins><em>Note 2:</em></ins> You might have to re-run the <code class="language-plaintext highlighter-rouge">setup.sh</code> GUI after each installation.</p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> If you see an error about <strong>OVERLAY</strong>, another tool must be installed first.<br />
+<ins><em>Note:</em></ins> The versions of the required TOOL and the OVERLAY TOOL must match in order to continue with the installation.</p>
+  </li>
+</ul>
+
+<h3 id="iv-2-synopsys-tool-list">IV. 2) SYNOPSYS Tool List</h3>
+<p>After installed, to check if the tool works, try to run the following:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>customcompiler/W-2024.09/bin/custom_compiler
+   <span class="nv">$ </span>finesim/Q-2020.03-SP1/bin/finesim
+   <span class="nv">$ </span>formality/W-2024.09/bin/fm_shell
+   <span class="nv">$ </span>fpga/U-2023.03/bin/synplify_pro
+   <span class="nv">$ </span>fusioncompiler/W-2024.09/bin/fc_shell
+   <span class="nv">$ </span>fusioncompiler/W-2024.09/bin/icc2_lm_shell
+   <span class="nv">$ </span>fusioncompiler/W-2024.09/bin/lm_shell
+   <span class="nv">$ </span>hercules/B-2008.09-SP5-1/bin/amd64/hercules
+   <span class="nv">$ </span>hsim/Q-2020.03-SP2/hsimplus/bin/hsim
+   <span class="nv">$ </span>hspice/W-2024.09-1/hspice/bin/hspice
+   <span class="nv">$ </span>icc/W-2024.09/bin/icc_shell
+   <span class="nv">$ </span>icc2/W-2024.09/bin/icc2_shell
+   <span class="nv">$ </span>icv_workbench/V-2023.09-SP2/bin/linux64/icvwb
+   <span class="nv">$ </span>icvalidator/W-2024.09-2/bin/icv64
+   <span class="nv">$ </span>idq/R-2020.09-SP4/linux64/iddq/bin/ipro
+   <span class="nv">$ </span>library_compiler/W-2024.09/bin/lc_shell
+   <span class="nv">$ </span>milkyway/W-2024.09/bin/linux64/Milkyway
+   <span class="nv">$ </span>nanotime/V-2023.12-SP5/bin/nt_shell
+   <span class="nv">$ </span>primelib/T-2022.03-1/bin/primelib
+   <span class="nv">$ </span>primerail/M-2017.06-SP3/bin/pr_shell
+   <span class="nv">$ </span>primesim/T-2022.06-SP2-2/bin/primesim
+   <span class="nv">$ </span>primetime/U-2022.12-SP5-4/bin/pt_shell
+   <span class="nv">$ </span>primewave/W-2024.09/bin/primewave
+   <span class="nv">$ </span>primewavereliability/W-2024.09/bin/primewave_reliability
+   <span class="nv">$ </span>quantumatk/W-2024.09-SP1/bin/quantumatk
+   <span class="nv">$ </span>quickcap/W-2024.09/bin/quickcap
+   <span class="nv">$ </span>raphael/T-2022.03/bin/raphael
+   <span class="nv">$ </span>raphael_fx/T-2022.03-SP1/bin/raphael_fx
+   <span class="nv">$ </span>rtl_architect/T-2022.03-SP1/bin/rtl_shell
+   <span class="nv">$ </span>sentaurus/W-2024.09/bin/qtx
+   <span class="nv">$ </span>sentaurus_explorer/W-2024.09/bin/spx
+   <span class="nv">$ </span>siliconsmart/V-2023.12-SP1-7/bin/siliconsmart
+   <span class="nv">$ </span>slitho/U-2022.12/bin/slitho
+   <span class="nv">$ </span>slitho_pwa/U-2022.12/bin/pwa
+   <span class="nv">$ </span>spxviewer/W-2024.09/bin/spx_routeview
+   <span class="nv">$ </span>spyglass/V-2023.12/SPYGLASS_HOME/bin/spyglass
+   <span class="nv">$ </span>starrc/V-2023.12-SP5/bin/starrc_shell
+   <span class="nv">$ </span>syn/W-2024.09/bin/dc_shell
+   <span class="nv">$ </span>taurus/S_2021.06/bin/medici
+   <span class="nv">$ </span>tetramax/R-2020.09-SP4/bin/tmax2
+   <span class="nv">$ </span>vcs/W-2024.09/bin/vcs
+   <span class="nv">$ </span>vc_static/S-2021.09-SP2-4/bin/vc_static_shell
+   <span class="nv">$ </span>verdi/T-2022.06-SP1-1/bin/verdi
+   <span class="nv">$ </span>waveview/W-2024.09-2/bin/wv
+   <span class="nv">$ </span>xa/W-2024.09-1/bin/xa
+</code></pre></div></div>
+<p>As long as the tool opens (maybe complains about the license), then you are fine.<br />
+If the tool shows errors (mostly related to those .so files) and does not open, then you have to try to fix the errors.</p>
+
+<h2 id="v-fix-so-error">V. Fix .so Error</h2>
+<h3 id="v-1-fix-missing-so-files">V. 1) Fix Missing .so Files</h3>
+<p>Fix the missing or wrong <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> file:</p>
+
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Check if the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> or the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so</code> in the system or not.<br />
+The check command: <code class="language-plaintext highlighter-rouge">$ whereis &lt;name&gt;.so.&lt;number&gt;</code> or: <code class="language-plaintext highlighter-rouge">$ whereis &lt;name&gt;.so</code><br />
+-&gt; If not found, proceed to <em>step 2</em>.<br />
+-&gt; If found, create a symbolic link and link it back to the <code class="language-plaintext highlighter-rouge">/usr/lib/</code> folder.<br />
+The link command: <code class="language-plaintext highlighter-rouge">$ ln -s /path/to/filename /usr/lib/&lt;name&gt;.so.&lt;number&gt;</code></p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> If the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so</code> file cannot be found by <code class="language-plaintext highlighter-rouge">whereis</code>, then try to <code class="language-plaintext highlighter-rouge">apt install</code> it first.<br />
+The apt install command: <code class="language-plaintext highlighter-rouge">$ sudo apt-get install &lt;name&gt;</code> or: <code class="language-plaintext highlighter-rouge">$ sudo apt-get install &lt;name&gt;&lt;number&gt;</code><br />
+<ins><em>Note:</em></ins> The <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> is usually all <ins>de-capitalized</ins>, and <ins>NO dot</ins> <code class="language-plaintext highlighter-rouge">.</code> in between the <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> and the <code class="language-plaintext highlighter-rouge">&lt;number&gt;</code> .<br />
+-&gt; If the apt package or the exact version is unavailable, proceed to <em>step 3</em>.</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> In this step, you have to download the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> manually. Go to this website: <a href="https://pkgs.org/">https://pkgs.org/</a><br />
+Search for the full name of <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> . Pick either <strong>Solus</strong> or <strong>FreeBSD/NetBSD</strong>.<br />
+Beware of the 32-bit or 64-bit version, pick the one you need. Download it, untar it.<br />
+Beware of the link files, after untar, always use <code class="language-plaintext highlighter-rouge">ll</code> to check, not <code class="language-plaintext highlighter-rouge">ls</code> -&gt; So you can see where the link is going to.<br />
+Copy only the content file (<em>NOT</em> the link file) to the <code class="language-plaintext highlighter-rouge">/usr/lib/</code> folder.<br />
+Then, go to the <code class="language-plaintext highlighter-rouge">/usr/lib/</code> folder and re-create the link file by: <code class="language-plaintext highlighter-rouge">$ sudo ln -s &lt;raw file&gt; &lt;name&gt;.so.&lt;number&gt;</code> .</p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> If the error still exists and says <code class="language-plaintext highlighter-rouge">ELF32</code> or <code class="language-plaintext highlighter-rouge">ELF64</code> wrong, you copied the wrong 32/64-bit version.<br />
+-&gt; Repeat <em>step 3</em> and download the corrected ones.</p>
+  </li>
+</ul>
+
+<h3 id="v-2-other-errors">V. 2) Other Errors</h3>
+<ul>
+  <li><strong>Problem 1:</strong> If the error says something about <code class="language-plaintext highlighter-rouge">undefined symbol</code>, for example:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> undefined symbol: ucal_openTimeZones_50
+</code></pre></div>    </div>
+    <p>Maybe it’s still about the missing .so file, let’s <code class="language-plaintext highlighter-rouge">grep -r</code> and see if something comes up: <code class="language-plaintext highlighter-rouge">$ grep -r ucal_openTimeZones_50</code> :</p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">grep</span>: tools.lnx86/lib/cdnslibicui18n.so.50.1.2: binary file matches
+ <span class="nb">grep</span>: tools.lnx86/lib/64bit/cdnslibicui18n.so.50.1.2: binary file matches
+ <span class="nb">grep</span>: tools.lnx86/Qt/v5/64bit/lib/libcdsQt5Core.so.5.15.9: binary file matches
+</code></pre></div>    </div>
+    <p>In this case, it means you’re missing the <code class="language-plaintext highlighter-rouge">cdnslibicui18n.so</code> file.<br />
+-&gt; So, let’s repeat from the <em>step 1</em> in the <ins><em>previous section</em></ins>.</p>
+  </li>
+  <li><strong>Problem 2:</strong> If these kind of errors show up: <code class="language-plaintext highlighter-rouge">operator</code>, <code class="language-plaintext highlighter-rouge">unexpected</code>, <code class="language-plaintext highlighter-rouge">syntax error</code>; for example:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">test</span>: unexpected operator
+ Syntax error: redirection unexpected
+ Syntax error: <span class="s2">"("</span> unexpected
+ <span class="o">[</span>: 0: unexpected operator
+ /bin/sh: 0: Illegal option <span class="nt">-h</span>
+</code></pre></div>    </div>
+    <p>Then, this is about the bash-script environment.<br />
+Open the run file, change the 1st line from <code class="language-plaintext highlighter-rouge">#!/bin/sh</code> to <code class="language-plaintext highlighter-rouge">#!/bin/bash</code> and try again.</p>
+  </li>
+  <li><strong>Problem 3:</strong> If the error says something about <code class="language-plaintext highlighter-rouge">GLIBC</code>, it could be very serious or still about some missing .so files.<br />
+Take a closer look at the error message. If it said something like this:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tools.lnx86/lib/64bit/&lt;name&gt;.so.&lt;number&gt;: version <span class="sb">`</span>GLIBC_X.X<span class="s1">' not found (required by ...)
+</span></code></pre></div>    </div>
+    <p>Look closely at the <strong>PATH</strong> of the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> file, and you’ll see it uses its own local lib of <code class="language-plaintext highlighter-rouge">tools.lnx86/lib/64bit/</code>, not the system’s lib like <code class="language-plaintext highlighter-rouge">/usr/...</code> or <code class="language-plaintext highlighter-rouge">/lib/...</code> .<br />
+Maybe the system doesn’t have that <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> file -&gt; The tool is trying to use its own local version, which is causing the problem.<br />
+To know for sure, try <code class="language-plaintext highlighter-rouge">whereis</code> the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> and check if the system has it or not. -&gt; This means you’re repeating the <em>step 1</em> in the <ins>previous section</ins>.</p>
+  </li>
+  <li><strong>Problem 4:</strong> Same as the previous problem, however, this time, the <strong>PATH</strong> of the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> DO belongs to the system’s lib. For example:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /lib/x86_64-linux-gnu/&lt;name&gt;.so.&lt;number&gt;: version <span class="sb">`</span>GLIBC_X.X<span class="s1">' not found (required by ...)
+</span></code></pre></div>    </div>
+    <p>Yeah, in this case, this is serious. Mismatching <strong>GLIBC</strong> between the tool and its host is a horror for any Linux dev.<br />
+Just a sanity check, let’s still do a <code class="language-plaintext highlighter-rouge">$ whereis &lt;name&gt;.so.&lt;number&gt;</code> .<br /></p>
+  </li>
+</ul>
+
+<p>If the <code class="language-plaintext highlighter-rouge">&lt;name&gt;.so.&lt;number&gt;</code> is there, properly linked, but the error persists, then you’re left with only one option: <ins>upgrade</ins> or <ins>downgrade</ins> the <strong>GLIBC</strong> (which is not recommended anywhere).<br /></p>
+
+<p><strong>GLIBC</strong> <em>IS</em> the Kernel. Messing with it could destroy your OS, so do it at your own risk.<br />
+When you’re ready, check the <a href="/tutorial/2025/03/10/Install-VLSI-tools-GLIBC-problem">Install VLSI-CAD Tools with GLIBC_Problem</a> guide.</p>
+
+<h3 id="v-3-backup-solution">V. 3) Backup Solution</h3>
+<p><strong>NOTE:</strong> This solution is a backup and not recommended because tricking the VLSI-CAD tools this way could lead to unforeseen problems.<br />
+Sometimes, it causes problems for other tools, not even the VLSI-CAD tools.</p>
+
+<p>You can create a ‘fake’ <strong>redhat-release</strong> file by: <code class="language-plaintext highlighter-rouge">$ sudo vi /etc/redhat-release</code><br />
+Then, write this line:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 8.&lt;sub-version&gt;.&lt;<span class="nb">date</span><span class="o">&gt;</span> <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>
+<p>For the <code class="language-plaintext highlighter-rouge">&lt;sub-version&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;date&gt;</code>, check this website: <a href="https://access.redhat.com/articles/3078">https://access.redhat.com/articles/3078</a><br />
+The <code class="language-plaintext highlighter-rouge">&lt;date&gt;</code> is a 4-digit number: first 2-digit for year, and last 2-digit for month.</p>
+
+<p>For example, if you want to pick the RedHat 7.0 version, then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 7.0.1406 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>
+<p>If you want to pick the RedHat 8.0 version, then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 8.0.1905 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>
+<p>If you want to pick the RedHat 8.10 version, then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   CentOS Linux release 8.10.2405 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></div></div>]]></content><author><name>thuchoang90</name></author><category term="Tutorial" /><category term="VLSI" /><category term="Linux" /><category term="Tutorial" /><summary type="html"><![CDATA[I. Preparation Install some dependencies: $ sudo apt install ksh csh zsh patchelf xvfb Make changes to YOUR ~/.bashrc according to the example. In the example, watch from the mark # VLSI-CAD TOOLS to the end. Make sure to put the correct installation folder to those export ... .]]></summary></entry><entry><title type="html">Fresh Ubuntu (24.04) setup for working with RISC-V</title><link href="/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html" rel="alternate" type="text/html" title="Fresh Ubuntu (24.04) setup for working with RISC-V" /><published>2025-02-13T00:00:00+00:00</published><updated>2025-02-13T00:00:00+00:00</updated><id>/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup</id><content type="html" xml:base="/jekyll-theme-yat/tutorial/2025/02/13/Fresh-Ubuntu-setup.html"><![CDATA[<h2 id="i-dependencies--proxy">I. Dependencies &amp; Proxy</h2>
+
+<p>To make <code class="language-plaintext highlighter-rouge">vi</code> more comfortable:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>vim
+<span class="nv">$ </span>vi ~/.vimrc
+</code></pre></div></div>
+
+<p>Then add this two lines below:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set </span>nocompatible
+syntax on
+</code></pre></div></div>
+
+<p>If your machine needs proxy, replace the <strong>http://[address]:[port]</strong> with your proxy address: (don’t do this if you don’t have proxy)</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::http::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::https::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::ftp::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+</code></pre></div></div>
+
+<p>Update &amp; upgrade everything:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt upgrade
+</code></pre></div></div>
+
+<p>Install dependencies:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>autoconf automake autotools-dev curl python3 python3-pip <span class="se">\</span>
+python3-tomli libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex <span class="se">\</span>
+texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake <span class="se">\</span>
+libglib2.0-dev libslirp-dev minicom npm perl make g++ ccache net-tools wget gcc <span class="se">\</span>
+patch vim-common device-tree-compiler uuid-dev unzip cpio rsync expat screen expect <span class="se">\</span>
+makeself libusb-dev libyaml-dev libftdi-dev pkg-config llvm clang verilator <span class="se">\</span>
+libusb-1.0-0-dev libtool-bin help2man
+</code></pre></div></div>
+
+<p>If your machine needs proxy, replace the <strong>http://[address]:[port]</strong> with your proxy address: (don’t do this if you don’t have proxy)</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>wget
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'http_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'https_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'ftp_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+
+<span class="k">for </span>git
+<span class="nv">$ </span>git config <span class="nt">--global</span> https.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> http.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> ftp.proxy http://[address]:[port]
+
+<span class="k">for </span>npm
+<span class="nv">$ </span>npm config <span class="nb">set </span>proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>https-proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>ftp-proxy http://[address]:[port]/
+
+<span class="k">for </span>curl
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'proxy = "http://[address]:[port]"'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> ~/.curlrc
+</code></pre></div></div>
+
+<p>Finally, reboot the machine.</p>
+
+<hr />
+
+<h2 id="ii-risc-v-tools">II. RISC-V Tools</h2>
+
+<h3 id="ii-a-github">II. a) Github</h3>
+
+<p>When working with RISC-V, you will be using Github all the times. These are some tips for using Github:</p>
+
+<p>To git clone</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span>          <span class="c">#clone and keep the original name for the cloned folder</span>
+<span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span> &lt;name&gt;   <span class="c">#clone and change the name for the cloned folder</span>
+</code></pre></div></div>
+
+<p>To track your changes</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff                                        <span class="c">#list the differences of your folder</span>
+<span class="nv">$ </span>git diff &lt;branch-name&gt;                          <span class="c">#list the differences of your folder compare to another branch</span>
+<span class="nv">$ </span>git diff &lt;src-branch&gt;..&lt;des-branch&gt;             <span class="c">#list the differences between two branches</span>
+<span class="nv">$ </span>git diff &lt;commit-hash&gt;                          <span class="c">#list the differences of your folder compare to the old commit</span>
+<span class="nv">$ </span>git diff &lt;src-commit-hash&gt;..&lt;des-commit-hash&gt;   <span class="c">#list the differences between two commits</span>
+</code></pre></div></div>
+
+<p>To update your folder FROM github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull                  <span class="c">#pull from the current branch</span>
+<span class="nv">$ </span>git pull &lt;branch-name&gt;    <span class="c">#pull from another branch</span>
+</code></pre></div></div>
+
+<p>To update your folder TO github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status                          <span class="c">#to see changes for commit</span>
+<span class="nv">$ </span>git add &lt;file-name&gt; &lt;folder-name&gt;   <span class="c">#first, add every changes of yours</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"&lt;some message&gt;"</span>      <span class="c">#make a commit with &lt;some message&gt; attached</span>
+<span class="nv">$ </span>git push                            <span class="c">#this one will push to the current branch, OR</span>
+<span class="nv">$ </span>git push &lt;branch-name&gt;              <span class="c">#push to another branch</span>
+</code></pre></div></div>
+
+<p>To switch to another branch and commit</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout &lt;branch-name&gt;                    <span class="c">#switch to another branch</span>
+<span class="nv">$ </span>git checkout &lt;commit-hash&gt;                    <span class="c">#rollback to the old commit in the same branch</span>
+<span class="nv">$ </span>git checkout <span class="nt">-b</span> &lt;branch-name&gt; &lt;commit-hash&gt;   <span class="c">#switch to another branch and rollback to the old commit of that branch</span>
+</code></pre></div></div>
+
+<p>To patch file</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="o">&gt;</span> patch-file     <span class="c">#export current changes into a patch-file</span>
+<span class="nv">$ </span>git format-patch &lt;src branch or commit&gt;..&lt;des branch or commit&gt; <span class="nt">--stdout</span> <span class="o">&gt;</span> patch-file
+                            <span class="c">#export a patch-file from &lt;src branch or commit&gt; to &lt;des branch or commit&gt;</span>
+<span class="nv">$ </span>patch <span class="nt">-p1</span> &lt; patch-file    <span class="c">#update your folder with the patch-file</span>
+</code></pre></div></div>
+
+<p>To see the status of repo</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log
+<span class="nv">$ </span>git log <span class="nt">--oneline</span>
+<span class="nv">$ </span>git log <span class="nt">--all</span> <span class="nt">--decorate</span> <span class="nt">--oneline</span> <span class="nt">--graph</span>
+</code></pre></div></div>
+
+<h3 id="ii-b-scala--sbt">II. b) Scala &amp; sbt:</h3>
+
+<p>The source code for hardware is written in the Scala language.</p>
+
+<p>Scala is a language, Chisel is a library.
+Scala itself is not originally designed for “hardware coding.” But with the Chisel library attached to it, then we have a new way for “hardware coding.”</p>
+
+<p>Sbt is a Scala compiler.
+Sbt will compile Scala to Java. Then, executing Java will give us FIRRTL. And finally, a FIRRTL compiler will compile FIRRTL to the actual Verilog code.</p>
+
+<p>In short: Scala -&gt; Java -&gt; FIRRTL -&gt; Verilog (1st arrow is done by SBT, 2nd arrow is done by Java, and 3rd arrows is done by FIRRTL compiler)</p>
+
+<p>Now we need to install sbt. Follow the <a href="https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html">scala-sbt.org</a> to install.</p>
+
+<h3 id="ii-c-qemu">II. c) QEMU</h3>
+
+<p>QEMU is an emulation tool, not a simulation tool. It does not simulate anything (.v codes, .scala codes, or .c codes, etc.).
+It emulates the behavioral that a correct CPU should behave.
+Reference link: <a href="https://github.com/qemu/qemu">github</a> and <a href="https://wiki.qemu.org/Documentation/Platforms/RISCV">wiki</a>.</p>
+
+<p>To install the RISC-V QEMU:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stand where you want to <span class="nb">install </span>RISC-V QEMU
+<span class="nv">$ </span>git clone https://github.com/qemu/qemu.git riscv-qemu
+<span class="nv">$ </span><span class="nb">cd </span>riscv-qemu/
+<span class="nv">$ </span>git checkout stable-9.2   <span class="c">#commit cac3fb44 on 8-Feb-2025</span>
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>../configure <span class="nt">--target-list</span><span class="o">=</span>riscv64-softmmu
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="ii-d-visual-studio-code">II. d) Visual Studio Code</h3>
+
+<p>Let’s download a GUI for our programming.
+Just follow the guide from <a href="https://code.visualstudio.com/docs/setup/linux">code.visualstudio.com</a>.</p>
+
+<h3 id="ii-e-openocd">II. e) OpenOCD</h3>
+
+<p>Open OCD (OCD: On-Chip Debugger) is a tool to control a CPU via a debugger, thus allowing us to load a program, and run or debug that program.</p>
+
+<p>To install &amp; make OpenOCD:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-openocd.git    <span class="c">#branch riscv commit 8f595704 on 31-Jan-2025</span>
+<span class="nv">$ </span><span class="nb">cd </span>riscv-openocd/
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span><span class="nb">cd </span>jimtcl/
+<span class="nv">$ </span>./configure
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+<span class="nv">$ </span><span class="nb">cd</span> ../
+<span class="nv">$ </span>./bootstrap
+<span class="nv">$ </span>./configure <span class="nt">--enable-ftdi</span> <span class="nt">--enable-dummy</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Configuration files for RISC-V CPU: <a href="/assets/sources/other/riscv-openocd.cfg">riscv-openocd</a>
+You should download them and put them under the <code class="language-plaintext highlighter-rouge">riscv-openocd/</code> folder.</p>
+
+<h3 id="ii-f-vivado">II. f) Vivado</h3>
+
+<p><strong>Check your eth0 interface:</strong></p>
+
+<p>Type <code class="language-plaintext highlighter-rouge">$ ifconfig -a</code> to make sure that the network interface name is <code class="language-plaintext highlighter-rouge">eth0</code>.
+If not, the Vivado cannot recognize the license from the NAT interface.
+Then, the network interface name must be rename by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/default/grub
+
+Then add this line beneath those GRUB... lines:
+    <span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"net.ifnames=0 biosdevname=0"</span>
+
+Then:
+<span class="nv">$ </span><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg
+</code></pre></div></div>
+
+<p>Finally, reboot again for the computer to update the new ethernet interface.</p>
+
+<p><strong>Download and Install:</strong></p>
+
+<p>First, download the Vivado for Linux from <a href="https://www.xilinx.com/support/download.html">xilinx.com</a> (linux .bin file self extract). Then, cd to the downloaded .bin file and run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x FPGAs_....bin
+<span class="nv">$ </span>./FPGAs_....bin
+</code></pre></div></div>
+
+<p>The GUI for installation will be load. Choose to install the <strong>Vivado</strong> and then <strong>Vivado ML Standard</strong> and wait for the installer to complete.</p>
+
+<p><strong>Install cable driver:</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>to Vivado installed folder:
+<span class="nv">$ </span><span class="nb">cd</span> ...Xilinx/Vivado/2024.2/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+<span class="nv">$ </span><span class="nb">sudo</span> ./install_drivers
+</code></pre></div></div>
+
+<h3 id="ii-g-quartus">II. g) Quartus</h3>
+
+<p>Just download from the <a href="http://fpgasoftware.intel.com/?edition=standard&amp;platform=linux&amp;download_manager=direct">fpgasoftware.intel.com</a> and install.
+Choose to download the <strong>Quartus Prime Standard Edition</strong>.
+Similarly, cd to the downloaded .bin file and run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x qinst-....bin
+<span class="nv">$ </span>./qinst-....bin
+</code></pre></div></div>
+
+<p>The Quartus execution file is located at <code class="language-plaintext highlighter-rouge">intelFPGA/23.1std/quartus/bin/quartus</code></p>
+
+<p><strong>Install cable driver:</strong></p>
+
+<p>Create two 51- and 52- files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/51-usbblaster.rules
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/52-usbblaster.rules
+</code></pre></div></div>
+
+<p>And add these lines on both files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># USB-Blaster</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6001"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6002"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span> 
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6003"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>   
+
+<span class="c"># USB-Blaster II</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6010"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6810"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+</code></pre></div></div>
+
+<p>After that, you may:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>service udev restart
+</code></pre></div></div>
+
+<p>Or even reboot the computer if it’s still not recognize the cable.</p>
+
+<hr />
+
+<h2 id="iii-risc-v-toolchain">III. RISC-V Toolchain</h2>
+
+<p>Toolchain for RISC-V CPU. Reference <a href="https://github.com/riscv/riscv-gnu-toolchain">link</a>.</p>
+
+<h3 id="iii-a-git-clone">III. a) Git clone</h3>
+
+<p>Git clone the toolchain-making on github:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-gnu-toolchain
+<span class="nv">$ </span><span class="nb">cd </span>riscv-gnu-toolchain/
+</code></pre></div></div>
+
+<p>Current mainstream is gcc 14.2.
+If you want to use older gcc (recommend 8.2), just check out that version.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GCC 14.2:   <span class="nv">$ </span>git checkout 795267df36fcf1269f2bd596ac42e0e91ad9cfd3
+GCC 13.2:   <span class="nv">$ </span>git checkout 0e53b8d56232236dd74b586c1568295a2985910e
+GCC 12.2:   <span class="nv">$ </span>git checkout 9f0c0979e205c580ced4a06fb10ddf9095cfd400
+GCC 11.1:   <span class="nv">$ </span>git checkout 52735e2177f762388cdc6212680e6bf4c0c2f899
+GCC 10.2:   <span class="nv">$ </span>git checkout a838c5dfe91c3ef29218747fa266ce24ae2cf052
+GCC 9.2:    <span class="nv">$ </span>git checkout 41775b55a038d10068664e819628a15e45f60055
+GCC 8.3:    <span class="nv">$ </span>git checkout afcc8bc655d30cf6af054ac1d3f5f89d0627aa79
+GCC 8.2:    <span class="nv">$ </span>git checkout 7d6d68fb1d1c553dd0ee8b48352667032d389f61
+GCC 7.1:    <span class="nv">$ </span>git checkout 4e51f2641f21f1f37640c788b7f438d2f0968a3c
+GCC 6.1:    <span class="nv">$ </span>git checkout 7fb29464d64c6fcac83ef6b2346db0f0c6c01c23
+GCC 5.3:    <span class="nv">$ </span>git checkout 105ffc3043c234d82b792b7e6950f286ff2bc65d
+GCC 4.9:    <span class="nv">$ </span>git checkout 1743584a9ee845e4dd507bcbe18a83cb1c2a7579
+</code></pre></div></div>
+
+<p>Finally:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+</code></pre></div></div>
+
+<p>Note: if it prints:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   fatal: clone of <span class="s1">'git://...
+   Failed to clone ... Retry scheduled
+</span></code></pre></div></div>
+
+<p>Then:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://github.com/qemu"</span>.insteadOf git://git.qemu-project.org
+<span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://gitlab.freedesktop.org/pixman/pixman"</span>.insteadOf git://anongit.freedesktop.org/pixman
+<span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://"</span>.insteadOf git://
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+</code></pre></div></div>
+
+<h3 id="iii-b-config--make">III. b) Config &amp; Make</h3>
+
+<p>The configuration command format:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=[</span>path] <span class="nt">--enable-multilib</span>
+
+For example:
+<span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=</span>/opt/riscv <span class="nt">--enable-multilib</span>
+</code></pre></div></div>
+<p>For other configurations, follow: https://github.com/riscv-collab/riscv-gnu-toolchain</p>
+
+<p>Now you can <code class="language-plaintext highlighter-rouge">$ make</code> the toolchain by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>elf-toolchain <span class="o">(</span>or baremetal toolchain<span class="o">)</span> to run directly on the CPU <span class="o">(</span>like MCU<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+
+<span class="k">for </span>linux-toolchain to run on the Linux that run on the CPU <span class="o">(</span>like OS app<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make linux <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p><em>Note</em>: to re-make another configuration, it is better to <code class="language-plaintext highlighter-rouge">$ sudo make clean</code> beforehand.</p>]]></content><author><name>thuchoang90</name></author><category term="Tutorial" /><category term="RISC-V" /><category term="Linux" /><category term="Tutorial" /><summary type="html"><![CDATA[I. Dependencies &amp; Proxy]]></summary></entry><entry><title type="html">Advanced VLSI Design</title><link href="/jekyll-theme-yat/teaching/2022/12/30/Advanced-VLSI.html" rel="alternate" type="text/html" title="Advanced VLSI Design" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/Advanced-VLSI</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/Advanced-VLSI.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Understand the <strong>V</strong>ery <strong>L</strong>arge-<strong>S</strong>cale <strong>I</strong>ntegration circuit <em>(VLSI)</em> digital design flow.
+<br />
+Know how to design a Standard Cell (<em>StdCell</em>) <em>library</em>.
+<br />
+Know how to integrate various digital or analog designs into a FullChip frame.
+<br />
+Working with industrial-grade or open-source EDA tools.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have <strong>digital design</strong> knowledge and know how to use <strong>Verilog</strong> <em>(or VHDL)</em> language.</p>
+
+<h3 id="course-list">Course List</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Lecture</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td>VLSI Introduction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td>MOSFET, CMOS, and Logic</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td>Delay and Power Models</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td>SPICE and Schematic</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td>Interconnect and Layout</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td>Standard Cell Library</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td>Characterization</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td>Timing Analysis and Synthesis</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9</td>
+      <td>Place and Route</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10</td>
+      <td>Macro Integration</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11</td>
+      <td>IOs and FullChip</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12</td>
+      <td>Advanced Topics</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">13</td>
+      <td>Course Summary</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Lecture #1:    VLSI Introduction</strong><br />
+Introduce the overall VLSI flow and show some VLSI applications. Explain the necessary files when designing circuits. Finally, EDA tools for VLSI design will be introduced.</p>
+
+<p><strong>Lecture #2:    MOSFET, CMOS, and Logic</strong><br />
+Briefly review MOSFET characteristics and Boolean functions. Show what needs to be done at the transistor-level optimization. Review the basics of logic design using CMOS. Showing how to make an optimization schematic given a Boolean function.</p>
+
+<p><strong>Lecture #3:    Delay and Power Models</strong><br />
+Explain the non-restoring element in schematic design. Explain the RC delay model used in the multi-stage schematic optimization. Several examples of the RC delay model are given. Explain the power model used in VLSI circuits, including static power and dynamic power examples.</p>
+
+<p><strong>Lecture #4:    SPICE and Schematic</strong><br />
+Explain the SPICE language. Explain how to use SPICE for transistor-level circuit simulation with examples. Finally, show how to use tools for schematic design with simulation.</p>
+
+<p><strong>Lecture #5:    Interconnect and Layout</strong><br />
+Introduce the stick diagram method via examples. Provide a guide on using tools to draw a layout of an inverter circuit. Finally, show how to use a tool for design rules check and then run a post-layout simulation with a script.</p>
+
+<p><strong>Lecture #6:    Standard Cell Library</strong><br />
+Introduce the cell-based method and explain the differences between standard and custom cells. Explain the “rules” in standard cell design. Give an example of a standard cell library, then explain each component.</p>
+
+<p><strong>Lecture #7:    Characterization</strong><br />
+Explain how to create various library files from the original layout. Guide on creating library files using a characterization tool and an abstraction tool.</p>
+
+<p><strong>Lecture #8:    Timing Analysis and Synthesis</strong><br />
+Explain the latch and flip-flop designs. Explain the timing requirements and show how to write an SDC constraint. Guide on using the tool for synthesis. Guide on checking the synthesis results and post-synthesis netlist simulation.</p>
+
+<p><strong>Lecture #9:    Place and Route</strong><br />
+Guide on using tools for Place-and-Route (PnR). Guide on checking the PnR results and post-layout simulation. Explain the formal verification and physical verification. Explain the antenna and metal density checking. Explain the completed full digital design flow. Finally, a guide on using the full-flow digital design template.</p>
+
+<p><strong>Lecture #10:    Macro Integration</strong><br />
+Explain the differences between analog/custom and digital design flows. Show how to manually perform the design rules checks, verifications, and post-layout simulation. Provide a guide on creating other necessary files for FullChip integration.</p>
+
+<p><strong>Lecture #11:    IOs and FullChip</strong><br />
+Explain the latchup and ESD phenomenon. Introduce the IO designs, frame, and package. Introduce the FullChip integration task and explain the steps. Guide on using the FullChip integration template.</p>
+
+<p><strong>Lecture #12:    Advanced Topics</strong><br />
+Give an explanation of several advanced topics such as synchronizer, FinFet vs. SOI, design for test, and clock gating.</p>
+
+<p><strong>Lecture #13:    Course Summary</strong><br />
+Review all lectures related to the Advanced VLSI Design course.</p>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V" /><category term="Courses" /><category term="VLSI" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">Hardware Design with CHISEL</title><link href="/jekyll-theme-yat/teaching/2022/12/30/Hardware-CHISEL.html" rel="alternate" type="text/html" title="Hardware Design with CHISEL" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/Hardware-CHISEL</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/Hardware-CHISEL.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Learn the <strong>Scala-CHISEL</strong> language and how to design a hardware circuit with it.
+<br />
+Learn how to create <ins>a new</ins> <strong>RISC-V computer system</strong> using <ins>open-source libraries</ins>.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have <strong>digital design</strong> knowledge and know how to use <strong>Verilog</strong> <em>(or VHDL)</em> language.</p>
+
+<h3 id="course-list">Course List</h3>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V" /><category term="Courses" /><category term="Chisel" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">RISC-V Computer System Integration</title><link href="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Integration.html" rel="alternate" type="text/html" title="RISC-V Computer System Integration" /><published>2022-12-30T00:00:00+00:00</published><updated>2022-12-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Integration</id><content type="html" xml:base="/jekyll-theme-yat/teaching/2022/12/30/RISC-V-Integration.html"><![CDATA[<h3 id="core-knowledge">Core Knowledge</h3>
+
+<p>Learn how to add your <strong>custom hardware</strong> <em>(written in Verilog or VHDL)</em> to an existing RISC-V computer system.
+<br />
+Learn how to control and debug your custom hardware in <ins>software</ins> after regenerating the system.</p>
+
+<h3 id="course-requirement">Course Requirement</h3>
+
+<p>Participants <ins>must</ins> have <strong>digital design</strong> knowledge and know how to use <strong>Verilog</strong> <em>(or VHDL)</em> language.
+<br />
+Participants <ins>don’t need</ins> to know the <strong>Scala-CHISEL</strong> language to learn this course.</p>
+
+<p>Exercises in this course use the <a href="https://digilent.com/reference/programmable-logic/arty-a7/start">Arty-A7</a> FPGA board. Participants need to have an Arty-A7 to learn this course.
+<br />
+<em>Note:</em> both 35T and 100T versions of the FPGA are ok.</p>
+
+<h3 id="course-list">Course List</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Lecture</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td>RISC-V Introduction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td>Hardware Design with CHISEL/Scala</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td>Chipyard Design Framework</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td>Rocket Computer System</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td>Boot Sequence and Software</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td>Custom Hardware on Peripheral</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td>Custom Hardware in ROCC</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td>Course Summary</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Lecture #1:    RISC-V Introduction</strong><br />
+Explain the structure of a typical computer system. Introduce RISC-V and RISC-V ISA. Giving materials and some RISC-V news.</p>
+
+<p><strong>Lecture #2:    Hardware Design with CHISEL/Scala</strong><br />
+Briefly review the Scala language and how to make hardware with CHISEL coding. Introduce CHISEL syntax and basic operators. Show how to create specific hardware with examples.</p>
+
+<p><strong>Lecture #3:    Chipyard Design Framework</strong><br />
+Introduce the Chipyard library and explain its structure. Show how to git clone and make. Learn how to create a new Chisel project using this Chipyard library as a template.</p>
+
+<p><strong>Lecture #4:    Rocket Computer System</strong><br />
+Introduce the RISC-V computer system. Learn how to Git clone and make the system. Learn how to program with the Arty-A7 FPGA board. Learn how to change some of the system configurations.</p>
+
+<p><strong>Lecture #5:    Boot Sequence and Software</strong><br />
+Describe the typical boot flow of computer systems. Describe our system’s boot sequence using the default software. Learn how to change the default program with your custom code.</p>
+
+<p><strong>Lecture #6:    Custom Hardware on Peripheral</strong><br />
+Explain the TileLink bus protocol and the peripheral’s memory-mapped communication. Explain the GCD circuit and how to write a Scala wrapper for that circuit. Finally, learn how to write software to control the new hardware.</p>
+
+<p><strong>Lecture #7:    Custom Hardware in ROCC</strong><br />
+Explain the ROCC. Reuse the GCD circuit, but this time attach it to the ROCC instead of the peripheral. Finally, learn how to control the ROCC module with software.</p>
+
+<p><strong>Lecture #8:    Course Summary</strong><br />
+A top-down review from ISA to software and hardware.</p>]]></content><author><name>thuchoang90</name></author><category term="Teaching" /><category term="RISC-V" /><category term="Courses" /><category term="FPGA" /><summary type="html"><![CDATA[Core Knowledge]]></summary></entry><entry><title type="html">Fresh Ubuntu (20.04 &amp;amp; 22.04) setup for working with RISC-V</title><link href="/jekyll-theme-yat/tutorial/2022/09/30/Fresh-Ubuntu-setup.html" rel="alternate" type="text/html" title="Fresh Ubuntu (20.04 &amp;amp; 22.04) setup for working with RISC-V" /><published>2022-09-30T00:00:00+00:00</published><updated>2022-09-30T00:00:00+00:00</updated><id>/jekyll-theme-yat/tutorial/2022/09/30/Fresh-Ubuntu-setup</id><content type="html" xml:base="/jekyll-theme-yat/tutorial/2022/09/30/Fresh-Ubuntu-setup.html"><![CDATA[<h2 id="i-dependencies--proxy">I. Dependencies &amp; Proxy</h2>
+
+<p>To make <code class="language-plaintext highlighter-rouge">vi</code> more comfortable:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>vim
+<span class="nv">$ </span>vi ~/.vimrc
+</code></pre></div></div>
+
+<p>Then add this two lines below:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set </span>nocompatible
+syntax on
+</code></pre></div></div>
+
+<p>Update &amp; upgrade everything:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If your machine has proxy, replace the <span class="k">**</span>http://[address]:[port]<span class="k">**</span> with your proxy address:
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::http::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::https::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Acquire::ftp::proxy "http://[address]:[port]";'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/apt/apt.conf
+
+<span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt upgrade
+</code></pre></div></div>
+
+<p>Need to install openjdk version 8:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>openjdk-8-jdk
+</code></pre></div></div>
+
+<p>Then install dependencies:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>curl git npm autoconf perl python3 make g++ flex bison ccache <span class="se">\</span>
+libgoogle-perftools-dev numactl perl-doc libfl2 libfl-dev zlib1g zlib1g-dev libglib2.0-dev <span class="se">\</span>
+libpixman-1-dev libtool libusb-1.0-0-dev net-tools automake autotools-dev libmpc-dev <span class="se">\</span>
+libmpfr-dev libgmp-dev gawk build-essential texinfo gperf patchutils bc libexpat-dev wget <span class="se">\</span>
+gcc patch vim-common device-tree-compiler uuid-dev unzip cpio rsync cmake ninja-build <span class="se">\</span>
+expat libexpat1-dev tmux bzip2 lbzip2 libssl-dev screen expect makeself p7zip-full libusb-dev <span class="se">\</span>
+libyaml-dev libsdl2-dev libftdi-dev libftdi1 minicom libtinfo5 libpopt-dev help2man python3-venv
+
+For Ubuntu 20.04-LTS <span class="o">(</span>Focal Fossa<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>zlibc python llvm-9-dev clang-9 libclang-9-dev
+
+For Ubuntu 22.04-LTS <span class="o">(</span>Jammy Jellyfish<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python2 pkg-config llvm-dev clang libclang-dev
+</code></pre></div></div>
+
+<p>Update proxy if your machine has proxy:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Replace the <span class="k">**</span>http://[address]:[port]<span class="k">**</span> with your proxy address:
+
+<span class="k">for </span>wget
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'http_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'https_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'ftp_proxy = http://[address]:[port]/'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/wgetrc
+
+<span class="k">for </span>git
+<span class="nv">$ </span>git config <span class="nt">--global</span> https.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> http.proxy http://[address]:[port]
+<span class="nv">$ </span>git config <span class="nt">--global</span> ftp.proxy http://[address]:[port]
+
+<span class="k">for </span>npm
+<span class="nv">$ </span>npm config <span class="nb">set </span>proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>https-proxy http://[address]:[port]/
+<span class="nv">$ </span>npm config <span class="nb">set </span>ftp-proxy http://[address]:[port]/
+
+<span class="k">for </span>curl
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'proxy = "http://[address]:[port]"'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> ~/.curlrc
+</code></pre></div></div>
+
+<p>Finally, reboot the machine.</p>
+
+<hr />
+
+<h2 id="ii-risc-v-tools">II. RISC-V Tools</h2>
+
+<h3 id="ii-a-github">II. a) Github</h3>
+
+<p>When working with RISC-V, you will be using Github all the times. These are some tips for using Github:</p>
+
+<p>To git clone</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span>          <span class="c">#clone and keep the original name for the cloned folder</span>
+<span class="nv">$ </span>git clone &lt;<span class="nb">link</span><span class="o">&gt;</span> &lt;name&gt;   <span class="c">#clone and change the name for the cloned folder</span>
+</code></pre></div></div>
+
+<p>To track your changes</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff                                        <span class="c">#list the differences of your folder</span>
+<span class="nv">$ </span>git diff &lt;branch-name&gt;                          <span class="c">#list the differences of your folder compare to another branch</span>
+<span class="nv">$ </span>git diff &lt;src-branch&gt;..&lt;des-branch&gt;             <span class="c">#list the differences between two branches</span>
+<span class="nv">$ </span>git diff &lt;commit-hash&gt;                          <span class="c">#list the differences of your folder compare to the old commit</span>
+<span class="nv">$ </span>git diff &lt;src-commit-hash&gt;..&lt;des-commit-hash&gt;   <span class="c">#list the differences between two commits</span>
+</code></pre></div></div>
+
+<p>To update your folder FROM github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull                  <span class="c">#pull from the current branch</span>
+<span class="nv">$ </span>git pull &lt;branch-name&gt;    <span class="c">#pull from another branch</span>
+</code></pre></div></div>
+
+<p>To update your folder TO github</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status                          <span class="c">#to see changes for commit</span>
+<span class="nv">$ </span>git add &lt;file-name&gt; &lt;folder-name&gt;   <span class="c">#first, add every changes of yours</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"&lt;some message&gt;"</span>      <span class="c">#make a commit with &lt;some message&gt; attached</span>
+<span class="nv">$ </span>git push                            <span class="c">#this one will push to the current branch, OR</span>
+<span class="nv">$ </span>git push &lt;branch-name&gt;              <span class="c">#push to another branch</span>
+</code></pre></div></div>
+
+<p>To switch to another branch and commit</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout &lt;branch-name&gt;                    <span class="c">#switch to another branch</span>
+<span class="nv">$ </span>git checkout &lt;commit-hash&gt;                    <span class="c">#rollback to the old commit in the same branch</span>
+<span class="nv">$ </span>git checkout <span class="nt">-b</span> &lt;branch-name&gt; &lt;commit-hash&gt;   <span class="c">#switch to another branch and rollback to the old commit of that branch</span>
+</code></pre></div></div>
+
+<p>To patch file</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="o">&gt;</span> patch-file     <span class="c">#export current changes into a patch-file</span>
+<span class="nv">$ </span>git format-patch &lt;src branch or commit&gt;..&lt;des branch or commit&gt; <span class="nt">--stdout</span> <span class="o">&gt;</span> patch-file
+                            <span class="c">#export a patch-file from &lt;src branch or commit&gt; to &lt;des branch or commit&gt;</span>
+<span class="nv">$ </span>patch <span class="nt">-p1</span> &lt; patch-file    <span class="c">#update your folder with the patch-file</span>
+</code></pre></div></div>
+
+<p>To see the status of repo</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log
+<span class="nv">$ </span>git log <span class="nt">--oneline</span>
+<span class="nv">$ </span>git log <span class="nt">--all</span> <span class="nt">--decorate</span> <span class="nt">--oneline</span> <span class="nt">--graph</span>
+</code></pre></div></div>
+
+<h3 id="ii-b-scala--sbt">II. b) Scala &amp; sbt:</h3>
+
+<p>The source code for hardware is written in the Scala language.</p>
+
+<p>Scala is a language, Chisel is a library.
+Scala itself is not originally designed for “hardware coding.” But with the Chisel library attached to it, then we have a new way for “hardware coding.”</p>
+
+<p>Sbt is a Scala compiler.
+Sbt will compile Scala to Java. Then, executing Java will give us FIRRTL. And finally, a FIRRTL compiler will compile FIRRTL to the actual Verilog code.</p>
+
+<p>In short: Scala -&gt; Java -&gt; FIRRTL -&gt; Verilog (1st arrow is done by SBT, 2nd arrow is done by Java, and 3rd arrows is done by FIRRTL compiler)</p>
+
+<p>Now we need to install sbt. Follow the <a href="https://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html">scala-sbt.org</a> to install.</p>
+
+<h3 id="ii-c-verilator">II. c) Verilator</h3>
+
+<p>Verilator is a cycle-accurate behavioral model, and it is used to simulate the Verilog codes at cycle level (like ModelSim).</p>
+
+<p>To install the Verilator:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stand where you want to <span class="nb">install </span>Verilator
+<span class="nv">$ </span>git clone http://git.veripool.org/git/verilator
+<span class="nv">$ </span><span class="nb">cd </span>verilator/
+<span class="nv">$ </span>git checkout stable
+<span class="nv">$ </span><span class="nb">unset </span>VERILATOR_ROOT    <span class="c">#For bash, unsetenv for csh</span>
+<span class="nv">$ </span>autoconf                <span class="c">#this is to create the ./configure script</span>
+<span class="nv">$ </span>./configure             <span class="c">#then run the script</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+<p>In general, follows the guide here to install: https://verilator.org/guide/latest/install.html</p>
+
+<h3 id="ii-d-qemu">II. d) QEMU</h3>
+
+<p>QEMU is an emulation tool, not a simulation tool. It does not simulate anything (.v codes, .scala codes, or .c codes, etc.).
+It emulates the behavioral that a correct CPU should behave.
+Reference link: <a href="https://github.com/qemu/qemu">github</a> and <a href="https://wiki.qemu.org/Documentation/Platforms/RISCV">wiki</a>.</p>
+
+<p>To install the RISC-V QEMU:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stand where you want to <span class="nb">install </span>RISC-V QEMU
+<span class="nv">$ </span>git clone https://github.com/qemu/qemu.git riscv-qemu
+<span class="nv">$ </span><span class="nb">cd </span>riscv-qemu/
+<span class="nv">$ </span>git checkout stable-8.1   <span class="c">#commit c95e38d3 on 22-Dec-2023</span>
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>../configure <span class="nt">--target-list</span><span class="o">=</span>riscv64-softmmu
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="ii-e-idea-intellij">II. e) Idea IntelliJ</h3>
+
+<p><strong>Idea IntelliJ</strong> is a GUI for sbt (which is a scala compiler).
+After download the <strong>Idea IntelliJ</strong> from <a href="https://www.jetbrains.com/idea/">jetbrains.com</a>, extract it and run it by <code class="language-plaintext highlighter-rouge">./idea.sh</code></p>
+
+<h3 id="ii-f-eclipse">II. f) Eclipse</h3>
+
+<p>Eclipse is an open-source IDE (mostly for C/C++) to build, to run, and to debug a software.</p>
+
+<p>Download the gnu-mcu-eclipse (linux version x86_64) from the <a href="https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases">website</a>.
+Then extract it and copy the folder to any place you want. The execution file is at: <code class="language-plaintext highlighter-rouge">./eclipse/eclipse</code></p>
+
+<h3 id="ii-g-openocd">II. g) OpenOCD</h3>
+
+<p>Open OCD (OCD: On-Chip Debugger) is a tool to control a CPU via a debugger, thus allowing us to load a program, and run or debug that program.</p>
+
+<p>To install &amp; make OpenOCD:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-openocd.git    <span class="c">#branch riscv commit 54e5d253 on 5-Mar-2020</span>
+<span class="nv">$ </span><span class="nb">cd </span>riscv-openocd/
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+<span class="nv">$ </span>./bootstrap
+<span class="nv">$ </span>./configure <span class="nt">--enable-ftdi</span> <span class="nt">--enable-dummy</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Configuration files for RISC-V CPU: <a href="/assets/sources/other/riscv-openocd.cfg">riscv-openocd</a>
+You should download them and put them under the <code class="language-plaintext highlighter-rouge">riscv-openocd/</code> folder.</p>
+
+<h3 id="ii-h-vivado">II. h) Vivado</h3>
+
+<p><strong>Check your eth0 interface:</strong></p>
+
+<p>Type <code class="language-plaintext highlighter-rouge">$ ifconfig -a</code> to make sure that the network interface name is <code class="language-plaintext highlighter-rouge">eth0</code>.
+If not, the Vivado cannot recognize the license from the NAT interface.
+Then, the network interface name must be rename by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/default/grub
+
+Then add this line beneath those GRUB... lines:
+    <span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"net.ifnames=0 biosdevname=0"</span>
+
+Then:
+<span class="nv">$ </span><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg
+</code></pre></div></div>
+
+<p>Finally, reboot again for the computer to update the new ethernet interface.</p>
+
+<p><strong>Download and Install:</strong></p>
+
+<p>First, download the Vivado for Linux from <a href="https://www.xilinx.com/support/download.html">xilinx.com</a> (linux .bin file self extract). Then, cd to the downloaded .bin file and run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x Xilinx_....bin
+<span class="nv">$ </span>./Xilinx_....bin
+</code></pre></div></div>
+
+<p>The GUI for installation will be load. Choose to install the Vivado / Vivado ML Standard and wait for the installer to complete.</p>
+
+<p><strong>Install cable driver:</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>to Vivado installed folder:
+<span class="nv">$ </span><span class="nb">cd</span> ...Xilinx/Vivado/2022.1/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+<span class="nv">$ </span><span class="nb">sudo</span> ./install_drivers
+</code></pre></div></div>
+
+<h3 id="ii-i-quartus">II. i) Quartus</h3>
+
+<p>Just download from the <a href="http://fpgasoftware.intel.com/?edition=standard&amp;platform=linux&amp;download_manager=direct">fpgasoftware.intel.com</a> and install.
+Choose to download the Intel Quartus Prime Standard Edition.
+The Quartus execution file is located at <code class="language-plaintext highlighter-rouge">intelFPGA/21.1/quartus/bin/quartus</code></p>
+
+<p><strong>Install cable driver:</strong></p>
+
+<p>Create two 51- and 52- files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/51-usbblaster.rules
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/udev/rules.d/52-usbblaster.rules
+</code></pre></div></div>
+
+<p>And add these lines on both files:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># USB-Blaster</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6001"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6002"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span> 
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6003"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>   
+
+<span class="c"># USB-Blaster II</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6010"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+<span class="nv">BUS</span><span class="o">==</span><span class="s2">"usb"</span>, SYSFS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">"09fb"</span>, SYSFS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">"6810"</span>, <span class="nv">MODE</span><span class="o">=</span><span class="s2">"0666"</span>
+</code></pre></div></div>
+
+<p>After that, you may:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>service udev restart
+</code></pre></div></div>
+
+<p>Or even reboot the computer if it’s still not recognize the cable.</p>
+
+<hr />
+
+<h2 id="iii-risc-v-toolchain">III. RISC-V Toolchain</h2>
+
+<p>Toolchain for RISC-V CPU. Reference <a href="https://github.com/riscv/riscv-gnu-toolchain">link</a>.</p>
+
+<h3 id="iii-a-git-clone">III. a) Git clone</h3>
+
+<p>Git clone the toolchain-making on github:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/riscv/riscv-gnu-toolchain
+<span class="nv">$ </span><span class="nb">cd </span>riscv-gnu-toolchain/
+</code></pre></div></div>
+
+<p>Current mainstream is gcc 11.1
+If you want to use older gcc (recommend 8.2 version):</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GCC 11.1:   <span class="nv">$ </span>git checkout 995778bd3315faddd709948190ca76fb10b43188
+GCC 10.2:   <span class="nv">$ </span>git checkout a838c5dfe91c3ef29218747fa266ce24ae2cf052
+GCC 10.1:   <span class="nv">$ </span>git checkout f13b418e9a2e90308b3881adc13413c933d363ee
+GCC 9.2:    <span class="nv">$ </span>git checkout 345f419e1f783139dd3353eb09bb3efaa000bad9
+GCC 8.3:    <span class="nv">$ </span>git checkout afcc8bc655d30cf6af054ac1d3f5f89d0627aa79
+GCC 8.2:    <span class="nv">$ </span>git checkout fa1fcaba7f883b20e14f1613bf4bb1028bec6e43
+GCC 8.1:    <span class="nv">$ </span>git checkout af5aa9f3fad527c14b3a8d3885d05d06931070ae
+GCC 7.2:    <span class="nv">$ </span>git checkout 686320c1fee0519f12117d0b6c9ef22b5fa4db16
+GCC 7.1:    <span class="nv">$ </span>git checkout dcda255e1f3d114e8d12b23c80b80382b51109d6
+GCC 6.1:    <span class="nv">$ </span>git checkout 39fb67144cd7228f72c00be330bc80e649105878
+GCC 5.3:    <span class="nv">$ </span>git checkout 105ffc3043c234d82b792b7e6950f286ff2bc65d
+GCC 5.2:    <span class="nv">$ </span>git checkout 28fccff586e77d73d1ef58d0e3f2d167065513b0
+GCC 5.1:    <span class="nv">$ </span>git checkout add1510c7b0f9cdf7e55ebd60d9744d2c740fe24
+GCC 4.9:    <span class="nv">$ </span>git checkout fe4c7d9583a3c06df08a7f013a901fd6a3456bfd
+</code></pre></div></div>
+
+<p>Finally:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+
+Note: <span class="k">if </span>it prints:
+    fatal: unable to connect to github.com:
+Then:
+<span class="nv">$ </span>git config <span class="nt">--global</span> url.<span class="s2">"https://"</span>.insteadOf git://
+<span class="nv">$ </span>git submodule update <span class="nt">--init</span> <span class="nt">--recursive</span>
+</code></pre></div></div>
+
+<h3 id="iii-b-config--make">III. b) Config &amp; Make</h3>
+
+<p>The configuration command format:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=[</span>path] <span class="nt">--enable-multilib</span>
+
+For example:
+<span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=</span>/opt/riscv <span class="nt">--enable-multilib</span>
+</code></pre></div></div>
+<p>For other onfigurations, follow: https://github.com/riscv-collab/riscv-gnu-toolchain</p>
+
+<p>Now you can <code class="language-plaintext highlighter-rouge">$ make</code> the toolchain by:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>elf-toolchain <span class="o">(</span>or baremetal toolchain<span class="o">)</span> to run directly on the CPU <span class="o">(</span>like MCU<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+
+<span class="k">for </span>linux-toolchain to run on the Linux that run on the CPU <span class="o">(</span>like OS app<span class="o">)</span>:
+<span class="nv">$ </span><span class="nb">sudo </span>make linux <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p><em>Note</em>: to re-make another configuration, it is better to <code class="language-plaintext highlighter-rouge">$ sudo make clean</code> beforehand.</p>]]></content><author><name>thuchoang90</name></author><category term="Tutorial" /><category term="RISC-V" /><category term="Linux" /><category term="Tutorial" /><summary type="html"><![CDATA[I. Dependencies &amp; Proxy]]></summary></entry><entry><title type="html">RISC-V Chip Collection</title><link href="/jekyll-theme-yat/project/2022/09/05/RISC-V-Chip.html" rel="alternate" type="text/html" title="RISC-V Chip Collection" /><published>2022-09-05T00:00:00+00:00</published><updated>2022-09-05T00:00:00+00:00</updated><id>/jekyll-theme-yat/project/2022/09/05/RISC-V-Chip</id><content type="html" xml:base="/jekyll-theme-yat/project/2022/09/05/RISC-V-Chip.html"><![CDATA[<style>
+  .chipimg {
+    float:center;
+    height:auto;
+    width:100%;
+    max-width:650px;
+  }
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .td {
+    text-align: center;
+  }
+</style>
+
+<h2 id="iv-crypto-processor-crypro-chips">IV. Crypto Processor (CryPro) Chips</h2>
+
+<h3 id="iv1-crypro-single-core-rocket-chip-with-tls-13-compatible-crypto-cores">IV.1) CryPro Single-core Rocket-chip with TLS-1.3 Compatible Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Feb. 2022</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IMAC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES-GCM, ChaCha20, Poly1305, AEAD, Ed/EC-DSA, HMAC-SHA2, RSA-1024, SHA3-512, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/CryPro-22-02-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/CryPro-22-02-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/CryPro-22-02-chip.jpg" class="chipimg" /></p>
+
+<h2 id="iii-trusted-execution-environment-tee-hardware-chips">III. Trusted Execution Environment (TEE) Hardware Chips</h2>
+
+<h3 id="iii6-teehw-64-bit-dual-core-rocket-boom-with-secure-boot-sub-system-crypto-cores-and-trng">III.6) TEEHW 64-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>7.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2021</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1) + Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, Ed25519, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4253-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii5-teehw-32-bit-dual-core-rocket-boom-with-secure-boot-sub-system-crypto-cores-and-trng">III.5) TEEHW 32-bit Dual-core Rocket-Boom with Secure Boot Sub-system, Crypto-cores, and TRNG</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2021</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IMAC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1) + Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-06-R4252-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii4-teehw-64-bit-dual-core-rocket-chip-with-crypto-cores-and-trng">III.4) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores and TRNG</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Feb. 2021</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>2)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, Ed25519, and TRNG</td>
+  </tr>
+  <tr>
+    <td><b>Secure Boot</b></td>
+    <td>MCU as sub-system with IBex core (RV32IMC)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Floorplan</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-02-floorplan.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-02-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-21-02-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii3-teehw-64-bit-single-core-boom-with-crypto-cores">III.3) TEEHW 64-bit Single-core Boom with Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and Ed25519</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4254-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii2-teehw-32-bit-dual-core-rocket-boom-with-crypto-cores">III.2) TEEHW 32-bit Dual-core Rocket-Boom with Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jun. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IMAC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>1) + Boom (<span>&#215;</span>1)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and Ed25519</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-06-R4252-chip.jpg" class="chipimg" /></p>
+
+<h3 id="iii1-teehw-64-bit-dual-core-rocket-chip-with-crypto-cores">III.1) TEEHW 64-bit Dual-core Rocket-chip with Crypto-cores</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jan. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>2)</td>
+  </tr>
+  <tr>
+    <td><b>Cryptography Accelerator</b></td>
+    <td>AES, SHA3-512, and Ed25519</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-01-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/TEEHW-20-01-chip.jpg" class="chipimg" /></p>
+
+<h2 id="ii-vexriscv-chips">II. VexRiscv Chips</h2>
+
+<h3 id="ii2-vexriscv-rohm-chip">II.2) VexRiscv ROHM Chip</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>2.5<span>&#215;</span>2.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Jan. 2020</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IM</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>VexRiscv (<span>&#215;</span>1)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-20-01-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-20-01-chip.jpg" class="chipimg" /></p>
+
+<h3 id="ii1-vexriscv-sotb-chip">II.1) VexRiscv SOTB Chip</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>SOTB-65nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>2<span>&#215;</span>1.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Aug. 2019</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV32IM</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>VexRiscv (<span>&#215;</span>1)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-19-08-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/VexRiscv-19-08-chip.jpg" class="chipimg" /></p>
+
+<h2 id="i-freedom-chips">I. Freedom Chips</h2>
+
+<h3 id="i1-freedom-quad-core-rocket-chip">I.1) Freedom Quad-core Rocket-chip</h3>
+
+<p align="center"><b><font size="5">Summary</font></b></p>
+
+<table>
+  <tr>
+    <td><b>Process</b></td>
+    <td>ROHM-180nm</td>
+  </tr>
+  <tr>
+    <td><b>Die</b></td>
+    <td>5<span>&#215;</span>7.5-mm<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><b>Fab. Date</b></td>
+    <td>Oct. 2019</td>
+  </tr>
+  <tr>
+    <td><b>ISA</b></td>
+    <td>RV64GC</td>
+  </tr>
+  <tr>
+    <td><b>Core</b></td>
+    <td>Rocket (<span>&#215;</span>4)</td>
+  </tr>
+</table>
+
+<p align="center"><b><font size="5">Layout</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/Freedom-19-10-layout.jpg" class="chipimg" /></p>
+
+<p align="center"><b><font size="5">Barechip</font></b></p>
+
+<p><img src="/assets/sources/ChipCollection/Freedom-19-10-chip.jpg" class="chipimg" /></p>]]></content><author><name>thuchoang90</name></author><category term="Project" /><category term="Chips" /><category term="VLSI" /><category term="RISC-V" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Keystone 64-bit build using CMake</title><link href="/jekyll-theme-yat/project/2020/11/12/Keystone-cmake-64.html" rel="alternate" type="text/html" title="Keystone 64-bit build using CMake" /><published>2020-11-12T00:00:00+00:00</published><updated>2020-11-12T00:00:00+00:00</updated><id>/jekyll-theme-yat/project/2020/11/12/Keystone-cmake-64</id><content type="html" xml:base="/jekyll-theme-yat/project/2020/11/12/Keystone-cmake-64.html"><![CDATA[<h2 id="i-keystone">I. Keystone</h2>
+
+<h3 id="i-a-using-their-prebuilt-toolchain-gcc-72">I. a) Using their prebuilt toolchain (gcc-7.2)</h3>
+
+<p><em>Note:</em> because their prebuilt toolchain is <code class="language-plaintext highlighter-rouge">RV64GC</code>, so for the <code class="language-plaintext highlighter-rouge">RV64IMAC</code> build please follow the guide in <a href="#i-b-using-our-local-toolchain-gcc-83-in-this-example">I. b) Using our local toolchain</a>.</p>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone <span class="nt">-b</span> dev https://github.com/keystone-enclave/keystone.git keystone-rv64gc
+  <span class="c">#commit e448fa32 on 19-Oct-2020</span>
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc/
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Download prebuilt toolchain:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh   <span class="c">#this will download the prebuilt toolchain (gcc-7.2) and set things up</span>
+<span class="nv">$ </span><span class="nb">.</span> source.sh       <span class="c">#update PATH</span>
+</code></pre></div></div>
+
+<p>Update sdk examples:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>sdk/
+<span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t[ ]*freemem_size[ ]*=[ ]*48/size_t freemem_size = 2/g'</span> examples/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span>make examples
+<span class="nv">$ </span><span class="nb">cd</span> ../../   <span class="c">#back outside</span>
+</code></pre></div></div>
+
+<p>Create build folder then make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span>cmake ..
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>make run-tests    <span class="c">#after this, a bbl.bin file is generated</span>
+</code></pre></div></div>
+
+<h3 id="i-b-using-our-local-toolchain-gcc-83-in-this-example">I. b) Using our local toolchain (gcc-8.3 in this example)</h3>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If build <span class="k">for </span>RV64GC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> local-tc-cmake https://github.com/thuchoang90/keystone.git keystone-rv64gc-local
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc-local/
+
+If build <span class="k">for </span>RV64IMAC:
+<span class="nv">$ </span>git clone <span class="nt">-b</span> local-tc-cmake https://github.com/thuchoang90/keystone.git keystone-rv64imac
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64imac/
+</code></pre></div></div>
+
+<p>Check PATH:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH.
+If build <span class="k">for </span>RV64GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64gc      <span class="c">#point to RV64GC toolchain</span>
+If build <span class="k">for </span>RV64IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64imac    <span class="c">#point to RV64IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin/:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Update submodule:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./fast-setup.sh   <span class="c">#this time, it won't download the prebuilt toolchain, just update the submodule</span>
+</code></pre></div></div>
+
+<p>Do the following if build for <code class="language-plaintext highlighter-rouge">RV64IMAC</code>, skip if build for <code class="language-plaintext highlighter-rouge">RV64GC</code>:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./patches/imac-patch.sh
+</code></pre></div></div>
+
+<p>Update sdk example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>sdk/
+<span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/size_t[ ]*freemem_size[ ]*=[ ]*48/size_t freemem_size = 2/g'</span> examples/tests/test-runner.cpp
+  <span class="c">#this line is for FPGA board, because usually there is only 1GB of memory on the board</span>
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span>make examples
+<span class="nv">$ </span><span class="nb">cd</span> ../../   <span class="c">#back outside</span>
+</code></pre></div></div>
+
+<p>Create build folder then make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>build
+<span class="nv">$ </span><span class="nb">cd </span>build/
+<span class="nv">$ </span>cmake ..
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>make run-tests    <span class="c">#after this, a bbl.bin file is generated</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ii-keystone-demo">II. Keystone-demo</h2>
+
+<p>Check PATH:</p>
+<ul>
+  <li>Pair with the prebuilt-toolchain of Keystone: <em>(Note: prebuilt-toolchain is <code class="language-plaintext highlighter-rouge">RV64GC</code>, so if you want to build for <code class="language-plaintext highlighter-rouge">RV64IMAC</code> please follow the local-built-toolchain)</em></li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>          <span class="c">#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH</span>
+<span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc/   <span class="c">#go to your keystone folder</span>
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/build   <span class="c">#point to the build folder</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Pair with the local-built-toolchain of Keystone:</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#go to your keystone folder</span>
+    <span class="nv">$ </span><span class="nb">cd </span>keystone-rv64gc-local/
+Or: <span class="nv">$ </span><span class="nb">cd </span>keystone-rv64imac/
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>    <span class="c">#check if our toolchain is on the PATH or not</span>
+
+If not <span class="k">then </span><span class="nb">export </span>it to PATH
+If build <span class="k">for </span>RV64GC:      <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64gc      <span class="c">#point to RV64GC toolchain</span>
+If build <span class="k">for </span>RV64IMAC:    <span class="nv">$ </span><span class="nb">export </span><span class="nv">RISCV</span><span class="o">=</span>/opt/GCC8/riscv64imac    <span class="c">#point to RV64IMAC toolchain</span>
+
+Finally:
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$RISCV</span>/bin/:<span class="nv">$PATH</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_SDK_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/sdk/build
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/build   <span class="c">#point to the build folder</span>
+</code></pre></div></div>
+
+<p>Git clone:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ../    <span class="c">#go back outside</span>
+<span class="nv">$ </span>git clone <span class="nt">-b</span> cmake https://github.com/thuchoang90/keystone-demo.git keystone-demo-rv64
+</code></pre></div></div>
+
+<p>Make:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>keystone-demo-rv64/
+<span class="nv">$ </span><span class="nb">.</span> source.sh
+<span class="nv">$ </span>./quick-start.sh    <span class="c">#type Y when asked</span>
+<span class="nv">$ </span><span class="nb">.</span> copybins.sh       <span class="c">#copy binaries to keystone overlay</span>
+</code></pre></div></div>
+
+<p>Update keystone-demo to keystone build folder:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="k">}</span>    <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make image                  <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<p><em>Note:</em> there is kind of a bug with <code class="language-plaintext highlighter-rouge">script/run-qemu.sh</code>, so do this to make sure that the <code class="language-plaintext highlighter-rouge">script/run-qemu.sh</code> will run smoother later:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>&lt;open a new terminal&gt;
+<span class="nv">$ </span><span class="nb">cd</span> &lt;to the keystone build folder&gt;
+<span class="nv">$ </span>./script/run-qemu.sh
+</code></pre></div></div>
+
+<p>Log in by the id of <code class="language-plaintext highlighter-rouge">root</code> and the password of <code class="language-plaintext highlighter-rouge">sifive</code>.
+Then exit qemu by <code class="language-plaintext highlighter-rouge">poweroff</code>.
+If it got stuck with <code class="language-plaintext highlighter-rouge">Power off</code> then just close the terminal.</p>
+
+<p>To update the new hash value to the <code class="language-plaintext highlighter-rouge">keystone-demo/</code> folder, do the followings:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Now go back with the original terminal ealier</span>
+<span class="nv">$ </span><span class="nb">cd</span> ../../keystone-demo-rv64/              <span class="c">#first, cd back to the keystone-demo directory</span>
+<span class="nv">$ </span>./scripts/get_attestation.sh ./include    <span class="c">#if it stuck at "Power off", just Ctrl+C</span>
+<span class="nv">$ </span><span class="nb">rm </span>build/trusted_client.riscv
+<span class="nv">$ </span>make <span class="nt">-C</span> build/ trusted_client.riscv
+<span class="nv">$ </span><span class="nb">.</span> copybins.sh
+  <span class="c">#after this step, the app is updated with the correct hash value and coppied to the keystone directory</span>
+
+<span class="nv">$ </span><span class="nb">cd</span> <span class="k">${</span><span class="nv">KEYSTONE_BUILD_DIR</span><span class="k">}</span>    <span class="c">#now go back to the keystone folder</span>
+<span class="nv">$ </span>make image                  <span class="c">#and update the bbl.bin there</span>
+</code></pre></div></div>
+
+<p><em>Note:</em> sometimes <code class="language-plaintext highlighter-rouge">./scripts/get_attestation.sh ./include</code> encountered a problem like this:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spawn ./scripts/run-qemu.sh
+<span class="k">****</span> Running QEMU SSH on port 3000 <span class="k">****</span>
+qemu-system-riscv64: Could not <span class="nb">set </span>up host forwarding rule <span class="s1">'tcp::3000-:22'</span>
+expect: spawn <span class="nb">id </span>exp4 not open
+    <span class="k">while </span>executing
+<span class="s2">"expect "</span><span class="k">*</span>?assword<span class="s2">" { send "</span>sifive<span class="se">\r</span><span class="s2">" }"</span>
+Could not extract the SM_HASH!
+</code></pre></div></div>
+
+<p>Then just change the SSH port in <code class="language-plaintext highlighter-rouge">${KEYSTONE_BUILD_DIR}/scripts/get_attestation.sh</code> from:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HOST_PORT</span><span class="o">=</span><span class="k">${</span><span class="nv">HOST_PORT</span>:<span class="p">=</span><span class="s2">"</span><span class="k">$((</span><span class="m">3000</span> <span class="o">+</span> RANDOM <span class="o">%</span> <span class="m">3000</span><span class="k">))</span><span class="s2">"</span><span class="k">}</span><span class="p">;</span>
+</code></pre></div></div>
+<p>To any fix number like this for example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HOST_PORT</span><span class="o">=</span><span class="k">${</span><span class="nv">HOST_PORT</span>:<span class="p">=</span><span class="s2">"</span><span class="k">$((</span><span class="m">3222</span><span class="k">))</span><span class="s2">"</span><span class="k">}</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="iii-run-test-on-qemu">III. Run Test on QEMU</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> &lt;keystone folder&gt;                <span class="c">#go to your keystone folder</span>
+<span class="nv">$ </span><span class="nb">cd </span>build/                           <span class="c">#go to build folder</span>
+<span class="nv">$ </span>./scripts/run-qemu.sh
+  <span class="c">#Login by the id of 'root' and the password of 'sifive'</span>
+
+<span class="nv">$ </span>insmod keystone-driver.ko           <span class="c">#install driver</span>
+
+To <span class="k">do </span>the initial <span class="nb">test</span>:
+<span class="nv">$ </span><span class="nb">time</span> ./tests.ke                     <span class="c">#ok if 'Attestation report SIGNATURE is valid' is printed</span>
+
+To <span class="k">do </span>the keystone-demo <span class="nb">test</span>:
+<span class="nv">$ </span><span class="nb">cd </span>keystone-demo/                   <span class="c">#go to the keystone-demo test</span>
+<span class="nv">$ </span>./demo-server.riscv &amp;               <span class="c">#run host in localhost</span>
+<span class="nv">$ </span>./trusted_client.riscv localhost    <span class="c">#connect to localhost and test</span>
+</code></pre></div></div>
+<p>It is okay if the <strong>Attestation signature and enclave hash are valid</strong> is printed.
+Exit the security monitor by:	<code class="language-plaintext highlighter-rouge">$ q</code>. And exit the QEMU by: <code class="language-plaintext highlighter-rouge">$ poweroff</code>.</p>
+
+<p><em>Note:</em> sometimes <code class="language-plaintext highlighter-rouge">./scripts/run-qemu.sh</code> encountered a problem like this:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">****</span> Running QEMU SSH on port 5291 <span class="k">****</span>
+overriding secure boot ROM <span class="o">(</span>file: /home/ubuntu/Projects/Keystone/CMake/keystone-rv64gc-local/build/bootrom.build/bootrom.bin<span class="o">)</span>
+boot ROM size: 54061
+fdt dumped at 58157
+qemu-system-riscv64: <span class="nt">-device</span> virtio-blk-device,drive<span class="o">=</span>hd0: Failed to get <span class="s2">"write"</span> lock
+Is another process using the image <span class="o">[</span>/home/ubuntu/Projects/Keystone/CMake/keystone-rv64gc-local/build/buildroot.build/images/rootfs.ext2]?
+</code></pre></div></div>
+
+<p>Then just remake the image and rerun again:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make image <span class="nt">-j</span><span class="sb">`</span><span class="nb">nproc</span><span class="sb">`</span>
+<span class="nv">$ </span>./scripts/run-qemu.sh
+</code></pre></div></div>]]></content><author><name>thuchoang90</name></author><category term="Project" /><category term="RISC-V" /><category term="TEE" /><category term="Linux" /><summary type="html"><![CDATA[I. Keystone]]></summary></entry></feed>
